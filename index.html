@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Cửa hàng bán Sách</title>
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/reset.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-top">
+        <!----------- 
+               Logo 
+         ------------>
+        <a href="#" class="logo">
+          <div class="logo-badge">
+            <img style="width: 135px" src="./assets/logo/logo.png" alt="Logo" />
+          </div>
+          <div class="logo-text">
+            <h1>Tiệm Sách Sơn Vỹ</h1>
+            <span>Không Gian Đọc & Lan Tỏa Tri Thức</span>
+          </div>
+        </a>
+        <!--------------- 
+            Search bar 
+         --------------->
+        <div class="search-bar">
+          <select class="search-select">
+            <option>Tất cả danh mục</option>
+            <option>Văn Học & Tiểu Thuyết</option>
+            <option>Kinh Doanh-Khởi Nghiệp</option>
+            <option>Phát Triển Bản Thân</option>
+            <option>Thiếu Nhi & Truyện Tranh</option>
+          </select>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Tìm theo tựa sách, tác giả, dịch giả..."
+          />
+          <button class="search-button" aria-label="Tìm kiếm">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 11px;"></i>
+          </button>
+        </div>
+
+        <!-------------------
+               Actions 
+         ------------------->
+        <div class="header-actions">
+          <div class="action-bussiness">
+            <button class="icon-btn" title="Yêu thích">
+              <i class="fa-regular fa-heart"></i> <span class="badge-dot">4</span>
+            </button> 
+            <a href="#" class="cart-btn">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2">
+                    <path d="M5 7h13.79a2 2 0 0 1 1.99 2.199l-.6 6A2 2 0 0 1 18.19 17H8.64a2 2 0 0 1-1.962-1.608z" />
+                    <path stroke-linecap="round" d="m5 7l-.81-3.243A1 1 0 0 0 3.22 3H2m6 18h2m6 0h2" />
+                  </g>
+                </svg>
+                <span class="cart-dot">3</span>
+              </button>
+              <span>GIỎ HÀNG
+            </a>
+          </div>
+          <div class="action-buttons">
+            <a href="#" class="btn-primary">Đăng nhập</a>
+            <a href="#" class="btn-secondary">Đăng ký</a>
+          </div>
+        </div>
+      </div>
+
+      <!-----------
+          Nav 
+       ----------->
+       <nav class="nav-bar">
+        <div class="nav-container">
+          <div class="nav-links">
+            <a href="#" class="nav-link">Trang Chủ</a>
+            <a href="#" class="nav-link">Văn Học & Tiểu Thuyết</a>
+            <a href="#" class="nav-link">Kinh Doanh - Khởi Nghiệp</a>
+            <a href="#" class="nav-link">Phát Triển Bản Thân</a>
+            <a href="#" class="nav-link">Thiếu Nhi & Tranh Truyện</a>
+            <a href="#" class="nav-link">Sách Bán Chạy</a>
+            <a href="#" class="nav-link">Khuyến Mãi Đặc Biệt</a>
+          </div>
+        </div>
+       </nav>
+    </header>
+    <!-------------- 
+        Main 
+    --------------->
+    <main class="container">
+      <!---------------
+       Hero section
+       --------------->
+      <section class="hero-card">
+        <div>
+          <div class="hero-tag">
+            <i class="fa-solid fa-feather-pointed"></i> TUẦN LỄ VĂN HỌC & NGHỆ
+            THUẬT SỐNG
+          </div>
+          <h2 class="hero-title">
+            Đắm chìm trong <br/><span class="italic">từng trang sách</span>
+            nguyên <br/> bản.
+          </h2>
+          <div class="hero-quote">
+            &ldquo;Một cuốn sách hay là cánh cửa mở ra thế giới mới.&rdquo; </br>
+            <span class="text-quote">
+              — Tuyển tập mùa thu
+            </span>
+          </div>
+          <p class="small-text">
+            Hơn 3.000 tác phẩm tuyển chọn, bìa nguyên bản từ các NXB uy tín hàng
+            đầu.
+          </p>
+
+          <div class="hero__cta-group">
+            <button class="btn-primary btn-explore">Khám Phá Tuyển Tập Mới
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16m-7-7l7 7l-7 7" />
+              </svg>
+            </button>
+            <button class="btn-secondary btn-outline">
+              <span>Đọc Thử Sách Trực Tuyến</span>
+            </button>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="stat-number">12.5k+</div>
+              <div class="stat-label">Độc giả thân thiết</div>
+            </div>
+            <div>
+              <div class="stat-number">4.92 ★</div>
+              <div class="stat-label">Hài lòng dịch vụ</div>
+            </div>
+            <div>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Bản quyền chính hãng</div>
+            </div>
+          </div>
+        </div>
+        <!----------------------------- 
+        Hero highlight book card 
+        ------------------------------>
+        <div class="hero__book-showcase">
+          <div class="highlight-card">
+            <span class="badge-top-left">
+              <i class="fa-solid fa-star" style="color: #f59e0b; font-size: 11px"></i>
+              Sách Đề Cử Tháng</span>
+            <img class="highlight-img" src="./assets/books/RungNaUy.png" alt="Rừng Una">
+            <h3 class="title-book-card">
+              Rừng Na Uy (Ấn Bản Kỷ Niệm)
+            </h3>
+            <p
+              class="small-text-book"
+            >
+              Haruki Murakami • Trịnh Lữ dịch
+            </p>
+
+            <div class="price-book">
+              <span>132.000đ</span>
+            </div>
+            <div class="button-group">
+              <button class="btn-primary btn-add">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2">
+                    <path d="M5 7h13.79a2 2 0 0 1 1.99 2.199l-.6 6A2 2 0 0 1 18.19 17H8.64a2 2 0 0 1-1.962-1.608z" />
+                    <path stroke-linecap="round" d="m5 7l-.81-3.243A1 1 0 0 0 3.22 3H2m6 18h2m6 0h2" />
+                  </g>
+                </svg>
+                Thêm Giỏ Hàng
+              </button>
+              <button class="btn-secondary btn-detail">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24">
+	                <path d="M0 0h24v24H0z" fill="none" />
+	                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+		                <path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19s-7.764-4.013-9.257-5.962a1.69 1.69 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5s7.764 4.013 9.257 5.962" />
+		                <circle cx="12" cy="12" r="3" />
+	                </g>
+                </svg>
+                Xem Chi Tiết
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------------ 
+      TRUST PILLARS  
+      ------------------->
+      <section class="pillars-grid">
+        <div class="pillar-item">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M0 0h16v16H0z" fill="none" />
+              <path fill="currentColor" d="m11.335 2.065l.076.153l.577 1.533c.045.12.14.216.261.261l1.48.555c.65.244.999.938.826 1.595l-.042.13l-.688 1.523a.45.45 0 0 0 0 .37l.653 1.439a1.34 1.34 0 0 1-.543 1.711l-.153.076l-1.533.577a.45.45 0 0 0-.261.261l-.555 1.48a1.34 1.34 0 0 1-1.595.826l-.13-.042l-1.523-.688a.45.45 0 0 0-.37 0l-1.439.653a1.34 1.34 0 0 1-1.711-.543l-.076-.153l-.577-1.533a.45.45 0 0 0-.261-.261l-1.48-.555a1.34 1.34 0 0 1-.826-1.595l.042-.13l.689-1.523a.45.45 0 0 0 0-.37l-.654-1.439a1.34 1.34 0 0 1 .543-1.711l.153-.076l1.533-.577a.45.45 0 0 0 .261-.261l.555-1.48a1.34 1.34 0 0 1 1.595-.826l.13.042l1.523.688a.45.45 0 0 0 .37 0l1.439-.653a1.34 1.34 0 0 1 1.711.543m-5.931.52l-.556 1.48a1.34 1.34 0 0 1-.783.783l-1.48.556l-.098.05a.45.45 0 0 0-.152.553l.654 1.439c.16.352.16.756 0 1.108l-.66 1.453l-.027.092a.45.45 0 0 0 .283.497l1.48.556c.362.136.648.421.783.783l.556 1.48l.051.099c.12.174.352.242.552.151l1.439-.654a1.34 1.34 0 0 1 1.108 0l1.453.66l.092.027a.45.45 0 0 0 .497-.283l.556-1.48a1.34 1.34 0 0 1 .783-.783l1.48-.556l.099-.051a.45.45 0 0 0 .151-.552l-.654-1.439a1.34 1.34 0 0 1 0-1.108l.66-1.453l.027-.092a.45.45 0 0 0-.283-.497l-1.48-.556a1.34 1.34 0 0 1-.783-.783l-.556-1.48l-.051-.099a.45.45 0 0 0-.552-.151l-1.439.654a1.34 1.34 0 0 1-1.108 0l-1.44-.654l-.027-.012a.447.447 0 0 0-.575.261m1.574 6.762l3.186-3.641a.447.447 0 0 1 .725.514l-.053.074l-3.5 4a.45.45 0 0 1-.578.081l-.074-.06l-1.5-1.5a.447.447 0 0 1 .562-.688l.07.057zl3.186-3.641z" />
+            </svg>
+          </div>
+          <div>
+            <div class="pillar-title">100% Sách Chính Hãng</div>
+            <div class="pillar-desc">Bản quyền nguyên vẹn từ NXB</div>
+          </div>
+        </div>
+        <div class="pillar-item">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path fill="currentColor" d="M11 9.47V11h3.76L13 14.53V13H9.24zM13 1L6 15h5v8l7-14h-5z" />
+            </svg>
+          </div>
+          <div>
+            <div class="pillar-title">Giao Hỏa Tốc 2 Giờ</div>
+            <div class="pillar-desc">Nội thành Hà Nội & TP.HCM</div>
+          </div>
+        </div>
+        <div class="pillar-item">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
+              <path d="M0 0h16v16H0z" fill="none" />
+              <g fill="currentColor">
+                <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z" />
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="pillar-title">Bookmark & Thiệp Viết Tay</div>
+            <div class="pillar-desc">Gửi kèm theo từng đơn sách</div>
+          </div>
+        </div>
+        <div class="pillar-item">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2">
+                <path stroke-linecap="round" d="M11.029 2.54a2 2 0 0 1 1.942 0l7.515 4.174a1 1 0 0 1 .514.874v8.235a2 2 0 0 1-1.029 1.749l-7 3.888a2 2 0 0 1-1.942 0l-7-3.889A2 2 0 0 1 3 15.824V7.588a1 1 0 0 1 .514-.874z" />
+                <path stroke-linecap="round" d="m7.5 4.5l9 5V13M6 12.328L9 14" />
+                <path d="m3 7l9 5m0 0l9-5m-9 5v10" />
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="pillar-title">Đóng Gói 3 Lớp Chuẩn Mực</div>
+            <div class="pillar-desc">Chống gãy gáy và ẩm mốc</div>
+          </div>
+        </div>
+      </section>
+      <!------------- 
+        CATEGORIES 
+      -------------->
+      <section>
+        <!-- secton header -->
+        <div class="section-header">
+          <div>
+            <span class="section-subtitle">Tủ Sách Theo Chủ Đề</span>
+            <h2 class="section-title">Danh Mục Sách Tuyển Chọn</h2>
+          </div>
+          <div class="section__small-text">
+            <a href="#" class="small-text">Xem tất cả danh mục
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path fill="currentColor" d="m13.172 12l-4.95-4.95l1.414-1.413L16 12l-6.364 6.364l-1.414-1.415z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- categories -->
+        <div class="categories-grid">
+          <a href="#" class="category-card">
+            <div class="cat-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" d="M12.143 11v9m0-9c-2.506-.71-3.191-1.395-6.137-1.35a.864.864 0 0 0-.863.85v7.288c0 .483.414.869.916.862c2.775-.036 3.46.656 6.084 1.35m0-9c2.505-.71 3.107-1.395 6.052-1.35c.48.008.948.388.948.85v7.288c0 .483-.499.869-1 .862c-2.775-.036-3.376.656-6 1.35m2-14a2 2 0 1 1-4 0a2 2 0 0 1 4 0Z" />
+              </svg>
+            </div>
+            <div class="cat-name">Văn Học Kinh Điển</div>
+            <div class="cat-count">1.240+ cuốn</div>
+          </a>
+          <a href="#" class="category-card">
+            <div class="cat-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path fill="currentColor" stroke-width="1.8" d="M13 3c3.88 0 7 3.14 7 7c0 2.8-1.63 5.19-4 6.31V21H9v-3H8c-1.11 0-2-.89-2-2v-3H4.5c-.42 0-.66-.5-.42-.81L6 9.66A7.003 7.003 0 0 1 13 3m0-2C8.42 1 4.61 4.43 4.06 8.91L2.5 11c-.58.72-.68 1.72-.26 2.59c.36.72 1 1.21 1.76 1.36V16c0 1.86 1.28 3.43 3 3.87V23h11v-5.53c2.5-1.64 4-4.41 4-7.47c0-4.96-4.04-9-9-9m3.1 8.42V9c0-.15 0-.24-.06-.38l.89-.66c.07-.04.07-.18.07-.28l-.82-1.36c-.05-.09-.18-.14-.28-.09l-.99.42c-.18-.19-.41-.33-.65-.42L14.1 5.2c-.03-.14-.1-.2-.22-.2h-1.59c-.1 0-.19.06-.19.2l-.14 1.03c-.23.09-.46.23-.66.42l-1.03-.42c-.09-.05-.17 0-.23.09l-.8 1.36c-.05.14-.05.24.05.28l.84.66c0 .14-.03.28-.03.38c0 .14.03.28.03.42l-.84.65c-.1.05-.1.14-.05.24l.8 1.4c.06.1.14.1.23.1l.99-.43c.24.19.42.29.7.38l.14 1.08c0 .09.09.16.19.16h1.59c.12 0 .19-.07.22-.16l.16-1.08c.24-.09.47-.19.65-.37l.99.42c.1 0 .23 0 .28-.1l.82-1.4c0-.1 0-.19-.07-.24zm-3 1.03c-.78 0-1.42-.66-1.42-1.45s.61-1.41 1.42-1.41c.78 0 1.44.61 1.44 1.41s-.66 1.45-1.44 1.45" />
+              </svg>
+            </div>
+            <div class="cat-name">Tâm Lý & Chữa Lành</div>
+            <div class="cat-count">860+ cuốn</div>
+          </a>
+          <a href="#" class="category-card">
+            <div class="cat-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 14 14">
+                <!-- Icon downloaded from https://icon-sets.iconify.design/streamline/graph-arrow-increase/ -->
+                <path d="M0 0h14v14H0z" fill="none" />
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                  <path d="M9.5 3.5h4v4" />
+                  <path d="M13.5 3.5L7.85 9.15a.5.5 0 0 1-.7 0l-2.3-2.3a.5.5 0 0 0-.7 0L.5 10.5" />
+                </g>
+              </svg>
+            </div>
+            <div class="cat-name">Kinh Doanh - Khởi Nghiệp</div>
+            <div class="cat-count">650+ cuốn</div>
+          </a>
+          <a href="#" class="category-card">
+            <div class="cat-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 512 512">
+                <path d="M0 0h512v512H0z" fill="none"/>
+                <path fill="currentColor" d="M425.39 200.035A184.3 184.3 0 0 0 290.812 91.289l26.756-42.809l-27.136-16.96l-35.305 56.488A184.05 184.05 0 0 0 86.61 200.035a71.978 71.978 0 0 0 0 143.93a184.071 184.071 0 0 0 338.78 0a71.978 71.978 0 0 0 0-143.93m27.152 99.975a39.77 39.77 0 0 1-27.76 11.961l-20.725.394l-8.113 19.074a152.066 152.066 0 0 1-279.887 0l-8.114-19.074l-20.725-.394a39.978 39.978 0 0 1 0-79.942l20.725-.394l8.114-19.074a152.067 152.067 0 0 1 279.887 0l8.113 19.074l20.725.394a39.974 39.974 0 0 1 27.76 67.981" />
+                <path fill="currentColor" stroke-width="1.8" d="M168 232h40v40h-40zm136 0h40v40h-40zm-48 152a80 80 0 0 0 80-80H176a80 80 0 0 0 80 80" />
+              </svg>
+            </div>
+            <div class="cat-name">Thiếu Nhi & Truyện</div>
+            <div class="cat-count">920+ cuốn</div>
+          </a>
+          <a href="#" class="category-card">
+            <div class="cat-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+                <path d="M0 0h16v16H0z" fill="none" />
+                <g fill="currentColor" stroke-width="0.6" stroke="currentColor">
+                  <path d="M8 5a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3" />
+                  <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176c.078-.146.124-.464.07-1.119c-.014-.168-.037-.37-.061-.591c-.052-.464-.112-1.005-.118-1.462c-.01-.707.083-1.61.704-2.314c.369-.417.845-.578 1.272-.618c.404-.038.812.026 1.16.104c.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266c.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7" />
+                </g>
+              </svg>
+            </div>
+            <div class="cat-name">Nghệ Thuật & Thiết Kế</div>
+            <div class="cat-count">340+ cuốn</div>
+          </a>
+          <a href="#" class="category-card">
+            <div class="cat-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path fill="currentColor" d="M17 11c-.4 0-.75.23-.91.59l-4 9l1.83.81l1.07-2.41h4.03l1.07 2.41l1.83-.81l-4-9a1 1 0 0 0-.91-.59Zm-1.13 6L17 14.46L18.13 17zm-3.62-2.03l.49-1.94c-.13-.03-1.6-.43-3.17-1.42c1.4-1.41 2.49-3.26 2.74-5.61h1.68V4h-5V2h-2v2H2v2h8.3c-.25 1.91-1.19 3.34-2.31 4.4C7.3 9.75 6.68 8.96 6.25 8H4.12c.5 1.44 1.33 2.63 2.3 3.61c-1.57.99-3.04 1.39-3.17 1.42l.49 1.94c1.18-.3 2.76-.96 4.26-2.02c1.49 1.06 3.08 1.72 4.25 2.02" />
+              </svg>
+            </div>
+            <div class="cat-name">Sách Ngoại Văn</div>
+            <div class="cat-count">510+ cuốn</div>
+          </a>
+        </div>
+      </section>
+      <!---------------- 
+          BESTSELLERS 
+      ----------------->
+      <section>
+        <div class="section-header">
+          <div>
+            <span class="section-subtitle">Được Yêu Thích Nhất</span>
+            <h2 class="section-title">Sách Bán Chạy Nhất</h2>
+          </div>
+          <div class="container-btn">
+            <div class="btn-lists">
+              <button>Tất Cả</button>
+              <button>Văn Học</button>
+              <button>Tâm Lý</button>
+              <button>Kinh Tế</button>
+            </div>
+          </div>
+          <!------------- 
+              books grid
+          -------------->
+        <div class="books-grid">
+          <div class="book-card">
+            <div>
+              <div class="book-media">
+                <span class="book-badge">TOP 1 BXH</span>
+                <button class="wish-btn" aria-label="Yêu thích">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <img src="./assets/books/book1.png" alt="Rip Van Winkle and The Legend of Sleep Hollow"
+                  class="book-img"
+                />
+              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

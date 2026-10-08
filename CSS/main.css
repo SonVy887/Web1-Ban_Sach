@@ -1,0 +1,31 @@
+@import "./theme.css";
+@import "./header.css";
+@import "./hero.css";
+@import"./pillars.css";
+@import"./categories.css";
+
+*{
+    box-sizing: border-box;
+}
+a {
+    border: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+select,
+input,
+button {
+  border: none;
+  outline: none;   /* bỏ viền xanh khi focus */
+  background: transparent;
+}
+
+:root {
+    font-family: var(--font-sans);
+}
+
+
+body {
+    background-color: var(--color-surface);
+}

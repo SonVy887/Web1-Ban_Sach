@@ -1,0 +1,47 @@
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 60px;
+    background: var(--color-below-surface);
+    padding: 22px 32px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.pillar-item {
+    display: flex;
+    background: var(--color-surface-container);
+    padding: 14px;
+    align-items: center;
+    border-radius: var(--radius-lg);
+    gap: 12px;
+    box-shadow: var(--shadow-subtle), var(--shadow-card);
+}
+
+.pillar-item:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+.pillar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--color-secondary-surface);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pillar-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+}
+
+.pillar-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}

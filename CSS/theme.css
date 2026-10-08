@@ -1,0 +1,121 @@
+:root {
+  /* ==========================================================================
+     1. COLOR SYSTEM (BẢNG MÀU THIẾT KẾ TIỆM SÁCH BOOK NOOK)
+     ========================================================================== */
+  --color-below-surface: #f3ede9;
+  /* Primary & Brand Accents (Xanh rừng sâu chủ đạo & Nâu cam đất) */
+  --color-primary: #1e3a2f;               /* Màu thương hiệu chính: Header, Tiêu đề lớn, Nút CTA chính */
+  --color-primary-hover: #162b23;         /* Trạng thái hover cho nút chính */
+  --color-primary-light: #2a4d3f;         /* Tông sáng hơn của Primary */
+  --color-primary-surface: #eef4f1;       /* Nền nhạt mang sắc xanh thương hiệu (Tag, Badge nhẹ) */
+  
+  --color-secondary: #c86432;             /* Nâu cam đất (Terracotta): Nhấn Bestseller, Khuyến mãi, Giá giảm */
+  --color-secondary-hover: #a04a1f;       /* Hover cho màu nhấn */
+  --color-secondary-surface: #fdf2eb;     /* Nền tag khuyến mãi, highlight */
+
+  /* Neutral & Background Surfaces (Sắc độ ấm kiểu giấy mộc / Book Paper) */
+  --color-surface: #fef8f4;               /* Nền chính toàn trang web (Warm Cream) */
+  --color-surface-container: #ffffff;     /* Nền card sách, ô nhập liệu, dropdown trắng sáng */
+  --color-surface-container-low: #f8f2ee; /* Nền khối phụ, sidebar hoặc banner nhẹ */
+  --color-surface-container-high: #f0e9e4;/* Nền hover các ô menu, card phụ */
+  
+  /* Borders & Dividers */
+  --color-border: #dfd9d5;                /* Đường viền chuẩn (Header, Khung thẻ sách, Input) */
+  --color-border-subtle: #eae5e1;         /* Đường ngăn cách rất nhẹ */
+  --color-border-focus: #1e3a2f;          /* Viền khi focus vào ô nhập liệu */
+
+  /* Typography Colors (Văn bản) */
+  --color-text-main: #2d2825;             /* Chữ chính, nội dung đọc (Độ tương phản cao, dịu mắt) */
+  --color-text-title: #1e3a2f;            /* Tiêu đề sách, tiêu đề phân khu */
+  --color-text-muted: #6b635c;            /* Mô tả phụ, tên tác giả, trạng thái */
+  --color-text-subtle: #8a7f77;           /* Chữ chú thích nhỏ, placeholder, breadcrumbs */
+  --color-text-inverse: #ffffff;          /* Chữ trắng trên nền đậm (Nút bấm, Topbar) */
+
+  /* Feedback & Utilities */
+  --color-star: #eab308;                  /* Màu sao đánh giá sách */
+  --color-success: #15803d;               /* Thông báo thành công, còn hàng */
+  --color-error: #b91c1c;                 /* Lỗi form, hết hàng */
+
+
+
+  /* ==========================================================================
+     2. TYPOGRAPHY (FONT, SIZE, LINE-HEIGHT, WEIGHT)
+     ========================================================================== */
+  
+  /* Font Families */
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif; /* Dùng cho Logo, Tiêu đề nghệ thuật (H1, H2, Tên sách) */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Dùng cho nội dung đọc, form, menu */
+
+  /* Font Sizes */
+  --text-2xs: 0.6875rem;     /* 11px: Nhãn cực nhỏ, badge giỏ hàng, metadata phụ */
+  --text-xs: 0.75rem;        /* 12px: Topbar, breadcrumb, chú thích form, tag thể loại */
+  --text-sm: 0.875rem;       /* 14px: Menu điều hướng, nhãn input, thông tin tác giả, nút bấm phụ */
+  --text-base: 1rem;         /* 16px: Đoạn văn bản chuẩn (Body), giá sách chi tiết */
+  --text-lg: 1.125rem;       /* 18px: Tựa sách trong lưới, tiêu đề nhóm nhỏ */
+  --text-xl: 1.25rem;        /* 20px: Tiêu đề card lớn, giá tiền nổi bật */
+  --text-2xl: 1.5rem;        /* 24px: Tiêu đề danh mục, tiêu đề phân khối (H3) */
+  --text-3xl: 1.875rem;      /* 30px: Tiêu đề trang (H2) */
+  --text-4xl: 2.25rem;       /* 36px: Tiêu đề Hero Banner chính (H1) */
+
+  /* Line Heights (Tỉ lệ chiều cao dòng) */
+  --leading-none: 1;
+  --leading-tight: 1.2;      /* Tiêu đề ngắn, heading cỡ lớn */
+  --leading-snug: 1.35;      /* Tựa sách 2 dòng, tiêu đề card */
+  --leading-normal: 1.5;     /* Giao diện người dùng, nút, nhãn form */
+  --leading-relaxed: 1.65;   /* Đoạn văn mô tả sách, lời mở đầu (tối ưu trải nghiệm đọc) */
+
+  /* Font Weights */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;   /* Nút CTA */
+  --font-bold: 700;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.03em; /* Tiêu đề Playfair Display lớn */
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;     /* Chữ viết hoa nhỏ (UPPERCASE categories, subtitle) */
+  --tracking-widest: 0.1em;    /* Slogan dưới logo */
+
+
+  /* ==========================================================================
+     3. SPACING & SIZING (KHOẢNG CÁCH & BỐ CỤC)
+     ========================================================================== */
+  
+  --space-1: 0.25rem;        /* 4px */
+  --space-2: 0.5rem;         /* 8px */
+  --space-3: 0.75rem;        /* 12px */
+  --space-4: 1rem;           /* 16px */
+  --space-5: 1.25rem;        /* 20px */
+  --space-6: 1.5rem;         /* 24px */
+  --space-8: 2rem;           /* 32px */
+  --space-10: 2.5rem;        /* 40px */
+  --space-12: 3rem;          /* 48px */
+  --space-16: 4rem;          /* 64px */
+
+  /* Containers */
+  --container-max-width: 80rem;   /* 1280px (Tương đương max-w-7xl trên Header & Trang sản phẩm) */
+  --header-height: 8.5rem;        /* Độ cao tổng hợp gồm Topbar, Main Bar và Navbar */
+
+
+  /* ==========================================================================
+     4. RADIUS, SHADOW & TRANSITIONS (BO GÓC & HIỆU ỨNG)
+     ========================================================================== */
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;      /* 4px: Tag nhỏ, checkbox */
+  --radius-md: 0.5rem;       /* 8px: Ô input, card sách chuẩn */
+  --radius-lg: 0.75rem;      /* 12px: Khung nội dung lớn, hộp quyền lợi */
+  --radius-xl: 1rem;         /* 16px: Khối quảng bá lớn, banner nổi bật */
+  --radius-full: 9999px;     /* Nút viên thuốc (Pill button), ô tìm kiếm bo tròn, avatar */
+
+  /* Box Shadows (Độ bóng dịu nhẹ chuẩn phong cách ấm cúng) */
+  --shadow-subtle: 0 1px 2px 0 rgba(30, 58, 47, 0.04);
+  --shadow-card: 0 4px 12px -2px rgba(30, 58, 47, 0.06);
+  --shadow-card-hover: 0 10px 24px -4px rgba(30, 58, 47, 0.12);
+  --shadow-dropdown: 0 10px 30px 0 rgba(30, 58, 47, 0.15);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
