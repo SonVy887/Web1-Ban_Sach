@@ -1,0 +1,92 @@
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+    padding: 32px 124px;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 124px;
+}
+
+.small-text-footer {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--text-2xs);
+    font-family: var(--font-sans);
+    padding: 14px 8px;
+    color: var(--color-text-muted);
+    letter-spacing: 0.55px;
+}
+
+.title {
+    font-size: var(--text-xl);
+    display: flex;
+    align-items: center;
+    font-family: var(--font-serif);
+}
+
+.content {
+    font-family: var(--font-sans);
+    color: var(--color-text-muted);
+    font-weight: 400;
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+.links-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    & .icon {
+        color: #74584e;
+    }
+}
+.list-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--color-text-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+}
+
+.about-shop {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    & .hotline {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    & .hotline .telephone-number {
+        font-weight: 600;
+        color: var(--color-primary);
+    }
+
+}
+.payments small {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.list-icons {
+    color: #74584e;
+}

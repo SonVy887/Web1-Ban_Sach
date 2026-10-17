@@ -196,7 +196,9 @@
     font-weight: var(--font-medium);
     transition: transform 0.2s ease;
     box-shadow: var(--shadow-card);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary:hover {
@@ -228,6 +230,7 @@
     font-weight: var(--font-regular);
     color: var(--color-text-title);
     box-shadow: var(--shadow-subtle);
+    margin-bottom: 8px;
 }
 
 .nav-container {
@@ -251,4 +254,3 @@
     color:black;
     transform: translateY(-2px);
 }
-

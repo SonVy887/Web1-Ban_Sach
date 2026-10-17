@@ -8,21 +8,50 @@
   --color-primary-hover: #162b23;         /* Trạng thái hover cho nút chính */
   --color-primary-light: #2a4d3f;         /* Tông sáng hơn của Primary */
   --color-primary-surface: #eef4f1;       /* Nền nhạt mang sắc xanh thương hiệu (Tag, Badge nhẹ) */
+  --color-primary-fixed: #caeada;
+  --color-primary-fixed-dim: #aecebe;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #86a496;
+  --color-on-primary-fixed: #032017;
+  --color-on-primary-fixed-variant: #304c41;
   
   --color-secondary: #c86432;             /* Nâu cam đất (Terracotta): Nhấn Bestseller, Khuyến mãi, Giá giảm */
   --color-secondary-hover: #a04a1f;       /* Hover cho màu nhấn */
   --color-secondary-surface: #fdf2eb;     /* Nền tag khuyến mãi, highlight */
+  --color-secondary-container: #fed8ca;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #795c52;
+  --color-secondary-fixed: #ffdbce;
+  --color-secondary-fixed-dim: #e3bfb2;
+  --color-on-secondary-fixed: #2a170f;
+  --color-on-secondary-fixed-variant: #5a4137;
+
+  --color-tertiary: #3b1200;
+  --color-tertiary-container: #5e2100;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #ec7f4b;
+  --color-tertiary-fixed: #ffdbcc;
+  --color-tertiary-fixed-dim: #ffb595;
+  --color-on-tertiary-fixed: #351000;
+  --color-on-tertiary-fixed-variant: #7c2e00;
 
   /* Neutral & Background Surfaces (Sắc độ ấm kiểu giấy mộc / Book Paper) */
   --color-surface: #fef8f4;               /* Nền chính toàn trang web (Warm Cream) */
   --color-surface-container: #ffffff;     /* Nền card sách, ô nhập liệu, dropdown trắng sáng */
   --color-surface-container-low: #f8f2ee; /* Nền khối phụ, sidebar hoặc banner nhẹ */
   --color-surface-container-high: #f0e9e4;/* Nền hover các ô menu, card phụ */
+  --color-surface-container-highest: #e7e1dd;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-dim: #dfd9d5;
+  --color-surface-bright: #fef8f4;
+  --color-surface-variant: #e7e1dd;
   
   /* Borders & Dividers */
   --color-border: #dfd9d5;                /* Đường viền chuẩn (Header, Khung thẻ sách, Input) */
   --color-border-subtle: #eae5e1;         /* Đường ngăn cách rất nhẹ */
   --color-border-focus: #1e3a2f;          /* Viền khi focus vào ô nhập liệu */
+  --color-outline: #727974;
+  --color-outline-variant: #c1c8c3;
 
   /* Typography Colors (Văn bản) */
   --color-text-main: #2d2825;             /* Chữ chính, nội dung đọc (Độ tương phản cao, dịu mắt) */
@@ -30,12 +59,16 @@
   --color-text-muted: #6b635c;            /* Mô tả phụ, tên tác giả, trạng thái */
   --color-text-subtle: #8a7f77;           /* Chữ chú thích nhỏ, placeholder, breadcrumbs */
   --color-text-inverse: #ffffff;          /* Chữ trắng trên nền đậm (Nút bấm, Topbar) */
+  --color-on-surface: #1d1b19;
+  --color-on-surface-variant: #424844;
+  --color-inverse-surface: #32302e;
+  --color-inverse-on-surface: #f6f0ec;
+  --color-inverse-primary: #aecebe;
 
   /* Feedback & Utilities */
   --color-star: #eab308;                  /* Màu sao đánh giá sách */
   --color-success: #15803d;               /* Thông báo thành công, còn hàng */
   --color-error: #b91c1c;                 /* Lỗi form, hết hàng */
-
 
 
   /* ==========================================================================
@@ -45,6 +78,10 @@
   /* Font Families */
   --font-serif: 'Lora', Georgia, 'Times New Roman', serif; /* Dùng cho Logo, Tiêu đề nghệ thuật (H1, H2, Tên sách) */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Dùng cho nội dung đọc, form, menu */
+  --font-display: var(--font-serif);
+  --font-headline: var(--font-serif);
+  --font-body: var(--font-sans);
+  --font-label: var(--font-sans);
 
   /* Font Sizes */
   --text-2xs: 0.6875rem;     /* 11px: Nhãn cực nhỏ, badge giỏ hàng, metadata phụ */
@@ -57,12 +94,38 @@
   --text-3xl: 1.875rem;      /* 30px: Tiêu đề trang (H2) */
   --text-4xl: 2.25rem;       /* 36px: Tiêu đề Hero Banner chính (H1) */
 
+  /* Stitch typography roles, giữ font chữ hiện tại của website */
+  --text-display-hero: 3.5rem;          /* 56px */
+  --text-display-hero-mobile: 2.375rem; /* 38px */
+  --text-headline-lg: 2.5rem;           /* 40px */
+  --text-headline-lg-mobile: 1.75rem;   /* 28px */
+  --text-headline-md: 1.75rem;          /* 28px */
+  --text-headline-sm: 1.375rem;         /* 22px */
+  --text-body-lg: 1.125rem;             /* 18px */
+  --text-body-md: 1rem;                 /* 16px */
+  --text-body-sm: 0.875rem;             /* 14px */
+  --text-label-lg: 0.875rem;            /* 14px */
+  --text-label-md: 0.75rem;             /* 12px */
+  --text-label-sm: 0.6875rem;          /* 11px */
+
   /* Line Heights (Tỉ lệ chiều cao dòng) */
   --leading-none: 1;
   --leading-tight: 1.2;      /* Tiêu đề ngắn, heading cỡ lớn */
   --leading-snug: 1.35;      /* Tựa sách 2 dòng, tiêu đề card */
   --leading-normal: 1.5;     /* Giao diện người dùng, nút, nhãn form */
   --leading-relaxed: 1.65;   /* Đoạn văn mô tả sách, lời mở đầu (tối ưu trải nghiệm đọc) */
+  --leading-display-hero: 1.2143;       /* 68px tại 56px */
+  --leading-display-hero-mobile: 1.2632;/* 48px tại 38px */
+  --leading-headline-lg: 1.25;          /* 50px tại 40px */
+  --leading-headline-lg-mobile: 1.2857; /* 36px tại 28px */
+  --leading-headline-md: 1.3571;        /* 38px tại 28px */
+  --leading-headline-sm: 1.3636;        /* 30px tại 22px */
+  --leading-body-lg: 1.5556;            /* 28px tại 18px */
+  --leading-body-md: 1.5;               /* 24px tại 16px */
+  --leading-body-sm: 1.4286;            /* 20px tại 14px */
+  --leading-label-lg: 1.4286;           /* 20px tại 14px */
+  --leading-label-md: 1.3333;           /* 16px tại 12px */
+  --leading-label-sm: 1.2727;           /* 14px tại 11px */
 
   /* Font Weights */
   --font-regular: 400;
@@ -93,6 +156,17 @@
   --space-12: 3rem;          /* 48px */
   --space-16: 4rem;          /* 64px */
 
+  /* Stitch spacing aliases */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --gutter: 1.5rem;
+  --gutter-sm: 1rem;
+  --margin: 2.5rem;
+  --margin-sm: 1.25rem;
+
   /* Containers */
   --container-max-width: 80rem;   /* 1280px (Tương đương max-w-7xl trên Header & Trang sản phẩm) */
   --header-height: 8.5rem;        /* Độ cao tổng hợp gồm Topbar, Main Bar và Navbar */
@@ -108,6 +182,10 @@
   --radius-lg: 0.75rem;      /* 12px: Khung nội dung lớn, hộp quyền lợi */
   --radius-xl: 1rem;         /* 16px: Khối quảng bá lớn, banner nổi bật */
   --radius-full: 9999px;     /* Nút viên thuốc (Pill button), ô tìm kiếm bo tròn, avatar */
+  --radius-default: 0.5rem;
+  --radius-stitch-md: 0.75rem;
+  --radius-stitch-lg: 1rem;
+  --radius-stitch-xl: 1.5rem;
 
   /* Box Shadows (Độ bóng dịu nhẹ chuẩn phong cách ấm cúng) */
   --shadow-subtle: 0 1px 2px 0 rgba(30, 58, 47, 0.04);

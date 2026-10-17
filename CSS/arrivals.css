@@ -1,0 +1,107 @@
+.container__arrivals {
+    background: var(--color-surface-container-low);
+    margin-top: 120px;
+
+}
+.container__arrivals-top {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.arrivals-left {
+    padding: 28px 0px;
+}
+
+.arrivals-right {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex: 1;
+
+    & .time-finish {
+        display: flex;
+        font-size: var(--text-xs);
+        font-family: var(--font-sans);
+        align-items: center;
+        gap: 4px;
+    }
+
+    & .time-finish.text-offer {
+        color: var(--color-text-muted);
+    }
+
+    & .time {
+        background: var(--color-surface-container-highest);
+        border-radius: var(--radius-md);
+        padding: 8px 16px;
+        font-weight: 600;
+        display: flex;
+        gap: 2px;
+    }
+}
+
+.book-card.card-arrival {
+    width: 384px;
+}
+
+.book-badge#arrival {
+    background: var(--color-primary);
+    font-size: var(--text-xs);
+}
+
+.book-title.arrival-title {
+    font-size: var(--text-lg);
+}
+
+.arrival-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-now#arrival {
+    font-size: var(--text-xl);
+}
+.price-old#arrival {
+    font-size: var(--text-sm);
+}
+.btn-primary.btn-arrival {
+    padding: 8px 16px;
+    letter-spacing: 0.48px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+}
+
+.small-text-arrival {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--text-xs);
+
+    & .nxb {
+        color: var(--color-primary);
+    }
+    & .release {
+        color: var(--color-tertiary-container);
+    }
+}
+
+.container__arrivals-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 384px);
+    grid-template-rows: 361px;
+    margin: 0px 112px;
+    gap: 24px
+}
+
+.book-badge#arrival1 {
+    background: #74584e;
+    font-size: var(--text-xs);
+}
+
+.book-badge#arrival2 {
+    background: var(--color-tertiary-container);
+    font-size: var(--text-xs);
+}
+

@@ -1,8 +1,12 @@
 @import "./theme.css";
 @import "./header.css";
 @import "./hero.css";
-@import"./pillars.css";
-@import"./categories.css";
+@import "./pillars.css";
+@import "./categories.css";
+@import"./footer.css";
+@import "./arrivals.css";
+@import "./voucher.css";
+
 
 *{
     box-sizing: border-box;
@@ -17,15 +21,24 @@ select,
 input,
 button {
   border: none;
-  outline: none;   /* bỏ viền xanh khi focus */
+  outline: none;
   background: transparent;
 }
 
 :root {
     font-family: var(--font-sans);
+    line-height: var( --leading-normal);
 }
 
 
 body {
-    background-color: var(--color-surface);
+    background-color: var(--color-surface-bright);
+}
+
+
+.star {
+    width: 1.1em;
+    height: 1.1em;
+    color: var(--color-secondary);
+    flex-shrink: 0;
 }

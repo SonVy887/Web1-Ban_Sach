@@ -3,7 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-bottom: 60px;
-    background: var(--color-below-surface);
+    background: var(--color-surface-container-low);
     padding: 22px 32px;
     box-shadow: var(--shadow-subtle);
 }
