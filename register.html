@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Đăng ký tài khoản | Tiệm Sách Sơn Vỹ</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="CSS/register.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-top">
+        <!----------- 
+               Logo 
+         ------------>
+        <a class="logo" href="trangchu.html">
+          <div class="logo-badge">
+            <img alt="Logo" src="./assets/logo/logo.png" />
+          </div>
+          <div class="logo-text">
+            <h1>Tiệm Sách Sơn Vỹ</h1>
+            <span>Không Gian Đọc &amp; Lan Tỏa Tri Thức</span>
+          </div>
+        </a>
+        <!--------------- 
+            Search bar 
+         --------------->
+        <div class="search-bar">
+          <select class="search-select">
+            <option>Tất cả danh mục</option>
+            <option>Văn Học &amp; Tiểu Thuyết</option>
+            <option>Kinh Doanh-Khởi Nghiệp</option>
+            <option>Phát Triển Bản Thân</option>
+            <option>Thiếu Nhi &amp; Truyện Tranh</option>
+          </select>
+          <input
+            class="search-input"
+            placeholder="Tìm theo tựa sách, tác giả, dịch giả..."
+            type="text"
+          />
+          <button aria-label="Tìm kiếm" class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <!-------------------
+               Actions 
+         ------------------->
+        <div class="header-actions">
+          <div class="action-bussiness">
+            <button class="icon-btn" title="Yêu thích">
+              <i class="fa-regular fa-heart"></i>
+              <span class="badge-dot">4</span>
+            </button>
+            <a class="cart-btn" href="#">
+              <button>
+                <svg
+                  height="18px"
+                  viewbox="0 0 24 24"
+                  width="18px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M5 7h13.79a2 2 0 0 1 1.99 2.199l-.6 6A2 2 0 0 1 18.19 17H8.64a2 2 0 0 1-1.962-1.608z"
+                    ></path>
+                    <path
+                      d="m5 7l-.81-3.243A1 1 0 0 0 3.22 3H2m6 18h2m6 0h2"
+                      stroke-linecap="round"
+                    ></path>
+                  </g>
+                </svg>
+                <span class="cart-dot">3</span>
+              </button>
+              <span>GIỎ HÀNG</span>
+            </a>
+          </div>
+          <div class="action-buttons">
+            <a class="btn-primary" href="#">Đăng nhập</a>
+            <a class="btn-secondary" href="register.html">Đăng ký</a>
+          </div>
+        </div>
+      </div>
+      <!-----------
+          Nav 
+       ----------->
+      <nav class="nav-bar">
+        <div class="nav-container">
+          <div class="nav-links">
+            <a class="nav-link" href="trangchu.html">Trang Chủ</a>
+            <a class="nav-link" href="#">Văn Học &amp; Tiểu Thuyết</a>
+            <a class="nav-link" href="#">Kinh Doanh - Khởi Nghiệp</a>
+            <a class="nav-link" href="#">Phát Triển Bản Thân</a>
+            <a class="nav-link" href="#">Thiếu Nhi &amp; Tranh Truyện</a>
+            <a class="nav-link" href="#">Sách Bán Chạy</a>
+            <a class="nav-link" href="#">Khuyến Mãi Đặc Biệt</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="register-main">
+      <div class="register-container">
+        <div class="breadcrumb">
+          <a href="trangchu.html">Trang chủ</a>  ›  Tài khoản  › 
+          <strong>Đăng ký</strong>
+        </div>
+        <div class="layout">
+          <aside class="benefits">
+            <div class="eyebrow">✦ Hội viên yêu sách</div>
+            <h2>Chạm vào thế giới tri thức cùng Book Nook</h2>
+            <p class="intro">
+              Một góc nhỏ dành cho những tâm hồn yêu sách. Đăng ký để khám phá
+              những đầu sách thú vị và trải nghiệm mua sắm ấm áp.
+            </p>
+            <div class="benefit">
+              <div class="benefit-icon">%</div>
+              <div>
+                <strong>Ưu đãi chào đón 15%</strong>
+                <p>Ưu đãi dành cho đơn sách đầu tiên của hội viên.</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">♡</div>
+              <div>
+                <strong>Tích lũy điểm hội viên</strong>
+                <p>Nhận điểm thưởng và khám phá những món quà thú vị.</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">✉</div>
+              <div>
+                <strong>Gợi ý sách mỗi tuần</strong>
+                <p>
+                  Cập nhật đầu sách mới và những câu chuyện truyền cảm hứng.
+                </p>
+              </div>
+            </div>
+            <div class="quote">
+              “Một cuốn sách hay là một người bạn không bao giờ rời xa.”
+            </div>
+          </aside>
+          <section class="form-card">
+            <span class="tag">✦ Tạo tài khoản mới</span>
+            <h1>Đăng ký tài khoản</h1>
+            <p class="subtitle">
+              Trở thành thành viên Book Nook để nhận <b>ưu đãi chào đón</b> và
+              lưu lại những cuốn sách yêu thích.
+            </p>
+            <form id="registerForm">
+              <div class="field">
+                <label for="fullName"
+                  >Họ và tên <span class="required">*</span></label
+                ><input
+                  autocomplete="name"
+                  id="fullName"
+                  placeholder="Nhập họ và tên đầy đủ"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="phone"
+                    >Số điện thoại <span class="required">*</span></label
+                  ><input
+                    id="phone"
+                    inputmode="numeric"
+                    pattern="0[0-9]{9}"
+                    placeholder="Ví dụ: 0912345678"
+                    required=""
+                    title="Nhập số điện thoại 10 chữ số bắt đầu bằng 0"
+                    type="tel"
+                  />
+                </div>
+                <div class="field">
+                  <label for="email"
+                    >Email <span class="required">*</span></label
+                  ><input
+                    autocomplete="email"
+                    id="email"
+                    placeholder="Nhập email của cậu"
+                    required=""
+                    type="email"
+                  />
+                </div>
+                <div class="field">
+                  <label for="password"
+                    >Mật khẩu <span class="required">*</span></label
+                  >
+                  <div class="password-wrap">
+                    <input
+                      autocomplete="new-password"
+                      id="password"
+                      minlength="6"
+                      placeholder="Tối thiểu 6 ký tự"
+                      required=""
+                      type="password"
+                    /><button class="eye" data-toggle="password" type="button">
+                      Hiện
+                    </button>
+                  </div>
+                  <small class="helper" id="strength"
+                    >Mật khẩu tối thiểu 6 ký tự</small
+                  >
+                </div>
+                <div class="field">
+                  <label for="confirmPassword"
+                    >Xác nhận mật khẩu <span class="required">*</span></label
+                  >
+                  <div class="password-wrap">
+                    <input
+                      autocomplete="new-password"
+                      id="confirmPassword"
+                      minlength="6"
+                      placeholder="Nhập lại mật khẩu"
+                      required=""
+                      type="password"
+                    /><button
+                      class="eye"
+                      data-toggle="confirmPassword"
+                      type="button"
+                    >
+                      Hiện
+                    </button>
+                  </div>
+                  <div class="error" id="passwordError" role="alert"></div>
+                </div>
+              </div>
+              <label class="checkline"
+                ><input id="terms" required="" type="checkbox" /><span
+                  >Tôi đồng ý với
+                  <a href="#" onclick="event.preventDefault()"
+                    >Điều khoản dịch vụ</a
+                  >
+                  và
+                  <a href="#" onclick="event.preventDefault()"
+                    >Chính sách bảo mật</a
+                  >
+                  của Book Nook. <span class="required">*</span></span
+                ></label
+              ><label class="checkline"
+                ><input checked="" id="newsletter" type="checkbox" /><span
+                  >Nhận bản tin sách mới và những ưu đãi thú vị từ Book
+                  Nook.</span
+                ></label
+              ><button class="submit" type="submit">Tạo tài khoản →</button>
+              <div class="notice" id="notice" role="status">
+                ✓ Giao diện đăng ký đã được kiểm tra thành công! Đây là bản demo
+                web tĩnh, thông tin chưa được lưu vào hệ thống.
+              </div>
+            </form>
+            <div class="login-note">
+              Đã có tài khoản? <a href="login.html">Đăng nhập ngay →</a>
+            </div>
+          </section>
+        </div>
+        <div class="trust">
+          <div class="trust-item">
+            <div class="trust-icon">▣</div>
+            <div>
+              <strong>Đóng gói cẩn thận</strong
+              ><span>Giữ gìn từng trang sách khi giao hàng</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">↺</div>
+            <div>
+              <strong>Hỗ trợ đổi trả</strong
+              ><span>Hỗ trợ khi sản phẩm có vấn đề</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">♡</div>
+            <div>
+              <strong>Luôn đồng hành</strong
+              ><span>Chăm sóc và tư vấn cho người yêu sách</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container__top"></div>
+      <div class="container__main">
+        <div class="main-grid">
+          <div class="info-card">
+            <span class="title">
+              <svg
+                height="22px"
+                viewbox="0 0 256 256"
+                width="22px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h256v256H0z" fill="none"></path>
+                <path
+                  d="M232 48h-72a40 40 0 0 0-32 16a40 40 0 0 0-32-16H24a8 8 0 0 0-8 8v144a8 8 0 0 0 8 8h72a24 24 0 0 1 24 24a8 8 0 0 0 16 0a24 24 0 0 1 24-24h72a8 8 0 0 0 8-8V56a8 8 0 0 0-8-8M96 192H32V64h64a24 24 0 0 1 24 24v112a39.8 39.8 0 0 0-24-8m128 0h-64a39.8 39.8 0 0 0-24 8V88a24 24 0 0 1 24-24h64ZM160 88h40a8 8 0 0 1 0 16h-40a8 8 0 0 1 0-16m48 40a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8m0 32a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              Tiệm Sách Sơn Vỹ
+            </span>
+            <p class="content">
+              Tiệm Sách Sơn Vỹ - Lan tỏa tình yêu sách Việt. Điểm dừng chân của
+              những tâm hồn tìm kiếm sự tĩnh tại, chiều sâu suy tưởng và vẻ đẹp
+              tinh tế của văn hóa đọc nguyên bản.
+            </p>
+            <div class="icon">
+              <ul class="links-footer">
+                <li class="icon">
+                  <a href="#">
+                    <svg
+                      height="20"
+                      viewbox="0 0 24 24"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        d="M12 6.25c-1.5-1.35-3.7-2-6.25-2h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2c2.55 0 4.75.65 6.25 2Zm0 0c1.5-1.35 3.7-2 6.25-2h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2c-2.55 0-4.75.65-6.25 2Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="icon">
+                  <a href="#">
+                    <svg
+                      height="20"
+                      viewbox="0 0 24 24"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        d="M16 13V5H6v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2M5 3h15a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V4a1 1 0 0 1 1-1m13 2v3h2V5zM2 19h18v2H2z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="icon">
+                  <a href="#">
+                    <svg
+                      height="20"
+                      viewbox="0 0 24 24"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        d="M16 14h.5c.827 0 1.5-.673 1.5-1.5v-9c0-.827-.673-1.5-1.5-1.5h-13C2.673 2 2 2.673 2 3.5V18l5.333-4zm-9.333-2L4 14V4h12v8z"
+                        fill="currentColor"
+                      ></path>
+                      <path
+                        d="M20.5 8H20v6.001c0 1.1-.893 1.993-1.99 1.999H8v.5c0 .827.673 1.5 1.5 1.5h7.167L22 22V9.5c0-.827-.673-1.5-1.5-1.5"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="icon">
+                  <a href="#">
+                    <svg
+                      height="20"
+                      viewbox="0 0 1024 1024"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M0 0h1024v1024H0z" fill="none"></path>
+                      <path
+                        d="M752 664c-28.5 0-54.8 10-75.4 26.7L469.4 540.8a160.7 160.7 0 0 0 0-57.6l207.2-149.9C697.2 350 723.5 360 752 360c66.2 0 120-53.8 120-120s-53.8-120-120-120s-120 53.8-120 120c0 11.6 1.6 22.7 4.7 33.3L439.9 415.8C410.7 377.1 364.3 352 312 352c-88.4 0-160 71.6-160 160s71.6 160 160 160c52.3 0 98.7-25.1 127.9-63.8l196.8 142.5c-3.1 10.6-4.7 21.8-4.7 33.3c0 66.2 53.8 120 120 120s120-53.8 120-120s-53.8-120-120-120m0-476c28.7 0 52 23.3 52 52s-23.3 52-52 52s-52-23.3-52-52s23.3-52 52-52M312 600c-48.5 0-88-39.5-88-88s39.5-88 88-88s88 39.5 88 88s-39.5 88-88 88m440 236c-28.7 0-52-23.3-52-52s23.3-52 52-52s52 23.3 52 52s-23.3 52-52 52"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-card">
+            <h4 class="title">Khám phá tiệm</h4>
+            <ul class="list-texts">
+              <li class="text"><a href="#">Về chúng tôi</a></li>
+              <li class="text"><a href="#">Không gian đọc sách cafe</a></li>
+              <li class="text"><a href="#">Sự kiện ra mắt sách</a></li>
+              <li class="text"><a href="#">Tuyển dụng BookLover</a></li>
+              <li class="text"><a href="#">Tạp chí sách Journal</a></li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4 class="title">Hỗ Trợ Bạn Đọc</h4>
+            <ul class="list-texts">
+              <li class="text"><a href="#">Hướng dẫn mua hàng</a></li>
+              <li class="text">
+                <a href="#">Chính sách đổi trả &amp; bảo hành sách</a>
+              </li>
+              <li class="text">
+                <a href="#">Biểu phí &amp; Giao nhận toàn quốc</a>
+              </li>
+              <li class="text"><a href="#">Dịch vụ bọc sách thủ công</a></li>
+              <li class="text"><a href="#">Câu hỏi thường gặp</a></li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4 class="title">Ghé thăm &amp; Liên hệ</h4>
+            <div class="about-shop">
+              <span> 120, Yên Lãng </span>
+              <span> Giờ mở cửa: 08:30 - 22:00 mỗi ngày </span>
+              <div class="hotline">
+                <span class="hotline-title"> Hotline tư vấn: </span>
+                <span class="telephone-number">
+                  1900 6868 - 024 3828 9999
+                </span>
+              </div>
+            </div>
+            <div class="payments">
+              <small> Phương thức thanh toán an toàn: </small>
+              <div class="list-icons">
+                <svg
+                  height="26"
+                  viewbox="0 0 16 16"
+                  width="26"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h16v16H0z" fill="none"></path>
+                  <g fill="currentColor">
+                    <path
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"
+                    ></path>
+                    <path
+                      d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
+                    ></path>
+                  </g>
+                </svg>
+                <svg
+                  height="26"
+                  viewbox="0 0 24 24"
+                  width="26"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M9.5 6.5v3h-3v-3zM11 5H5v6h6zm-1.5 9.5v3h-3v-3zM11 13H5v6h6zm6.5-6.5v3h-3v-3zM19 5h-6v6h6zm-6 8h1.5v1.5H13zm1.5 1.5H16V16h-1.5zM16 13h1.5v1.5H16zm-3 3h1.5v1.5H13zm1.5 1.5H16V19h-1.5zM16 16h1.5v1.5H16zm1.5-1.5H19V16h-1.5zm0 3H19V19h-1.5zM22 7h-2V4h-3V2h5zm0 15v-5h-2v3h-3v2zM2 22h5v-2H4v-3H2zM2 2v5h2V4h3V2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <svg
+                  height="26"
+                  viewbox="0 0 24 24"
+                  width="26"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M5 6h18v12H5zm9 3a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3M9 8a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2v-4a2 2 0 0 1-2-2zm-8 2h2v10h16v2H1z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+                <svg
+                  height="26"
+                  viewbox="0 0 48 48"
+                  width="26"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h48v48H0z" fill="none"></path>
+                  <g fill="none">
+                    <path
+                      d="M39 16V9a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h27a3 3 0 0 0 3-3v-7"
+                      stroke="currentColor"
+                      stroke-linejoin="round"
+                      stroke-width="4"
+                    ></path>
+                    <rect
+                      height="16"
+                      rx="3"
+                      stroke="currentColor"
+                      stroke-linejoin="round"
+                      stroke-width="4"
+                      width="20"
+                      x="22"
+                      y="16"
+                    ></rect>
+                    <circle
+                      fill="currentColor"
+                      r="2"
+                      transform="matrix(0 -1 -1 0 30 24)"
+                    ></circle>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container__bottom">
+        <div class="small-text-footer">
+          <div class="copyright-text">
+            <span
+              >© 2025 Tiệm Sách Sơn Vỹ. Giữ toàn bộ bản quyền tuyển tập.</span
+            >
+          </div>
+          <div class="message">
+            <span>Thiết kế với cảm hứng từ những trang sách giấy ấm áp.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll("[data-toggle]").forEach((button) =>
+        button.addEventListener("click", () => {
+          const input = document.getElementById(button.dataset.toggle);
+          input.type = input.type === "password" ? "text" : "password";
+          button.textContent = input.type === "password" ? "Hiện" : "Ẩn";
+        }),
+      );
+      const password = document.getElementById("password"),
+        confirmPassword = document.getElementById("confirmPassword"),
+        error = document.getElementById("passwordError");
+      function checkMatch() {
+        error.textContent =
+          confirmPassword.value && password.value !== confirmPassword.value
+            ? "Mật khẩu nhập lại không khớp."
+            : "";
+      }
+      password.addEventListener("input", () => {
+        const v = password.value;
+        document.getElementById("strength").textContent =
+          v.length < 6
+            ? "Mật khẩu tối thiểu 6 ký tự"
+            : v.length < 10
+              ? "Độ mạnh: Trung bình"
+              : "Độ mạnh: Khá tốt";
+        checkMatch();
+      });
+      confirmPassword.addEventListener("input", checkMatch);
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+          checkMatch();
+          if (password.value !== confirmPassword.value) {
+            confirmPassword.focus();
+            return;
+          }
+          document.getElementById("notice").classList.add("is-visible");
+        });
+    </script>
+  </body>
+</html>
