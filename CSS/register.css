@@ -1,0 +1,263 @@
+/* Styles scoped to registration content */
+.register-main {
+        padding: 0 0 64px;
+      }
+.register-container {
+        width: min(100% - 3rem, var(--container-max-width));
+        margin: auto;
+      }
+.breadcrumb {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        padding: 19px 0 28px;
+      }
+.breadcrumb strong {
+        color: var(--color-primary);
+      }
+.layout {
+        display: grid;
+        grid-template-columns: minmax(280px, 5fr) minmax(0, 7fr);
+        gap: 30px;
+        align-items: start;
+      }
+.benefits {
+        background: var(--color-surface-container-low);
+        padding: 34px;
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--color-border-subtle);
+      }
+.eyebrow {
+        font-size: var(--text-xs);
+        color: var(--color-secondary);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+.benefits h2,
+      .form-card h1 {
+        font-family: var(--font-serif);
+        color: var(--color-primary);
+        line-height: 1.32;
+      }
+.benefits h2 {
+        font-size: 32px;
+        margin: 14px 0;
+      }
+.intro {
+        color: var(--color-text-muted);
+        font-size: 14px;
+        margin-bottom: 27px;
+      }
+.benefit {
+        display: flex;
+        gap: 14px;
+        padding: 18px;
+        margin-bottom: 12px;
+        border-radius: var(--radius-lg);
+        background: white;
+        box-shadow: var(--shadow-card);
+      }
+.benefit-icon {
+        background: var(--color-secondary-surface);
+        color: var(--color-secondary);
+        height: 42px;
+        width: 42px;
+        flex: none;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        font-size: 20px;
+      }
+.benefit strong {
+        font-size: 14px;
+        color: var(--color-primary);
+      }
+.benefit p {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        margin: 5px 0 0;
+      }
+.quote {
+        margin-top: 22px;
+        padding: 27px 20px;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(
+          135deg,
+          var(--color-primary),
+          var(--color-primary-light)
+        );
+        color: #fff;
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 19px;
+        text-align: center;
+      }
+.form-card {
+        background: #fff;
+        border: 1px solid var(--color-border-subtle);
+        border-radius: 20px;
+        padding: 38px 42px;
+        box-shadow: var(--shadow-card-hover);
+      }
+.form-card h1 {
+        font-size: 34px;
+        margin: 14px 0 8px;
+      }
+.form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+.field {
+        margin-bottom: 20px;
+      }
+.field.full {
+        grid-column: 1/-1;
+      }
+.field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+.field input {
+        width: 100%;
+        background: var(--color-surface-container-low);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        padding: 13px 14px;
+        color: var(--color-text-main);
+        outline: 0;
+        transition: var(--transition-normal);
+      }
+.field input:focus {
+        background: #fff;
+        border-color: var(--color-border-focus);
+        box-shadow: 0 0 0 3px rgba(30, 58, 47, 0.12);
+      }
+.field input::placeholder {
+        color: var(--color-text-subtle);
+        font-size: 13px;
+      }
+.password-wrap {
+        position: relative;
+      }
+.password-wrap input {
+        padding-right: 52px;
+      }
+.submit {
+        display: block;
+        width: 100%;
+        margin-top: 24px;
+        background: var(--color-primary);
+        border: 0;
+        border-radius: var(--radius-full);
+        padding: 16px;
+        color: #fff;
+        font-weight: 700;
+        transition: var(--transition-normal);
+      }
+.submit:hover {
+        background: var(--color-primary-hover);
+      }
+.login-note {
+        text-align: center;
+        border-top: 1px solid var(--color-border-subtle);
+        margin-top: 26px;
+        padding-top: 22px;
+        color: var(--color-text-muted);
+        font-size: 13px;
+      }
+.login-note a {
+        color: var(--color-primary);
+        font-weight: 700;
+      }
+.trust {
+        margin-top: 30px;
+        background: var(--color-surface-container-low);
+        border-radius: var(--radius-lg);
+        padding: 22px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+.trust-item {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+.trust-icon {
+        font-size: 25px;
+        color: var(--color-secondary);
+      }
+.trust strong {
+        display: block;
+        font-size: 13px;
+        color: var(--color-primary);
+      }
+.trust span {
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+@media  (max-width: 1100px) {.layout {
+          grid-template-columns: 1fr;
+        }.benefits {
+          display: none;
+        }.form-card {
+          max-width: 760px;
+          margin: auto;
+        }}
+@media  (max-width: 700px) {.form-card {
+          padding: 24px 18px;
+        }.form-card h1 {
+          font-size: 27px;
+        }.form-grid {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }.trust {
+          grid-template-columns: 1fr;
+        }}
+/* Responsive registration layout */
+@media(max-width:1100px){.register-main .layout{grid-template-columns:1fr}.register-main .benefits{display:none}.register-main .form-card{max-width:760px;margin:auto}}
+@media(max-width:700px){.register-main .form-grid{grid-template-columns:1fr}.register-main .form-card{padding:24px 18px}.register-main .register-container{width:calc(100% - 2rem)}}
+
+/* Form đăng ký: cô lập khỏi CSS trang chủ */
+.register-main {font-family:var(--font-sans);font-size:var(--text-base);line-height:1.5;padding:18px 0 64px;}
+.register-main .register-container{width:min(calc(100% - 3rem),var(--container-max-width));margin-inline:auto;}
+.register-main .layout{display:grid;grid-template-columns:minmax(260px,5fr) minmax(0,7fr);gap:30px;align-items:start;}
+.register-main .form-card{min-width:0;background:#fff;border:1px solid var(--color-border-subtle);border-radius:20px;padding:38px 42px;box-shadow:var(--shadow-card);}
+.register-main .form-card .tag{display:inline-block;font-family:var(--font-sans);font-size:12px;letter-spacing:.08em;font-weight:600;color:var(--color-secondary);margin-bottom:6px;}
+.register-main .form-card h1{font-family:var(--font-serif);font-size:34px;line-height:1.25;color:var(--color-primary);margin:8px 0 14px;}
+.register-main .form-card .subtitle{font-family:var(--font-sans);font-size:14px;line-height:1.7;color:var(--color-text-muted);margin:0 0 26px;}
+.register-main .form-card .subtitle b{font-weight:700;}
+.register-main .form-card .field{min-width:0;margin-bottom:20px;}
+.register-main .form-card .field label{display:block;margin-bottom:8px;font-family:var(--font-sans);font-size:13px;line-height:1.5;font-weight:600;color:var(--color-text-main);}
+.register-main .form-card .field input:not([type=checkbox]){display:block;width:100%;min-width:0;min-height:48px;padding:12px 14px;background:var(--color-surface-container-low);border:1px solid var(--color-border);border-radius:var(--radius-md);font:400 14px/1.5 var(--font-sans);color:var(--color-text-main);}
+.register-main .form-card .field input:focus{background:white;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(30,58,47,.1);}
+.register-main .form-card .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px;}
+.register-main .form-card .password-wrap{position:relative;display:block;}
+.register-main .form-card .password-wrap input{padding-right:66px;}
+.register-main .form-card .password-wrap .eye{position:absolute;right:10px;top:50%;transform:translateY(-50%);padding:8px;color:var(--color-primary);font:600 12px var(--font-sans);cursor:pointer;border:0;background:transparent;}
+.register-main .form-card .helper{display:block;margin-top:6px;font:400 12px/1.5 var(--font-sans);color:var(--color-text-muted);}
+.register-main .form-card .error{min-height:0;margin-top:5px;color:var(--color-error);font-size:12px;line-height:1.5;}
+.register-main .form-card .required{color:var(--color-error);}
+.register-main .form-card .checkline{display:flex;align-items:flex-start;gap:10px;margin:13px 0;font:400 13px/1.6 var(--font-sans);color:var(--color-text-main);cursor:pointer;}
+.register-main .form-card .checkline input{flex:0 0 16px;width:16px;height:16px;margin:3px 0 0;accent-color:var(--color-primary);}
+.register-main .form-card .checkline span{flex:1;min-width:0;}
+.register-main .form-card .checkline a{color:var(--color-primary);text-decoration:underline;text-underline-offset:2px;}
+.register-main .form-card .submit{display:flex;justify-content:center;align-items:center;width:100%;margin-top:24px;min-height:52px;padding:14px;background:var(--color-primary);border:0;border-radius:var(--radius-full);font:700 14px var(--font-sans);color:white;cursor:pointer;}
+.register-main .form-card .submit:hover{background:var(--color-primary-hover);}
+.register-main .form-card .notice{display:none;margin-top:16px;padding:14px 16px;background:var(--color-primary-surface);border:1px solid var(--color-primary-fixed-dim);border-radius:var(--radius-md);font:400 13px/1.6 var(--font-sans);color:var(--color-primary);}
+.register-main .form-card .login-note{margin-top:26px;padding-top:22px;border-top:1px solid var(--color-border-subtle);text-align:center;font:400 13px/1.5 var(--font-sans);color:var(--color-text-muted);}
+.register-main .form-card .login-note a{font-weight:700;color:var(--color-primary);}
+.register-main .benefits{min-width:0;}
+.register-main .trust{margin-top:30px;}
+@media(max-width:1100px){.register-main .layout{grid-template-columns:1fr}.register-main .benefits{display:none}.register-main .form-card{max-width:760px;margin-inline:auto}}
+@media(max-width:700px){.register-main .form-card{padding:26px 20px}.register-main .form-card .form-grid{grid-template-columns:1fr}.register-main .form-card h1{font-size:28px}.register-main .register-container{width:calc(100% - 2rem)}}
+
+/* Show confirmation only after valid form submission */
+.register-main .form-card .notice.is-visible{display:block;}
+/* Keep home logo dimensions without inline styles */
+.header .logo-badge img{width:135px;height:auto;}
+.header .search-button .fa-magnifying-glass{font-size:11px;}
+/* Keep content below the shared sticky header */
