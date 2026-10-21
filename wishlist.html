@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sách yêu thích | Tiệm Sách Sơn Vỹ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/wishlist.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-top">
+        <!----------- 
+               Logo 
+         ------------>
+        <a href="#" class="logo">
+          <div class="logo-badge">
+            <img style="width: 135px" src="./assets/logo/logo.png" alt="Logo" />
+          </div>
+          <div class="logo-text">
+            <h1>Tiệm Sách Sơn Vỹ</h1>
+            <span>Không Gian Đọc & Lan Tỏa Tri Thức</span>
+          </div>
+        </a>
+        <!--------------- 
+            Search bar 
+         --------------->
+        <div class="search-bar">
+          <select class="search-select">
+            <option>Tất cả danh mục</option>
+            <option>Văn Học & Tiểu Thuyết</option>
+            <option>Kinh Doanh-Khởi Nghiệp</option>
+            <option>Phát Triển Bản Thân</option>
+            <option>Thiếu Nhi & Truyện Tranh</option>
+          </select>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Tìm theo tựa sách, tác giả, dịch giả..."
+          />
+          <button class="search-button" aria-label="Tìm kiếm">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 11px"></i>
+          </button>
+        </div>
+
+        <!-------------------
+               Actions 
+         ------------------->
+        <div class="header-actions">
+          <div class="action-bussiness">
+            <button class="icon-btn" title="Yêu thích">
+              <i class="fa-regular fa-heart"></i>
+              <span class="badge-dot">4</span>
+            </button>
+            <a href="#" class="cart-btn">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18px"
+                  height="18px"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M5 7h13.79a2 2 0 0 1 1.99 2.199l-.6 6A2 2 0 0 1 18.19 17H8.64a2 2 0 0 1-1.962-1.608z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      d="m5 7l-.81-3.243A1 1 0 0 0 3.22 3H2m6 18h2m6 0h2"
+                    />
+                  </g>
+                </svg>
+                <span class="cart-dot">3</span>
+              </button>
+              <span>GIỎ HÀNG</span>
+            </a>
+          </div>
+          <div class="action-buttons">
+            <a href="#" class="btn-primary">Đăng nhập</a>
+            <a href="#" class="btn-secondary">Đăng ký</a>
+          </div>
+        </div>
+      </div>
+
+      <!-----------
+          Nav 
+       ----------->
+      <nav class="nav-bar">
+        <div class="nav-container">
+          <div class="nav-links">
+            <a href="#" class="nav-link">Trang Chủ</a>
+            <a href="#" class="nav-link">Văn Học & Tiểu Thuyết</a>
+            <a href="#" class="nav-link">Kinh Doanh - Khởi Nghiệp</a>
+            <a href="#" class="nav-link">Phát Triển Bản Thân</a>
+            <a href="#" class="nav-link">Thiếu Nhi & Tranh Truyện</a>
+            <a href="#" class="nav-link">Sách Bán Chạy</a>
+            <a href="#" class="nav-link">Khuyến Mãi Đặc Biệt</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="wishlist-page">
+      <div class="wishlist-shell">
+        <div class="breadcrumb">
+          <a href="trangchu.html">Trang chủ</a><span>/</span
+          ><strong>Sách yêu thích</strong>
+        </div>
+        <section class="wishlist-heading">
+          <div>
+            <p class="eyebrow">
+              <i class="fa-regular fa-heart"></i> GÓC ĐỌC CỦA BẠN
+            </p>
+            <h1>Tủ sách yêu thích <span id="wishlist-counter">(4)</span></h1>
+            <p class="heading-copy">
+              Những cuốn sách bạn muốn đọc, muốn giữ lại và chia sẻ cùng người
+              thương.
+            </p>
+          </div>
+          <div class="heading-actions">
+            <button class="outline-action" id="share-wishlist">
+              <i class="fa-solid fa-share-nodes"></i> Chia sẻ danh sách</button
+            ><button class="solid-action" id="add-all">
+              <i class="fa-solid fa-bag-shopping"></i> Thêm tất cả vào giỏ
+              <span>(4)</span>
+            </button>
+          </div>
+        </section>
+        <div class="wishlist-toolbar">
+          <div class="filter-chips" role="group" aria-label="Lọc sách">
+            <button class="filter-chip active" data-filter="all">
+              Tất cả <span>4</span></button
+            ><button class="filter-chip" data-filter="in-stock">
+              Còn hàng <span>3</span></button
+            ><button class="filter-chip" data-filter="low-stock">
+              Sắp hết <span>1</span></button
+            ><button class="filter-chip" data-filter="sale">
+              Ưu đãi -20% <span>4</span>
+            </button>
+          </div>
+          <label class="sort-control"
+            >Sắp xếp
+            <select id="sort-select">
+              <option value="added">Mới thêm gần đây</option>
+              <option value="price-low">Giá thấp đến cao</option>
+              <option value="price-high">Giá cao đến thấp</option>
+              <option value="title">Tên sách (A-Z)</option>
+            </select></label
+          >
+        </div>
+        <div class="wishlist-grid" id="wishlist-grid">
+          <article
+            class="wishlist-card"
+            data-stock="in-stock"
+            data-sale="true"
+            data-price="132000"
+            data-title="Rừng Na Uy"
+          >
+            <div class="cover-wrap">
+              <img
+                src="assets/books/RungNaUy.png"
+                alt="Bìa sách Rừng Na Uy"
+              /><span class="sale-badge">-20%</span
+              ><button
+                class="remove-item"
+                title="Xóa khỏi yêu thích"
+                aria-label="Xóa Rừng Na Uy"
+              >
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-info">
+              <span class="category-label">Văn học & tiểu thuyết</span>
+              <h2>Rừng Na Uy</h2>
+              <p class="author">Haruki Murakami</p>
+              <p class="note">
+                “Nếu bạn chỉ đọc những cuốn sách mà mọi người đang đọc, bạn chỉ
+                có thể nghĩ những điều mọi người đang nghĩ.”
+              </p>
+              <div class="rating">
+                ★★★★★ <b>4.8</b> <span>(312 nhận xét)</span>
+              </div>
+            </div>
+            <div class="card-purchase">
+              <div>
+                <strong>132.000đ</strong><del>165.000đ</del
+                ><small>Còn hàng · Giao trong 2h</small>
+              </div>
+              <button class="add-cart">
+                <i class="fa-solid fa-bag-shopping"></i> Thêm vào giỏ</button
+              ><button class="read-mark">
+                <i class="fa-regular fa-bookmark"></i> Đánh dấu đã đọc
+              </button>
+            </div>
+          </article>
+          <article
+            class="wishlist-card"
+            data-stock="in-stock"
+            data-sale="true"
+            data-price="86000"
+            data-title="Cây Cam Ngọt Của Tôi"
+          >
+            <div class="cover-wrap">
+              <img
+                src="assets/books/ngaytrove.jpg"
+                alt="Bìa sách Cây Cam Ngọt Của Tôi"
+              /><span class="sale-badge">-14%</span
+              ><button
+                class="remove-item"
+                title="Xóa khỏi yêu thích"
+                aria-label="Xóa Cây Cam Ngọt Của Tôi"
+              >
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-info">
+              <span class="category-label">Văn học đương đại</span>
+              <h2>Cây Cam Ngọt Của Tôi</h2>
+              <p class="author">José Mauro de Vasconcelos</p>
+              <p class="note">
+                Một câu chuyện dịu dàng về tuổi thơ, tình yêu thương và những
+                điều làm nên một trái tim tốt.
+              </p>
+              <div class="rating">
+                ★★★★★ <b>4.9</b> <span>(428 nhận xét)</span>
+              </div>
+            </div>
+            <div class="card-purchase">
+              <div>
+                <strong>86.000đ</strong><del>100.000đ</del
+                ><small>Còn hàng · Giao trong 2h</small>
+              </div>
+              <button class="add-cart">
+                <i class="fa-solid fa-bag-shopping"></i> Thêm vào giỏ</button
+              ><button class="read-mark">
+                <i class="fa-regular fa-bookmark"></i> Đánh dấu đã đọc
+              </button>
+            </div>
+          </article>
+          <article
+            class="wishlist-card"
+            data-stock="low-stock"
+            data-sale="true"
+            data-price="144000"
+            data-title="Dune Messiah"
+          >
+            <div class="cover-wrap">
+              <img
+                src="assets/books/dune-messiah.png"
+                alt="Bìa sách Dune Messiah"
+              /><span class="sale-badge">-40%</span
+              ><button
+                class="remove-item"
+                title="Xóa khỏi yêu thích"
+                aria-label="Xóa Dune Messiah"
+              >
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-info">
+              <span class="category-label">Khoa học viễn tưởng</span>
+              <h2>Dune Messiah</h2>
+              <p class="author">Frank Herbert</p>
+              <p class="note">
+                Xứ Cát: Cứu Thế Chủ — phần tiếp theo đầy ám ảnh của thiên sử thi
+                về quyền lực và định mệnh.
+              </p>
+              <div class="rating">
+                ★★★★<span class="muted-star">★</span> <b>4.7</b>
+                <span>(230 nhận xét)</span>
+              </div>
+            </div>
+            <div class="card-purchase">
+              <div>
+                <strong>144.000đ</strong><del>240.000đ</del
+                ><small>Còn hàng · Giao trong 2h</small>
+              </div>
+              <button class="add-cart">
+                <i class="fa-solid fa-bag-shopping"></i> Thêm vào giỏ</button
+              ><button class="read-mark">
+                <i class="fa-regular fa-bookmark"></i> Đánh dấu đã đọc
+              </button>
+            </div>
+          </article>
+          <article
+            class="wishlist-card"
+            data-stock="out-of-stock"
+            data-sale="true"
+            data-price="120000"
+            data-title="Hoàng Tử Bé"
+          >
+            <div class="cover-wrap">
+              <img
+                src="assets/books/hoang-tu-be-stitch.jpg"
+                alt="Bìa sách Hoàng Tử Bé"
+              /><span class="sale-badge">-20%</span
+              ><button
+                class="remove-item"
+                title="Xóa khỏi yêu thích"
+                aria-label="Xóa Hoàng Tử Bé"
+              >
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-info">
+              <span class="category-label">Thiếu nhi & truyện tranh</span>
+              <h2>Hoàng Tử Bé</h2>
+              <p class="author">Antoine de Saint-Exupéry</p>
+              <p class="note">
+                “Người ta chỉ thấy rõ bằng trái tim. Điều cốt lõi luôn vô hình
+                trước mắt trần...”
+              </p>
+              <div class="rating">
+                ★★★★★ <b>4.9</b> <span>(517 nhận xét)</span>
+              </div>
+            </div>
+            <div class="card-purchase">
+              <div>
+                <strong>120.000đ</strong><del>150.000đ</del
+                ><small class="sold-out">Tạm hết hàng · Báo khi có hàng</small>
+              </div>
+              <button class="add-cart disabled" disabled>
+                <i class="fa-solid fa-bell"></i> Báo khi có hàng</button
+              ><button class="read-mark">
+                <i class="fa-regular fa-bookmark"></i> Đánh dấu đã đọc
+              </button>
+            </div>
+          </article>
+        </div>
+        <div class="empty-state" id="empty-state">
+          <i class="fa-solid fa-book-open"></i>
+          <h2>Tủ sách yêu thích đang trống</h2>
+          <p>Hãy khám phá thêm những cuốn sách thật hay nhé.</p>
+          <a href="trangchu.html" class="solid-action">Khám phá sách mới</a>
+        </div>
+        <section class="analytics">
+          <div class="analytics-copy">
+            <p class="eyebrow">THÓI QUEN ĐỌC</p>
+            <h2>Danh sách của bạn đang kể điều gì?</h2>
+            <p>
+              Những lựa chọn gần đây cho thấy bạn đang ưu ái các câu chuyện giàu
+              chiều sâu và những thế giới mới lạ.
+            </p>
+            <div class="progress-row">
+              <span>Văn học & cảm xúc</span>
+              <div class="progress"><i style="width: 72%"></i></div>
+              <b>72%</b>
+            </div>
+            <div class="progress-row">
+              <span>Khám phá & tưởng tượng</span>
+              <div class="progress"><i style="width: 48%"></i></div>
+              <b>48%</b>
+            </div>
+          </div>
+          <div class="analytics-stat">
+            <div class="donut"><strong>4</strong><span>cuốn sách</span></div>
+            <p>Tổng giá trị tủ sách <b>482.000đ</b></p>
+            <small>Tiết kiệm 113.000đ nếu mua hôm nay</small>
+          </div>
+        </section>
+        <section class="recommendations">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">DÀNH RIÊNG CHO BẠN</p>
+              <h2>Có thể bạn cũng sẽ thích</h2>
+            </div>
+            <a href="danhmucsanpham.html"
+              >Xem tất cả <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="recommend-grid">
+            <a class="recommend-card" href="chitietsanpham.html"
+              ><img
+                src="assets/books/norwegian-wood-stitch.jpg"
+                alt="Norwegian Wood"
+              />
+              <h3>Norwegian Wood</h3>
+              <span>Haruki Murakami</span><b>145.000đ</b></a
+            ><a class="recommend-card" href="chitietsanpham.html"
+              ><img
+                src="assets/books/thay-doi-ti-hon-stitch.jpg"
+                alt="Thay Đổi Tí Hon"
+              />
+              <h3>Thay Đổi Tí Hon</h3>
+              <span>James Clear</span><b>99.000đ</b></a
+            ><a class="recommend-card" href="chitietsanpham.html"
+              ><img
+                src="assets/books/muon-kiep-nhan-sinh-stitch.jpg"
+                alt="Muôn kiếp nhân sinh"
+              />
+              <h3>Muôn Kiếp Nhân Sinh</h3>
+              <span>Nguyễn Phong</span><b>168.000đ</b></a
+            ><a class="recommend-card" href="chitietsanpham.html"
+              ><img src="assets/books/tinhlang.jpg" alt="Tĩnh lặng" />
+              <h3>Tĩnh Lặng</h3>
+              <span>Thích Nhất Hạnh</span><b>78.000đ</b></a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+    <section class="wishlist-voucher">
+      <div class="section-header section-main">
+        <div class="main-content">
+          <div class="prvivilege">
+            <div class="privi-top">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+              >
+                <path d="M0 0h48v48H0z" fill="none" />
+                <g fill="none">
+                  <path
+                    stroke="currentColor"
+                    stroke-linejoin="round"
+                    stroke-width="4"
+                    d="m6 42l8.674-24.736L31 34.038z"
+                  />
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="4"
+                    d="m23 19l5-5q4-4 1-7m0 18l5-5q5-5 10 0"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M20 7a2 2 0 1 0 0-4a2 2 0 0 0 0 4m22-1a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 23a2 2 0 1 0 0-4a2 2 0 0 0 0 4m-3 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4"
+                  />
+                </g>
+              </svg>
+              <span class="privi-text">Đặc Quyền Thành Viên Mới</span>
+            </div>
+            <h3 class="privi-title">Gia Nhập Câu Lạc Bộ Bạn Đọc Sơn Vỹ</h3>
+            <p class="small-text-privi">
+              Tặng voucher 50.000đ cho đơn hàng đầu tiên.
+            </p>
+          </div>
+          <div class="form-voucher">
+            <div class="cta-form">
+              <input
+                class="input"
+                type="email"
+                placeholder="Nhập địa chỉ email của bạn..."
+                aria-label="Địa chỉ email"
+              />
+              <button class="btn-primary btn-voucher" type="button">
+                Nhận voucher
+              </button>
+            </div>
+            <small
+              >* Cam kết không gửi thư rác. Bạn có thể hủy đăng ký bất cứ lúc
+              nào chỉ với một cú nhấp chuột.</small
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container__top"></div>
+
+      <div class="container__main">
+        <div class="main-grid">
+          <div class="info-card">
+            <span class="title">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22px"
+                height="22px"
+                viewBox="0 0 256 256"
+              >
+                <path d="M0 0h256v256H0z" fill="none" />
+                <path
+                  fill="currentColor"
+                  d="M232 48h-72a40 40 0 0 0-32 16a40 40 0 0 0-32-16H24a8 8 0 0 0-8 8v144a8 8 0 0 0 8 8h72a24 24 0 0 1 24 24a8 8 0 0 0 16 0a24 24 0 0 1 24-24h72a8 8 0 0 0 8-8V56a8 8 0 0 0-8-8M96 192H32V64h64a24 24 0 0 1 24 24v112a39.8 39.8 0 0 0-24-8m128 0h-64a39.8 39.8 0 0 0-24 8V88a24 24 0 0 1 24-24h64ZM160 88h40a8 8 0 0 1 0 16h-40a8 8 0 0 1 0-16m48 40a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8m0 32a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8"
+                />
+              </svg>
+              Tiệm Sách Sơn Vỹ
+            </span>
+            <p class="content">
+              Tiệm Sách Sơn Vỹ - Lan tỏa tình yêu sách Việt. Điểm dừng chân của
+              những tâm hồn tìm kiếm sự tĩnh tại, chiều sâu suy tưởng và vẻ đẹp
+              tinh tế của văn hóa đọc nguyên bản.
+            </p>
+            <div class="icon">
+              <ul class="links-footer">
+                <li class="icon">
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 6.25c-1.5-1.35-3.7-2-6.25-2h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2c2.55 0 4.75.65 6.25 2Zm0 0c1.5-1.35 3.7-2 6.25-2h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2c-2.55 0-4.75.65-6.25 2Z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="icon">
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        fill="currentColor"
+                        d="M16 13V5H6v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2M5 3h15a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V4a1 1 0 0 1 1-1m13 2v3h2V5zM2 19h18v2H2z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="icon">
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        fill="currentColor"
+                        d="M16 14h.5c.827 0 1.5-.673 1.5-1.5v-9c0-.827-.673-1.5-1.5-1.5h-13C2.673 2 2 2.673 2 3.5V18l5.333-4zm-9.333-2L4 14V4h12v8z"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="M20.5 8H20v6.001c0 1.1-.893 1.993-1.99 1.999H8v.5c0 .827.673 1.5 1.5 1.5h7.167L22 22V9.5c0-.827-.673-1.5-1.5-1.5"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="icon">
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path d="M0 0h1024v1024H0z" fill="none" />
+                      <path
+                        fill="currentColor"
+                        d="M752 664c-28.5 0-54.8 10-75.4 26.7L469.4 540.8a160.7 160.7 0 0 0 0-57.6l207.2-149.9C697.2 350 723.5 360 752 360c66.2 0 120-53.8 120-120s-53.8-120-120-120s-120 53.8-120 120c0 11.6 1.6 22.7 4.7 33.3L439.9 415.8C410.7 377.1 364.3 352 312 352c-88.4 0-160 71.6-160 160s71.6 160 160 160c52.3 0 98.7-25.1 127.9-63.8l196.8 142.5c-3.1 10.6-4.7 21.8-4.7 33.3c0 66.2 53.8 120 120 120s120-53.8 120-120s-53.8-120-120-120m0-476c28.7 0 52 23.3 52 52s-23.3 52-52 52s-52-23.3-52-52s23.3-52 52-52M312 600c-48.5 0-88-39.5-88-88s39.5-88 88-88s88 39.5 88 88s-39.5 88-88 88m440 236c-28.7 0-52-23.3-52-52s23.3-52 52-52s52 23.3 52 52s-23.3 52-52 52"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-card">
+            <h4 class="title">Khám phá tiệm</h4>
+            <ul class="list-texts">
+              <li class="text"><a href="#">Về chúng tôi</a></li>
+              <li class="text"><a href="#">Không gian đọc sách cafe</a></li>
+              <li class="text"><a href="#">Sự kiện ra mắt sách</a></li>
+              <li class="text"><a href="#">Tuyển dụng BookLover</a></li>
+              <li class="text"><a href="#">Tạp chí sách Journal</a></li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4 class="title">Hỗ Trợ Bạn Đọc</h4>
+            <ul class="list-texts">
+              <li class="text"><a href="#">Hướng dẫn mua hàng</a></li>
+              <li class="text">
+                <a href="#">Chính sách đổi trả &amp; bảo hành sách</a>
+              </li>
+              <li class="text">
+                <a href="#">Biểu phí &amp; Giao nhận toàn quốc</a>
+              </li>
+              <li class="text"><a href="#">Dịch vụ bọc sách thủ công</a></li>
+              <li class="text"><a href="#">Câu hỏi thường gặp</a></li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4 class="title">Ghé thăm &amp; Liên hệ</h4>
+            <div class="about-shop">
+              <span> 120, Yên Lãng </span>
+              <span> Giờ mở cửa: 08:30 - 22:00 mỗi ngày </span>
+              <div class="hotline">
+                <span class="hotline-title"> Hotline tư vấn: </span>
+                <span class="telephone-number">
+                  1900 6868 - 024 3828 9999
+                </span>
+              </div>
+            </div>
+            <div class="payments">
+              <small> Phương thức thanh toán an toàn: </small>
+              <div class="list-icons">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M0 0h16v16H0z" fill="none" />
+                  <g fill="currentColor">
+                    <path
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"
+                    />
+                    <path
+                      d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
+                    />
+                  </g>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    fill="currentColor"
+                    d="M9.5 6.5v3h-3v-3zM11 5H5v6h6zm-1.5 9.5v3h-3v-3zM11 13H5v6h6zm6.5-6.5v3h-3v-3zM19 5h-6v6h6zm-6 8h1.5v1.5H13zm1.5 1.5H16V16h-1.5zM16 13h1.5v1.5H16zm-3 3h1.5v1.5H13zm1.5 1.5H16V19h-1.5zM16 16h1.5v1.5H16zm1.5-1.5H19V16h-1.5zm0 3H19V19h-1.5zM22 7h-2V4h-3V2h5zm0 15v-5h-2v3h-3v2zM2 22h5v-2H4v-3H2zM2 2v5h2V4h3V2z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    fill="currentColor"
+                    d="M5 6h18v12H5zm9 3a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3M9 8a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2v-4a2 2 0 0 1-2-2zm-8 2h2v10h16v2H1z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 48 48"
+                >
+                  <path d="M0 0h48v48H0z" fill="none" />
+                  <g fill="none">
+                    <path
+                      stroke="currentColor"
+                      stroke-linejoin="round"
+                      stroke-width="4"
+                      d="M39 16V9a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h27a3 3 0 0 0 3-3v-7"
+                    />
+                    <rect
+                      width="20"
+                      height="16"
+                      x="22"
+                      y="16"
+                      stroke="currentColor"
+                      stroke-linejoin="round"
+                      stroke-width="4"
+                      rx="3"
+                    />
+                    <circle
+                      r="2"
+                      fill="currentColor"
+                      transform="matrix(0 -1 -1 0 30 24)"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container__bottom">
+        <div class="small-text-footer">
+          <div class="copyright-text">
+            <span
+              >© 2025 Tiệm Sách Sơn Vỹ. Giữ toàn bộ bản quyền tuyển tập.</span
+            >
+          </div>
+          <div class="message">
+            <span>Thiết kế với cảm hứng từ những trang sách giấy ấm áp.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
