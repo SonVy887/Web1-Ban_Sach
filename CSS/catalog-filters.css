@@ -1,0 +1,5 @@
+.filter-panel .filter-apply {display:block;width:100%;min-height:42px;margin-top:18px;padding:10px 14px;border:1px solid #1e3a2f;border-radius:8px;background:#1e3a2f;color:white;font:600 14px/1.5 var(--font-sans,Inter,sans-serif);cursor:pointer;}
+.filter-panel .filter-apply:hover {background:#07241a;}
+.filter-panel .filter-apply:focus-visible {outline:3px solid #aecebe;outline-offset:3px;}
+.filter-panel .filter-reset {width:100%;margin-top:10px;cursor:pointer;}
+.active-filters[hidden] {display:none;}

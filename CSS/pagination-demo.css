@@ -1,0 +1,5 @@
+[data-demo-pagination] [data-demo-page] {display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:32px;cursor:pointer;}
+[data-demo-pagination] [data-demo-page][aria-current="page"] {background:var(--color-primary-container,#1e3a2f) !important;color:#fff !important;font-weight:700;}
+[data-demo-pagination] [data-demo-page]:not([aria-current="page"]) {background:var(--color-surface-container,#f2ede5) !important;color:var(--color-primary,#07241a) !important;}
+[data-demo-pagination] [data-demo-page][aria-disabled="true"] {opacity:.45;cursor:not-allowed;}
+[data-demo-pagination] [data-demo-page]:focus-visible {outline:3px solid #aecebe;outline-offset:2px;}

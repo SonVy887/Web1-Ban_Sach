@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<link rel="stylesheet" href="../CSS/fonts.css">
+<title>Tiệm Sách Sơn Vỹ - Quản Lý Khuyến Mãi &amp; Mã Giảm Giá</title>
+<link rel="stylesheet" href="../CSS/theme.css">
+<link rel="stylesheet" href="../CSS/admin.css">
+<link rel="stylesheet" href="../CSS/promotions.css">
+</head>
+<body class="admin-shell min-h-screen flex flex-col" data-page="promotions">
+<!-- Top Navigation Header -->
+<header class="sticky top-0 z-40 bg-[#fef8f4]/95 backdrop-blur-md border-b border-[#ede7e3] shadow-sm">
+<div class="admin-header-inner max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="admin-logo-viewport"><!-- Logo -->
+<img src="../assets/logo/logo.png" alt="Logo"><span class="material-symbols-outlined logo-fallback" aria-hidden="true" hidden="">menu_book</span></span>
+<div>
+<span class="font-serif text-2xl font-bold text-primary block leading-tight">Tiệm Sách Sơn Vỹ</span>
+<span class="text-[11px] font-semibold tracking-widest uppercase text-secondary">Trung Tâm Quản Trị Hệ Thống</span>
+</div>
+</div>
+<nav class="hidden xl:flex items-center gap-1 bg-surface-container-low p-1.5 rounded-xl border border-surface-container-high" aria-label="Điều hướng quản trị">
+<a href="dashboard.html" class="admin-nav-link"><span>1. Tổng quan</span></a><a href="books.html" class="admin-nav-link"><span>2. Quản lý Sách</span></a><a href="orders.html" class="admin-nav-link"><span>3. Đơn hàng</span><span class="nav-count rounded-full">38</span></a><a href="inventory.html" class="admin-nav-link"><span>4. Kho &amp; Nhập</span></a><a href="customers.html" class="admin-nav-link"><span>5. Khách hàng</span></a><a href="promotions.html" class="admin-nav-link is-current" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">loyalty</span><span>6. Khuyến mãi</span><span class="nav-active-badge rounded-full">Active</span></a></nav>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors relative" title="Thông báo" type="button" data-action="notifications" data-label="Thông báo" aria-label="Thông báo">
+<span class="material-symbols-outlined text-[22px]" aria-hidden="true">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<div class="hidden sm:block text-right">
+<div class="text-xs font-bold text-primary">Nguyễn Văn A</div>
+<div class="text-[11px] text-secondary">Tổng Điều Hành Kho</div>
+</div>
+</div>
+</div>
+</header>
+<main class="admin-main admin-page-main flex-1 " id="main-content">
+  <div class="page-content">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-2 text-secondary text-xs mb-1">
+          <span class="material-symbols-outlined text-[15px]">admin_panel_settings</span>
+          <span>Phân Hệ 6</span>
+          <span>/</span>
+          <span class="text-primary font-semibold">Chiến Dịch Khuyến Mãi &amp; Tri Ân Độc Giả</span>
+        </div>
+        <h1 class="font-headline-lg text-3xl lg:text-4xl text-primary font-bold tracking-tight">Quản Lý Mã Giảm Giá &amp; Khuyến Mãi</h1>
+        <p class="text-sm text-on-surface-variant mt-1">Cấu hình voucher giảm giá, mã miễn phí vận chuyển và chương trình quà tặng thủ công Sơn Vỹ.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="bg-surface-container text-secondary hover:text-primary px-3.5 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors" type="button" data-action="history" data-label="Lịch Sử Áp Mã" aria-label="Lịch Sử Áp Mã">
+          <span class="material-symbols-outlined text-[18px]" aria-hidden="true">history</span>
+          <span>Lịch Sử Áp Mã</span>
+        </button>
+        <button class="bg-primary-container text-on-primary hover:bg-primary px-4 py-2 rounded-lg text-xs font-semibold shadow-sm flex items-center gap-1.5 transition-all" type="button" data-action="create" data-label="+ Tạo Mã Khuyến Mãi Mới" aria-label="+ Tạo Mã Khuyến Mãi Mới">
+          <span class="material-symbols-outlined text-[18px]" aria-hidden="true">add_circle</span>
+          <span>+ Tạo Mã Khuyến Mãi Mới</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4 KPI Metrics -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm">
+        <span class="text-[11px] font-semibold text-secondary uppercase tracking-wider">Mã Giảm Đang Hoạt Động</span>
+        <div class="text-2xl font-bold text-primary mt-1">6 <span class="text-xs font-normal text-secondary">chiến dịch</span>
+</div>
+        <div class="text-[11px] text-emerald-700 font-semibold mt-0.5">3 mã công khai · 3 mã VIP</div>
+      </div>
+      <div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm">
+        <span class="text-[11px] font-semibold text-secondary uppercase tracking-wider">Lượt Sử Dụng Tháng Này</span>
+        <div class="text-2xl font-bold text-primary mt-1">1.480 <span class="text-xs font-normal text-secondary">lượt</span>
+</div>
+        <div class="text-[11px] text-primary font-medium mt-0.5">Tăng 22% so với tháng trước</div>
+      </div>
+      <div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm">
+        <span class="text-[11px] font-semibold text-secondary uppercase tracking-wider">Ngân Sách Ưu Đãi Đã Dùng</span>
+        <div class="text-2xl font-bold text-secondary mt-1">18.650.000₫</div>
+        <div class="text-[11px] text-on-surface-variant font-medium mt-0.5">Đạt 62% hạn mức tháng 5</div>
+      </div>
+      <div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm">
+        <span class="text-[11px] font-semibold text-secondary uppercase tracking-wider">Doanh Thu Mang Lại (ROI)</span>
+        <div class="text-2xl font-bold text-emerald-800 mt-1">74.200.000₫</div>
+        <div class="text-[11px] text-emerald-700 font-semibold mt-0.5">Hiệu quả gấp 3.98 lần</div>
+      </div>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm mb-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div class="relative flex-1 max-w-md">
+        <span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-outline">search</span>
+        <input class="w-full bg-surface-container-low border border-surface-container-high rounded-lg pl-9 pr-3 py-2 text-xs text-on-surface placeholder-on-surface-variant/60 focus:bg-surface-container-lowest focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none" placeholder="Tìm theo mã voucher (SONVY...), tên chương trình..." type="search" id="promotions-field-1" aria-label="Tìm theo mã voucher (SONVY...), tên chương trình..." data-search="">
+      </div>
+      <div class="flex items-center gap-2 text-xs">
+        <button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-semibold shadow-xs" type="button" data-action="tab" data-label="Tất cả (8)" aria-label="Tất cả (8)" aria-pressed="true">Tất cả (8)</button>
+        <button class="px-3 py-1.5 rounded-lg bg-surface-container text-secondary hover:text-primary font-medium" type="button" data-action="tab" data-label="Đang chạy (6)" aria-label="Đang chạy (6)" aria-pressed="false">Đang chạy (6)</button>
+        <button class="px-3 py-1.5 rounded-lg bg-surface-container text-secondary hover:text-primary font-medium" type="button" data-action="tab" data-label="Đã hết hạn (2)" aria-label="Đã hết hạn (2)" aria-pressed="false">Đã hết hạn (2)</button>
+      </div>
+    </div>
+
+    <!-- Promotions Master Table -->
+    <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm mb-6">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-surface-container-low text-on-surface-variant uppercase font-semibold">
+              <th class="py-3 px-3 rounded-l-lg">Mã Voucher &amp; Tên Chiến Dịch</th>
+              <th class="py-3 px-3">Mức Ưu Đãi / Giảm Giá</th>
+              <th class="py-3 px-3">Điều Kiện Áp Dụng</th>
+              <th class="py-3 px-3 text-center">Đã Dùng / Giới Hạn</th>
+              <th class="py-3 px-3">Thời Hạn Hiệu Lực</th>
+              <th class="py-3 px-3 text-center">Trạng Thái</th>
+              <th class="py-3 px-3 text-right rounded-r-lg">Thao Tác</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-container">
+            <!-- Promo 1 -->
+            <tr class="hover:bg-surface-container-low/60 transition-colors">
+              <td class="py-3.5 px-3">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-mono font-bold text-xs border border-secondary-container">SONVY_BANMAI</span>
+                  <div>
+                    <span class="font-bold text-primary block">Mùa Đọc Ban Mai</span>
+                    <span class="text-[11px] text-secondary">Chào bạn đọc mùa hè</span>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="font-bold text-emerald-800 text-sm block">Giảm 20.000₫</span>
+                <span class="text-[11px] text-secondary">Trừ trực tiếp vào đơn</span>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="font-medium text-on-surface">Đơn từ 200.000₫</span>
+                <span class="block text-[11px] text-secondary">Tất cả tựa sách lưu hành</span>
+              </td>
+              <td class="py-3.5 px-3 text-center">
+                <span class="font-bold text-primary">342 / 500</span>
+                <div class="w-20 mx-auto bg-surface-container-low rounded-full h-1.5 mt-1 overflow-hidden">
+                  <div class="bg-primary-container h-1.5 rounded-full promotions-visual-1"></div>
+                </div>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="text-on-surface font-medium">01/05 - 31/05/2025</span>
+                <span class="block text-[11px] text-emerald-700">Còn 16 ngày</span>
+              </td>
+              <td class="py-3.5 px-3 text-center">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Đang chạy
+                </span>
+              </td>
+              <td class="py-3.5 px-3 text-right">
+                <div class="flex items-center justify-end gap-1.5">
+                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors" title="Sửa chiến dịch" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit</span>
+                  </button>
+                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-secondary hover:text-primary transition-colors" title="Sao chép liên kết" type="button" data-action="copy" data-label="Sao chép liên kết" aria-label="Sao chép liên kết">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">content_copy</span>
+                  </button>
+                  <button class="p-1 rounded bg-surface-container hover:bg-error-container/40 text-error transition-colors" title="Tạm dừng" type="button" data-action="pause" data-label="Tạm dừng" aria-label="Tạm dừng">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">pause</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Promo 2 -->
+            <tr class="hover:bg-surface-container-low/60 transition-colors">
+              <td class="py-3.5 px-3">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 rounded bg-primary-fixed text-primary font-mono font-bold text-xs border border-primary-fixed-dim">FREESHIP_VIP</span>
+                  <div>
+                    <span class="font-bold text-primary block">Miễn Phí Vận Chuyển VIP</span>
+                    <span class="text-[11px] text-secondary">Đặc quyền Hội viên Sơn Vỹ</span>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="font-bold text-primary text-sm block">Free ship (tối đa 35k)</span>
+                <span class="text-[11px] text-secondary">Hỗ trợ giao toàn quốc</span>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="font-medium text-on-surface">Đơn từ 350.000₫</span>
+                <span class="block text-[11px] text-secondary">Chỉ áp dụng hạng Hội viên</span>
+              </td>
+              <td class="py-3.5 px-3 text-center">
+                <span class="font-bold text-primary">618 / 1.000</span>
+                <div class="w-20 mx-auto bg-surface-container-low rounded-full h-1.5 mt-1 overflow-hidden">
+                  <div class="bg-primary-container h-1.5 rounded-full promotions-visual-2"></div>
+                </div>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="text-on-surface font-medium">Vô thời hạn</span>
+                <span class="block text-[11px] text-secondary">Tự động gia hạn</span>
+              </td>
+              <td class="py-3.5 px-3 text-center">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Đang chạy
+                </span>
+              </td>
+              <td class="py-3.5 px-3 text-right">
+                <div class="flex items-center justify-end gap-1.5">
+                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors" title="Sửa chiến dịch" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit</span>
+                  </button>
+                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-secondary hover:text-primary transition-colors" title="Sao chép liên kết" type="button" data-action="copy" data-label="Sao chép liên kết" aria-label="Sao chép liên kết">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">content_copy</span>
+                  </button>
+                  <button class="p-1 rounded bg-surface-container hover:bg-error-container/40 text-error transition-colors" title="Tạm dừng" type="button" data-action="pause" data-label="Tạm dừng" aria-label="Tạm dừng">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">pause</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Promo 3 -->
+            <tr class="hover:bg-surface-container-low/60 transition-colors">
+              <td class="py-3.5 px-3">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 rounded bg-amber-100 text-amber-900 font-mono font-bold text-xs border border-amber-300">BOOKMARK_GO</span>
+                  <div>
+                    <span class="font-bold text-primary block">Tặng Bookmark Thủ Công</span>
+                    <span class="text-[11px] text-secondary">Quà tặng tri ân độc bản</span>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="font-bold text-secondary text-sm block">Quà tặng 45.000₫</span>
+                <span class="text-[11px] text-secondary">Tặng kèm theo kiện hàng</span>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="font-medium text-on-surface">Đơn có sách bìa cứng</span>
+                <span class="block text-[11px] text-secondary">Rừng Na Uy, Thổ Hạc Xuân Tình</span>
+              </td>
+              <td class="py-3.5 px-3 text-center">
+                <span class="font-bold text-primary">185 / 200</span>
+                <div class="w-20 mx-auto bg-surface-container-low rounded-full h-1.5 mt-1 overflow-hidden">
+                  <div class="bg-amber-600 h-1.5 rounded-full promotions-visual-3"></div>
+                </div>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="text-on-surface font-medium">10/05 - 25/05/2025</span>
+                <span class="block text-[11px] text-amber-800 font-semibold">Sắp hết quà</span>
+              </td>
+              <td class="py-3.5 px-3 text-center">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Đang chạy
+                </span>
+              </td>
+              <td class="py-3.5 px-3 text-right">
+                <div class="flex items-center justify-end gap-1.5">
+                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors" title="Sửa chiến dịch" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit</span>
+                  </button>
+                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-secondary hover:text-primary transition-colors" title="Sao chép liên kết" type="button" data-action="copy" data-label="Sao chép liên kết" aria-label="Sao chép liên kết">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">content_copy</span>
+                  </button>
+                  <button class="p-1 rounded bg-surface-container hover:bg-error-container/40 text-error transition-colors" title="Tạm dừng" type="button" data-action="pause" data-label="Tạm dừng" aria-label="Tạm dừng">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">pause</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Promo 4 -->
+            <tr class="hover:bg-surface-container-low/60 transition-colors opacity-75">
+              <td class="py-3.5 px-3">
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-1 rounded bg-surface-container text-secondary font-mono font-bold text-xs">TRIAN_XUAN</span>
+                  <div>
+                    <span class="font-bold text-primary block">Tri Ân Mùa Xuân 2025</span>
+                    <span class="text-[11px] text-secondary">Đã kết thúc chiến dịch</span>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="font-bold text-on-surface-variant text-sm block">Giảm 15%</span>
+                <span class="text-[11px] text-secondary">Tối đa 50.000₫</span>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="font-medium text-on-surface">Đơn từ 150.000₫</span>
+              </td>
+              <td class="py-3.5 px-3 text-center">
+                <span class="font-bold text-secondary">300 / 300</span>
+                <div class="w-20 mx-auto bg-surface-container-low rounded-full h-1.5 mt-1 overflow-hidden">
+                  <div class="bg-gray-400 h-1.5 rounded-full promotions-visual-4"></div>
+                </div>
+              </td>
+              <td class="py-3.5 px-3">
+                <span class="text-on-surface font-medium">Hết hạn: 30/04/2025</span>
+              </td>
+              <td class="py-3.5 px-3 text-center">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-surface-container text-secondary">
+                  Đã kết thúc
+                </span>
+              </td>
+              <td class="py-3.5 px-3 text-right">
+                <div class="flex items-center justify-end gap-1.5">
+                  <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-semibold text-[11px] flex items-center gap-1 transition-colors" type="button" data-action="activate" data-label="Tái Kích Hoạt" aria-label="Tái Kích Hoạt">
+                    <span class="material-symbols-outlined text-[14px]" aria-hidden="true">replay</span>
+                    <span>Tái Kích Hoạt</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-surface-container-low border-t border-surface-container-high py-4 mt-8">
+<div class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-secondary gap-2">
+<div>© 2025 Tiệm Sách Sơn Vỹ. Hệ thống quản trị ấn bản, kho lưu trữ &amp; phát hành sách.</div>
+<div>Phiên bản v2.5 Interactive Enterprise</div>
+</div>
+</footer>
+<div id="admin-overlays">
+<div id="admin-toast" class="admin-toast" role="status" aria-live="polite" hidden>
+<span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span id="admin-toast-message"></span><button type="button" aria-label="Đóng thông báo" data-close-toast>×</button>
+</div>
+<dialog id="admin-dialog" class="admin-dialog" aria-labelledby="dialog-title"><div class="dialog-top">
+<h2 id="dialog-title"></h2>
+<button type="button" class="dialog-close" aria-label="Đóng" data-close-dialog><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+</div>
+<form id="admin-action-form">
+<div id="dialog-content" class="dialog-content"></div>
+<div class="dialog-actions">
+<button type="button" class="dialog-button" data-close-dialog>Đóng</button><button type="submit" class="dialog-button primary" id="dialog-confirm">Xác nhận</button>
+</div>
+</form></dialog>
+</div>
+<script src="../JS/admin.js" defer></script><script src="../JS/promotions.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>Đơn hàng của tôi | Tiệm Sách Sơn Vỹ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="CSS/reset.css">
+<link rel="stylesheet" href="CSS/main.css">
+<link rel="stylesheet" href="CSS/my-orders.css">
+<link rel="stylesheet" href="CSS/member-pages.css">
+
+
+<link rel="stylesheet" href="CSS/user-demo.css"><link rel="stylesheet" href="CSS/my-orders-extras.css"><link rel="stylesheet" href="CSS/pagination-demo.css"></head>
+<body class="member-site my-orders-page" data-user-page="my-orders">
+<header class="header">
+      <div class="header-top">
+        <!----------- 
+               Logo 
+         ------------>
+        <a href="trangchu.html" class="logo">
+          <div class="logo-badge">
+            <img src="./assets/logo/logo.png" alt="Logo" style="width: 135px">
+          </div>
+          <div class="logo-text">
+            <h1>Tiệm Sách Sơn Vỹ</h1>
+            <span>Không Gian Đọc &amp; Lan Tỏa Tri Thức</span>
+          </div>
+        </a>
+        <!--------------- 
+            Search bar 
+         --------------->
+        <div class="search-bar">
+          <select class="search-select">
+            <option>Tất cả danh mục</option>
+            <option>Văn Học &amp; Tiểu Thuyết</option>
+            <option>Kinh Doanh-Khởi Nghiệp</option>
+            <option>Phát Triển Bản Thân</option>
+            <option>Thiếu Nhi &amp; Truyện Tranh</option>
+          </select>
+          <input type="text" class="search-input" placeholder="Tìm theo tựa sách, tác giả, dịch giả...">
+          <button class="search-button" aria-label="Tìm kiếm" type="button">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 11px"></i>
+          </button>
+        </div>
+
+        <!-------------------
+               Actions 
+         ------------------->
+        <div class="header-actions">
+          <div class="action-bussiness">
+            <button class="icon-btn" title="Yêu thích" type="button" data-user-action="wishlist" aria-label="Sách yêu thích">
+              <i class="fa-regular fa-heart"></i> <span class="badge-dot">4</span>
+            </button> 
+            <a href="giohang.html" class="cart-btn">
+              <button type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2">
+                    <path d="M5 7h13.79a2 2 0 0 1 1.99 2.199l-.6 6A2 2 0 0 1 18.19 17H8.64a2 2 0 0 1-1.962-1.608z"></path>
+                    <path stroke-linecap="round" d="m5 7l-.81-3.243A1 1 0 0 0 3.22 3H2m6 18h2m6 0h2"></path>
+                  </g>
+                </svg>
+                <span class="cart-dot">3</span>
+              </button>
+              <span>GIỎ HÀNG</span>
+            </a>
+          </div>
+          <div class="action-buttons"><a href="login.html" class="btn-primary">Đăng nhập</a><a href="register.html" class="btn-secondary">Đăng ký</a></div>
+        </div>
+      </div>
+
+      <!-----------
+          Nav 
+       ----------->
+       <nav class="nav-bar">
+        <div class="nav-container">
+          <div class="nav-links">
+            <a href="trangchu.html" class="nav-link">Trang Chủ</a>
+            <a href="danhmucsanpham.html?category=V%C4%83n%20H%E1%BB%8Dc%20%26%20Ti%E1%BB%83u%20Thuy%E1%BA%BFt" class="nav-link">Văn Học &amp; Tiểu Thuyết</a>
+            <a href="danhmucsanpham.html?category=Kinh%20Doanh%20-%20Kh%E1%BB%9Fi%20Nghi%E1%BB%87p" class="nav-link">Kinh Doanh - Khởi Nghiệp</a>
+            <a href="danhmucsanpham.html?category=Ph%C3%A1t%20Tri%E1%BB%83n%20B%E1%BA%A3n%20Th%C3%A2n" class="nav-link">Phát Triển Bản Thân</a>
+            <a href="danhmucsanpham.html?category=Thi%E1%BA%BFu%20Nhi%20%26%20Tranh%20Truy%E1%BB%87n" class="nav-link">Thiếu Nhi &amp; Tranh Truyện</a>
+            <a href="danhmucsanpham.html?category=S%C3%A1ch%20B%C3%A1n%20Ch%E1%BA%A1y" class="nav-link">Sách Bán Chạy</a>
+            <a href="danhmucsanpham.html?category=Khuy%E1%BA%BFn%20M%C3%A3i%20%C4%90%E1%BA%B7c%20Bi%E1%BB%87t" class="nav-link">Khuyến Mãi Đặc Biệt</a>
+          </div>
+        </div>
+       </nav>
+    </header>
+    <main class="sv-w-full sv-pt-36 sv-bg-background member-main member-main-my-orders" id="orders-list"><div class="sv-flex sv-flex-col sv-w-full">
+<div class="sv-max-w-6xl sv-mx-auto sv-w-full sv-px-margin md:sv-px-margin-desktop sv-py-space-lg sv-flex sv-flex-col sv-gap-space-lg member-content-shell">
+<!-- 1. Breadcrumb -->
+<nav aria-label="Đường dẫn trang" class="sv-flex sv-items-center sv-gap-space-xs sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<a class="hover:sv-text-primary sv-transition-colors sv-flex sv-items-center sv-gap-1" href="trangchu.html">
+<span class="material-symbols-outlined sv-text-[16px]">home</span>
+<span>Trang Chủ</span>
+</a>
+<span class="sv-text-outline-variant sv-font-light">/</span>
+<span class="sv-text-primary sv-font-medium">Đơn Hàng Của Tôi</span>
+</nav>
+<!-- 2. Page Header -->
+<section class="sv-bg-surface-container-lowest sv-rounded-xl sv-p-space-lg sv-shadow-sm sv-flex sv-flex-col md:sv-flex-row md:sv-items-end sv-justify-between sv-gap-space-md">
+<div class="sv-flex sv-flex-col sv-gap-space-xs sv-max-w-2xl">
+<div class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-space-sm sv-py-0.5 sv-rounded-full sv-bg-surface-container sv-text-secondary sv-font-label-sm sv-text-label-sm sv-w-fit">
+<span class="material-symbols-outlined sv-text-[14px]">verified</span>
+<span>Đảm bảo đóng gói chuẩn chống sốc &amp; bảo hiểm vận chuyển</span>
+</div>
+<h1 class="sv-font-headline-lg sv-text-headline-lg sv-text-primary sv-tracking-tight">
+          Đơn Hàng Của Tôi
+        </h1>
+<p class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">
+          Quản lý và tra cứu tiến trình giao vận các ấn phẩm sách tuyển chọn của cậu tại Tiệm Sách Sơn Vỹ.
+        </p>
+</div>
+<div class="sv-flex sv-items-center sv-gap-space-sm sv-bg-surface-container-low sv-px-space-md sv-py-space-sm sv-rounded-lg sv-self-start md:sv-self-auto">
+<span class="material-symbols-outlined sv-text-primary-container sv-text-[20px]">local_shipping</span>
+<div class="sv-flex sv-flex-col">
+<span class="sv-font-label-sm sv-text-label-sm sv-text-on-surface-variant sv-uppercase sv-font-semibold">Tình trạng bưu phẩm</span>
+<span class="sv-font-label-lg sv-text-label-lg sv-text-primary sv-font-bold">1 đơn đang trên đường giao</span>
+</div>
+</div>
+</section>
+<!-- 3. Search & Filter Toolbar -->
+<section class="sv-grid sv-grid-cols-1 md:sv-grid-cols-12 sv-gap-space-sm sv-items-center">
+<form class="md:sv-col-span-8 sv-relative" action="my-orders.html" method="get">
+<span class="material-symbols-outlined sv-absolute sv-left-space-md sv-top-1/2 sv--translate-y-1/2 sv-text-outline sv-text-[20px] sv-pointer-events-none">
+          search
+        </span>
+<input class="sv-w-full sv-bg-surface-container-lowest sv-rounded-lg sv-pl-11 sv-pr-space-md sv-py-2.5 sv-font-body-md sv-text-body-md sv-text-on-surface placeholder:sv-text-outline sv-shadow-sm focus:sv-outline-none focus:sv-ring-1 focus:sv-ring-primary-container" placeholder="Tìm kiếm theo Mã đơn hàng hoặc Tên tựa sách, tác giả..." type="search" name="search" aria-label="Tìm đơn hàng">
+</form>
+<div class="md:sv-col-span-4 sv-flex sv-items-center sv-gap-space-xs">
+<div class="sv-relative sv-w-full">
+<select class="sv-w-full sv-appearance-none sv-bg-surface-container-lowest sv-rounded-lg sv-px-space-md sv-py-2.5 sv-font-body-md sv-text-body-md sv-text-on-surface sv-shadow-sm focus:sv-outline-none focus:sv-ring-1 focus:sv-ring-primary-container sv-cursor-pointer sv-pr-10">
+<option>Tất cả thời gian</option>
+<option>30 ngày gần nhất</option>
+<option>6 tháng gần nhất</option>
+<option>Năm 2025</option>
+<option>Năm 2024</option>
+</select>
+<span class="material-symbols-outlined sv-absolute sv-right-space-sm sv-top-1/2 sv--translate-y-1/2 sv-text-on-surface-variant sv-pointer-events-none sv-text-[20px]">
+            calendar_month
+          </span>
+</div>
+</div>
+</section>
+<!-- 4. Smart Filter Tabs (Horizontal) -->
+<nav aria-label="Bộ lọc trạng thái đơn" class="sv-flex sv-items-center sv-overflow-x-auto sv-gap-space-xs sv-pb-1 sv-border-b-0 sv-scrollbar-none">
+<button class="sv-flex sv-items-center sv-gap-1.5 sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-primary-container sv-text-on-primary sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-whitespace-nowrap" type="button">
+<span>Tất cả</span>
+<span class="sv-px-1.5 sv-py-0.2 sv-rounded-full sv-bg-white/20 sv-text-[11px]">8</span>
+</button>
+<button class="sv-flex sv-items-center sv-gap-1.5 sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface-variant hover:sv-text-on-surface sv-font-label-lg sv-text-label-lg sv-transition-colors sv-whitespace-nowrap sv-shadow-sm" type="button">
+<span>Chờ xác nhận</span>
+<span class="sv-px-1.5 sv-py-0.2 sv-rounded-full sv-bg-surface-container sv-text-on-surface-variant sv-text-[11px]">0</span>
+</button>
+<button class="sv-flex sv-items-center sv-gap-1.5 sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface-variant hover:sv-text-on-surface sv-font-label-lg sv-text-label-lg sv-transition-colors sv-whitespace-nowrap sv-shadow-sm" type="button">
+<span>Đang xử lý &amp; Đóng gói</span>
+<span class="sv-px-1.5 sv-py-0.2 sv-rounded-full sv-bg-surface-container sv-text-on-surface-variant sv-text-[11px]">1</span>
+</button>
+<button class="sv-flex sv-items-center sv-gap-1.5 sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface-variant hover:sv-text-on-surface sv-font-label-lg sv-text-label-lg sv-transition-colors sv-whitespace-nowrap sv-shadow-sm" type="button">
+<span>Đang vận chuyển</span>
+<span class="sv-px-1.5 sv-py-0.2 sv-rounded-full sv-bg-secondary-container sv-text-on-secondary-container sv-font-bold sv-text-[11px]">1</span>
+</button>
+<button class="sv-flex sv-items-center sv-gap-1.5 sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface-variant hover:sv-text-on-surface sv-font-label-lg sv-text-label-lg sv-transition-colors sv-whitespace-nowrap sv-shadow-sm" type="button">
+<span>Đã giao hàng</span>
+<span class="sv-px-1.5 sv-py-0.2 sv-rounded-full sv-bg-surface-container sv-text-on-surface-variant sv-text-[11px]">5</span>
+</button>
+<button class="sv-flex sv-items-center sv-gap-1.5 sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface-variant hover:sv-text-on-surface sv-font-label-lg sv-text-label-lg sv-transition-colors sv-whitespace-nowrap sv-shadow-sm" type="button">
+<span>Đã hủy</span>
+<span class="sv-px-1.5 sv-py-0.2 sv-rounded-full sv-bg-surface-container sv-text-on-surface-variant sv-text-[11px]">1</span>
+</button>
+</nav>
+<!-- 5. List of Orders -->
+<div class="sv-flex sv-flex-col sv-gap-space-lg">
+<!-- ================= ORDER 1: IN TRANSIT ================= -->
+<article class="sv-bg-surface-container-lowest sv-rounded-xl sv-shadow-sm sv-overflow-hidden sv-flex sv-flex-col" data-order-id="#SV-8942" data-order-status="shipping">
+<!-- Order Header -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-wrap sv-items-center sv-justify-between sv-gap-space-sm">
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-x-space-md sv-gap-y-1">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary sv-tracking-wide">#SV-8942</span>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">schedule</span>
+<span>15:30 - Hôm nay, 16/05/2025</span>
+</div>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-font-body-sm sv-text-body-sm sv-text-secondary">
+<span class="material-symbols-outlined sv-text-[16px]">local_shipping</span>
+<span>VNPost Express (Vận đơn: <strong class="sv-font-semibold sv-text-primary">VN8921820</strong>)</span>
+</div>
+</div>
+<div class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-2.5 sv-py-1 sv-rounded sv-bg-secondary-container/60 sv-text-on-secondary-container sv-font-label-sm sv-text-label-sm sv-font-semibold">
+<span class="material-symbols-outlined sv-text-[14px]">inventory_2</span>
+<span>Đang đóng gói Kraft &amp; chuẩn bị giao</span>
+</div>
+</div>
+<!-- Products List -->
+<div class="sv-p-space-lg sv-flex sv-flex-col sv-divide-y sv-divide-surface-container">
+<!-- Product Item 1 -->
+<div class="sv-py-space-md first:sv-pt-0 sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="Vintage hardcover book edition of Norwegian Wood by Haruki Murakami wrapped in craft paper aesthetic warm natural lighting with delicate botanical touches on dark wooden shelf" src="assets/member-pages/2cd55bb3c04e.jpg" alt="Vintage hardcover book edition of Norwegian Wood by Haruki Murakami wrapped in craft paper aesthetic warm natural lighting with delicate botanical touches on dark wooden shelf">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Rừng Na Uy (Norwegian Wood)
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Haruki Murakami</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-secondary sv-font-label-sm sv-text-label-sm sv-bg-secondary sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản bìa cứng giới hạn kèm boxset thủ công
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1</span>
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">245.000đ</span>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="sv-py-space-md sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="Illustrated poetic classic book cover of My Sweet Orange Tree Jose Mauro de Vasconcelos tender warm sunlit colors on ivory linen textured cover" src="assets/member-pages/a5fed35a14fa.jpg" alt="Illustrated poetic classic book cover of My Sweet Orange Tree Jose Mauro de Vasconcelos tender warm sunlit colors on ivory linen textured cover">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Cây Cam Ngọt Của Tôi
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: José Mauro de Vasconcelos</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản in minh họa 4 sắc cao cấp
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x2</span>
+<div class="sv-flex sv-flex-col sm:sv-items-end">
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">172.000đ</span>
+<span class="sv-font-body-sm sv-text-body-sm sv-text-on-surface-variant">(86.000đ / cuốn)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="sv-py-space-md last:sv-pb-0 sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="Science fiction novel Dune Messiah by Frank Herbert premium French flap edition with metallic gold desert typography and dunes in emerald and ochre" src="assets/member-pages/ba7cfdbf768e.jpg" alt="Science fiction novel Dune Messiah by Frank Herbert premium French flap edition with metallic gold desert typography and dunes in emerald and ochre">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Dune Messiah
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Frank Herbert</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản bìa mềm tay gập nghệ thuật
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1</span>
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">168.000đ</span>
+</div>
+</div>
+</div>
+<!-- Gift banner inside order -->
+<div class="sv-mx-space-lg sv-mb-space-md sv-p-space-sm sv-bg-surface-container sv-rounded-lg sv-flex sv-items-center sv-gap-space-sm">
+<div class="sv-w-8 sv-h-8 sv-rounded-full sv-bg-secondary/15 sv-text-secondary sv-flex sv-items-center sv-justify-center sv-flex-shrink-0">
+<span class="material-symbols-outlined sv-text-[18px]">card_giftcard</span>
+</div>
+<p class="sv-font-body-sm sv-text-body-sm sv-text-on-surface-variant">
+<strong class="sv-text-primary sv-font-semibold">Quà tặng Sơn Vỹ:</strong> Bookmark gỗ tự nhiên khắc laser &amp; Thiệp tri ân viết tay từ tiệm.
+          </p>
+</div>
+<!-- Order Footer -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-col md:sv-flex-row sv-items-center sv-justify-between sv-gap-space-md">
+<div class="sv-flex sv-flex-col sm:sv-flex-row sm:sv-items-center sv-gap-1 sm:sv-gap-space-md sv-w-full md:sv-w-auto">
+<div class="sv-flex sv-items-baseline sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tổng thanh toán (4 cuốn):</span>
+<span class="sv-font-headline-md sv-text-headline-md sv-text-primary sv-font-bold">506.500đ</span>
+</div>
+<span class="sv-font-label-sm sv-text-label-sm sv-text-primary-container sv-bg-primary-fixed sv-px-2 sv-py-0.5 sv-rounded sv-font-medium sv-w-fit">
+              Đã thanh toán VietQR • Miễn phí vận chuyển
+            </span>
+</div>
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+<button class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container sv-text-on-surface-variant hover:sv-text-on-surface sv-font-label-lg sv-text-label-lg sv-font-medium sv-transition-colors" type="button">
+              Hủy Đơn Hàng
+            </button>
+<a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-primary hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-transition-colors" href="#order-detail-1">
+              Xem Chi Tiết Đơn
+            </a>
+<button class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-primary-container sv-text-on-primary hover:sv-bg-primary sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-gap-1.5" type="button">
+<span class="material-symbols-outlined sv-text-[18px]">location_searching</span>
+<span>Theo Dõi Vận Đơn (VNPost)</span>
+</button>
+</div>
+</div>
+</article>
+<!-- ================= ORDER 2: DELIVERED ================= -->
+<article class="sv-bg-surface-container-lowest sv-rounded-xl sv-shadow-sm sv-overflow-hidden sv-flex sv-flex-col" data-order-id="#SV-8720" data-order-status="delivered">
+<!-- Order Header -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-wrap sv-items-center sv-justify-between sv-gap-space-sm">
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-x-space-md sv-gap-y-1">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary sv-tracking-wide">#SV-8720</span>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">calendar_today</span>
+<span>Ngày đặt: 28/04/2025</span>
+</div>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">done_all</span>
+<span>Đã giao: 30/04/2025</span>
+</div>
+</div>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-px-2.5 sv-py-1 sv-rounded sv-bg-primary-fixed/60 sv-text-primary-container sv-font-label-sm sv-text-label-sm sv-font-semibold">
+<span class="material-symbols-outlined sv-text-[14px]">check_circle</span>
+<span>Giao thành công</span>
+</div>
+</div>
+<!-- Products List -->
+<div class="sv-p-space-lg sv-flex sv-flex-col sv-divide-y sv-divide-surface-container">
+<!-- Item 1 -->
+<div class="sv-py-space-md first:sv-pt-0 sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="The Little Prince special 80th anniversary luxury leather bound edition with embossed gold foil details on warm cream background" src="assets/member-pages/1d7aacf33e5e.jpg" alt="The Little Prince special 80th anniversary luxury leather bound edition with embossed gold foil details on warm cream background">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Hoàng Tử Bé (Le Petit Prince)
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Antoine de Saint-Exupéry</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản kỷ niệm 80 năm mạ vàng bìa da
+                </div>
+
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1</span>
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">185.000đ</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="sv-py-space-md last:sv-pb-0 sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="The Alchemist book Paulo Coelho collector hardcover restoration edition with subtle mystic motifs in deep emerald green and warm paper" src="assets/member-pages/154b4f5183ee.jpg" alt="The Alchemist book Paulo Coelho collector hardcover restoration edition with subtle mystic motifs in deep emerald green and warm paper">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Nhà Giả Kim (The Alchemist)
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Paulo Coelho</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản bìa cứng phục dựng
+                </div>
+
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1</span>
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">120.000đ</span>
+</div>
+</div>
+</div>
+<!-- Order Footer -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-col md:sv-flex-row sv-items-center sv-justify-between sv-gap-space-md">
+<div class="sv-flex sv-items-baseline sv-gap-1.5 sv-w-full md:sv-w-auto">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tổng thanh toán (2 cuốn):</span>
+<span class="sv-font-headline-md sv-text-headline-md sv-text-primary sv-font-bold">305.000đ</span>
+</div>
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+<button type="button" class="sv-review-open" data-review-order="#SV-8720" aria-haspopup="dialog" aria-controls="sv-review-dialog">+ Đánh giá</button>
+
+<a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-medium sv-shadow-sm sv-transition-colors" href="#order-detail-2">
+              Xem Chi Tiết
+            </a>
+<a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-primary-container sv-text-on-primary hover:sv-bg-primary sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-gap-1" href="giohang.html">
+<span class="material-symbols-outlined sv-text-[16px]">replay</span>
+<span>Mua Lại Đơn Này</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ================= ORDER 3: DELIVERED WITH REVIEW ================= -->
+<article class="sv-bg-surface-container-lowest sv-rounded-xl sv-shadow-sm sv-overflow-hidden sv-flex sv-flex-col" data-order-id="#SV-8511" data-order-status="delivered">
+<!-- Order Header -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-wrap sv-items-center sv-justify-between sv-gap-space-sm">
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-x-space-md sv-gap-y-1">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary sv-tracking-wide">#SV-8511</span>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">calendar_today</span>
+<span>Ngày đặt: 12/03/2025</span>
+</div>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">done_all</span>
+<span>Đã giao: 14/03/2025</span>
+</div>
+</div>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-px-2.5 sv-py-1 sv-rounded sv-bg-primary-fixed/60 sv-text-primary-container sv-font-label-sm sv-text-label-sm sv-font-semibold">
+<span class="material-symbols-outlined sv-text-[14px]">check_circle</span>
+<span>Giao thành công</span>
+</div>
+</div>
+<!-- Products List -->
+<div class="sv-p-space-lg sv-flex sv-flex-col">
+<div class="sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="Muon Kiep Nhan Sinh Many Lives Many Times set of 3 books boxed set with spiritual golden mandala symbols on rustic brown background" src="assets/member-pages/d61947bfbbd9.jpg" alt="Muon Kiep Nhan Sinh Many Lives Many Times set of 3 books boxed set with spiritual golden mandala symbols on rustic brown background">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Muôn Kiếp Nhân Sinh (Trọn bộ 3 tập)
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Nguyên Phong</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Boxset kỷ niệm phát hành đặc biệt kèm tranh minh họa
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1 Boxset</span>
+<div class="sv-flex sv-flex-col sm:sv-items-end">
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">405.000đ</span>
+<span class="sv-font-body-sm sv-text-body-sm sv-text-secondary sv-font-medium">Đã áp voucher Sơn Vỹ -10%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Footer -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-col md:sv-flex-row sv-items-center sv-justify-between sv-gap-space-md">
+<div class="sv-flex sv-items-baseline sv-gap-1.5 sv-w-full md:sv-w-auto">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tổng thanh toán:</span>
+<span class="sv-font-headline-md sv-text-headline-md sv-text-primary sv-font-bold">405.000đ</span>
+</div>
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+<button type="button" class="sv-review-open" data-review-order="#SV-8511" aria-haspopup="dialog" aria-controls="sv-review-dialog">+ Đánh giá</button>
+
+<a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-medium sv-shadow-sm sv-transition-colors" href="#order-detail-3">
+              Xem Chi Tiết
+            </a>
+<div class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container sv-text-on-surface-variant sv-font-label-lg sv-text-label-lg sv-flex sv-items-center sv-gap-1">
+<span class="sv-text-secondary sv-font-bold">★★★★★</span>
+<span>Đã đánh giá 5 sao</span>
+</div>
+<a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-primary-container sv-text-on-primary hover:sv-bg-primary sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-gap-1" href="giohang.html">
+<span class="material-symbols-outlined sv-text-[16px]">replay</span>
+<span>Mua Lại</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+<!-- 6. Pagination -->
+<div data-demo-pagination data-max-page="3" class="sv-flex sv-items-center sv-justify-center sv-gap-space-xs sv-py-space-md">
+<a data-demo-page="prev" class="sv-w-10 sv-h-10 sv-rounded-lg sv-bg-surface-container sv-text-outline sv-flex sv-items-center sv-justify-center sv-cursor-not-allowed" disabled="" href="my-orders.html?page=1">
+<span class="material-symbols-outlined sv-text-[20px]">chevron_left</span>
+</a>
+<a data-demo-page="1" class="sv-w-10 sv-h-10 sv-rounded-lg sv-bg-primary-container sv-text-on-primary sv-font-label-lg sv-text-label-lg sv-font-bold sv-shadow-sm" href="my-orders.html?page=1">
+        1
+      </a>
+<a data-demo-page="2" class="sv-w-10 sv-h-10 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-medium sv-shadow-sm sv-transition-colors" href="my-orders.html?page=2">
+        2
+      </a>
+<a data-demo-page="3" class="sv-w-10 sv-h-10 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-medium sv-shadow-sm sv-transition-colors" href="my-orders.html?page=3">
+        3
+      </a>
+<span class="sv-px-1 sv-text-outline sv-font-bold">...</span>
+<a data-demo-page="next" class="sv-w-10 sv-h-10 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-medium sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-justify-center" href="my-orders.html?page=2">
+<span class="material-symbols-outlined sv-text-[20px]">chevron_right</span>
+</a>
+</div>
+<!-- 7. Quick Help & Support Callout -->
+<aside class="sv-p-space-lg sv-rounded-xl sv-bg-surface-container-low sv-shadow-sm sv-flex sv-flex-col md:sv-flex-row sv-items-center sv-justify-between sv-gap-space-md sv-mb-space-lg">
+<div class="sv-flex sv-items-center sv-gap-space-md">
+<div class="sv-w-12 sv-h-12 sv-rounded-xl sv-bg-primary-container sv-text-on-primary sv-flex sv-items-center sv-justify-center sv-flex-shrink-0">
+<span class="material-symbols-outlined sv-text-[24px]">support_agent</span>
+</div>
+<div class="sv-flex sv-flex-col">
+<h2 class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">
+            Cần hỗ trợ về bưu phẩm hoặc chính sách đổi trả sách?
+          </h2>
+<p class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">
+            Đội ngũ thủ thư Sơn Vỹ luôn sẵn sàng giải đáp thắc mắc, bồi hoàn sách lỗi in hoặc theo dõi đơn vận chuyển 24/7.
+          </p>
+</div>
+</div>
+<div class="sv-flex sv-items-center sv-gap-space-xs sv-flex-shrink-0 sv-w-full md:sv-w-auto member-mobile-actions">
+<a class="sv-flex-1 md:sv-flex-initial sv-px-space-md sv-py-2.5 sv-rounded-lg sv-bg-surface-container-lowest sv-text-primary hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-bold sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-justify-center sv-gap-1.5 sv-whitespace-nowrap" href="tel:19006868">
+<span class="material-symbols-outlined sv-text-[18px] sv-text-secondary">call</span>
+<span>Hotline: 1900 6868</span>
+</a>
+<button class="sv-flex-1 md:sv-flex-initial sv-px-space-md sv-py-2.5 sv-rounded-lg sv-bg-secondary sv-text-on-secondary hover:sv-bg-secondary/90 sv-font-label-lg sv-text-label-lg sv-font-bold sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-justify-center sv-gap-1.5 sv-whitespace-nowrap" type="button">
+<span class="material-symbols-outlined sv-text-[18px]">chat</span>
+<span>Nhắn Tin Tư Vấn</span>
+</button>
+</div>
+</aside>
+</div>
+</div></main><section id="order-detail-1" class="member-overlay" role="dialog" aria-modal="true" aria-labelledby="order-detail-1-title"><div class="member-modal">
+<div class="member-modal-top">
+<h2 id="order-detail-1-title">Chi tiết #SV-8942</h2>
+<a href="#orders-list" aria-label="Đóng" class="member-modal-close">×</a>
+</div>
+<div class="member-modal-body">
+<article class="sv-bg-surface-container-lowest sv-rounded-xl sv-shadow-sm sv-overflow-hidden sv-flex sv-flex-col">
+<!-- Order Header -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-wrap sv-items-center sv-justify-between sv-gap-space-sm">
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-x-space-md sv-gap-y-1">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary sv-tracking-wide">#SV-8942</span>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">schedule</span>
+<span>15:30 - Hôm nay, 16/05/2025</span>
+</div>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-font-body-sm sv-text-body-sm sv-text-secondary">
+<span class="material-symbols-outlined sv-text-[16px]">local_shipping</span>
+<span>VNPost Express (Vận đơn: <strong class="sv-font-semibold sv-text-primary">VN8921820</strong>)</span>
+</div>
+</div>
+<div class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-2.5 sv-py-1 sv-rounded sv-bg-secondary-container/60 sv-text-on-secondary-container sv-font-label-sm sv-text-label-sm sv-font-semibold">
+<span class="material-symbols-outlined sv-text-[14px]">inventory_2</span>
+<span>Đang đóng gói Kraft &amp; chuẩn bị giao</span>
+</div>
+</div>
+<!-- Products List -->
+<div class="sv-p-space-lg sv-flex sv-flex-col sv-divide-y sv-divide-surface-container">
+<!-- Product Item 1 -->
+<div class="sv-py-space-md first:sv-pt-0 sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="Vintage hardcover book edition of Norwegian Wood by Haruki Murakami wrapped in craft paper aesthetic warm natural lighting with delicate botanical touches on dark wooden shelf" src="assets/member-pages/2cd55bb3c04e.jpg" alt="Vintage hardcover book edition of Norwegian Wood by Haruki Murakami wrapped in craft paper aesthetic warm natural lighting with delicate botanical touches on dark wooden shelf">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Rừng Na Uy (Norwegian Wood)
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Haruki Murakami</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-secondary sv-font-label-sm sv-text-label-sm sv-bg-secondary sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản bìa cứng giới hạn kèm boxset thủ công
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1</span>
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">245.000đ</span>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="sv-py-space-md sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="Illustrated poetic classic book cover of My Sweet Orange Tree Jose Mauro de Vasconcelos tender warm sunlit colors on ivory linen textured cover" src="assets/member-pages/a5fed35a14fa.jpg" alt="Illustrated poetic classic book cover of My Sweet Orange Tree Jose Mauro de Vasconcelos tender warm sunlit colors on ivory linen textured cover">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Cây Cam Ngọt Của Tôi
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: José Mauro de Vasconcelos</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản in minh họa 4 sắc cao cấp
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x2</span>
+<div class="sv-flex sv-flex-col sm:sv-items-end">
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">172.000đ</span>
+<span class="sv-font-body-sm sv-text-body-sm sv-text-on-surface-variant">(86.000đ / cuốn)</span>
+</div>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="sv-py-space-md last:sv-pb-0 sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="Science fiction novel Dune Messiah by Frank Herbert premium French flap edition with metallic gold desert typography and dunes in emerald and ochre" src="assets/member-pages/ba7cfdbf768e.jpg" alt="Science fiction novel Dune Messiah by Frank Herbert premium French flap edition with metallic gold desert typography and dunes in emerald and ochre">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Dune Messiah
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Frank Herbert</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản bìa mềm tay gập nghệ thuật
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1</span>
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">168.000đ</span>
+</div>
+</div>
+</div>
+<!-- Gift banner inside order -->
+<div class="sv-mx-space-lg sv-mb-space-md sv-p-space-sm sv-bg-surface-container sv-rounded-lg sv-flex sv-items-center sv-gap-space-sm">
+<div class="sv-w-8 sv-h-8 sv-rounded-full sv-bg-secondary/15 sv-text-secondary sv-flex sv-items-center sv-justify-center sv-flex-shrink-0">
+<span class="material-symbols-outlined sv-text-[18px]">card_giftcard</span>
+</div>
+<p class="sv-font-body-sm sv-text-body-sm sv-text-on-surface-variant">
+<strong class="sv-text-primary sv-font-semibold">Quà tặng Sơn Vỹ:</strong> Bookmark gỗ tự nhiên khắc laser &amp; Thiệp tri ân viết tay từ tiệm.
+          </p>
+</div>
+<!-- Order Footer -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-col md:sv-flex-row sv-items-center sv-justify-between sv-gap-space-md">
+<div class="sv-flex sv-flex-col sm:sv-flex-row sm:sv-items-center sv-gap-1 sm:sv-gap-space-md sv-w-full md:sv-w-auto">
+<div class="sv-flex sv-items-baseline sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tổng thanh toán (4 cuốn):</span>
+<span class="sv-font-headline-md sv-text-headline-md sv-text-primary sv-font-bold">506.500đ</span>
+</div>
+<span class="sv-font-label-sm sv-text-label-sm sv-text-primary-container sv-bg-primary-fixed sv-px-2 sv-py-0.5 sv-rounded sv-font-medium sv-w-fit">
+              Đã thanh toán VietQR • Miễn phí vận chuyển
+            </span>
+</div>
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+</div>
+</div>
+</article>
+</div>
+</div></section><section id="order-detail-2" class="member-overlay" role="dialog" aria-modal="true" aria-labelledby="order-detail-2-title"><div class="member-modal">
+<div class="member-modal-top">
+<h2 id="order-detail-2-title">Chi tiết #SV-8720</h2>
+<a href="#orders-list" aria-label="Đóng" class="member-modal-close">×</a>
+</div>
+<div class="member-modal-body">
+<article class="sv-bg-surface-container-lowest sv-rounded-xl sv-shadow-sm sv-overflow-hidden sv-flex sv-flex-col">
+<!-- Order Header -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-wrap sv-items-center sv-justify-between sv-gap-space-sm">
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-x-space-md sv-gap-y-1">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary sv-tracking-wide">#SV-8720</span>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">calendar_today</span>
+<span>Ngày đặt: 28/04/2025</span>
+</div>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">done_all</span>
+<span>Đã giao: 30/04/2025</span>
+</div>
+</div>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-px-2.5 sv-py-1 sv-rounded sv-bg-primary-fixed/60 sv-text-primary-container sv-font-label-sm sv-text-label-sm sv-font-semibold">
+<span class="material-symbols-outlined sv-text-[14px]">check_circle</span>
+<span>Giao thành công</span>
+</div>
+</div>
+<!-- Products List -->
+<div class="sv-p-space-lg sv-flex sv-flex-col sv-divide-y sv-divide-surface-container">
+<!-- Item 1 -->
+<div class="sv-py-space-md first:sv-pt-0 sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="The Little Prince special 80th anniversary luxury leather bound edition with embossed gold foil details on warm cream background" src="assets/member-pages/1d7aacf33e5e.jpg" alt="The Little Prince special 80th anniversary luxury leather bound edition with embossed gold foil details on warm cream background">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Hoàng Tử Bé (Le Petit Prince)
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Antoine de Saint-Exupéry</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản kỷ niệm 80 năm mạ vàng bìa da
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1</span>
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">185.000đ</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="sv-py-space-md last:sv-pb-0 sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="The Alchemist book Paulo Coelho collector hardcover restoration edition with subtle mystic motifs in deep emerald green and warm paper" src="assets/member-pages/154b4f5183ee.jpg" alt="The Alchemist book Paulo Coelho collector hardcover restoration edition with subtle mystic motifs in deep emerald green and warm paper">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Nhà Giả Kim (The Alchemist)
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Paulo Coelho</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Bản bìa cứng phục dựng
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1</span>
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">120.000đ</span>
+</div>
+</div>
+</div>
+<!-- Order Footer -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-col md:sv-flex-row sv-items-center sv-justify-between sv-gap-space-md">
+<div class="sv-flex sv-items-baseline sv-gap-1.5 sv-w-full md:sv-w-auto">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tổng thanh toán (2 cuốn):</span>
+<span class="sv-font-headline-md sv-text-headline-md sv-text-primary sv-font-bold">305.000đ</span>
+</div>
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+<button type="button" class="sv-review-open" data-review-order="#SV-8720" aria-haspopup="dialog" aria-controls="sv-review-dialog">+ Đánh giá</button>
+
+</div>
+</div>
+</article>
+</div>
+</div></section><section id="order-detail-3" class="member-overlay" role="dialog" aria-modal="true" aria-labelledby="order-detail-3-title"><div class="member-modal">
+<div class="member-modal-top">
+<h2 id="order-detail-3-title">Chi tiết #SV-8511</h2>
+<a href="#orders-list" aria-label="Đóng" class="member-modal-close">×</a>
+</div>
+<div class="member-modal-body">
+<article class="sv-bg-surface-container-lowest sv-rounded-xl sv-shadow-sm sv-overflow-hidden sv-flex sv-flex-col">
+<!-- Order Header -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-wrap sv-items-center sv-justify-between sv-gap-space-sm">
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-x-space-md sv-gap-y-1">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary sv-tracking-wide">#SV-8511</span>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">calendar_today</span>
+<span>Ngày đặt: 12/03/2025</span>
+</div>
+<span class="sv-text-outline-variant sv-font-light sv-hidden sm:sv-inline">•</span>
+<div class="sv-flex sv-items-center sv-gap-1 sv-text-on-surface-variant sv-font-body-sm sv-text-body-sm">
+<span class="material-symbols-outlined sv-text-[16px]">done_all</span>
+<span>Đã giao: 14/03/2025</span>
+</div>
+</div>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-px-2.5 sv-py-1 sv-rounded sv-bg-primary-fixed/60 sv-text-primary-container sv-font-label-sm sv-text-label-sm sv-font-semibold">
+<span class="material-symbols-outlined sv-text-[14px]">check_circle</span>
+<span>Giao thành công</span>
+</div>
+</div>
+<!-- Products List -->
+<div class="sv-p-space-lg sv-flex sv-flex-col">
+<div class="sv-flex sv-flex-col sm:sv-flex-row sv-gap-space-md sv-items-start sm:sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-start sv-gap-space-md">
+<img class="sv-w-16 sv-h-24 sv-object-cover sv-rounded sv-shadow-sm sv-flex-shrink-0" data-alt="Muon Kiep Nhan Sinh Many Lives Many Times set of 3 books boxed set with spiritual golden mandala symbols on rustic brown background" src="assets/member-pages/d61947bfbbd9.jpg" alt="Muon Kiep Nhan Sinh Many Lives Many Times set of 3 books boxed set with spiritual golden mandala symbols on rustic brown background">
+<div class="sv-flex sv-flex-col sv-gap-0.5">
+<span class="sv-font-headline-sm sv-text-headline-sm sv-text-primary hover:sv-text-secondary sv-cursor-pointer sv-transition-colors">
+                  Muôn Kiếp Nhân Sinh (Trọn bộ 3 tập)
+                </span>
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tác giả: Nguyên Phong</span>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-mt-1 sv-text-on-surface-variant sv-font-label-sm sv-text-label-sm sv-bg-surface-container sv-px-2 sv-py-0.5 sv-rounded sv-w-fit">
+                  Boxset kỷ niệm phát hành đặc biệt kèm tranh minh họa
+                </div>
+</div>
+</div>
+<div class="sv-flex sv-items-center sm:sv-flex-col sm:sv-items-end sv-justify-between sv-w-full sm:sv-w-auto sv-gap-1">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Số lượng: x1 Boxset</span>
+<div class="sv-flex sv-flex-col sm:sv-items-end">
+<span class="sv-font-title-md sv-text-title-md sv-text-primary sv-font-bold">405.000đ</span>
+<span class="sv-font-body-sm sv-text-body-sm sv-text-secondary sv-font-medium">Đã áp voucher Sơn Vỹ -10%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Footer -->
+<div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-col md:sv-flex-row sv-items-center sv-justify-between sv-gap-space-md">
+<div class="sv-flex sv-items-baseline sv-gap-1.5 sv-w-full md:sv-w-auto">
+<span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tổng thanh toán:</span>
+<span class="sv-font-headline-md sv-text-headline-md sv-text-primary sv-font-bold">405.000đ</span>
+</div>
+<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+<button type="button" class="sv-review-open" data-review-order="#SV-8511" aria-haspopup="dialog" aria-controls="sv-review-dialog">+ Đánh giá</button>
+
+<div class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container sv-text-on-surface-variant sv-font-label-lg sv-text-label-lg sv-flex sv-items-center sv-gap-1">
+<span class="sv-text-secondary sv-font-bold">★★★★★</span>
+<span>Đã đánh giá 5 sao</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div></section><section>
+          <div class="section-header section-main">
+            <div class="main-content">
+              <div class="prvivilege">
+                <div class="privi-top">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
+                    <path d="M0 0h48v48H0z" fill="none"></path>
+                      <g fill="none">
+                        <path stroke="currentColor" stroke-linejoin="round" stroke-width="4" d="m6 42l8.674-24.736L31 34.038z"></path>
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m23 19l5-5q4-4 1-7m0 18l5-5q5-5 10 0"></path>
+                        <path fill="currentColor" d="M20 7a2 2 0 1 0 0-4a2 2 0 0 0 0 4m22-1a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 23a2 2 0 1 0 0-4a2 2 0 0 0 0 4m-3 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4"></path>
+                      </g>
+                  </svg>
+                  <span class="privi-text">Đặc Quyền Thành Viên Mới</span>
+                </div>
+                <h3 class="privi-title">
+                  Gia Nhập Câu Lạc Bộ Bạn Đọc Sơn Vỹ
+                </h3>
+                <p class="small-text-privi">Tặng voucher 50.000đ cho đơn hàng đầu tiên.</p>
+              </div>
+              <div class="form-voucher">
+                <div class="cta-form">
+                  <input class="input" type="text" placeholder="Nhập địa chỉ email của bạn...">
+                  <button class="btn-primary btn-voucher">
+                    Nhận voucher
+                  </button>
+                </div>
+                <small>* Cam kết không gửi thư rác. Bạn có thể hủy đăng ký bất cứ lúc nào chỉ
+                 với một cú nhấp chuột.</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <footer>
+
+      <div class="container__top">
+
+      </div>
+
+      <div class="container__main">
+        <div class="main-grid">
+          <div class="info-card">
+            <span class="title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 256 256">
+                <path d="M0 0h256v256H0z" fill="none"></path>
+                <path fill="currentColor" d="M232 48h-72a40 40 0 0 0-32 16a40 40 0 0 0-32-16H24a8 8 0 0 0-8 8v144a8 8 0 0 0 8 8h72a24 24 0 0 1 24 24a8 8 0 0 0 16 0a24 24 0 0 1 24-24h72a8 8 0 0 0 8-8V56a8 8 0 0 0-8-8M96 192H32V64h64a24 24 0 0 1 24 24v112a39.8 39.8 0 0 0-24-8m128 0h-64a39.8 39.8 0 0 0-24 8V88a24 24 0 0 1 24-24h64ZM160 88h40a8 8 0 0 1 0 16h-40a8 8 0 0 1 0-16m48 40a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8m0 32a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8"></path>
+              </svg>
+              Tiệm Sách Sơn Vỹ
+            </span>
+            <p class="content">
+              Tiệm Sách Sơn Vỹ - Lan tỏa tình yêu sách Việt. Điểm dừng chân của những tâm hồn tìm kiếm sự tĩnh tại, chiều sâu suy tưởng và vẻ đẹp tinh tế của văn hóa đọc nguyên bản.
+            </p>
+            <div class="icon">
+              <ul class="links-footer">
+                <li class="icon"><a href="#" data-user-info="Thông tin cửa hàng">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.25c-1.5-1.35-3.7-2-6.25-2h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2c2.55 0 4.75.65 6.25 2Zm0 0c1.5-1.35 3.7-2 6.25-2h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2c-2.55 0-4.75.65-6.25 2Z"></path>
+                  </svg>
+                </a></li>
+                <li class="icon"><a href="#" data-user-info="Thông tin cửa hàng">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path fill="currentColor" d="M16 13V5H6v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2M5 3h15a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V4a1 1 0 0 1 1-1m13 2v3h2V5zM2 19h18v2H2z"></path>
+                  </svg>
+                </a></li>
+                <li class="icon"><a href="#" data-user-info="Thông tin cửa hàng">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path fill="currentColor" d="M16 14h.5c.827 0 1.5-.673 1.5-1.5v-9c0-.827-.673-1.5-1.5-1.5h-13C2.673 2 2 2.673 2 3.5V18l5.333-4zm-9.333-2L4 14V4h12v8z"></path>
+                    <path fill="currentColor" d="M20.5 8H20v6.001c0 1.1-.893 1.993-1.99 1.999H8v.5c0 .827.673 1.5 1.5 1.5h7.167L22 22V9.5c0-.827-.673-1.5-1.5-1.5"></path>
+                  </svg>
+                </a></li>
+                <li class="icon"><a href="#" data-user-info="Thông tin cửa hàng">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
+                    <path d="M0 0h1024v1024H0z" fill="none"></path>
+                    <path fill="currentColor" d="M752 664c-28.5 0-54.8 10-75.4 26.7L469.4 540.8a160.7 160.7 0 0 0 0-57.6l207.2-149.9C697.2 350 723.5 360 752 360c66.2 0 120-53.8 120-120s-53.8-120-120-120s-120 53.8-120 120c0 11.6 1.6 22.7 4.7 33.3L439.9 415.8C410.7 377.1 364.3 352 312 352c-88.4 0-160 71.6-160 160s71.6 160 160 160c52.3 0 98.7-25.1 127.9-63.8l196.8 142.5c-3.1 10.6-4.7 21.8-4.7 33.3c0 66.2 53.8 120 120 120s120-53.8 120-120s-53.8-120-120-120m0-476c28.7 0 52 23.3 52 52s-23.3 52-52 52s-52-23.3-52-52s23.3-52 52-52M312 600c-48.5 0-88-39.5-88-88s39.5-88 88-88s88 39.5 88 88s-39.5 88-88 88m440 236c-28.7 0-52-23.3-52-52s23.3-52 52-52s52 23.3 52 52s-23.3 52-52 52"></path>
+                  </svg>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-card">
+            <h4 class="title">Khám phá tiệm</h4>
+            <ul class="list-texts">
+              <li class="text"><a href="#" data-user-info="Về chúng tôi">Về chúng tôi</a></li>
+              <li class="text"><a href="#" data-user-info="Không gian đọc sách cafe">Không gian đọc sách cafe</a></li>
+              <li class="text"><a href="#" data-user-info="Sự kiện ra mắt sách">Sự kiện ra mắt sách</a></li>
+              <li class="text"><a href="#" data-user-info="Tuyển dụng BookLover">Tuyển dụng BookLover</a></li>
+              <li class="text"><a href="#" data-user-info="Tạp chí sách Journal">Tạp chí sách Journal</a></li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4 class="title">Hỗ Trợ Bạn Đọc</h4>
+            <ul class="list-texts">
+              <li class="text"><a href="#" data-user-info="Hướng dẫn mua hàng">Hướng dẫn mua hàng</a></li>
+              <li class="text"><a href="#" data-user-info="Chính sách đổi trả &amp; bảo hành sách">Chính sách đổi trả &amp; bảo hành sách</a></li>
+              <li class="text"><a href="#" data-user-info="Biểu phí &amp; Giao nhận toàn quốc">Biểu phí &amp; Giao nhận toàn quốc</a></li>
+              <li class="text"><a href="#" data-user-info="Dịch vụ bọc sách thủ công">Dịch vụ bọc sách thủ công</a></li>
+              <li class="text"><a href="#" data-user-info="Câu hỏi thường gặp">Câu hỏi thường gặp</a></li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4 class="title">Ghé thăm &amp; Liên hệ</h4>
+            <div class="about-shop">
+              <span>
+                120, Yên Lãng
+              </span>
+              <span>
+                Giờ mở cửa: 08:30 - 22:00 mỗi ngày
+              </span>
+              <div class="hotline">
+                <span class="hotline-title">
+                  Hotline tư vấn:
+                </span>
+                <span class="telephone-number">
+                  1900 6868 - 024 3828 9999
+                </span>
+              </div>
+            </div>
+            <div class="payments">
+              <small>
+                Phương thức thanh toán an toàn:
+              </small>
+              <div class="list-icons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+                  <path d="M0 0h16v16H0z" fill="none"></path>
+                  <g fill="currentColor">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"></path>
+                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path>
+                  </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path fill="currentColor" d="M9.5 6.5v3h-3v-3zM11 5H5v6h6zm-1.5 9.5v3h-3v-3zM11 13H5v6h6zm6.5-6.5v3h-3v-3zM19 5h-6v6h6zm-6 8h1.5v1.5H13zm1.5 1.5H16V16h-1.5zM16 13h1.5v1.5H16zm-3 3h1.5v1.5H13zm1.5 1.5H16V19h-1.5zM16 16h1.5v1.5H16zm1.5-1.5H19V16h-1.5zm0 3H19V19h-1.5zM22 7h-2V4h-3V2h5zm0 15v-5h-2v3h-3v2zM2 22h5v-2H4v-3H2zM2 2v5h2V4h3V2z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path fill="currentColor" d="M5 6h18v12H5zm9 3a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3M9 8a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2v-4a2 2 0 0 1-2-2zm-8 2h2v10h16v2H1z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 48 48">
+                  <path d="M0 0h48v48H0z" fill="none"></path>
+                  <g fill="none">
+                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="4" d="M39 16V9a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h27a3 3 0 0 0 3-3v-7"></path>
+                    <rect width="20" height="16" x="22" y="16" stroke="currentColor" stroke-linejoin="round" stroke-width="4" rx="3"></rect>
+                    <circle r="2" fill="currentColor" transform="matrix(0 -1 -1 0 30 24)"></circle>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container__bottom">
+        <div class="small-text-footer">
+          <div class="copyright-text">
+            <span>© 2025 Tiệm Sách Sơn Vỹ. Giữ toàn bộ bản quyền tuyển tập.</span>
+          </div>
+          <div class="message">
+            <span>Thiết kế với cảm hứng từ những trang sách giấy ấm áp.</span>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  
+<dialog id="sv-review-dialog" aria-labelledby="sv-review-title">
+  <div class="sv-review-head"><h2 id="sv-review-title">Đánh giá đơn hàng</h2><button type="button" class="sv-review-close" aria-label="Đóng đánh giá">×</button></div>
+  <form id="sv-review-form">
+    <p class="sv-review-note" id="sv-review-order-label"></p>
+    <label>Sản phẩm<select id="sv-review-product" required=""></select></label>
+    <fieldset><legend>Cậu đánh giá cuốn sách này thế nào?</legend><div class="sv-review-stars">
+<input type="radio" name="sv-rating" id="sv-rating-5" value="5" required="" aria-label="5 sao"><label for="sv-rating-5" title="5 sao">★</label><input type="radio" name="sv-rating" id="sv-rating-4" value="4" required="" aria-label="4 sao"><label for="sv-rating-4" title="4 sao">★</label><input type="radio" name="sv-rating" id="sv-rating-3" value="3" required="" aria-label="3 sao"><label for="sv-rating-3" title="3 sao">★</label><input type="radio" name="sv-rating" id="sv-rating-2" value="2" required="" aria-label="2 sao"><label for="sv-rating-2" title="2 sao">★</label><input type="radio" name="sv-rating" id="sv-rating-1" value="1" required="" aria-label="1 sao"><label for="sv-rating-1" title="1 sao">★</label>
+    </div></fieldset>
+    <label>Nhận xét của cậu<textarea id="sv-review-comment" rows="4" maxlength="2000" placeholder="Chia sẻ cảm nhận về cuốn sách..."></textarea></label>
+    <p class="sv-review-note">Đánh giá được lưu trên trình duyệt này.</p>
+    <div class="sv-review-actions"><button type="button" class="sv-review-cancel">Hủy</button><button type="submit" class="sv-review-open">Gửi đánh giá</button></div>
+  </form>
+</dialog>
+<div id="sv-review-feedback" role="status" hidden=""></div>
+
+
+
+<script src="JS/user-core.js" defer=""></script><script src="JS/user-auth.js" defer=""></script><script src="JS/user-shop.js" defer=""></script><script src="JS/user-cart.js" defer=""></script><script src="JS/user-account.js" defer=""></script><script src="JS/user-orders.js" defer=""></script><script src="JS/user-reviews.js" defer=""></script><script src="JS/pagination-demo.js" defer></script></body></html>

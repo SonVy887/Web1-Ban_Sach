@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<link rel="stylesheet" href="../CSS/fonts.css">
+<title>Tiệm Sách Sơn Vỹ - Quản Trị Hệ Thống - Tổng Quan</title>
+<link rel="stylesheet" href="../CSS/theme.css">
+<link rel="stylesheet" href="../CSS/admin.css">
+<link rel="stylesheet" href="../CSS/dashboard.css">
+</head>
+<body class="admin-shell min-h-screen flex flex-col" data-page="dashboard">
+<!-- Top Navigation Header -->
+<header class="sticky top-0 z-40 bg-[#fef8f4]/95 backdrop-blur-md border-b border-[#ede7e3] shadow-sm">
+<div class="admin-header-inner max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="admin-logo-viewport"><!-- Logo -->
+<img src="../assets/logo/logo.png" alt="Logo"><span class="material-symbols-outlined logo-fallback" aria-hidden="true" hidden="">menu_book</span></span>
+<div>
+<span class="font-serif text-2xl font-bold text-primary block leading-tight">Tiệm Sách Sơn Vỹ</span>
+<span class="text-[11px] font-semibold tracking-widest uppercase text-secondary">Trung Tâm Quản Trị Hệ Thống</span>
+</div>
+</div>
+<nav class="hidden xl:flex items-center gap-1 bg-surface-container-low p-1.5 rounded-xl border border-surface-container-high" aria-label="Điều hướng quản trị">
+<a href="index.html" class="admin-nav-link is-current" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">dashboard</span><span>1. Tổng quan</span><span class="nav-active-badge rounded-full">Active</span></a><a href="books.html" class="admin-nav-link"><span>2. Quản lý Sách</span></a><a href="orders.html" class="admin-nav-link"><span>3. Đơn hàng</span><span class="nav-count rounded-full">38</span></a><a href="inventory.html" class="admin-nav-link"><span>4. Kho &amp; Nhập</span></a><a href="customers.html" class="admin-nav-link"><span>5. Khách hàng</span></a><a href="promotions.html" class="admin-nav-link"><span>6. Khuyến mãi</span></a></nav>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors relative" title="Thông báo" type="button" data-action="notifications" data-label="Thông báo" aria-label="Thông báo">
+<span class="material-symbols-outlined text-[22px]" aria-hidden="true">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<div class="hidden sm:block text-right">
+<div class="text-xs font-bold text-primary">Nguyễn Văn A</div>
+<div class="text-[11px] text-secondary">Tổng Điều Hành Kho</div>
+</div>
+</div>
+</div>
+</header>
+<main class="admin-main admin-page-main flex-1 " id="main-content">
+<section class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high mb-6"><h2 class="text-xl font-bold">Thống kê khách hàng</h2><p class="mt-2">Xem Top 5 khách hàng có mức mua cao nhất và chi tiết từng đơn hàng.</p><a class="inline-flex mt-3 px-4 py-2 rounded-lg bg-primary-container text-on-primary" href="orders.html#analytics">Mở thống kê Top 5 khách hàng →</a></section>
+  <div class="page-content">
+    <!-- Header Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-2 text-secondary text-xs mb-1">
+          <span class="material-symbols-outlined text-[15px]">admin_panel_settings</span>
+          <span>Phân Hệ 1</span>
+          <span>/</span>
+          <span class="text-primary font-semibold">Báo Cáo Tổng Hợp &amp; Tình Hình Kinh Doanh</span>
+        </div>
+        <h1 class="font-headline-lg text-3xl lg:text-4xl text-primary font-bold tracking-tight">Tổng Quan Quản Trị Hệ Thống</h1>
+        <p class="text-sm text-on-surface-variant mt-1">Theo dõi thời gian thực doanh thu, luân chuyển kho tàng sách quý và tương tác của bạn đọc Sơn Vỹ.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="bg-surface-container-lowest border border-surface-container-high px-3.5 py-2 rounded-lg text-xs font-medium flex items-center gap-2 shadow-sm">
+          <span class="material-symbols-outlined text-[18px] text-secondary">calendar_month</span>
+          <span>Tháng 05/2025</span>
+        </div>
+        <button class="bg-primary-container text-on-primary hover:bg-primary px-4 py-2 rounded-lg text-xs font-semibold shadow-sm flex items-center gap-1.5 transition-all" type="button" data-action="export" data-label="Xuất Báo Cáo Tuần" aria-label="Xuất Báo Cáo Tuần">
+          <span class="material-symbols-outlined text-[18px]" aria-hidden="true">file_download</span>
+          <span>Xuất Báo Cáo Tuần</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4 KPI Metrics -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs uppercase font-semibold text-secondary tracking-wider">Doanh Thu Tháng</span>
+          <span class="p-2 rounded-lg bg-surface-container text-primary-container material-symbols-outlined text-[20px]">payments</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-2xl font-bold text-primary">128.450.000₫</div>
+          <div class="flex items-center gap-1 text-xs text-emerald-700 font-semibold mt-1">
+            <span class="material-symbols-outlined text-[15px]">trending_up</span> +18.2% <span class="text-on-surface-variant font-normal">so với tháng trước</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs uppercase font-semibold text-secondary tracking-wider">Đơn Hàng Mới</span>
+          <span class="p-2 rounded-lg bg-secondary-container/40 text-secondary material-symbols-outlined text-[20px]">shopping_bag</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-2xl font-bold text-primary">426 <span class="text-xs font-normal text-secondary">đơn</span>
+</div>
+          <div class="flex items-center gap-1 text-xs text-on-secondary-container font-semibold mt-1">
+            <span class="px-1.5 py-0.5 rounded bg-secondary-container text-[11px]">38 chờ duyệt</span> <span class="text-on-surface-variant font-normal">cần giao gấp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs uppercase font-semibold text-secondary tracking-wider">Đầu Sách Lưu Hành</span>
+          <span class="p-2 rounded-lg bg-surface-container text-primary-container material-symbols-outlined text-[20px]">auto_stories</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-2xl font-bold text-primary">1.890 <span class="text-xs font-normal text-secondary">tựa</span>
+</div>
+          <div class="flex items-center gap-1 text-xs text-primary font-semibold mt-1">
+            <span class="px-1.5 py-0.5 rounded bg-primary-fixed text-[11px]">+45 tựa mới</span> <span class="text-on-surface-variant font-normal">trong tháng 5</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs uppercase font-semibold text-secondary tracking-wider">Độc Giả Thân Thiết</span>
+          <span class="p-2 rounded-lg bg-surface-container text-primary-container material-symbols-outlined text-[20px]">group</span>
+        </div>
+        <div>
+          <div class="font-headline-md text-2xl font-bold text-primary">3.240 <span class="text-xs font-normal text-secondary">hội viên</span>
+</div>
+          <div class="flex items-center gap-1 text-xs text-primary font-semibold mt-1">
+            <span class="px-1.5 py-0.5 rounded bg-surface-container-high text-[11px]">+115 đăng ký</span> <span class="text-on-surface-variant font-normal">tuần vừa qua</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content 2 Columns (8 / 4) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+      <!-- Left 8 cols: Recent Orders & Weekly Performance Trend -->
+      <div class="lg:col-span-8 flex flex-col gap-6">
+        <!-- Recent Orders Table -->
+        <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm">
+          <div class="flex items-center justify-between pb-3 border-b border-surface-container mb-4">
+            <div>
+              <h2 class="font-headline-sm text-lg font-bold text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-[20px] text-primary-container">receipt_long</span>
+                Đơn Hàng Gần Đây Cần Xử Lý
+              </h2>
+              <p class="text-xs text-on-surface-variant">Lưu chuyển bưu kiện sách phát hành trong ngày hôm nay.</p>
+            </div>
+            <a class="text-xs font-semibold text-primary hover:text-secondary flex items-center gap-1" href="orders.html">
+              Xem toàn bộ 38 đơn <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-surface-container-low text-on-surface-variant uppercase font-semibold">
+                  <th class="py-2.5 px-3 rounded-l-lg">Mã đơn</th>
+                  <th class="py-2.5 px-3">Khách hàng</th>
+                  <th class="py-2.5 px-3">Tác phẩm</th>
+                  <th class="py-2.5 px-3 text-right">Tổng tiền</th>
+                  <th class="py-2.5 px-3">Thanh toán</th>
+                  <th class="py-2.5 px-3">Trạng thái</th>
+                  <th class="py-2.5 px-3 text-right rounded-r-lg">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-surface-container">
+                <tr class="hover:bg-surface-container-low/60 transition-colors">
+                  <td class="py-3 px-3 font-mono font-bold text-primary">#SV-8942</td>
+                  <td class="py-3 px-3">
+                    <div class="font-semibold text-on-surface">Trần Thảo Ly</div>
+                    <div class="text-[11px] text-secondary">0912.834.xxx · Hà Nội</div>
+                  </td>
+                  <td class="py-3 px-3">
+                    <div class="font-medium text-primary truncate max-w-[160px]">Rừng Na Uy (Bản Bìa Cứng)</div>
+                    <div class="text-[10px] text-secondary">Kèm Boxset Sơn Vỹ</div>
+                  </td>
+                  <td class="py-3 px-3 text-right font-bold text-primary">385.000₫</td>
+                  <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium text-[11px]">Chuyển khoản</span></td>
+                  <td class="py-3 px-3"><span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-semibold text-[10px]">Đang đóng gói</span></td>
+                  <td class="py-3 px-3 text-right">
+                    <button class="p-1 hover:bg-surface-container rounded text-primary transition-colors" title="Xem chi tiết" type="button" data-action="details" data-label="Xem chi tiết" aria-label="Xem chi tiết">
+                      <span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-container-low/60 transition-colors">
+                  <td class="py-3 px-3 font-mono font-bold text-primary">#SV-8941</td>
+                  <td class="py-3 px-3">
+                    <div class="font-semibold text-on-surface">Đỗ Minh Tuấn</div>
+                    <div class="text-[11px] text-secondary">0988.102.xxx · Đà Nẵng</div>
+                  </td>
+                  <td class="py-3 px-3">
+                    <div class="font-medium text-primary truncate max-w-[160px]">Cây Cam Ngọt Của Tôi</div>
+                    <div class="text-[10px] text-secondary">+ Bookmark Gỗ Khắc</div>
+                  </td>
+                  <td class="py-3 px-3 text-right font-bold text-primary">215.000₫</td>
+                  <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-medium text-[11px]">COD</span></td>
+                  <td class="py-3 px-3"><span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-semibold text-[10px]">Chờ xác nhận</span></td>
+                  <td class="py-3 px-3 text-right">
+                    <button class="p-1 hover:bg-surface-container rounded text-primary transition-colors" title="Xem chi tiết" type="button" data-action="details" data-label="Xem chi tiết" aria-label="Xem chi tiết">
+                      <span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-container-low/60 transition-colors">
+                  <td class="py-3 px-3 font-mono font-bold text-primary">#SV-8940</td>
+                  <td class="py-3 px-3">
+                    <div class="font-semibold text-on-surface">Lê Hoàng Yến</div>
+                    <div class="text-[11px] text-secondary">0903.456.xxx · TP.HCM</div>
+                  </td>
+                  <td class="py-3 px-3">
+                    <div class="font-medium text-primary truncate max-w-[160px]">Thổ Hạc Xuân Tình (Bìa Da)</div>
+                    <div class="text-[10px] text-secondary">Bản phục dựng cổ</div>
+                  </td>
+                  <td class="py-3 px-3 text-right font-bold text-primary">950.000₫</td>
+                  <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium text-[11px]">VNPAY QR</span></td>
+                  <td class="py-3 px-3"><span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-semibold text-[10px]">Đã gửi bưu cục</span></td>
+                  <td class="py-3 px-3 text-right">
+                    <button class="p-1 hover:bg-surface-container rounded text-primary transition-colors" title="Xem chi tiết" type="button" data-action="details" data-label="Xem chi tiết" aria-label="Xem chi tiết">
+                      <span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Weekly Activity & Inbound Schedule -->
+        <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm">
+          <h2 class="font-headline-sm text-lg font-bold text-primary mb-1">Nhịp Độ Đơn Hàng &amp; Kế Hoạch Vận Chuyển</h2>
+          <p class="text-xs text-on-surface-variant mb-4">Dữ liệu ghi nhận từ hệ thống máy chủ giao vận VNPost &amp; GHTK liên kết.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+            <div class="p-3.5 bg-surface-container-low rounded-lg border border-surface-container-high">
+              <span class="text-[11px] uppercase tracking-wider text-secondary font-semibold">Tỉ Lệ Giao Thành Công</span>
+              <div class="text-xl font-bold text-primary mt-1">98.4%</div>
+              <div class="text-[11px] text-emerald-700 mt-0.5">+1.2% so với tháng trước</div>
+            </div>
+            <div class="p-3.5 bg-surface-container-low rounded-lg border border-surface-container-high">
+              <span class="text-[11px] uppercase tracking-wider text-secondary font-semibold">Thời Gian Giao Trung Bình</span>
+              <div class="text-xl font-bold text-primary mt-1">1.8 ngày</div>
+              <div class="text-[11px] text-on-surface-variant mt-0.5">Nội thành Hà Nội &lt; 24h</div>
+            </div>
+            <div class="p-3.5 bg-surface-container-low rounded-lg border border-surface-container-high">
+              <span class="text-[11px] uppercase tracking-wider text-secondary font-semibold">Giá Trị Trung Bình / Đơn</span>
+              <div class="text-xl font-bold text-primary mt-1">301.500₫</div>
+              <div class="text-[11px] text-primary font-medium mt-0.5">~ 2.1 cuốn / đơn</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right 4 cols: Low stock alert & Quick Navigation -->
+      <div class="lg:col-span-4 flex flex-col gap-6">
+        <!-- Low Stock Alerts -->
+        <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm">
+          <div class="flex items-center justify-between pb-3 border-b border-surface-container mb-3">
+            <div class="flex items-center gap-1.5 text-error">
+              <span class="material-symbols-outlined text-[20px]">warning</span>
+              <h3 class="font-headline-sm text-base font-bold text-primary">Cảnh Báo Tồn Kho Thấp</h3>
+            </div>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-error-container text-on-error-container">3 tựa sách</span>
+          </div>
+          <div class="space-y-3">
+            <div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+              <div>
+                <div class="text-xs font-bold text-primary">Dune Messiah (Xứ Cát)</div>
+                <div class="text-[11px] text-secondary">NXB Kim Đồng · Bìa cứng</div>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-bold text-error">Còn 4 cuốn</span>
+                <span class="block text-[10px] text-on-surface-variant">Cần nhập: 50</span>
+              </div>
+            </div>
+            <div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+              <div>
+                <div class="text-xs font-bold text-primary">Hoàng Tử Bé (Bản Màu)</div>
+                <div class="text-[11px] text-secondary">NXB Kim Đồng · Sưu tầm</div>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-bold text-error">Còn 2 cuốn</span>
+                <span class="block text-[10px] text-on-surface-variant">Cần nhập: 30</span>
+              </div>
+            </div>
+            <div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+              <div>
+                <div class="text-xs font-bold text-primary">Marketing for Rookies</div>
+                <div class="text-[11px] text-secondary">NXB Trẻ · Tái bản lần 3</div>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-bold text-red-700">Hết hàng (0)</span>
+                <span class="block text-[10px] text-on-surface-variant">Cần nhập: 100</span>
+              </div>
+            </div>
+          </div>
+          <button class="w-full mt-4 py-2 bg-surface-container hover:bg-primary-container hover:text-on-primary text-primary text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5" type="button" data-action="create" data-label="Tạo Phiếu Nhập Sách Ngay" aria-label="Tạo Phiếu Nhập Sách Ngay">
+            <span class="material-symbols-outlined text-[16px]" aria-hidden="true">add_box</span>
+            <span>Tạo Phiếu Nhập Sách Ngay</span>
+          </button>
+        </div>
+
+        <!-- Quick Module Links -->
+        <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm">
+          <h3 class="font-headline-sm text-base font-bold text-primary mb-3">Lối Tắt Phân Hệ Quản Trị</h3>
+          <div class="space-y-2">
+            <a class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-semibold text-primary transition-colors" href="books.html">
+              <span class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-primary-container">menu_book</span>
+                2. Quản lý Danh mục Sách
+              </span>
+              <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+            </a>
+            <a class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-semibold text-primary transition-colors" href="orders.html">
+              <span class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-secondary">local_shipping</span>
+                3. Quản lý Đơn hàng (38 mới)
+              </span>
+              <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+            </a>
+            <a class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-semibold text-primary transition-colors" href="inventory.html">
+              <span class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-primary-container">inventory</span>
+                4. Quản lý Kho &amp; Phiếu Nhập
+              </span>
+              <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+            </a>
+            <a class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-semibold text-primary transition-colors" href="customers.html">
+              <span class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-primary-container">group</span>
+                5. Hồ sơ Khách hàng &amp; Độc giả
+              </span>
+              <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+            </a>
+            <a class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-semibold text-primary transition-colors" href="promotions.html">
+              <span class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-primary-container">loyalty</span>
+                6. Mã Khuyến mãi &amp; Tri ân
+              </span>
+              <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-surface-container-low border-t border-surface-container-high py-4 mt-8">
+<div class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-secondary gap-2">
+<div>© 2025 Tiệm Sách Sơn Vỹ. Hệ thống quản trị ấn bản, kho lưu trữ &amp; phát hành sách.</div>
+<div>Phiên bản v2.5 Interactive Enterprise</div>
+</div>
+</footer>
+<div id="admin-overlays">
+<div id="admin-toast" class="admin-toast" role="status" aria-live="polite" hidden>
+<span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span id="admin-toast-message"></span><button type="button" aria-label="Đóng thông báo" data-close-toast>×</button>
+</div>
+<dialog id="admin-dialog" class="admin-dialog" aria-labelledby="dialog-title"><div class="dialog-top">
+<h2 id="dialog-title"></h2>
+<button type="button" class="dialog-close" aria-label="Đóng" data-close-dialog><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+</div>
+<form id="admin-action-form">
+<div id="dialog-content" class="dialog-content"></div>
+<div class="dialog-actions">
+<button type="button" class="dialog-button" data-close-dialog>Đóng</button><button type="submit" class="dialog-button primary" id="dialog-confirm">Xác nhận</button>
+</div>
+</form></dialog>
+</div>
+<script src="../JS/admin.js" defer></script><script src="../JS/dashboard.js" defer></script>
+</body>
+</html>

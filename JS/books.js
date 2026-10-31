@@ -1,110 +1,171 @@
-// Giao diện quản lý sách: thông báo tương tác, không cập nhật dữ liệu trên bảng.
-const $ = id => document.getElementById(id);
-function showToast(message, type='info') {
-  const wrap=$('toast-wrap');
-  const el=document.createElement('div');
-  const icon=type==='error'?'error':type==='success'?'check_circle':'info';
-  el.className='toast-anim pointer-events-auto p-3.5 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-semibold text-white bg-primary-container';
-  const symbol=document.createElement('span'); symbol.className='material-symbols-outlined text-[18px]'; symbol.textContent=icon;
-  const msg=document.createElement('span');msg.textContent=message;
-  el.append(symbol,msg);wrap.append(el);
-  setTimeout(()=>{el.style.opacity='0';el.style.transition='opacity .25s';setTimeout(()=>el.remove(),260)},3200);
-}
-function openModal(id){$(id)?.classList.add('active')}
-function closeModal(id){$(id)?.classList.remove('active')}
-function notify(message){showToast(message,'success')}
-document.querySelectorAll('.modal-close').forEach(b=>b.addEventListener('click',()=>closeModal(b.dataset.target)));
-document.querySelectorAll('.modal-backdrop').forEach(el=>el.addEventListener('click',e=>{if(e.target===el)el.classList.remove('active')}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-backdrop.active').forEach(m=>m.classList.remove('active'))});
-const rows=[...document.querySelectorAll('.book-row')];
-let selected=rows[0];
-let currentQuickStatus=selected?.dataset.status || "Đang mở bán";
-function selectRow(row){
-  selected=row;
-  $('quick-badge').textContent='#'+row.dataset.code;
-  $('quick-title').textContent=row.dataset.title;
-  $('quick-price').value=row.dataset.price;
-  $('quick-stock').value=row.dataset.stock;
-  currentQuickStatus=row.dataset.status;
-  document.querySelectorAll('.quick-status-btn').forEach(b=>b.classList.toggle('demo-selected-tab',b.dataset.status===currentQuickStatus));
-}
-rows.forEach(row=>{
-  row.addEventListener('click',e=>{if(e.target.closest('button,input'))return;selectRow(row)});
-  row.querySelector('.btn-edit')?.addEventListener('click',()=>{
-    ['code','title','author','price','stock','status'].forEach(k=>{const el=$('edit-'+k);if(el)el.value=row.dataset[k]||''});
-    openModal('modal-edit');
-  });
-  row.querySelector('.btn-stock')?.addEventListener('click',()=>{
-    $('stock-target-code').textContent=row.dataset.code;
-    $('stock-target-title').textContent=row.dataset.title;
-    $('stock-target-val').textContent=row.dataset.stock+' cuốn';
-    $('stock-target-input').value=row.dataset.stock;
-    openModal('modal-stock');
-  });
-  row.querySelector('.btn-del')?.addEventListener('click',()=>{
-    $('del-title-label').textContent='Bạn có chắc muốn xóa ấn phẩm "'+row.dataset.title+'" khỏi hệ thống lưu hành?';
-    openModal('modal-del');
-  });
-});
-$('btn-open-add').addEventListener('click',()=>openModal('modal-add'));
-$('form-add').addEventListener('submit',e=>{e.preventDefault();if(!e.target.reportValidity())return;closeModal('modal-add');notify('Thêm sách thành công!')});
-$('form-edit').addEventListener('submit',e=>{e.preventDefault();if(!e.target.reportValidity())return;closeModal('modal-edit');notify('Lưu thay đổi thành công!')});
-$('btn-stock-plus').addEventListener('click',()=>{$('stock-target-input').value=Number($('stock-target-input').value||0)+1});
-$('btn-stock-minus').addEventListener('click',()=>{$('stock-target-input').value=Math.max(0,Number($('stock-target-input').value||0)-1)});
-$('btn-save-stock').addEventListener('click',()=>{closeModal('modal-stock');notify('Cập nhật tồn kho thành công!')});
-$('btn-confirm-del').addEventListener('click',()=>{closeModal('modal-del');notify('Xóa sách thành công!')});
-$('btn-export-csv').addEventListener('click',()=>notify('Xuất danh sách thành công!'));
-$('btn-bulk-open').addEventListener('click',()=>notify('Đã chọn tác vụ hàng loạt'));
-$('btn-quick-save').addEventListener('click',()=>notify('Lưu thay đổi thành công!'));
-$('btn-quick-reset').addEventListener('click',()=>{selectRow(selected);showToast('Đã khôi phục giá trị ban đầu trên biểu mẫu','info')});
-document.querySelectorAll('.quick-status-btn').forEach(b=>b.addEventListener('click',()=>{
-  currentQuickStatus=b.dataset.status;
-  document.querySelectorAll('.quick-status-btn').forEach(x=>x.classList.toggle('demo-selected-tab',x===b));showToast('Đã chọn trạng thái: '+b.textContent.trim()+'','info');
-}));
-document.querySelectorAll('.btn-approve').forEach(b=>b.addEventListener('click',()=>notify('Đơn hàng đã được duyệt!')));
-document.querySelectorAll('.btn-view-order').forEach(b=>b.addEventListener('click',()=>{
-  const d=b.dataset;
-  $('order-detail-id').textContent='Chi Tiết Đơn Hàng '+(d.id||'');
-  ['name','phone','addr','items','total'].forEach(k=>{const el=$('order-detail-'+k);if(el)el.textContent=d[k==='addr'?'address':k]||'—'});
-  openModal('modal-order');
-}));
-$('btn-order-modal-approve').addEventListener('click',()=>{closeModal('modal-order');notify('Đơn hàng đã được xác nhận!')});
-$('btn-view-schedule').addEventListener('click',()=>openModal('modal-sched'));
-document.querySelectorAll('.order-tab').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.order-tab').forEach(x=>x.classList.remove('demo-selected-tab'));
-  b.classList.add('demo-selected-tab');notify('Đã chọn nhóm đơn hàng: '+b.textContent.trim());
-}));
-function searchBooks(){
-  const q=$('search-input').value.trim();
-  if(!q){showToast('Vui lòng nhập tên sách, tác giả hoặc ISBN để tìm kiếm','info');return;}
-  notify('Đã tìm kiếm: '+q);
-}
-$('btn-search').addEventListener('click',searchBooks);
-$('search-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchBooks()}});
-$('genre-filter').addEventListener('change',e=>notify('Đã chọn bộ lọc '+e.target.options[e.target.selectedIndex].text));
-$('check-all').addEventListener('change',e=>document.querySelectorAll('.row-check').forEach(c=>c.checked=e.target.checked));
-document.querySelectorAll('.row-check').forEach(c=>c.addEventListener('change',()=>showToast('Đã chọn '+document.querySelectorAll('.row-check:checked').length+' sách để thao tác','info')));
-// Nút phân trang và nút in chỉ thông báo, không thay đổi bảng.
-document.querySelectorAll('button').forEach(b=>{
-  if(['1','2','3'].includes(b.textContent.trim()) && b.closest('.justify-between')) b.addEventListener('click',()=>notify('Đã chọn trang '+b.textContent.trim()));
-  if(b.textContent.includes('In Hóa Đơn')) b.addEventListener('click',()=>notify('Đã nhấn in hóa đơn'));
-});
-// Chuẩn hóa thông báo trên nút chuông (giữ nội dung có sẵn).
-// Phản hồi cho các nút phụ chưa thuộc một chức năng riêng.
-const handledSelectors = [
- '.modal-close','.btn-edit','.btn-stock','.btn-del','.btn-approve','.btn-view-order',
- '.quick-status-btn','.order-tab','.row-check',
- '#btn-open-add','#btn-export-csv','#btn-bulk-open','#btn-view-schedule',
- '#btn-quick-save','#btn-quick-reset','#btn-stock-plus','#btn-stock-minus',
- '#btn-save-stock','#btn-confirm-del','#btn-order-modal-approve'
-].join(',');
-document.querySelectorAll('button').forEach(b=>{
- if(b.matches(handledSelectors) || b.closest('form#form-add,form#form-edit'))return;
- if(['1','2','3'].includes(b.textContent.trim()))return;
- b.addEventListener('click',()=>notify('Đã nhấn '+(b.title||b.textContent.trim()||'nút thao tác')));
-});
+'use strict';
+(() => {
+  const dialog = document.getElementById('book-editor-dialog');
+  const form = document.getElementById('book-editor-form');
+  const editionList = document.getElementById('edition-list');
+  const editionTemplate = document.getElementById('edition-template');
+  const imageInput = form.elements.coverFile;
+  const imagePreview = form.querySelector('.book-cover-preview');
+  const demoMessage = document.getElementById('book-demo-message');
+  let editingRow = null;
+  let opener = null;
+  let previewUrl = null;
+  let imageRead = Promise.resolve();
 
-// Đặt trạng thái chọn ban đầu cho hai nhóm tab.
-if(selected) selectRow(selected);
-const defaultOrderTab=document.querySelector('.order-tab[data-filter="all"]');
-if(defaultOrderTab)defaultOrderTab.classList.add('demo-selected-tab');
+  const categories = ['Văn học & Tiểu thuyết','Kinh doanh - Khởi nghiệp','Phát triển bản thân','Thiếu nhi & Tranh truyện'];
+  const readJson = (value, fallback) => {
+    try { return value ? JSON.parse(value) : fallback; } catch { return fallback; }
+  };
+
+  function showPreview(src) {
+    imagePreview.hidden = !src;
+    if (src) imagePreview.src = src;
+    else imagePreview.removeAttribute('src');
+  }
+
+  function addEdition(data = {}) {
+    const item = editionTemplate.content.firstElementChild.cloneNode(true);
+    item.querySelectorAll('[data-edition-field]').forEach(input => {
+      const key = input.dataset.editionField;
+      if (key === 'listPrice' && !(Number(data[key]) > 0)) {
+        input.value = ''; // Không có giá cũ: không hiển thị 0đ.
+      } else if (data[key] !== undefined && data[key] !== null) input.value = String(data[key]);
+    });
+    editionList.append(item);
+    refreshEditionLabels();
+  }
+
+  function refreshEditionLabels() {
+    const items = [...editionList.querySelectorAll('.edition-item')];
+    items.forEach((item, index) => {
+      item.querySelector('.edition-item-title').textContent = `Ấn bản ${index + 1}`;
+      item.querySelector('[data-remove-edition]').hidden = items.length === 1;
+    });
+  }
+
+  function openEditor(row, button) {
+    editingRow = row;
+    opener = button;
+    form.reset();
+    demoMessage.hidden = true;
+    demoMessage.textContent = 'Lưu mô phỏng thành công. Danh sách sách mẫu không thay đổi.';
+    editionList.replaceChildren();
+    imageInput.value = '';
+    imageRead = Promise.resolve();
+    showPreview('');
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    previewUrl = null;
+
+    document.getElementById('book-editor-title').textContent = row ? 'Sửa thông tin sách' : 'Thêm sách mới';
+    if (row) {
+      for (const key of ['title','originalTitle','author','translator','category','publisher','distributor','description','quote']) {
+        form.elements[key].value = row.dataset[key] || '';
+      }
+      const editions = readJson(row.dataset.editions, null);
+      if (editions?.length) editions.forEach(addEdition);
+      else addEdition({
+        format: row.dataset.format || 'Bìa Mềm Tiêu Chuẩn',
+        isbn: row.dataset.isbn || '',
+        price: row.dataset.price ? Number(row.dataset.price.replace(/[^\d]/g,'')) : '',
+        listPrice: row.dataset.listPrice ? Number(row.dataset.listPrice.replace(/[^\d]/g,'')) : '',
+        stock: row.dataset.stock || 0,
+        status: row.dataset.status || 'Đang mở bán'
+      });
+      showPreview(row.dataset.cover || row.querySelector('img')?.getAttribute('src') || '');
+    } else {
+      form.elements.category.value = categories[0];
+      addEdition({format:'Bìa Mềm Tiêu Chuẩn',stock:0,status:'Đang mở bán'});
+    }
+    dialog.showModal();
+  }
+
+  window.addEventListener('click', event => {
+    const button = event.target.closest('button');
+    if (!button) return;
+    if (button.id === 'btn-open-add' || button.matches('.btn-edit')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openEditor(button.matches('.btn-edit') ? button.closest('.book-row') : null, button);
+    } else if (button.hasAttribute('data-book-close')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      dialog.close();
+    } else if (button.hasAttribute('data-add-edition')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      addEdition({format:'Bìa Mềm Tiêu Chuẩn',stock:0,status:'Đang mở bán'});
+    } else if (button.hasAttribute('data-remove-edition')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      button.closest('.edition-item')?.remove();
+      refreshEditionLabels();
+    }
+  }, true);
+
+  imageInput.addEventListener('change', () => {
+    const file = imageInput.files?.[0];
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    previewUrl = null;
+    if (!file) return;
+    if (!['image/jpeg','image/png','image/webp'].includes(file.type) || file.size > 5 * 1024 * 1024) {
+      imageInput.value = '';
+      imageInput.setCustomValidity('Chọn ảnh JPG, PNG hoặc WebP tối đa 5MB.');
+      imageInput.reportValidity();
+      return;
+    }
+    imageInput.setCustomValidity('');
+    imageRead = new Promise(resolve => {
+      const reader = new FileReader();
+      reader.onload = () => { showPreview(String(reader.result || '')); resolve(); };
+      reader.onerror = () => { imageInput.setCustomValidity('Không đọc được ảnh, hãy chọn lại.'); imageInput.reportValidity(); resolve(); };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  dialog.addEventListener('close', () => {
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    previewUrl = null;
+    showPreview('');
+    opener?.focus();
+  });
+
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const box = dialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+  });
+
+  form.addEventListener('submit', async event => {
+    if (event.target !== form) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    await imageRead;
+    if (!form.reportValidity()) return;
+    let invalidPrice = false;
+    editionList.querySelectorAll('.edition-item').forEach(item => {
+      const price = Number(item.querySelector('[data-edition-field="price"]').value || 0);
+      const listPriceInput = item.querySelector('[data-edition-field="listPrice"]');
+      const listPrice = Number(listPriceInput.value || 0);
+      listPriceInput.setCustomValidity('');
+      if (listPrice > 0 && price > listPrice) {
+        listPriceInput.setCustomValidity('Giá bìa phải lớn hơn hoặc bằng giá bán.');
+        invalidPrice = true;
+      }
+    });
+    if (invalidPrice) { form.reportValidity(); return; }
+    demoMessage.hidden = false;
+    demoMessage.focus?.();
+    // Demo only: do not mutate the table, persist values, or send the chosen image anywhere.
+  }, true);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.AdminUI) window.AdminUI.mount({
+      createTitle:'Thêm sách mới',
+      summary:'Thông tin sách và các ấn bản.',
+      fields:[
+        {label:'Tên sách',type:'text'}, {label:'Tác giả',type:'text'},
+        {label:'Danh mục',options:categories}, {label:'Nhà xuất bản',type:'text'}
+      ]
+    });
+  });
+})();

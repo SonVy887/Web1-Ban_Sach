@@ -1,0 +1,30 @@
+/* Chỉ bổ sung trạng thái tương tác, menu tài khoản và hộp thoại mô phỏng. */
+[hidden] {display:none !important;}
+.header .action-buttons .member-account-menu {position:relative;font-family:var(--font-sans,inherit);}
+.header .member-account-menu summary {display:flex;align-items:center;gap:9px;list-style:none;cursor:pointer;color:var(--primary,#1e3a2f);font-size:13px;font-weight:600;}
+.header .member-account-menu summary::-webkit-details-marker {display:none;}
+.header .member-account-menu .member-avatar {display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;flex-shrink:0;border-radius:50%;background:var(--primary-container,#1e3a2f);color:white;font-size:12px;}
+.header .member-account-menu nav {position:absolute;right:0;top:calc(100% + 12px);display:flex;flex-direction:column;min-width:190px;padding:8px;border:1px solid var(--outline-variant,#c1c8c3);border-radius:12px;background:var(--surface-container-lowest,#fff);box-shadow:0 10px 30px #0002;z-index:1000;}
+.header .member-account-menu nav a {display:block;padding:10px 12px;color:var(--primary,#1e3a2f);text-decoration:none;border-radius:7px;white-space:nowrap;}
+.header .member-account-menu nav a:hover {background:var(--surface-container-low,#f8f2ee);}
+[data-product-link] {cursor:pointer;}
+[data-user-liked=true] {color:var(--secondary,#a34b47) !important;}
+#user-toast {position:fixed;bottom:24px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);padding:13px 20px;border-radius:10px;background:var(--primary-container,#1e3a2f);color:#fff;box-shadow:0 8px 24px #0002;z-index:10000;font:14px/1.5 var(--font-sans,sans-serif);}
+#user-dialog {box-sizing:border-box;width:min(520px,calc(100% - 32px));max-height:calc(100dvh - 40px);overflow:auto;padding:24px;border:0;border-radius:16px;background:var(--surface,#fffdf8);color:var(--primary,#1e3a2f);font-family:var(--font-sans,inherit);}
+#user-dialog::backdrop {background:#0007;}
+#user-dialog h2 {font:600 23px/1.4 var(--font-serif,serif);margin:0 0 16px;}
+#user-dialog form {display:grid;gap:14px;}
+#user-dialog label {display:grid;gap:6px;font-size:13px;}
+#user-dialog input, #user-dialog select, #user-dialog textarea {box-sizing:border-box;width:100%;border:1px solid var(--outline-variant,#c1c8c3);border-radius:8px;padding:10px;background:transparent;color:inherit;font:inherit;}
+#user-dialog .user-dialog-actions {display:flex;justify-content:flex-end;gap:10px;margin-top:8px;}
+#user-dialog button {border:1px solid var(--outline-variant,#c1c8c3);padding:10px 16px;border-radius:8px;background:var(--surface-container-low,#f8f2ee);color:inherit;font:inherit;cursor:pointer;}
+#user-dialog button[type=submit] {background:var(--primary-container,#1e3a2f);color:#fff;}
+.user-empty {padding:32px;text-align:center;grid-column:1/-1;font:14px/1.6 var(--font-sans,inherit);}
+.user-empty a {color:inherit;text-decoration:underline;}
+.catalog.user-list .book-catalog-grid {grid-template-columns:1fr;}
+.catalog.user-list .catalog-card {display:grid;grid-template-columns:120px 1fr;gap:12px;}
+.catalog.user-list .catalog-cover {grid-row:span 6;}
+@media(max-width:640px){.header .member-account-name{max-width:92px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}}
+
+.header .member-account-menu summary > .material-symbols-outlined {font-size:0;}
+.header .member-account-menu summary > .material-symbols-outlined::after {content:"⌄";font:16px/1 var(--font-sans,sans-serif);}

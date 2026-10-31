@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<link rel="stylesheet" href="../CSS/fonts.css">
+<title>Tiệm Sách Sơn Vỹ - Quản Lý Khách Hàng &amp; Độc Giả</title>
+<link rel="stylesheet" href="../CSS/theme.css">
+<link rel="stylesheet" href="../CSS/admin.css">
+<link rel="stylesheet" href="../CSS/customers.css">
+</head>
+<body class="admin-shell min-h-screen flex flex-col" data-page="customers">
+<!-- Top Navigation Header -->
+<header class="sticky top-0 z-40 bg-[#fef8f4]/95 backdrop-blur-md border-b border-[#ede7e3] shadow-sm">
+<div class="admin-header-inner max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="admin-logo-viewport"><!-- Logo -->
+<img src="../assets/logo/logo.png" alt="Logo"><span class="material-symbols-outlined logo-fallback" aria-hidden="true" hidden="">menu_book</span></span>
+<div>
+<span class="font-serif text-2xl font-bold text-primary block leading-tight">Tiệm Sách Sơn Vỹ</span>
+<span class="text-[11px] font-semibold tracking-widest uppercase text-secondary">Trung Tâm Quản Trị Hệ Thống</span>
+</div>
+</div>
+<nav class="hidden xl:flex items-center gap-1 bg-surface-container-low p-1.5 rounded-xl border border-surface-container-high" aria-label="Điều hướng quản trị">
+<a href="dashboard.html" class="admin-nav-link"><span>1. Tổng quan</span></a><a href="books.html" class="admin-nav-link"><span>2. Quản lý Sách</span></a><a href="orders.html" class="admin-nav-link"><span>3. Đơn hàng</span><span class="nav-count rounded-full">38</span></a><a href="inventory.html" class="admin-nav-link"><span>4. Kho &amp; Nhập</span></a><a href="customers.html" class="admin-nav-link is-current" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">group</span><span>5. Khách hàng</span><span class="nav-active-badge rounded-full">Active</span></a><a href="promotions.html" class="admin-nav-link"><span>6. Khuyến mãi</span></a></nav>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors relative" title="Thông báo" type="button" data-action="notifications" data-label="Thông báo" aria-label="Thông báo">
+<span class="material-symbols-outlined text-[22px]" aria-hidden="true">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<div class="hidden sm:block text-right">
+<div class="text-xs font-bold text-primary">Nguyễn Văn A</div>
+<div class="text-[11px] text-secondary">Tổng Điều Hành Kho</div>
+</div>
+</div>
+</div>
+</header>
+<main class="admin-main admin-page-main users-main" id="main-content">
+<div class="users-heading"><div><p class="users-eyebrow">Quản trị hệ thống / Tài khoản người mua</p><h1>Quản Lý Người Dùng</h1><p>Thêm tài khoản, chỉnh sửa thông tin và quản lý quyền truy cập của người mua.</p></div><button class="user-primary" type="button" data-user-action="create">+ Thêm user / Đăng ký</button></div>
+<div class="users-metrics"><div><span>Tổng tài khoản mẫu</span><strong>3</strong></div><div><span>Đang hoạt động</span><strong>2</strong></div><div><span>Đã khóa</span><strong>1</strong></div></div>
+<section class="users-panel" aria-label="Danh sách người dùng"><div class="users-filter"><label>Tìm người dùng<input type="search" id="user-search" placeholder="Nhập họ tên, mã user, email hoặc số điện thoại"></label><label>Trạng thái tài khoản<select id="user-status-filter"><option value="all">Tất cả trạng thái</option><option value="active">Đang hoạt động</option><option value="locked">Đã khóa</option></select></label></div><div class="users-table-scroll"><table class="users-table"><thead><tr><th>Họ tên / Mã user</th><th>Email / Số điện thoại</th><th>Địa chỉ</th><th>Ngày đăng ký</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody><tr data-user-id="DG-1042" data-name="Trần Thảo Ly" data-email="thaoly.tran@gmail.com" data-phone="0912345678" data-address="Hoàn Kiếm, Hà Nội" data-status="active"><td><strong>Trần Thảo Ly</strong><small>#DG-1042</small></td><td>thaoly.tran@gmail.com<small>0912345678</small></td><td>Hoàn Kiếm, Hà Nội</td><td>12/01/2024</td><td><span class="user-status active">Đang hoạt động</span></td><td><div class="user-row-actions"><button type="button" data-user-action="edit">Sửa thông tin</button><button type="button" data-user-action="lock" class="danger">Khóa user</button></div></td></tr><tr data-user-id="DG-1028" data-name="Lê Hoàng Yến" data-email="hoangyen.le@gmail.com" data-phone="0903456789" data-address="Quận 1, TP.HCM" data-status="active"><td><strong>Lê Hoàng Yến</strong><small>#DG-1028</small></td><td>hoangyen.le@gmail.com<small>0903456789</small></td><td>Quận 1, TP.HCM</td><td>05/03/2024</td><td><span class="user-status active">Đang hoạt động</span></td><td><div class="user-row-actions"><button type="button" data-user-action="edit">Sửa thông tin</button><button type="button" data-user-action="lock" class="danger">Khóa user</button></div></td></tr><tr data-user-id="DG-2115" data-name="Đỗ Minh Tuấn" data-email="tuan.do88@gmail.com" data-phone="0988102888" data-address="Hải Châu, Đà Nẵng" data-status="locked"><td><strong>Đỗ Minh Tuấn</strong><small>#DG-2115</small></td><td>tuan.do88@gmail.com<small>0988102888</small></td><td>Hải Châu, Đà Nẵng</td><td>10/05/2025</td><td><span class="user-status locked">Đã khóa</span></td><td><div class="user-row-actions"><button type="button" data-user-action="edit">Sửa thông tin</button><button type="button" data-user-action="unlock" class="positive">Mở khóa user</button></div></td></tr><tr id="users-empty" hidden><td colspan="6">Không có người dùng phù hợp.</td></tr></tbody></table></div><p id="users-count" aria-live="polite">Hiển thị 3 tài khoản mẫu.</p></section>
+</main>
+
+<footer class="bg-surface-container-low border-t border-surface-container-high py-4 mt-8">
+<div class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-secondary gap-2">
+<div>© 2025 Tiệm Sách Sơn Vỹ. Hệ thống quản trị ấn bản, kho lưu trữ &amp; phát hành sách.</div>
+<div>Phiên bản v2.5 Interactive Enterprise</div>
+</div>
+</footer>
+<dialog id="user-dialog" aria-labelledby="user-dialog-title"><form id="user-form"><div class="user-dialog-heading"><h2 id="user-dialog-title"></h2><button type="button" data-close-user-dialog aria-label="Đóng">×</button></div><div id="user-form-fields"></div><p id="user-form-error" role="alert" hidden></p><div class="user-dialog-actions"><button type="button" data-close-user-dialog>Hủy</button><button class="user-primary" id="user-form-submit" type="submit">Xác nhận</button></div></form></dialog>
+<div class="users-toast" id="users-toast" role="status" hidden></div>
+<script src="../JS/admin.js" defer></script><script src="../JS/customers.js" defer></script>
+</body></html>
