@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Member Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/a699af1dea30.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Member Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/e45972c7e9f2.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Member Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/87e867b52640.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Member Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/6f49e1b28bce.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Member Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/c8f8c7f5ed53.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Member Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/26bad053b5ab.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Member Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/9c2c504c5bf6.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Member Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/33605a421732.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../assets/fonts/febcd075c3e4.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../assets/fonts/722d54da3dbf.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../assets/fonts/ef22c232bb39.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../assets/fonts/f7edf71d76fb.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../assets/fonts/d0e154fa8a11.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../assets/fonts/f3fb6e3aeb1b.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../assets/fonts/160517eddbca.ttf) format('truetype');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+}
+

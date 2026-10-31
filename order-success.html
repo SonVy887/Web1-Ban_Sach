@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Đặt Hàng Thành Công | Tiệm Sách Sơn Vỹ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="CSS/reset.css">
+<link rel="stylesheet" href="CSS/main.css">
+<link rel="stylesheet" href="CSS/order-success.css">
+<link rel="stylesheet" href="CSS/member-pages.css">
+<link rel="stylesheet" href="CSS/user-demo.css"></head>
+<body class="member-site order-success-page" data-user-page="order-success">
+<header class="header">
+      <div class="header-top">
+        <!----------- 
+               Logo 
+         ------------>
+        <a href="trangchu.html" class="logo">
+          <div class="logo-badge">
+            <img src="./assets/logo/logo.png" alt="Logo" style="width: 135px">
+          </div>
+          <div class="logo-text">
+            <h1>Tiệm Sách Sơn Vỹ</h1>
+            <span>Không Gian Đọc &amp; Lan Tỏa Tri Thức</span>
+          </div>
+        </a>
+        <!--------------- 
+            Search bar 
+         --------------->
+        <div class="search-bar">
+          <select class="search-select">
+            <option>Tất cả danh mục</option>
+            <option>Văn Học &amp; Tiểu Thuyết</option>
+            <option>Kinh Doanh-Khởi Nghiệp</option>
+            <option>Phát Triển Bản Thân</option>
+            <option>Thiếu Nhi &amp; Truyện Tranh</option>
+          </select>
+          <input type="text" class="search-input" placeholder="Tìm theo tựa sách, tác giả, dịch giả...">
+          <button class="search-button" aria-label="Tìm kiếm" type="button">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 11px"></i>
+          </button>
+        </div>
+
+        <!-------------------
+               Actions 
+         ------------------->
+        <div class="header-actions">
+          <div class="action-bussiness">
+            <button class="icon-btn" title="Yêu thích" type="button" data-user-action="wishlist" aria-label="Sách yêu thích">
+              <i class="fa-regular fa-heart"></i> <span class="badge-dot">4</span>
+            </button> 
+            <a href="giohang.html" class="cart-btn">
+              <button type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2">
+                    <path d="M5 7h13.79a2 2 0 0 1 1.99 2.199l-.6 6A2 2 0 0 1 18.19 17H8.64a2 2 0 0 1-1.962-1.608z"></path>
+                    <path stroke-linecap="round" d="m5 7l-.81-3.243A1 1 0 0 0 3.22 3H2m6 18h2m6 0h2"></path>
+                  </g>
+                </svg>
+                <span class="cart-dot">3</span>
+              </button>
+              <span>GIỎ HÀNG</span>
+            </a>
+          </div>
+          <div class="action-buttons"><a href="login.html" class="btn-primary">Đăng nhập</a><a href="register.html" class="btn-secondary">Đăng ký</a></div>
+        </div>
+      </div>
+
+      <!-----------
+          Nav 
+       ----------->
+       <nav class="nav-bar">
+        <div class="nav-container">
+          <div class="nav-links">
+            <a href="trangchu.html" class="nav-link">Trang Chủ</a>
+            <a href="danhmucsanpham.html?category=V%C4%83n%20H%E1%BB%8Dc%20%26%20Ti%E1%BB%83u%20Thuy%E1%BA%BFt" class="nav-link">Văn Học &amp; Tiểu Thuyết</a>
+            <a href="danhmucsanpham.html?category=Kinh%20Doanh%20-%20Kh%E1%BB%9Fi%20Nghi%E1%BB%87p" class="nav-link">Kinh Doanh - Khởi Nghiệp</a>
+            <a href="danhmucsanpham.html?category=Ph%C3%A1t%20Tri%E1%BB%83n%20B%E1%BA%A3n%20Th%C3%A2n" class="nav-link">Phát Triển Bản Thân</a>
+            <a href="danhmucsanpham.html?category=Thi%E1%BA%BFu%20Nhi%20%26%20Tranh%20Truy%E1%BB%87n" class="nav-link">Thiếu Nhi &amp; Tranh Truyện</a>
+            <a href="danhmucsanpham.html?category=S%C3%A1ch%20B%C3%A1n%20Ch%E1%BA%A1y" class="nav-link">Sách Bán Chạy</a>
+            <a href="danhmucsanpham.html?category=Khuy%E1%BA%BFn%20M%C3%A3i%20%C4%90%E1%BA%B7c%20Bi%E1%BB%87t" class="nav-link">Khuyến Mãi Đặc Biệt</a>
+          </div>
+        </div>
+       </nav>
+    </header>
+    <main class="sv-w-full sv-bg-background sv-min-h-screen sv-pt-32 member-main member-main-order-success" id="member-main"><div class="sv-flex sv-flex-col sv-w-full">
+<div class="sv-relative sv-w-full sv-overflow-hidden sv-pb-10 sv-pt-4">
+<!-- Ambient Bookish Glow Elements -->
+<div class="sv-absolute sv--top-24 sv-left-1/2 sv--translate-x-1/2 sv-w-[720px] sv-h-[340px] sv-bg-gradient-to-b sv-from-primary-fixed/20 sv-via-secondary-container/15 sv-to-transparent sv-rounded-full sv-blur-3xl sv-pointer-events-none"></div>
+<div class="sv-absolute sv-top-96 sv-right-10 sv-w-96 sv-h-96 sv-bg-secondary-fixed/10 sv-rounded-full sv-blur-2xl sv-pointer-events-none"></div>
+<div class="sv-max-w-[1240px] sv-w-full sv-mx-auto sv-px-4 sm:sv-px-6 lg:sv-px-8 sv-relative member-content-shell">
+<!-- Breadcrumbs & Document Utility Bar -->
+<div class="sv-flex sv-flex-wrap sv-items-center sv-justify-between sv-gap-4 sv-mb-6 sv-text-on-surface-variant sv-font-label-md">
+<div class="sv-flex sv-items-center sv-gap-2 sv-text-xs sv-uppercase sv-tracking-widest sv-text-secondary sv-font-semibold">
+<a class="hover:sv-text-primary sv-transition-colors" href="trangchu.html">Trang Chủ</a>
+<span class="sv-text-outline-variant">/</span>
+<a class="hover:sv-text-primary sv-transition-colors" href="giohang.html">Giỏ Hàng</a>
+<span class="sv-text-outline-variant">/</span>
+<span class="sv-text-primary sv-font-bold">Xác Nhận Đơn Hàng</span>
+</div>
+<div class="sv-flex sv-items-center sv-gap-3">
+<button class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-3.5 sv-py-1.5 sv-rounded-full sv-bg-surface-container hover:sv-bg-surface-container-high sv-text-on-surface sv-transition-all sv-text-xs sv-font-medium sv-shadow-sm" id="btn-print" type="button">
+<span class="material-symbols-outlined sv-text-[17px] sv-text-secondary">print</span>
+<span class="">In biên nhận / Hóa đơn điện tử</span>
+</button>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-px-3 sv-py-1 sv-rounded-full sv-bg-surface-container sv-text-xs sv-text-secondary">
+<span class="material-symbols-outlined sv-text-[15px] sv-text-primary">verified</span>
+<span class="">Đơn hàng bảo chứng</span>
+</div>
+</div>
+</div>
+<!-- SECTION 1: HERO CONFIRMATION & CELEBRATION CARD -->
+<div class="sv-relative sv-w-full sv-rounded-2xl sv-bg-surface-container-lowest sv-shadow-[0_8px_30px_rgba(30,58,47,0.06)] sv-overflow-hidden sv-mb-8">
+<!-- Bookmark Graphic Tag -->
+<div class="sv-absolute sv-top-0 sv-right-12 sv-hidden md:sv-flex sv-flex-col sv-items-center sv-z-10">
+<div class="sv-bg-primary sv-text-on-primary sv-text-[10px] sv-tracking-widest sv-uppercase sv-font-bold sv-px-3 sv-py-2.5 sv-rounded-b-md sv-shadow-md sv-flex sv-items-center sv-gap-1">
+<span class="material-symbols-outlined sv-text-[14px]">auto_stories</span>
+<span class="">Đơn Hàng #SV-8942</span>
+</div>
+</div>
+<div class="sv-p-8 sm:sv-p-12 sv-flex sv-flex-col sv-items-center sv-text-center sv-max-w-3xl sv-mx-auto">
+<!-- Artisanal Seal Icon -->
+<div class="sv-relative sv-mb-6">
+<div class="sv-w-20 sv-h-20 sv-rounded-full sv-bg-primary-container/10 sv-flex sv-items-center sv-justify-center sv-text-primary-container sv-shadow-inner sv-ring-8 sv-ring-primary-container/5">
+<span class="material-symbols-outlined sv-text-[44px] order-success-inline-3">check_circle</span>
+</div>
+<div class="sv-absolute sv--bottom-1 sv--right-1 sv-w-7 sv-h-7 sv-rounded-full sv-bg-surface-container-lowest sv-shadow-md sv-flex sv-items-center sv-justify-center sv-text-primary">
+<span class="material-symbols-outlined sv-text-[18px]">verified_user</span>
+</div>
+</div>
+<!-- Main Serif Headline -->
+<span class="sv-font-label-sm sv-text-secondary sv-tracking-widest sv-uppercase sv-mb-2 sv-font-bold">Xác Nhận Giao Dịch Thành Công</span>
+<h1 class="sv-font-serif sv-text-3xl sm:sv-text-4xl lg:sv-text-5xl sv-text-primary sv-font-bold sv-tracking-tight sv-mb-4">
+            Đặt Hàng Thành Công!
+          </h1>
+<!-- Warm Personal Note -->
+<p class="sv-text-body-md sv-text-on-surface-variant sv-leading-relaxed sv-mb-6 sv-font-normal">
+            Cảm ơn cậu <strong class="sv-text-on-surface sv-font-semibold">Lại Sơn Vỹ</strong> đã trao gửi niềm tin vào những trang sách của <span class="sv-font-serif sv-text-primary sv-font-medium sv-italic">Tiệm Sách Sơn Vỹ</span>. Chúng tôi đã tiếp nhận đơn hàng và đang chuẩn bị tuyển chọn, kiểm định từng gáy sách và bọc gói cẩn thận.
+          </p>
+<!-- Order ID & Meta Plaque -->
+<div class="sv-inline-flex sv-flex-wrap sv-items-center sv-justify-center sv-gap-3 sm:sv-gap-6 sv-bg-surface-container-low sv-px-5 sv-py-3 sv-rounded-xl sv-shadow-sm sv-mb-8 sv-w-full sm:sv-w-auto">
+<div class="sv-flex sv-items-center sv-gap-2">
+<span class="sv-text-xs sv-uppercase sv-tracking-wider sv-text-secondary sv-font-semibold">Mã đơn:</span>
+<span class="sv-font-serif sv-text-lg sv-font-bold sv-text-primary sv-tracking-wide" id="order-code">#SV-8942</span>
+<button class="sv-p-1 sv-rounded-md sv-text-secondary hover:sv-text-primary hover:sv-bg-surface sv-transition-colors" id="btn-copy" title="Sao chép mã" type="button">
+<span class="material-symbols-outlined sv-text-[18px]">content_copy</span>
+</button>
+</div>
+<span class="sv-hidden sm:sv-inline sv-text-outline-variant">•</span>
+<div class="sv-flex sv-items-center sv-gap-1.5 sv-text-xs sv-text-on-surface-variant sv-font-medium">
+<span class="material-symbols-outlined sv-text-[16px] sv-text-secondary">schedule</span>
+<span class="">15:30 - Hôm nay, 16/05/2025</span>
+</div>
+<span class="sv-hidden sm:sv-inline sv-text-outline-variant">•</span>
+<div class="sv-flex sv-items-center sv-gap-1.5">
+<span class="sv-w-2 sv-h-2 sv-rounded-full sv-bg-primary sv-animate-pulse"></span>
+<span class="sv-text-xs sv-font-semibold sv-text-primary">Đã thanh toán (VietQR)</span>
+</div>
+</div>
+<!-- Call to Action Buttons -->
+<div class="sv-flex sv-flex-col sm:sv-flex-row sv-items-center sv-justify-center sv-gap-3.5 sv-w-full sv-max-w-md">
+<a class="sv-w-full sm:sv-w-1/2 sv-inline-flex sv-items-center sv-justify-center sv-gap-2 sv-bg-primary-container sv-text-on-primary sv-py-3.5 sv-px-6 sv-rounded-full sv-font-label-md sv-text-sm sv-font-semibold sv-tracking-wide hover:sv-bg-primary sv-transition-all sv-shadow-[0_4px_14px_rgba(30,58,47,0.2)]" href="my-orders.html">
+<span class="material-symbols-outlined sv-text-[19px]">receipt_long</span>
+<span class="">Chi Tiết Đơn Hàng</span>
+</a>
+<a class="sv-w-full sm:sv-w-1/2 sv-inline-flex sv-items-center sv-justify-center sv-gap-2 sv-bg-surface-container-high sv-text-primary sv-py-3.5 sv-px-6 sv-rounded-full sv-font-label-md sv-text-sm sv-font-semibold sv-tracking-wide hover:sv-bg-surface-variant sv-transition-all sv-shadow-sm" href="trangchu.html">
+<span class="material-symbols-outlined sv-text-[19px]">local_mall</span>
+<span class="">Tiếp Tục Mua Sắm</span>
+</a>
+</div>
+</div>
+</div>
+<!-- SECTION 2: TIMELINE PROGRESSION (4 STEPS) -->
+<div class="sv-w-full sv-bg-surface-container-lowest sv-rounded-2xl sv-p-6 sm:sv-p-8 sv-shadow-[0_4px_24px_rgba(30,58,47,0.04)] sv-mb-8">
+<div class="sv-flex sv-items-center sv-justify-between sv-mb-8 sv-pb-4">
+<div class="sv-flex sv-items-center sv-gap-2.5">
+<span class="material-symbols-outlined sv-text-primary sv-text-[24px]">local_shipping</span>
+<h2 class="sv-font-serif sv-text-xl sm:sv-text-2xl sv-font-bold sv-text-primary">Tiến Độ Xử Lý &amp; Giao Hàng</h2>
+</div>
+<span class="sv-text-xs sv-font-semibold sv-px-3 sv-py-1 sv-bg-surface-container sv-rounded-full sv-text-secondary">Dự kiến giao: 18 - 19/05/2025</span>
+</div>
+<div class="sv-grid sv-grid-cols-1 md:sv-grid-cols-4 sv-gap-6 sv-relative">
+<!-- Step 1: Hoàn tất -->
+<div class="sv-flex md:sv-flex-col sv-items-start sv-gap-4 sv-relative">
+<div class="sv-flex sv-items-center sv-justify-center sv-w-11 sv-h-11 sv-rounded-full sv-bg-primary-container sv-text-on-primary sv-shrink-0 sv-shadow-md sv-ring-4 sv-ring-primary-container/15">
+<span class="material-symbols-outlined sv-text-[20px]">done</span>
+</div>
+<div class="sv-flex sv-flex-col">
+<span class="sv-text-[11px] sv-font-bold sv-uppercase sv-tracking-wider sv-text-primary">Bước 01 • Hoàn thành</span>
+<h3 class="sv-font-serif sv-text-base sv-font-bold sv-text-primary sv-mt-0.5">Tiếp Nhận Đơn Hàng</h3>
+<p class="sv-text-xs sv-text-on-surface-variant sv-mt-1 sv-leading-relaxed">Hệ thống đã nhận lệnh lúc 15:30. Đơn được chuyển sang phân khu kho tuyển chọn.</p>
+</div>
+</div>
+<!-- Step 2: Đang xử lý -->
+<div class="sv-flex md:sv-flex-col sv-items-start sv-gap-4 sv-relative">
+<div class="sv-flex sv-items-center sv-justify-center sv-w-11 sv-h-11 sv-rounded-full sv-bg-secondary-container sv-text-tertiary sv-shrink-0 sv-shadow-md sv-ring-4 sv-ring-secondary-container/30 sv-animate-pulse">
+<span class="material-symbols-outlined sv-text-[20px]">package_2</span>
+</div>
+<div class="sv-flex sv-flex-col">
+<span class="sv-text-[11px] sv-font-bold sv-uppercase sv-tracking-wider sv-text-tertiary">Bước 02 • Đang thực hiện</span>
+<h3 class="sv-font-serif sv-text-base sv-font-bold sv-text-primary sv-mt-0.5">Đóng Gói Thủ Công</h3>
+<p class="sv-text-xs sv-text-on-surface-variant sv-mt-1 sv-leading-relaxed">Bọc 3 lớp giấy Kraft vintage, chống sốc góc gáy &amp; niêm phong sáp thơm Sơn Vỹ.</p>
+</div>
+</div>
+<!-- Step 3: Kế tiếp -->
+<div class="sv-flex md:sv-flex-col sv-items-start sv-gap-4 sv-relative sv-opacity-70">
+<div class="sv-flex sv-items-center sv-justify-center sv-w-11 sv-h-11 sv-rounded-full sv-bg-surface-container sv-text-secondary sv-shrink-0">
+<span class="material-symbols-outlined sv-text-[20px]">local_shipping</span>
+</div>
+<div class="sv-flex sv-flex-col">
+<span class="sv-text-[11px] sv-font-bold sv-uppercase sv-tracking-wider sv-text-secondary">Bước 03 • Tiếp theo</span>
+<h3 class="sv-font-serif sv-text-base sv-font-semibold sv-text-primary sv-mt-0.5">Bàn Giao Vận Chuyển</h3>
+<p class="sv-text-xs sv-text-on-surface-variant sv-mt-1 sv-leading-relaxed">VNPost Express tiếp nhận kiện hàng và cung cấp mã vận đơn theo dõi.</p>
+</div>
+</div>
+<!-- Step 4: Giao tới tay -->
+<div class="sv-flex md:sv-flex-col sv-items-start sv-gap-4 sv-relative sv-opacity-50">
+<div class="sv-flex sv-items-center sv-justify-center sv-w-11 sv-h-11 sv-rounded-full sv-bg-surface-container sv-text-secondary sv-shrink-0">
+<span class="material-symbols-outlined sv-text-[20px]">home_pin</span>
+</div>
+<div class="sv-flex sv-flex-col">
+<span class="sv-text-[11px] sv-font-bold sv-uppercase sv-tracking-wider sv-text-secondary">Bước 04 • Về đích</span>
+<h3 class="sv-font-serif sv-text-base sv-font-semibold sv-text-primary sv-mt-0.5">Giao Tới Bạn Đọc</h3>
+<p class="sv-text-xs sv-text-on-surface-variant sv-mt-1 sv-leading-relaxed">Kiểm tra kiện hàng nguyên vẹn trước khi ký nhận tại Long Khánh, Đồng Nai.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: ORDER OVERVIEW CARD (SPLIT LAYOUT) -->
+<div class="sv-grid sv-grid-cols-1 lg:sv-grid-cols-12 sv-gap-8 sv-mb-8">
+<!-- LEFT COLUMN: Shipping & Customer Logistics Info (5 cols) -->
+<div class="lg:sv-col-span-5 sv-flex sv-flex-col sv-gap-6">
+<!-- Card: Thông tin người nhận & Địa chỉ -->
+<div class="sv-bg-surface-container-lowest sv-rounded-2xl sv-p-6 sv-shadow-[0_4px_24px_rgba(30,58,47,0.04)] sv-flex sv-flex-col sv-gap-5">
+<div class="sv-flex sv-items-center sv-justify-between sv-pb-3">
+<div class="sv-flex sv-items-center sv-gap-2">
+<span class="material-symbols-outlined sv-text-primary sv-text-[22px]">pin_drop</span>
+<h3 class="sv-font-serif sv-text-lg sv-font-bold sv-text-primary">Thông Tin Giao Nhận</h3>
+</div>
+<span class="sv-text-[11px] sv-px-2.5 sv-py-0.5 sv-rounded-full sv-bg-surface-container sv-text-secondary sv-font-medium">Tiêu chuẩn</span>
+</div>
+<div class="sv-flex sv-flex-col sv-gap-3.5 sv-text-sm">
+<div class="sv-flex sv-items-start sv-gap-3">
+<span class="material-symbols-outlined sv-text-secondary sv-text-[20px] sv-shrink-0 sv-mt-0.5">person</span>
+<div>
+<div class="sv-font-semibold sv-text-on-surface sv-text-base">Lại Sơn Vỹ</div>
+<div class="sv-text-on-surface-variant sv-text-xs">Số điện thoại: <strong class="sv-text-on-surface sv-font-medium">0912 345 678</strong>
+</div>
+</div>
+</div>
+<div class="sv-flex sv-items-start sv-gap-3">
+<span class="material-symbols-outlined sv-text-secondary sv-text-[20px] sv-shrink-0 sv-mt-0.5">mark_email_read</span>
+<div class="sv-flex sv-flex-col">
+<div class="sv-text-on-surface sv-font-medium">sonvy@gmail.com</div>
+<div class="sv-inline-flex sv-items-center sv-gap-1 sv-text-[11px] sv-text-primary sv-font-medium sv-mt-0.5">
+<span class="material-symbols-outlined sv-text-[14px]">check</span>
+<span class="">Đã gửi email xác nhận chi tiết đơn hàng</span>
+</div>
+</div>
+</div>
+<div class="sv-flex sv-items-start sv-gap-3">
+<span class="material-symbols-outlined sv-text-secondary sv-text-[20px] sv-shrink-0 sv-mt-0.5">home</span>
+<div>
+<span class="sv-text-xs sv-uppercase sv-text-secondary sv-font-bold sv-block sv-mb-0.5">Địa chỉ nhận sách:</span>
+<p class="sv-text-on-surface sv-text-sm sv-leading-relaxed sv-font-normal">
+                    Tổ 34, phường Bình Lộc, thành phố Long Khánh, tỉnh Đồng Nai
+                  </p>
+</div>
+</div>
+<div class="sv-flex sv-items-start sv-gap-3 sv-pt-2">
+<span class="material-symbols-outlined sv-text-secondary sv-text-[20px] sv-shrink-0 sv-mt-0.5">local_shipping</span>
+<div>
+<span class="sv-text-xs sv-uppercase sv-text-secondary sv-font-bold sv-block sv-mb-0.5">Đối tác chuyển phát:</span>
+<p class="sv-text-on-surface sv-text-sm sv-font-semibold">VNPost Express - Giao hàng tiêu chuẩn</p>
+<p class="sv-text-xs sv-text-on-surface-variant sv-mt-0.5">Thời gian dự kiến: 2 - 3 ngày làm việc (không tính CN)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card: Thông tin thanh toán & Ghi chú -->
+<div class="sv-bg-surface-container-lowest sv-rounded-2xl sv-p-6 sv-shadow-[0_4px_24px_rgba(30,58,47,0.04)] sv-flex sv-flex-col sv-gap-4">
+<div class="sv-flex sv-items-center sv-justify-between sv-pb-2">
+<div class="sv-flex sv-items-center sv-gap-2">
+<span class="material-symbols-outlined sv-text-primary sv-text-[22px]">account_balance_wallet</span>
+<h3 class="sv-font-serif sv-text-lg sv-font-bold sv-text-primary">Phương Thức Thanh Toán</h3>
+</div>
+<span class="sv-inline-flex sv-items-center sv-gap-1 sv-text-[11px] sv-font-bold sv-px-2.5 sv-py-1 sv-rounded-full sv-bg-primary-container/10 sv-text-primary-container">
+<span class="material-symbols-outlined sv-text-[14px]">done_all</span>
+<span class="">Đã thanh toán</span>
+</span>
+</div>
+<div class="sv-p-3.5 sv-bg-surface-container-low sv-rounded-xl sv-flex sv-items-center sv-justify-between">
+<div class="sv-flex sv-items-center sv-gap-3">
+<div class="sv-w-10 sv-h-10 sv-rounded-lg sv-bg-surface-container-lowest sv-flex sv-items-center sv-justify-center sv-text-primary sv-shadow-sm sv-font-bold sv-text-xs sv-tracking-wider">
+                  QR
+                </div>
+<div>
+<div class="sv-font-semibold sv-text-sm sv-text-primary">Chuyển khoản VietQR</div>
+<div class="sv-text-xs sv-text-on-surface-variant">Giao dịch tham chiếu: <span class="sv-font-mono sv-text-on-surface">MBB-9842-8921</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined sv-text-primary sv-text-[22px]">check_circle</span>
+</div>
+<!-- Ghi chú bảo quản tiệm sách -->
+<div class="sv-p-3.5 sv-rounded-xl sv-bg-surface-container sv-flex sv-items-start sv-gap-3">
+<span class="material-symbols-outlined sv-text-secondary sv-text-[20px] sv-shrink-0 sv-mt-0.5">menu_book</span>
+<div class="sv-text-xs sv-text-on-surface-variant sv-leading-relaxed">
+<strong class="sv-text-on-surface">Đóng gói chuẩn Vintage Sơn Vỹ:</strong> Tất cả ấn phẩm được niêm phong chống ẩm, chèn lót góc bìa cẩn thận chống móp gáy trong suốt chặng đường.
+              </div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Book Summary & Financial Breakdown (7 cols) -->
+<div class="lg:sv-col-span-7 sv-flex sv-flex-col">
+<div class="sv-bg-surface-container-lowest sv-rounded-2xl sv-p-6 sm:sv-p-8 sv-shadow-[0_4px_24px_rgba(30,58,47,0.04)] sv-flex sv-flex-col sv-h-full">
+<div class="sv-flex sv-items-center sv-justify-between sv-pb-4 sv-mb-4">
+<div class="sv-flex sv-items-center sv-gap-2.5">
+<span class="material-symbols-outlined sv-text-primary sv-text-[22px]">collections_bookmark</span>
+<h3 class="sv-font-serif sv-text-xl sv-font-bold sv-text-primary">Tuyển Tập Ấn Phẩm Trong Đơn</h3>
+</div>
+<span class="sv-text-xs sv-font-semibold sv-px-2.5 sv-py-1 sv-rounded-full sv-bg-surface-container sv-text-secondary">03 Tựa sách (04 Cuốn)</span>
+</div>
+<!-- List of Ordered Items -->
+<div class="sv-flex sv-flex-col sv-gap-4 sv-mb-6 sv-divide-y sv-divide-surface-container">
+<!-- Item 1: Rừng Na Uy -->
+<div class="sv-pt-3 first:sv-pt-0 sv-flex sv-items-start sv-gap-4">
+<img class="sv-w-16 sv-h-22 sm:sv-w-20 sm:sv-h-28 sv-object-cover sv-rounded-md sv-shadow-sm sv-shrink-0 sv-bg-surface-container-high" data-alt="Bìa sách Rừng Na Uy Norwegian Wood bản bìa cứng giới hạn bọc vải màu xanh rêu cổ điển đặt trên bàn gỗ ấm cúng của Tiệm Sách Sơn Vỹ" src="assets/member-pages/ba817de458f2.jpg" alt="Bìa sách Rừng Na Uy Norwegian Wood bản bìa cứng giới hạn bọc vải màu xanh rêu cổ điển đặt trên bàn gỗ ấm cúng của Tiệm Sách Sơn Vỹ">
+<div class="sv-flex-1 sv-min-w-0">
+<div class="sv-flex sv-items-start sv-justify-between sv-gap-2">
+<h4 class="sv-font-serif sv-font-bold sv-text-sm sm:sv-text-base sv-text-primary sv-leading-snug">Rừng Na Uy (Norwegian Wood)</h4>
+<span class="sv-font-semibold sv-text-sm sm:sv-text-base sv-text-primary sv-whitespace-nowrap">245.000đ</span>
+</div>
+<p class="sv-text-xs sv-text-secondary sv-mt-0.5">Tác giả: Haruki Murakami • Dịch giả: Trịnh Lữ</p>
+<div class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-2 sv-py-0.5 sv-bg-surface-container sv-rounded sv-text-[11px] sv-text-on-surface-variant sv-font-medium sv-mt-2">
+<span class="material-symbols-outlined sv-text-[13px] sv-text-secondary">star</span>
+<span class="">Bản bìa cứng giới hạn • Kèm Boxset thủ công</span>
+</div>
+<div class="sv-text-xs sv-text-on-surface-variant sv-mt-1.5">Số lượng: <strong class="sv-text-on-surface sv-font-semibold">1</strong>
+</div>
+</div>
+</div>
+<!-- Item 2: Cây Cam Ngọt Của Tôi -->
+<div class="sv-pt-4 sv-flex sv-items-start sv-gap-4">
+<img class="sv-w-16 sv-h-22 sm:sv-w-20 sm:sv-h-28 sv-object-cover sv-rounded-md sv-shadow-sm sv-shrink-0 sv-bg-surface-container-high" data-alt="Bìa sách Cây Cam Ngọt Của Tôi bản minh họa màu nước ấm áp trang nhã phong cách cổ điển của Tiệm Sách Sơn Vỹ" src="assets/member-pages/9c2aee0e1724.jpg" alt="Bìa sách Cây Cam Ngọt Của Tôi bản minh họa màu nước ấm áp trang nhã phong cách cổ điển của Tiệm Sách Sơn Vỹ">
+<div class="sv-flex-1 sv-min-w-0">
+<div class="sv-flex sv-items-start sv-justify-between sv-gap-2">
+<h4 class="sv-font-serif sv-font-bold sv-text-sm sm:sv-text-base sv-text-primary sv-leading-snug">Cây Cam Ngọt Của Tôi</h4>
+<span class="sv-font-semibold sv-text-sm sm:sv-text-base sv-text-primary sv-whitespace-nowrap">172.000đ</span>
+</div>
+<p class="sv-text-xs sv-text-secondary sv-mt-0.5">Tác giả: José Mauro de Vasconcelos</p>
+<div class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-2 sv-py-0.5 sv-bg-surface-container sv-rounded sv-text-[11px] sv-text-on-surface-variant sv-font-medium sv-mt-2">
+<span class="material-symbols-outlined sv-text-[13px] sv-text-secondary">palette</span>
+<span class="">Bản in minh họa màu 4 sắc cao cấp</span>
+</div>
+<div class="sv-text-xs sv-text-on-surface-variant sv-mt-1.5">Số lượng: <strong class="sv-text-on-surface sv-font-semibold">2</strong> x 86.000đ</div>
+</div>
+</div>
+<!-- Item 3: Dune Messiah -->
+<div class="sv-pt-4 sv-flex sv-items-start sv-gap-4">
+<img class="sv-w-16 sv-h-22 sm:sv-w-20 sm:sv-h-28 sv-object-cover sv-rounded-md sv-shadow-sm sv-shrink-0 sv-bg-surface-container-high" data-alt="Bìa tiểu thuyết Dune Messiah Xứ Cát bản dịch kinh điển bìa màu vàng cát sang trọng tinh tế trên kệ sách gỗ" src="assets/member-pages/afcb8315264c.jpg" alt="Bìa tiểu thuyết Dune Messiah Xứ Cát bản dịch kinh điển bìa màu vàng cát sang trọng tinh tế trên kệ sách gỗ">
+<div class="sv-flex-1 sv-min-w-0">
+<div class="sv-flex sv-items-start sv-justify-between sv-gap-2">
+<h4 class="sv-font-serif sv-font-bold sv-text-sm sm:sv-text-base sv-text-primary sv-leading-snug">Dune Messiah - Bản Dịch Kinh Điển</h4>
+<span class="sv-font-semibold sv-text-sm sm:sv-text-base sv-text-primary sv-whitespace-nowrap">168.000đ</span>
+</div>
+<p class="sv-text-xs sv-text-secondary sv-mt-0.5">Tác giả: Frank Herbert • Vũ trụ Frank Herbert</p>
+<div class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-2 sv-py-0.5 sv-bg-surface-container sv-rounded sv-text-[11px] sv-text-on-surface-variant sv-font-medium sv-mt-2">
+<span class="material-symbols-outlined sv-text-[13px] sv-text-secondary">bookmark</span>
+<span class="">Bản bìa mềm tay gập nghệ thuật</span>
+</div>
+<div class="sv-text-xs sv-text-on-surface-variant sv-mt-1.5">Số lượng: <strong class="sv-text-on-surface sv-font-semibold">1</strong>
+</div>
+</div>
+</div>
+</div>
+<!-- Bonus Gift Box -->
+<div class="sv-p-3.5 sv-bg-surface-container-low sv-rounded-xl sv-mb-6">
+<div class="sv-flex sv-items-center sv-gap-2 sv-mb-2">
+<span class="material-symbols-outlined sv-text-secondary sv-text-[20px]">card_giftcard</span>
+<span class="sv-font-label-md sv-text-xs sv-uppercase sv-tracking-wider sv-text-primary sv-font-bold">Quà Tặng Kèm Tri Ân Bạn Đọc:</span>
+</div>
+<ul class="sv-text-xs sv-text-on-surface-variant sv-space-y-1.5 sv-pl-6 sv-list-disc">
+<li class="">
+<strong class="sv-text-on-surface sv-font-medium">01 Bookmark gỗ tự nhiên</strong> khắc laser thủ công tên: <em>Sơn Vỹ</em>
+</li>
+<li class="">
+<strong class="sv-text-on-surface sv-font-medium">01 Thiệp thư gửi người yêu sách</strong> in trên giấy mỹ thuật cao cấp kèm trích dẫn văn học</li>
+</ul>
+</div>
+<!-- Price Breakdown Calculation -->
+<div class="sv-mt-auto sv-pt-4 sv-flex sv-flex-col sv-gap-2.5 sv-text-sm sv-bg-surface-container-low sv-p-5 sv-rounded-xl">
+<div class="sv-flex sv-justify-between sv-text-on-surface-variant">
+<span class="">Tạm tính (4 tác phẩm)</span>
+<span class="sv-font-medium sv-text-on-surface">585.000đ</span>
+</div>
+<div class="sv-flex sv-justify-between sv-text-on-surface-variant">
+<div class="sv-flex sv-items-center sv-gap-1">
+<span class="">Chiết khấu hội viên thân thiết</span>
+<span class="sv-text-[11px] sv-px-1.5 sv-py-0.2 sv-bg-secondary-container sv-text-tertiary sv-rounded sv-font-semibold">-10%</span>
+</div>
+<span class="sv-font-medium sv-text-tertiary">-58.500đ</span>
+</div>
+<div class="sv-flex sv-justify-between sv-text-on-surface-variant">
+<div class="sv-flex sv-items-center sv-gap-1">
+<span class="">Mã ưu đãi (BOOKNOOK2025)</span>
+<span class="sv-text-[11px] sv-px-1.5 sv-py-0.2 sv-bg-surface-container-highest sv-text-secondary sv-rounded">Voucher</span>
+</div>
+<span class="sv-font-medium sv-text-tertiary">-20.000đ</span>
+</div>
+<div class="sv-flex sv-justify-between sv-text-on-surface-variant">
+<span class="">Phí vận chuyển toàn quốc</span>
+<span class="sv-font-medium sv-text-primary">Miễn phí (0đ)</span>
+</div>
+<div class="sv-pt-3 sv-mt-1 sv-flex sv-items-baseline sv-justify-between">
+<div>
+<span class="sv-font-serif sv-text-base sm:sv-text-lg sv-font-bold sv-text-primary sv-block">TỔNG TIỀN THANH TOÁN</span>
+<span class="sv-text-[11px] sv-text-secondary sv-font-medium">Đã bao gồm thuế GTGT &amp; dịch vụ bọc sách</span>
+</div>
+<div class="sv-text-right">
+<span class="sv-font-serif sv-text-2xl sm:sv-text-3xl sv-font-extrabold sv-text-primary sv-tracking-tight">506.500đ</span>
+<span class="sv-block sv-text-[11px] sv-text-primary sv-font-bold">Thành công</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: COMMITMENTS & READER PRIVILEGES BANNER -->
+<div class="sv-w-full sv-bg-surface-container-lowest sv-rounded-2xl sv-p-6 sm:sv-p-8 sv-shadow-[0_4px_24px_rgba(30,58,47,0.04)] sv-mb-4">
+<div class="sv-grid sv-grid-cols-1 md:sv-grid-cols-3 sv-gap-6 sv-divide-y md:sv-divide-y-0 md:sv-divide-x sv-divide-surface-container">
+<div class="sv-flex sv-items-start sv-gap-3.5 sv-pt-4 md:sv-pt-0 first:sv-pt-0">
+<div class="sv-w-10 sv-h-10 sv-rounded-full sv-bg-surface-container sv-flex sv-items-center sv-justify-center sv-text-primary sv-shrink-0">
+<span class="material-symbols-outlined sv-text-[22px]">published_with_changes</span>
+</div>
+<div>
+<h4 class="sv-font-serif sv-text-base sv-font-bold sv-text-primary">Đổi Trả An Tâm 7 Ngày</h4>
+<p class="sv-text-xs sv-text-on-surface-variant sv-mt-1 sv-leading-relaxed">
+                Hỗ trợ đổi mới ngay lập tức nếu ấn phẩm gặp lỗi in ấn, nhầm trang, cong vênh gáy hoặc rách bìa trong quá trình vận chuyển.
+              </p>
+</div>
+</div>
+<div class="sv-flex sv-items-start sv-gap-3.5 sv-pt-4 md:sv-pt-0 md:sv-pl-6">
+<div class="sv-w-10 sv-h-10 sv-rounded-full sv-bg-surface-container sv-flex sv-items-center sv-justify-center sv-text-primary sv-shrink-0">
+<span class="material-symbols-outlined sv-text-[22px]">support_agent</span>
+</div>
+<div>
+<h4 class="sv-font-serif sv-text-base sv-font-bold sv-text-primary">Hỗ Trợ Bạn Đọc 24/7</h4>
+<p class="sv-text-xs sv-text-on-surface-variant sv-mt-1 sv-leading-relaxed">
+                Hotline hỗ trợ đơn hàng: <strong class="sv-text-primary sv-font-bold">1900 6868</strong> (08:30 - 22:00) hoặc phản hồi qua email <span class="sv-text-secondary sv-underline">trogiup@tiemsachsonvy.vn</span>.
+              </p>
+</div>
+</div>
+<div class="sv-flex sv-items-start sv-gap-3.5 sv-pt-4 md:sv-pt-0 md:sv-pl-6">
+<div class="sv-w-10 sv-h-10 sv-rounded-full sv-bg-surface-container sv-flex sv-items-center sv-justify-center sv-text-primary sv-shrink-0">
+<span class="material-symbols-outlined sv-text-[22px]">loyalty</span>
+</div>
+<div>
+<h4 class="sv-font-serif sv-text-base sv-font-bold sv-text-primary">Tích Lũy Điểm Tri Thức</h4>
+<p class="sv-text-xs sv-text-on-surface-variant sv-mt-1 sv-leading-relaxed">
+                Đơn hàng tích lũy thêm <strong class="sv-text-primary sv-font-bold">+51 Điểm Hoa Sơn Vỹ</strong> vào tài khoản bạn đọc thân thiết của Lại Sơn Vỹ.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Script for Micro-interactions -->
+</div></main><section>
+          <div class="section-header section-main">
+            <div class="main-content">
+              <div class="prvivilege">
+                <div class="privi-top">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
+                    <path d="M0 0h48v48H0z" fill="none"></path>
+                      <g fill="none">
+                        <path stroke="currentColor" stroke-linejoin="round" stroke-width="4" d="m6 42l8.674-24.736L31 34.038z"></path>
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m23 19l5-5q4-4 1-7m0 18l5-5q5-5 10 0"></path>
+                        <path fill="currentColor" d="M20 7a2 2 0 1 0 0-4a2 2 0 0 0 0 4m22-1a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 23a2 2 0 1 0 0-4a2 2 0 0 0 0 4m-3 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4"></path>
+                      </g>
+                  </svg>
+                  <span class="privi-text">Đặc Quyền Thành Viên Mới</span>
+                </div>
+                <h3 class="privi-title">
+                  Gia Nhập Câu Lạc Bộ Bạn Đọc Sơn Vỹ
+                </h3>
+                <p class="small-text-privi">Tặng voucher 50.000đ cho đơn hàng đầu tiên.</p>
+              </div>
+              <div class="form-voucher">
+                <div class="cta-form">
+                  <input class="input" type="text" placeholder="Nhập địa chỉ email của bạn...">
+                  <button class="btn-primary btn-voucher">
+                    Nhận voucher
+                  </button>
+                </div>
+                <small>* Cam kết không gửi thư rác. Bạn có thể hủy đăng ký bất cứ lúc nào chỉ
+                 với một cú nhấp chuột.</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <footer>
+
+      <div class="container__top">
+
+      </div>
+
+      <div class="container__main">
+        <div class="main-grid">
+          <div class="info-card">
+            <span class="title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 256 256">
+                <path d="M0 0h256v256H0z" fill="none"></path>
+                <path fill="currentColor" d="M232 48h-72a40 40 0 0 0-32 16a40 40 0 0 0-32-16H24a8 8 0 0 0-8 8v144a8 8 0 0 0 8 8h72a24 24 0 0 1 24 24a8 8 0 0 0 16 0a24 24 0 0 1 24-24h72a8 8 0 0 0 8-8V56a8 8 0 0 0-8-8M96 192H32V64h64a24 24 0 0 1 24 24v112a39.8 39.8 0 0 0-24-8m128 0h-64a39.8 39.8 0 0 0-24 8V88a24 24 0 0 1 24-24h64ZM160 88h40a8 8 0 0 1 0 16h-40a8 8 0 0 1 0-16m48 40a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8m0 32a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8"></path>
+              </svg>
+              Tiệm Sách Sơn Vỹ
+            </span>
+            <p class="content">
+              Tiệm Sách Sơn Vỹ - Lan tỏa tình yêu sách Việt. Điểm dừng chân của những tâm hồn tìm kiếm sự tĩnh tại, chiều sâu suy tưởng và vẻ đẹp tinh tế của văn hóa đọc nguyên bản.
+            </p>
+            <div class="icon">
+              <ul class="links-footer">
+                <li class="icon"><a href="#" data-user-info="Thông tin cửa hàng">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.25c-1.5-1.35-3.7-2-6.25-2h-2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2c2.55 0 4.75.65 6.25 2Zm0 0c1.5-1.35 3.7-2 6.25-2h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2c-2.55 0-4.75.65-6.25 2Z"></path>
+                  </svg>
+                </a></li>
+                <li class="icon"><a href="#" data-user-info="Thông tin cửa hàng">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path fill="currentColor" d="M16 13V5H6v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2M5 3h15a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V4a1 1 0 0 1 1-1m13 2v3h2V5zM2 19h18v2H2z"></path>
+                  </svg>
+                </a></li>
+                <li class="icon"><a href="#" data-user-info="Thông tin cửa hàng">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path fill="currentColor" d="M16 14h.5c.827 0 1.5-.673 1.5-1.5v-9c0-.827-.673-1.5-1.5-1.5h-13C2.673 2 2 2.673 2 3.5V18l5.333-4zm-9.333-2L4 14V4h12v8z"></path>
+                    <path fill="currentColor" d="M20.5 8H20v6.001c0 1.1-.893 1.993-1.99 1.999H8v.5c0 .827.673 1.5 1.5 1.5h7.167L22 22V9.5c0-.827-.673-1.5-1.5-1.5"></path>
+                  </svg>
+                </a></li>
+                <li class="icon"><a href="#" data-user-info="Thông tin cửa hàng">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
+                    <path d="M0 0h1024v1024H0z" fill="none"></path>
+                    <path fill="currentColor" d="M752 664c-28.5 0-54.8 10-75.4 26.7L469.4 540.8a160.7 160.7 0 0 0 0-57.6l207.2-149.9C697.2 350 723.5 360 752 360c66.2 0 120-53.8 120-120s-53.8-120-120-120s-120 53.8-120 120c0 11.6 1.6 22.7 4.7 33.3L439.9 415.8C410.7 377.1 364.3 352 312 352c-88.4 0-160 71.6-160 160s71.6 160 160 160c52.3 0 98.7-25.1 127.9-63.8l196.8 142.5c-3.1 10.6-4.7 21.8-4.7 33.3c0 66.2 53.8 120 120 120s120-53.8 120-120s-53.8-120-120-120m0-476c28.7 0 52 23.3 52 52s-23.3 52-52 52s-52-23.3-52-52s23.3-52 52-52M312 600c-48.5 0-88-39.5-88-88s39.5-88 88-88s88 39.5 88 88s-39.5 88-88 88m440 236c-28.7 0-52-23.3-52-52s23.3-52 52-52s52 23.3 52 52s-23.3 52-52 52"></path>
+                  </svg>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-card">
+            <h4 class="title">Khám phá tiệm</h4>
+            <ul class="list-texts">
+              <li class="text"><a href="#" data-user-info="Về chúng tôi">Về chúng tôi</a></li>
+              <li class="text"><a href="#" data-user-info="Không gian đọc sách cafe">Không gian đọc sách cafe</a></li>
+              <li class="text"><a href="#" data-user-info="Sự kiện ra mắt sách">Sự kiện ra mắt sách</a></li>
+              <li class="text"><a href="#" data-user-info="Tuyển dụng BookLover">Tuyển dụng BookLover</a></li>
+              <li class="text"><a href="#" data-user-info="Tạp chí sách Journal">Tạp chí sách Journal</a></li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4 class="title">Hỗ Trợ Bạn Đọc</h4>
+            <ul class="list-texts">
+              <li class="text"><a href="#" data-user-info="Hướng dẫn mua hàng">Hướng dẫn mua hàng</a></li>
+              <li class="text"><a href="#" data-user-info="Chính sách đổi trả &amp; bảo hành sách">Chính sách đổi trả &amp; bảo hành sách</a></li>
+              <li class="text"><a href="#" data-user-info="Biểu phí &amp; Giao nhận toàn quốc">Biểu phí &amp; Giao nhận toàn quốc</a></li>
+              <li class="text"><a href="#" data-user-info="Dịch vụ bọc sách thủ công">Dịch vụ bọc sách thủ công</a></li>
+              <li class="text"><a href="#" data-user-info="Câu hỏi thường gặp">Câu hỏi thường gặp</a></li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4 class="title">Ghé thăm &amp; Liên hệ</h4>
+            <div class="about-shop">
+              <span>
+                120, Yên Lãng
+              </span>
+              <span>
+                Giờ mở cửa: 08:30 - 22:00 mỗi ngày
+              </span>
+              <div class="hotline">
+                <span class="hotline-title">
+                  Hotline tư vấn:
+                </span>
+                <span class="telephone-number">
+                  1900 6868 - 024 3828 9999
+                </span>
+              </div>
+            </div>
+            <div class="payments">
+              <small>
+                Phương thức thanh toán an toàn:
+              </small>
+              <div class="list-icons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+                  <path d="M0 0h16v16H0z" fill="none"></path>
+                  <g fill="currentColor">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"></path>
+                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path>
+                  </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path fill="currentColor" d="M9.5 6.5v3h-3v-3zM11 5H5v6h6zm-1.5 9.5v3h-3v-3zM11 13H5v6h6zm6.5-6.5v3h-3v-3zM19 5h-6v6h6zm-6 8h1.5v1.5H13zm1.5 1.5H16V16h-1.5zM16 13h1.5v1.5H16zm-3 3h1.5v1.5H13zm1.5 1.5H16V19h-1.5zM16 16h1.5v1.5H16zm1.5-1.5H19V16h-1.5zm0 3H19V19h-1.5zM22 7h-2V4h-3V2h5zm0 15v-5h-2v3h-3v2zM2 22h5v-2H4v-3H2zM2 2v5h2V4h3V2z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path fill="currentColor" d="M5 6h18v12H5zm9 3a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3M9 8a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2v-4a2 2 0 0 1-2-2zm-8 2h2v10h16v2H1z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 48 48">
+                  <path d="M0 0h48v48H0z" fill="none"></path>
+                  <g fill="none">
+                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="4" d="M39 16V9a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h27a3 3 0 0 0 3-3v-7"></path>
+                    <rect width="20" height="16" x="22" y="16" stroke="currentColor" stroke-linejoin="round" stroke-width="4" rx="3"></rect>
+                    <circle r="2" fill="currentColor" transform="matrix(0 -1 -1 0 30 24)"></circle>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container__bottom">
+        <div class="small-text-footer">
+          <div class="copyright-text">
+            <span>© 2025 Tiệm Sách Sơn Vỹ. Giữ toàn bộ bản quyền tuyển tập.</span>
+          </div>
+          <div class="message">
+            <span>Thiết kế với cảm hứng từ những trang sách giấy ấm áp.</span>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  
+
+<script src="JS/user-core.js" defer=""></script><script src="JS/user-auth.js" defer=""></script><script src="JS/user-shop.js" defer=""></script><script src="JS/user-cart.js" defer=""></script><script src="JS/user-account.js" defer=""></script><script src="JS/user-orders.js" defer=""></script></body></html>
