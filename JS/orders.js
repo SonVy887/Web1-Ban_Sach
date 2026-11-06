@@ -287,56 +287,8 @@
   if (window.location.hash === '#analytics') switchMainTab('analytics');
 
   // ORDER DETAIL POPUP MODAL
-  function openOrderModal(orderId) {
-    // Mọi nút Xem đều mở cùng một đơn minh họa, không đọc đơn được chọn.
-    orderId = 'SV-8942';
-    const order = ordersDatabase['SV-8942'];
-
-    document.getElementById('modalOrderCode').textContent = `Chi tiết đơn hàng mẫu ${order.code}`;
-    document.getElementById('modalOrderDate').textContent = `Thời gian đặt: ${order.date} · Hệ thống kho DC-01`;
-    document.getElementById('modalCustomerName').textContent = order.customer;
-    document.getElementById('modalCustomerPhone').textContent = `Điện thoại: ${order.phone}`;
-    document.getElementById('modalCustomerAddress').textContent = `Địa chỉ: ${order.address}`;
-    document.getElementById('modalCarrier').textContent = order.carrier;
-    document.getElementById('modalPayment').textContent = `Phương thức: ${order.payment}`;
-    document.getElementById('modalBookTitle').textContent = order.book;
-    document.getElementById('modalTotalAmount').textContent = order.amount;
-    document.getElementById('modalBookSubtitle').textContent = order.bookSub;
-    document.getElementById('modalUnitAmount').textContent = order.amount;
-    document.getElementById('modalLineAmount').textContent = order.amount;
-
-    const badge = document.getElementById('modalOrderStatusBadge');
-    const actionBtn = document.getElementById('modalActionNextBtn');
-
-    if (order.status === 'unconfirmed') {
-      badge.textContent = '1. Chưa xác nhận';
-      badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300';
-      actionBtn.style.display = 'inline-flex';
-      actionBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check_circle</span><span>Xác nhận đơn</span>';
-      actionBtn.onclick = function() {
-        closeOrderModal();
-        confirmOrderStep(orderId, 'confirmed');
-      };
-    } else if (order.status === 'confirmed') {
-      badge.textContent = '2. Đã xác nhận';
-      badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200';
-      actionBtn.style.display = 'inline-flex';
-      actionBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">local_shipping</span><span>Xác nhận đã giao</span>';
-      actionBtn.onclick = function() {
-        closeOrderModal();
-        confirmOrderStep(orderId, 'delivered');
-      };
-    } else if (order.status === 'delivered') {
-      badge.textContent = '3. Đã giao thành công (Đã Khóa)';
-      badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300';
-      actionBtn.style.display = 'none';
-    } else {
-      badge.textContent = 'Đã huỷ đơn (Đã Khóa)';
-      badge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-900 border border-red-300';
-      actionBtn.style.display = 'none';
-    }
-
-    document.getElementById('orderDetailModal').classList.remove('hidden');
+  function openOrderModal() {
+    window.location.assign('chitietdonhang.html');
   }
 
   function closeOrderModal() {

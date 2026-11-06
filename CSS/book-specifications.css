@@ -1,0 +1,16 @@
+/* Nội dung tab được giới hạn theo chiều rộng khối giới thiệu. */
+.detail-page .product-tab-panel[hidden]{display:none!important}
+.detail-page .description-section{min-width:0;box-sizing:border-box}
+.detail-page .section-tabs{display:flex;flex-wrap:wrap;gap:10px}
+.detail-page .section-tabs button{max-width:100%;white-space:normal;line-height:1.5;cursor:pointer}
+#product-specifications{width:100%;max-width:100%;min-width:0;margin:18px 0 0;box-sizing:border-box}
+#product-specifications h2{font:600 22px/1.5 var(--font-serif),serif;margin:0 0 16px;color:var(--color-primary,#203d32)}
+#product-specifications .product-spec-scroll{width:100%;max-width:100%;overflow-x:auto;border:1px solid #e4dfd5;border-radius:10px;background:#fff;box-sizing:border-box}
+#product-specifications .product-spec-table{width:100%;table-layout:fixed;border-collapse:collapse;font:14px/1.6 var(--font-sans),sans-serif;color:var(--color-text-main,#203d32)}
+#product-specifications .product-spec-table th,#product-specifications .product-spec-table td{padding:13px 16px;border:0;border-bottom:1px solid #eee8de;text-align:left;vertical-align:top;overflow-wrap:anywhere;white-space:normal;box-sizing:border-box}
+#product-specifications .product-spec-table thead{background:#edf1ea;color:var(--color-primary,#203d32)}
+#product-specifications .product-spec-table th:first-child{width:26%;font-weight:600}
+#product-specifications .product-spec-table tbody tr:last-child>*{border-bottom:0}
+#product-specifications .product-spec-table tbody tr:nth-child(even){background:#fbfaf7}
+#product-care{margin-top:18px}
+@media(max-width:600px){#product-specifications h2{font-size:19px}#product-specifications .product-spec-table{font-size:12px}#product-specifications .product-spec-table th,#product-specifications .product-spec-table td{padding:10px 8px}#product-specifications .product-spec-table th:first-child{width:29%}}
