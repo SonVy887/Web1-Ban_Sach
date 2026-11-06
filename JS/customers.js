@@ -54,14 +54,17 @@
     // Không cập nhật danh sách mẫu, không gửi yêu cầu và không lưu thông tin.
   });
   dialog.addEventListener('close', () => trigger?.focus());
-  // Luôn hiện cùng hai tài khoản mẫu, không so khớp từ khóa/trạng thái.
+  // Bộ lọc chỉ thông báo mô phỏng, luôn giữ đầy đủ danh sách mẫu.
   function applyDemoFilter(event) {
     event?.preventDefault();
-    document.querySelectorAll('tr[data-user-id]').forEach((row, index) => {
-      row.hidden = index >= 2;
+    const rows = document.querySelectorAll('tr[data-user-id]');
+    rows.forEach(row => {
+      row.hidden = false;
+      row.style.removeProperty('display');
     });
     document.getElementById('users-empty').hidden = true;
-    document.getElementById('users-count').textContent = 'Kết quả lọc: 2 tài khoản';
+    document.getElementById('users-count').textContent = `Hiển thị ${rows.length} tài khoản mẫu.`;
+    notify('Áp dụng bộ lọc thành công (mô phỏng).');
   }
   document.getElementById('apply-user-filter')?.addEventListener('click', applyDemoFilter);
   document.getElementById('user-status-filter').addEventListener('change', applyDemoFilter);

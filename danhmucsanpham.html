@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="CSS/category.css" />
     <link rel="stylesheet" href="CSS/user-demo.css" />
     <link rel="stylesheet" href="CSS/catalog-filters.css" />
+    <link rel="stylesheet" href="CSS/catalog-price-inputs.css" />
   </head>
   <body data-user-page="danhmucsanpham">
     <header class="header">
@@ -232,21 +233,12 @@
               Boxset</label
             >
           </div>
-          <div class="filter-group">
-            <h3>Khoảng giá</h3>
-            <label
-              ><input type="radio" name="price" value="all" checked /> Tất cả
-              mức giá</label
-            ><label
-              ><input type="radio" name="price" value="under100" /> Dưới
-              100.000đ</label
-            ><label
-              ><input type="radio" name="price" value="range100300" /> 100.000đ
-              - 300.000đ</label
-            ><label
-              ><input type="radio" name="price" value="over300" /> Trên
-              300.000đ</label
-            >
+          <div class="filter-group catalog-price-group">
+            <h3>Khoảng giá (VNĐ)</h3>
+            <div class="catalog-price-inputs">
+              <label for="catalog-price-min">Giá từ<div class="catalog-price-wrap"><input id="catalog-price-min" type="text" name="min-price" inputmode="numeric" placeholder="Ví dụ: 100.000" data-catalog-money /><span>đ</span></div></label>
+              <label for="catalog-price-max">Giá đến<div class="catalog-price-wrap"><input id="catalog-price-max" type="text" name="max-price" inputmode="numeric" placeholder="Ví dụ: 300.000" data-catalog-money /><span>đ</span></div></label>
+            </div>
           </div>
           <button class="filter-apply" type="submit">Áp dụng bộ lọc</button
           ><button class="filter-reset" type="button">Xóa bộ lọc</button>

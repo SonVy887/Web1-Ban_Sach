@@ -37,10 +37,10 @@ const SV_ACCOUNT_MENU="<details class=\"member-account-menu\"><summary><span cla
  const search=$('.header .search-input');
  function submitBasicSearch(){
   const params=new URLSearchParams();const query=search?.value.trim();
-  if(query)params.set('q',query);
+  params.set('q',query||'');
   const category=$('.header .search-select');
   if(category&&category.selectedIndex>0)params.append('category',category.value);
-  params.set('page','1');go('danhmucsanpham.html?'+params.toString());
+  go('ketquatimkiem.html?'+params.toString());
  }
  $('.header .search-button')?.addEventListener('click',e=>{e.preventDefault();submitBasicSearch();});
  search?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitBasicSearch();}});

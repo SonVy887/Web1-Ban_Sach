@@ -25,7 +25,7 @@
  function setupCatalog(){
   const form=$('#catalog-filter-form');if(!form)return;
   const applied=new URLSearchParams(location.search);
-  const pageNumber=Math.min(12,Math.max(1,Number.parseInt(applied.get('page'),10)||1));
+  const pageNumber=Math.min(12,Math.max(1,Number.parseInt(applied.get('page'),10)||Number(document.body.dataset.catalogPage)||1));
   const pageSize=['12','24','48'].includes(applied.get('per-page'))?applied.get('per-page'):'12';
   const categories=applied.getAll('category').filter(x=>x!=='all');
   const query=applied.get('q')||'';
@@ -37,25 +37,39 @@
   $$('input[name="format"]',form).forEach(input=>input.checked=applied.getAll('format').includes(input.value));
   const price=$$('input[name="price"]',form).find(input=>input.value===(applied.get('price')||'all'));
   if(price)price.checked=true;
-  const sort=$('#sort');if(sort&&applied.has('sort'))sort.value=applied.get('sort');
+  const moneyDigits=value=>String(value).replace(/\D/g,'').replace(/^0+(?=\d)/,'');
+  const formatMoney=value=>moneyDigits(value).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  const legacyPrices={under100:['','100000'],range100300:['100000','300000'],over300:['300000','']};
+  const oldRange=legacyPrices[applied.get('price')]||['',''];
+  $$('[data-catalog-money]',form).forEach((input,index)=>{
+   input.value=formatMoney(applied.get(input.name)||oldRange[index]);
+   input.addEventListener('input',()=>{
+    const before=input.value.slice(0,input.selectionStart),count=moneyDigits(before).length;
+    input.value=formatMoney(input.value);let caret=0,seen=0;
+    while(caret<input.value.length&&seen<count){if(/\d/.test(input.value[caret]))seen++;caret++;}
+    input.setSelectionRange(caret,caret);
+   });
+  });
+  const sort=$('#sort');if(sort&&[...sort.options].some(option=>option.value===applied.get('sort')))sort.value=applied.get('sort');
   // Changing controls only prepares conditions. Navigation starts on submit.
   categoryInputs.forEach(input=>input.addEventListener('change',()=>{
    if(input.value==='all'&&input.checked)categoryInputs.forEach(other=>{if(other!==input)other.checked=false;});
    else if(input.value!=='all'&&input.checked)categoryInputs.find(other=>other.value==='all').checked=false;
    if(!categoryInputs.some(other=>other.checked))categoryInputs.find(other=>other.value==='all').checked=true;
   }));
-  function navigate(params){S.go((location.pathname.split('/').pop()||'danhmucsanpham.html')+'?'+params.toString());}
+  function navigate(params){const target=document.body.dataset.catalogView==='search'?'ketquatimkiem.html':params.get('page')==='2'?'danhmucsanpham-2.html':'danhmucsanpham.html';if(document.body.dataset.catalogView==='search')params.delete('page');S.go(target+'?'+params.toString());}
   form.addEventListener('submit',event=>{
    event.preventDefault();const params=new URLSearchParams(applied);
    ['q','category','format','price','min-price','max-price','page','sort'].forEach(key=>params.delete(key));
-   const term=form.elements.q.value.trim();if(term)params.set('q',term);
+   const term=form.elements.q.value.trim();params.set('q',term);
    $$('input[name="category"]:checked',form).filter(input=>input.value!=='all').forEach(input=>params.append('category',input.value));
    $$('input[name="format"]:checked',form).forEach(input=>params.append('format',input.value));
    const selected=$('input[name="price"]:checked',form)?.value||'all';
    if(selected!=='all')params.set('price',selected);
    const ranges={under100:['','100000'],range100300:['100000','300000'],over300:['300000','']};
    if(ranges[selected]){if(ranges[selected][0])params.set('min-price',ranges[selected][0]);if(ranges[selected][1])params.set('max-price',ranges[selected][1]);}
-   if(sort)params.set('sort',sort.value);params.set('page','1');navigate(params);
+   $$('[data-catalog-money]',form).forEach(input=>{const value=moneyDigits(input.value);if(value)params.set(input.name,value);});
+   if(sort)params.set('sort',sort.value);params.delete('page');S.go('ketquatimkiem.html?'+params.toString());
   });
   function reset(){const params=new URLSearchParams();if(S.logged)params.set('demo-login','1');params.set('page','1');navigate(params);}
   $('.filter-reset',form)?.addEventListener('click',reset);
@@ -66,7 +80,9 @@
    if(categories.length)chips.push(['Danh mục: '+categories.join(', '),['category']]);
    if(applied.getAll('format').length)chips.push(['Hình thức: '+applied.getAll('format').join(', '),['format']]);
    const priceLabels={under100:'Dưới 100.000đ',range100300:'100.000đ - 300.000đ',over300:'Trên 300.000đ'};
-   if(priceLabels[applied.get('price')])chips.push(['Giá: '+priceLabels[applied.get('price')],['price','min-price','max-price']]);
+   const min=applied.get('min-price'),max=applied.get('max-price');
+   if(min||max)chips.push(['Giá: '+(min?formatMoney(min)+'đ':'Bất kỳ')+' – '+(max?formatMoney(max)+'đ':'Bất kỳ'),['price','min-price','max-price']]);
+   else if(priceLabels[applied.get('price')])chips.push(['Giá: '+priceLabels[applied.get('price')],['price','min-price','max-price']]);
    active.hidden=chips.length===0;
    const label=document.createElement('span');label.textContent='ĐANG LỌC:';active.append(label);
    chips.forEach(([text,keys])=>{const button=document.createElement('button');button.type='button';button.textContent=text+' ×';button.setAttribute('aria-label','Bỏ '+text);button.addEventListener('click',()=>{const params=new URLSearchParams(applied);keys.forEach(key=>params.delete(key));params.set('page','1');navigate(params);});active.append(button);});
@@ -85,7 +101,7 @@
    const jump=$('label input',pagination);if(jump){jump.value=String(pageNumber);const go=()=>{if(!jump.reportValidity())return;const params=new URLSearchParams(applied);params.set('page',jump.value);navigate(params);};$('label button',pagination)?.addEventListener('click',go);jump.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();go();}});}
   }
   $$('.view-toggle').forEach(button=>button.addEventListener('click',()=>S.toast('Chọn kiểu hiển thị thành công.')));
-  // The book cards remain the same static sample for every query and page.
+  // Each HTML page has a fixed sample; search conditions never filter the records.
  }
 
  if(page==='danhmucsanpham')setupCatalog();

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<link rel="stylesheet" href="../CSS/fonts.css">
+<title>Tiệm Sách Sơn Vỹ - Quản Trị Hệ Thống - Chi Tiết Đơn Hàng</title>
+<link rel="stylesheet" href="../CSS/theme.css">
+<link rel="stylesheet" href="../CSS/admin.css">
+<link rel="stylesheet" href="../CSS/admin-order-detail.css">
+</head>
+<body class="admin-shell min-h-screen flex flex-col" data-page="orders">
+<header class="sticky top-0 z-40 bg-[#fef8f4]/95 backdrop-blur-md border-b border-[#ede7e3] shadow-sm">
+<div class="admin-header-inner max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="admin-logo-viewport"><!-- Logo -->
+<img src="../assets/logo/logo.png" alt="Logo"><span class="material-symbols-outlined logo-fallback" aria-hidden="true" hidden="">menu_book</span></span>
+<div>
+<span class="font-serif text-2xl font-bold text-primary block leading-tight">Tiệm Sách Sơn Vỹ</span>
+<span class="text-[11px] font-semibold tracking-widest uppercase text-secondary">Trung Tâm Quản Trị Hệ Thống</span>
+</div>
+</div>
+<nav class="hidden xl:flex items-center gap-1 bg-surface-container-low p-1.5 rounded-xl border border-surface-container-high" aria-label="Điều hướng quản trị">
+<a href="dashboard.html" class="admin-nav-link"><span>1. Tổng quan</span></a><a href="books.html" class="admin-nav-link"><span>2. Quản lý Sách</span></a><a href="orders.html" class="admin-nav-link is-current" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">local_shipping</span><span>3. Đơn hàng</span><span class="nav-active-badge rounded-full">Active</span></a><a href="inventory.html" class="admin-nav-link"><span>4. Kho &amp; Nhập</span></a><a href="customers.html" class="admin-nav-link"><span>5. Khách hàng</span></a><a href="promotions.html" class="admin-nav-link"><span>6. Khuyến mãi</span></a></nav>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors relative" title="Thông báo" type="button" data-action="notifications" data-label="Thông báo" aria-label="Thông báo">
+<span class="material-symbols-outlined text-[22px]" aria-hidden="true">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<div class="hidden sm:block text-right">
+<div class="text-xs font-bold text-primary">Nguyễn Văn A</div>
+<div class="text-[11px] text-secondary">Tổng Điều Hành Kho</div>
+</div>
+</div>
+</div>
+</header>
+<main class="aod-main" id="main-content">
+<div id="aod-notfound" class="aod-card aod-notfound" hidden>
+<h1 style="font-family:var(--font-serif,'Lora',serif);font-size:1.4rem;color:var(--color-primary,#1f4d3a)">Không tìm thấy đơn hàng <span id="aod-missing"></span></h1>
+<p style="margin:.6rem 0 1rem;font-size:.85rem">Mã đơn không có trong dữ liệu mẫu.</p>
+<a class="aod-btn aod-btn--primary" href="orders.html">Quay lại danh sách đơn hàng</a>
+</div>
+<div id="aod-content">
+<div class="aod-crumb"><span class="material-symbols-outlined" style="font-size:15px" aria-hidden="true">admin_panel_settings</span><a href="orders.html">Quản Lý Đơn Hàng</a><span>/</span><strong>Chi tiết đơn hàng</strong></div>
+<div class="aod-head">
+<div>
+<h1><span id="aod-code">#SV-8942</span><span class="aod-badge" id="aod-badge" data-status="unconfirmed">Bước 1: Chưa xác nhận</span><span class="aod-sim">Mô phỏng · dữ liệu không đổi</span></h1>
+<p id="aod-time">Đặt lúc</p>
+</div>
+<div class="aod-head-actions">
+<a class="aod-btn" href="orders.html"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span><span>Danh sách đơn</span></a>
+<button class="aod-btn" id="aod-print" type="button"><span class="material-symbols-outlined" aria-hidden="true">print</span><span>In phiếu đóng gói</span></button>
+<button class="aod-btn aod-btn--danger" id="aod-cancel" type="button"><span class="material-symbols-outlined" aria-hidden="true">cancel</span><span>Huỷ đơn</span></button>
+<button class="aod-btn aod-btn--primary" id="aod-next" type="button"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>Xác nhận đơn</span></button>
+</div>
+</div>
+<div class="aod-grid">
+<div class="aod-col">
+<section class="aod-card" aria-label="Tiến trình đơn hàng"><h2><span class="material-symbols-outlined" aria-hidden="true">timeline</span>Tiến trình xử lý (1 chiều)</h2><ol class="aod-steps" id="aod-steps"></ol>
+<div class="aod-lock" id="aod-lock" hidden><span class="material-symbols-outlined" aria-hidden="true">lock</span><span>Đơn đã ở trạng thái cuối nên các nút thao tác bị khóa để tránh sai lệch kế toán và tồn kho.</span></div></section>
+<section class="aod-card" aria-label="Sản phẩm trong đơn"><h2><span class="material-symbols-outlined" aria-hidden="true">menu_book</span>Ấn phẩm đặt mua</h2>
+<div class="aod-table-wrap"><table class="aod-items"><thead><tr><th>Sản phẩm</th><th>Đơn giá</th><th>SL</th><th>Thành tiền</th></tr></thead><tbody id="aod-items"></tbody></table></div></section>
+<section class="aod-card aod-summary-card" aria-label="Tổng kết thanh toán"><h2><span class="material-symbols-outlined" aria-hidden="true">receipt_long</span>Tổng kết thanh toán</h2>
+<div class="aod-sum"><div><span>Tạm tính</span><span id="aod-sub"></span></div><div><span>Phí vận chuyển</span><span id="aod-ship"></span></div><div><span>Giảm giá / voucher</span><span id="aod-disc"></span></div><div class="is-total"><span>Tổng thanh toán</span><span id="aod-total"></span></div></div></section>
+<section class="aod-card" aria-label="Lịch sử đơn hàng"><h2><span class="material-symbols-outlined" aria-hidden="true">history</span>Lịch sử cập nhật</h2><ul class="aod-log" id="aod-log"></ul></section>
+</div>
+<div class="aod-col">
+<section class="aod-card" aria-label="Khách hàng"><h2><span class="material-symbols-outlined" aria-hidden="true">person</span>Khách hàng</h2>
+<dl class="aod-dl"><dt>Họ tên</dt><dd id="aod-cname"></dd><dt>Mã user</dt><dd id="aod-cid"></dd><dt>Điện thoại</dt><dd id="aod-cphone"></dd><dt>Email</dt><dd id="aod-cmail"></dd><dt>Hạng</dt><dd><span class="aod-tag" id="aod-ctier"></span></dd></dl></section>
+<section class="aod-card" aria-label="Giao hàng"><h2><span class="material-symbols-outlined" aria-hidden="true">local_shipping</span>Giao hàng</h2>
+<dl class="aod-dl"><dt>Địa chỉ</dt><dd id="aod-addr"></dd><dt>Đơn vị vận chuyển</dt><dd id="aod-carrier"></dd><dt>Mã vận đơn</dt><dd id="aod-track"></dd></dl></section>
+<section class="aod-card" aria-label="Thanh toán"><h2><span class="material-symbols-outlined" aria-hidden="true">payments</span>Thanh toán</h2>
+<dl class="aod-dl"><dt>Phương thức</dt><dd id="aod-method"></dd><dt>Tình trạng</dt><dd id="aod-paystate"></dd></dl></section>
+<section class="aod-card aod-note" aria-label="Ghi chú nội bộ"><h2><span class="material-symbols-outlined" aria-hidden="true">edit_note</span>Ghi chú nội bộ</h2>
+<textarea id="aod-note" aria-label="Ghi chú nội bộ" placeholder="Nhập ghi chú cho nhân viên kho..."></textarea><button class="aod-btn" id="aod-savenote" type="button">Lưu ghi chú</button></section>
+</div>
+</div>
+</div>
+</main>
+<dialog class="aod-dialog" id="aod-cancel-dialog" aria-labelledby="aod-cancel-title"><form id="aod-cancel-form" method="dialog"><h2 id="aod-cancel-title">Huỷ đơn hàng này?</h2>
+<p>Trạng thái "Đã huỷ" là trạng thái cuối, không thể hoàn tác. Thao tác chỉ mang tính mô phỏng.</p>
+<label>Lý do huỷ<select id="aod-reason"><option>Khách yêu cầu huỷ</option><option>Hết hàng / thiếu tồn kho</option><option>Không liên lạc được với khách</option><option>Thông tin giao hàng sai</option></select></label>
+<div class="aod-dialog-actions"><button class="aod-btn" type="button" data-aod-close>Giữ đơn</button><button class="aod-btn aod-btn--danger" type="submit">Xác nhận huỷ</button></div></form></dialog>
+<div class="aod-toast" id="aod-toast" role="status" aria-live="polite" hidden></div>
+
+<footer class="w-full bg-surface-container-low py-4 border-t border-surface-container-high shadow-xs">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-on-surface-variant">
+<p>© 2025 Tiệm Sách Sơn Vỹ. Hệ thống quản trị ấn bản, kho lưu trữ &amp; phát hành sách.</p>
+<div class="flex items-center gap-4">
+<span>Phiên bản Quản Trị v2.5 Enterprise</span>
+<span>Hà Nội DC-01</span>
+</div>
+</div>
+</footer>
+<script src="../JS/admin-order-detail.js" defer></script>
+</body>
+</html>
