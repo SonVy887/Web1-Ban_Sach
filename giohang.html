@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+<link rel="stylesheet" href="CSS/demo-ui.css">
+<script src="JS/demo-ui.js" defer></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giỏ Hàng - Tiệm Sách Sơn Vỹ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/fonts.css">
+  
   <link rel="stylesheet" href="CSS/theme.css">
   <link rel="stylesheet" href="CSS/reset.css">
   <link rel="stylesheet" href="CSS/main.css">
@@ -23,6 +26,7 @@
     .cart-book-link img,.recommendation-book-link img{cursor:pointer;}
     .recommendation-book-link{display:block;}
   </style>
+<link rel="stylesheet" href="CSS/typography.css">
 </head>
 <body data-user-page="giohang">
   <header class="header">
@@ -55,7 +59,7 @@
     </div></div></nav>
   </header>
 
-  <main class="cart-page">
+  <main class="cart-page" hidden>
     <div class="cart-heading">
       <div class="cart-breadcrumb"><a href="trangchu.html">Trang chủ</a><span>/</span><strong>Giỏ hàng</strong></div>
       <p class="cart-eyebrow">KHÔNG GIAN ĐỌC &amp; LAN TỎA TRI THỨC</p>
@@ -77,7 +81,7 @@
             <a href="chitietsanpham.html" class="cart-book-link"><div class="cart-thumb"><img src="./assets/books/RungNaUy.png" alt="Rừng Na Uy"></div></a>
             <div class="item-info"><span class="item-tag">Bìa Cứng Giới Hạn</span><h2><a href="chitietsanpham.html">Rừng Na Uy<br>(Norwegian Wood)</a></h2><p class="item-author">Tác giả: <strong>Haruki Murakami</strong></p><p>Kích thước: 14.5 x 20.5 cm | 520 trang</p><div class="item-actions"><button type="button"><span class="material-symbols-outlined">favorite</span>Lưu để sau</button><button type="button" class="delete-item"><span class="material-symbols-outlined">delete_outline</span>Xóa</button></div></div>
           </div>
-          <div class="item-price"><small>Đơn giá:</small><strong>245.000₫</strong></div><div class="item-quantity"><small>Số lượng:</small><div><button type="button" aria-label="Giảm">−</button><strong>1</strong><button type="button" aria-label="Tăng">+</button></div></div><div class="item-total"><small>Thành tiền:</small><strong>245.000₫</strong></div>
+          <div class="item-price"><small>Đơn giá:</small><strong>245.000đ</strong></div><div class="item-quantity"><small>Số lượng:</small><div><button type="button" aria-label="Giảm">−</button><strong>1</strong><button type="button" aria-label="Tăng">+</button></div></div><div class="item-total"><small>Thành tiền:</small><strong>245.000đ</strong></div>
         </article>
 
         <article class="cart-item">
@@ -86,7 +90,7 @@
             <a href="chitietsanpham.html" class="cart-book-link"><div class="cart-thumb"><img src="./assets/books/tinhlang.jpg" alt="Cây Cam Ngọt Của Tôi"></div></a>
             <div class="item-info"><span class="item-tag">Bản Minh Họa Màu</span><h2><a href="chitietsanpham.html">Cây Cam Ngọt Của Tôi</a></h2><p class="item-author">Tác giả: <strong>José Mauro de Vasconcelos</strong></p><p>Người dịch: Tô Huệ Lan | Nhã Nam &amp; NXB Hội Nhà Văn</p><div class="item-actions"><button type="button"><span class="material-symbols-outlined">favorite</span>Lưu để sau</button><button type="button" class="delete-item"><span class="material-symbols-outlined">delete_outline</span>Xóa</button></div></div>
           </div>
-          <div class="item-price"><small>Đơn giá:</small><strong>86.000₫</strong></div><div class="item-quantity"><small>Số lượng:</small><div><button type="button" aria-label="Giảm">−</button><strong>2</strong><button type="button" aria-label="Tăng">+</button></div></div><div class="item-total"><small>Thành tiền:</small><strong>172.000₫</strong></div>
+          <div class="item-price"><small>Đơn giá:</small><strong>86.000đ</strong></div><div class="item-quantity"><small>Số lượng:</small><div><button type="button" aria-label="Giảm">−</button><strong>2</strong><button type="button" aria-label="Tăng">+</button></div></div><div class="item-total"><small>Thành tiền:</small><strong>172.000đ</strong></div>
         </article>
 
         <article class="cart-item">
@@ -95,7 +99,7 @@
             <a href="chitietsanpham.html" class="cart-book-link"><div class="cart-thumb"><img src="./assets/books/dune-messiah.png" alt="Dune Messiah"></div></a>
             <div class="item-info"><span class="item-tag muted">Bản Dịch Kinh Điển</span><h2><a href="chitietsanpham.html">Dune Messiah</a></h2><p class="item-author">Tác giả: <strong>Frank Herbert</strong></p><p>Khổ sách tiêu chuẩn | Giấy xốp nhẹ chống lóa mắt</p><div class="item-actions"><button type="button"><span class="material-symbols-outlined">favorite</span>Lưu để sau</button><button type="button" class="delete-item"><span class="material-symbols-outlined">delete_outline</span>Xóa</button></div></div>
           </div>
-          <div class="item-price"><small>Đơn giá:</small><strong>168.000₫</strong></div><div class="item-quantity"><small>Số lượng:</small><div><button type="button" aria-label="Giảm">−</button><strong>1</strong><button type="button" aria-label="Tăng">+</button></div></div><div class="item-total"><small>Thành tiền:</small><strong>168.000₫</strong></div>
+          <div class="item-price"><small>Đơn giá:</small><strong>168.000đ</strong></div><div class="item-quantity"><small>Số lượng:</small><div><button type="button" aria-label="Giảm">−</button><strong>1</strong><button type="button" aria-label="Tăng">+</button></div></div><div class="item-total"><small>Thành tiền:</small><strong>168.000đ</strong></div>
         </article>
 
         <div class="cart-actions"><a href="danhmucsanpham.html"><span class="material-symbols-outlined">keyboard_backspace</span>Tiếp tục tìm &amp; chọn sách</a><span class="selected-count"><span class="material-symbols-outlined">check_circle</span>Đã chọn: <strong>3</strong> / 3 ấn phẩm</span><button type="button"><span class="material-symbols-outlined">delete_sweep</span>Xóa tất cả</button></div>
@@ -104,9 +108,9 @@
       <aside class="summary-card">
         <div class="member-box"><div><span>Tài khoản đặt mua</span><b>Hội viên Thân Thiết</b></div><div class="member-user"><strong>V</strong><p><b>Lại Sơn Vỹ</b><small>0912 345 678 - sonvy@gmail.com</small></p></div></div>
         <div class="summary-section"><div class="summary-label"><span class="material-symbols-outlined">pin_drop</span>Địa chỉ giao nhận <button type="button">Nhập địa chỉ mới</button></div><div class="address-box"><span class="material-symbols-outlined">radio_button_checked</span><p><b>Địa chỉ mặc định</b><span>Tổ 34, phường Bình Lộc, thành phố Long Khánh, tỉnh Đồng Nai.</span></p></div></div>
-        <div class="summary-section"><div class="summary-label"><span class="material-symbols-outlined">account_balance_wallet</span>Hình thức thanh toán</div><label class="payment-option"><span><input checked type="radio" name="payment"><b>Thanh toán khi nhận hàng (COD)</b><small>Kiểm tra sách kỹ lưỡng trước khi nhận</small></span><span class="material-symbols-outlined">payments</span></label><label class="payment-option"><span><input type="radio" name="payment"><b>Chuyển khoản QR</b><small>Quét mã VietQR tiện lợi không phí</small></span><span class="material-symbols-outlined">qr_code_scanner</span></label></div>
+        <div class="summary-section"><div class="summary-label"><span class="material-symbols-outlined">account_balance_wallet</span>Hình thức thanh toán</div><label class="payment-option"><input checked type="radio" name="payment"><span class="payment-option-copy"><b>Thanh toán khi nhận hàng (COD)</b><small>Kiểm tra sách kỹ lưỡng trước khi nhận</small></span><span class="material-symbols-outlined" aria-hidden="true">payments</span></label><label class="payment-option"><input type="radio" name="payment"><span class="payment-option-copy"><b>Chuyển khoản QR</b><small>Quét mã VietQR tiện lợi không phí</small></span><span class="material-symbols-outlined" aria-hidden="true">qr_code_scanner</span></label></div>
         <div class="voucher-box"><label>Mã ưu đãi / Phiếu đọc sách</label><div><span class="material-symbols-outlined">check_circle</span><strong>BOOKNOOK2025</strong><b>Đã áp dụng</b></div></div>
-        <div class="totals"><p><span>Tạm tính (3 tác phẩm):</span><strong>585.000₫</strong></p><p><span>Chiết khấu hội viên (10%):</span><strong class="discount">-58.500₫</strong></p><p><span>Mã giảm giá (EMANHVY2006):</span><strong class="discount">-20.000₫</strong></p><p><span>Phí vận chuyển toàn quốc:</span><strong class="free">Miễn phí (0₫)</strong></p><div class="grand-total"><span>Tổng thanh toán:</span><div><strong>506.500₫</strong><small>(Đã bao gồm VAT và đóng gói chuyên dụng)</small></div></div></div>
+        <div class="totals"><p><span>Tạm tính (3 tác phẩm):</span><strong>585.000đ</strong></p><p><span>Chiết khấu hội viên (10%):</span><strong class="discount">-58.500đ</strong></p><p><span>Mã giảm giá (EMANHVY2006):</span><strong class="discount">-20.000đ</strong></p><p><span>Phí vận chuyển toàn quốc:</span><strong class="free">Miễn phí (0đ)</strong></p><div class="grand-total"><span>Tổng thanh toán:</span><div><strong>506.500đ</strong><small>(Đã bao gồm VAT và đóng gói chuyên dụng)</small></div></div></div>
         <button type="button" class="checkout-button">Tiến Hành Đặt Hàng <span class="material-symbols-outlined">arrow_forward</span></button><p class="terms">Bằng việc đặt hàng, bạn đồng ý với các <a href="#" data-user-info="Điều khoản giao dịch">Điều khoản giao dịch</a> của Tiệm Sách Sơn Vỹ.</p>
       </aside>
     </div>
@@ -114,10 +118,10 @@
     <section class="recommendations">
       <div class="recommendation-heading"><div><span>GỢI Ý DÀNH RIÊNG CHO BẠN</span><h2>Độc Giả Cùng Mua Kèm</h2></div><a href="danhmucsanpham.html">Xem tuyển tập kinh điển <span class="material-symbols-outlined">arrow_right_alt</span></a></div>
       <div class="recommendation-grid">
-        <article data-product-id="kafka-ben-bo-bien" data-product="{&quot;id&quot;:&quot;kafka-ben-bo-bien&quot;,&quot;title&quot;:&quot;Kafka Bên Bờ Biển&quot;,&quot;price&quot;:198000,&quot;oldPrice&quot;:0,&quot;author&quot;:&quot;&quot;,&quot;image&quot;:&quot;./assets/books/Kafka.png&quot;,&quot;format&quot;:&quot;Bản tiêu chuẩn&quot;,&quot;stock&quot;:&quot;in-stock&quot;,&quot;sale&quot;:false,&quot;category&quot;:&quot;Văn học &amp; Tiểu thuyết&quot;}"><a href="chitietsanpham.html" class="recommendation-book-link"><img src="./assets/books/Kafka.png" alt="Kafka Bên Bờ Biển"><span>Haruki Murakami</span><h3 data-product-link="kafka-ben-bo-bien">Kafka Bên Bờ Biển</h3><strong>198.000₫</strong></a><button type="button"><span class="material-symbols-outlined">shopping_cart</span>Thêm vào giỏ</button></article>
-        <article data-product-id="hoang-tu-be" data-product="{&quot;id&quot;:&quot;hoang-tu-be&quot;,&quot;title&quot;:&quot;Hoàng Tử Bé (Bản Màu)&quot;,&quot;price&quot;:115000,&quot;oldPrice&quot;:0,&quot;author&quot;:&quot;&quot;,&quot;image&quot;:&quot;./assets/books/hoangtube.png&quot;,&quot;format&quot;:&quot;Bản tiêu chuẩn&quot;,&quot;stock&quot;:&quot;in-stock&quot;,&quot;sale&quot;:false,&quot;category&quot;:&quot;Văn học &amp; Tiểu thuyết&quot;}"><a href="chitietsanpham.html" class="recommendation-book-link"><img src="./assets/books/hoangtube.png" alt="Hoàng Tử Bé"><span>Antoine de Saint-Exupéry</span><h3 data-product-link="hoang-tu-be">Hoàng Tử Bé (Bản Màu)</h3><strong>115.000₫</strong></a><button type="button"><span class="material-symbols-outlined">shopping_cart</span>Thêm vào giỏ</button></article>
-        <article data-product-id="dune-xu-cat" data-product="{&quot;id&quot;:&quot;dune-xu-cat&quot;,&quot;title&quot;:&quot;Dune: Xứ Cát (Tập 1)&quot;,&quot;price&quot;:210000,&quot;oldPrice&quot;:0,&quot;author&quot;:&quot;&quot;,&quot;image&quot;:&quot;./assets/books/dune-messiah.png&quot;,&quot;format&quot;:&quot;Bản tiêu chuẩn&quot;,&quot;stock&quot;:&quot;in-stock&quot;,&quot;sale&quot;:false,&quot;category&quot;:&quot;Văn học &amp; Tiểu thuyết&quot;}"><a href="chitietsanpham.html" class="recommendation-book-link"><img src="./assets/books/dune-messiah.png" alt="Dune Xứ Cát"><span>Frank Herbert</span><h3 data-product-link="dune-xu-cat">Dune: Xứ Cát (Tập 1)</h3><strong>210.000₫</strong></a><button type="button"><span class="material-symbols-outlined">shopping_cart</span>Thêm vào giỏ</button></article>
-        <article data-product-id="tron-bo-1q84" data-product="{&quot;id&quot;:&quot;tron-bo-1q84&quot;,&quot;title&quot;:&quot;Trọn Bộ 1Q84&quot;,&quot;price&quot;:395000,&quot;oldPrice&quot;:0,&quot;author&quot;:&quot;Haruki Murakami&quot;,&quot;image&quot;:&quot;./assets/books/1Q84.png&quot;,&quot;format&quot;:&quot;Trọn bộ&quot;,&quot;stock&quot;:&quot;in-stock&quot;,&quot;sale&quot;:false,&quot;category&quot;:&quot;Văn học &amp; Tiểu thuyết&quot;}"><a href="chitietsanpham.html" class="recommendation-book-link"><img src="./assets/books/1Q84.png" alt="Bìa sách Trọn Bộ 1Q84"><span>Haruki Murakami</span><h3 data-product-link="tron-bo-1q84">Trọn Bộ 1Q84</h3><strong>395.000₫</strong></a><button type="button"><span class="material-symbols-outlined">shopping_cart</span>Thêm vào giỏ</button></article>
+        <article data-product-id="kafka-ben-bo-bien" data-product="{&quot;id&quot;:&quot;kafka-ben-bo-bien&quot;,&quot;title&quot;:&quot;Kafka Bên Bờ Biển&quot;,&quot;price&quot;:198000,&quot;oldPrice&quot;:0,&quot;author&quot;:&quot;&quot;,&quot;image&quot;:&quot;./assets/books/Kafka.png&quot;,&quot;format&quot;:&quot;Bản tiêu chuẩn&quot;,&quot;stock&quot;:&quot;in-stock&quot;,&quot;sale&quot;:false,&quot;category&quot;:&quot;Văn học &amp; Tiểu thuyết&quot;}"><a href="chitietsanpham.html" class="recommendation-book-link"><img src="./assets/books/Kafka.png" alt="Kafka Bên Bờ Biển"><span>Haruki Murakami</span><h3 data-product-link="kafka-ben-bo-bien">Kafka Bên Bờ Biển</h3><strong>198.000đ</strong></a><button type="button"><span class="material-symbols-outlined">shopping_cart</span>Thêm vào giỏ</button></article>
+        <article data-product-id="hoang-tu-be" data-product="{&quot;id&quot;:&quot;hoang-tu-be&quot;,&quot;title&quot;:&quot;Hoàng Tử Bé (Bản Màu)&quot;,&quot;price&quot;:115000,&quot;oldPrice&quot;:0,&quot;author&quot;:&quot;&quot;,&quot;image&quot;:&quot;./assets/books/hoangtube.png&quot;,&quot;format&quot;:&quot;Bản tiêu chuẩn&quot;,&quot;stock&quot;:&quot;in-stock&quot;,&quot;sale&quot;:false,&quot;category&quot;:&quot;Văn học &amp; Tiểu thuyết&quot;}"><a href="chitietsanpham.html" class="recommendation-book-link"><img src="./assets/books/hoangtube.png" alt="Hoàng Tử Bé"><span>Antoine de Saint-Exupéry</span><h3 data-product-link="hoang-tu-be">Hoàng Tử Bé (Bản Màu)</h3><strong>115.000đ</strong></a><button type="button"><span class="material-symbols-outlined">shopping_cart</span>Thêm vào giỏ</button></article>
+        <article data-product-id="dune-xu-cat" data-product="{&quot;id&quot;:&quot;dune-xu-cat&quot;,&quot;title&quot;:&quot;Dune: Xứ Cát (Tập 1)&quot;,&quot;price&quot;:210000,&quot;oldPrice&quot;:0,&quot;author&quot;:&quot;&quot;,&quot;image&quot;:&quot;./assets/books/dune-messiah.png&quot;,&quot;format&quot;:&quot;Bản tiêu chuẩn&quot;,&quot;stock&quot;:&quot;in-stock&quot;,&quot;sale&quot;:false,&quot;category&quot;:&quot;Văn học &amp; Tiểu thuyết&quot;}"><a href="chitietsanpham.html" class="recommendation-book-link"><img src="./assets/books/dune-messiah.png" alt="Dune Xứ Cát"><span>Frank Herbert</span><h3 data-product-link="dune-xu-cat">Dune: Xứ Cát (Tập 1)</h3><strong>210.000đ</strong></a><button type="button"><span class="material-symbols-outlined">shopping_cart</span>Thêm vào giỏ</button></article>
+        <article data-product-id="tron-bo-1q84" data-product="{&quot;id&quot;:&quot;tron-bo-1q84&quot;,&quot;title&quot;:&quot;Trọn Bộ 1Q84&quot;,&quot;price&quot;:395000,&quot;oldPrice&quot;:0,&quot;author&quot;:&quot;Haruki Murakami&quot;,&quot;image&quot;:&quot;./assets/books/1Q84.png&quot;,&quot;format&quot;:&quot;Trọn bộ&quot;,&quot;stock&quot;:&quot;in-stock&quot;,&quot;sale&quot;:false,&quot;category&quot;:&quot;Văn học &amp; Tiểu thuyết&quot;}"><a href="chitietsanpham.html" class="recommendation-book-link"><img src="./assets/books/1Q84.png" alt="Bìa sách Trọn Bộ 1Q84"><span>Haruki Murakami</span><h3 data-product-link="tron-bo-1q84">Trọn Bộ 1Q84</h3><strong>395.000đ</strong></a><button type="button"><span class="material-symbols-outlined">shopping_cart</span>Thêm vào giỏ</button></article>
       </div>
     </section>
   </main>

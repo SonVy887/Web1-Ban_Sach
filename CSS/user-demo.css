@@ -13,8 +13,10 @@
 #user-dialog {box-sizing:border-box;width:min(520px,calc(100% - 32px));max-height:calc(100dvh - 40px);overflow:auto;padding:24px;border:0;border-radius:16px;background:var(--surface,#fffdf8);color:var(--primary,#1e3a2f);font-family:var(--font-sans,inherit);}
 #user-dialog::backdrop {background:#0007;}
 #user-dialog h2 {font:600 23px/1.4 var(--font-serif,serif);margin:0 0 16px;}
+#user-dialog {margin:auto;}
+#user-dialog-description {margin:0 0 12px;line-height:1.55;}
 #user-dialog form {display:grid;gap:14px;}
-#user-dialog label {display:grid;gap:6px;font-size:13px;}
+#user-dialog label {display:grid;gap:6px;font-size:var(--text-sm);}
 #user-dialog input, #user-dialog select, #user-dialog textarea {box-sizing:border-box;width:100%;border:1px solid var(--outline-variant,#c1c8c3);border-radius:8px;padding:10px;background:transparent;color:inherit;font:inherit;}
 #user-dialog .user-dialog-actions {display:flex;justify-content:flex-end;gap:10px;margin-top:8px;}
 #user-dialog button {border:1px solid var(--outline-variant,#c1c8c3);padding:10px 16px;border-radius:8px;background:var(--surface-container-low,#f8f2ee);color:inherit;font:inherit;cursor:pointer;}

@@ -28,3 +28,19 @@
 #book-editor-dialog .book-demo-message {margin:0;padding:11px 13px;border:1px solid #a9cfb2;border-radius:8px;background:#edf7ee;color:#24532e;font-size:13px;font-weight:600;}
 #book-editor-dialog .book-editor-actions {display:flex;justify-content:flex-end;gap:10px;}
 @media(max-width:560px){#book-editor-dialog .book-editor{grid-template-columns:1fr;padding:16px;}#book-editor-dialog .book-editor-wide{grid-column:1;}#book-editor-dialog .edition-item{grid-template-columns:1fr;}}
+
+.books-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.book-view-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  border-radius: 6px;
+  color: var(--color-primary);
+  font-weight: 650;
+}
+.book-view-link:hover, .book-title:hover { text-decoration: underline; }

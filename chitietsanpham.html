@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+<link rel="stylesheet" href="CSS/demo-ui.css">
+<script src="JS/demo-ui.js" defer></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cửa hàng bán Sách - Chi tiết Rừng Na Uy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="CSS/fonts.css"><link rel="stylesheet" href="CSS/theme.css"><link rel="stylesheet" href="CSS/reset.css"><link rel="stylesheet" href="CSS/main.css"><link rel="stylesheet" href="CSS/detail.css"><link rel="stylesheet" href="CSS/book-specifications.css"><link rel="stylesheet" href="CSS/user-demo.css">
+  <link rel="stylesheet" href="CSS/theme.css"><link rel="stylesheet" href="CSS/reset.css"><link rel="stylesheet" href="CSS/main.css"><link rel="stylesheet" href="CSS/detail.css"><link rel="stylesheet" href="CSS/book-specifications.css"><link rel="stylesheet" href="CSS/user-demo.css">
   <style>
     .related-book-link{display:block;color:inherit;text-decoration:none;}
     .related-book-link img{cursor:pointer;}
     .related-book-link h3{color:inherit;text-decoration:none;transition:color .2s ease;}
     .related-book-link:hover h3{color:var(--color-secondary,#8a4b34);}
   </style>
+<link rel="stylesheet" href="CSS/admin-sidebar.css">
+<link rel="stylesheet" href="CSS/admin-book-editor.css">
+<script src="JS/admin-sidebar.js" defer></script>
+<link rel="stylesheet" href="CSS/typography.css">
 </head>
 <body data-user-page="chitietsanpham">
   <header class="header">
@@ -27,8 +34,13 @@
   <main class="detail-page">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="trangchu.html">Trang chủ</a><span>/</span><a href="danhmucsanpham.html?category=V%C4%83n%20H%E1%BB%8Dc%20%26%20Ti%E1%BB%83u%20Thuy%E1%BA%BFt">Văn học &amp; Tiểu thuyết</a><span>/</span><a href="danhmucsanpham.html?category=V%C4%83n%20H%E1%BB%8Dc%20Nh%E1%BA%ADt%20B%E1%BA%A3n">Văn học Nhật Bản</a><span>/</span><strong>Rừng Na Uy</strong></nav>
     <section class="product-detail">
-      <div class="product-gallery"><div class="gallery-main"><span class="limited-badge"><i class="fa-solid fa-certificate"></i> ẤN BẢN HARDCOVER GIỚI HẠN</span><span class="bestseller-badge">Bán chạy #1 Văn Học Dịch</span><img src="./assets/books/RungNaUy.png" alt="Bìa sách Rừng Na Uy"></div><div class="gallery-thumbs"><button class="thumb active" type="button"><img src="./assets/books/RungNaUy.png" alt="Mặt trước sách"></button><button class="thumb" type="button"><img src="./assets/books/RungNaUy.png" alt="Ảnh chi tiết sách"></button><button class="thumb" type="button"><img src="./assets/books/RungNaUy.png" alt="Bìa sau sách"></button><button class="thumb" type="button"><img src="./assets/books/RungNaUy.png" alt="Ruột sách"></button></div><div class="edition-note"><i class="fa-regular fa-image"></i> Ấn bản có số thứ tự bản &amp; chữ ký khách chìm</div></div>
-      <div class="product-info"><h1>Rừng Na Uy</h1><p class="product-subtitle">Norwegian Wood <span>•</span> Ấn bản Bìa Cứng Giới Hạn</p><div class="authors"><span>Tác giả: <strong>Haruki Murakami</strong></span><span>•</span><span>Dịch giả: <strong>Trịnh Lữ</strong></span></div><hr><div class="rating"><span class="stars">★★★★★</span><strong>4.9</strong><span>•</span><span>142 đánh giá</span></div><div class="price-row"><strong>245.000đ</strong><del>290.000đ</del><span>-15%</span></div><fieldset class="format-options"><legend>ĐỊNH DẠNG</legend><label class="format-option selected">Bìa Cứng Boxset<strong>245.000đ</strong></label><label class="format-option">Bìa Mềm Tiêu Chuẩn<strong>135.000đ</strong></label></fieldset><div class="purchase-row"><div class="quantity"><button type="button" aria-label="Giảm số lượng">−</button><span>1</span><button type="button" aria-label="Tăng số lượng">+</button></div><button type="button" class="add-cart"><i class="fa-solid fa-cart-shopping"></i> Thêm Vào Giỏ</button><button type="button" class="buy-now">Mua Ngay</button><button type="button" class="favorite" aria-label="Thêm yêu thích"><i class="fa-regular fa-heart"></i></button></div><div class="shipping-notes"><span>🚚 Giao hỏa tốc 2h</span><span>♧ Đổi mới 7 ngày</span><span>♧ Đóng gói màng co 3 lớp</span></div></div>
+      <div class="product-gallery"><div class="gallery-main"><span class="limited-badge"><i class="fa-solid fa-certificate"></i> ẤN BẢN HARDCOVER GIỚI HẠN</span><span class="bestseller-badge">Bán chạy #1 Văn Học Dịch</span><img src="./assets/books/RungNaUy.png" alt="Bìa sách Rừng Na Uy"></div><div class="edition-note"><i class="fa-regular fa-image"></i> Ấn bản có số thứ tự bản &amp; chữ ký khách chìm</div></div>
+      <div class="product-info"><h1>Rừng Na Uy</h1>
+        <label class="product-edit-field product-code-field" hidden>
+          <span>Mã sản phẩm</span>
+          <input type="text" value="SV-BK01" data-new-code="SV-BK06" readonly>
+        </label>
+        <p class="product-subtitle">Norwegian Wood <span>•</span> Ấn bản Bìa Cứng Giới Hạn</p><div class="authors"><span>Tác giả: <strong>Haruki Murakami</strong></span><span>•</span><span>Dịch giả: <strong>Trịnh Lữ</strong></span></div><hr><div class="rating"><span class="stars">★★★★★</span><strong>4.9</strong><span>•</span><span>142 đánh giá</span></div><div class="price-row"><strong>245.000đ</strong><del>290.000đ</del><span>-15%</span></div><fieldset class="format-options"><legend>ĐỊNH DẠNG</legend><label class="format-option selected">Bìa Cứng Boxset<strong>245.000đ</strong></label><label class="format-option">Bìa Mềm Tiêu Chuẩn<strong>135.000đ</strong></label></fieldset><div class="purchase-row"><div class="quantity"><button type="button" aria-label="Giảm số lượng">−</button><span>1</span><button type="button" aria-label="Tăng số lượng">+</button></div><button type="button" class="add-cart"><i class="fa-solid fa-cart-shopping"></i> Thêm Vào Giỏ</button><button type="button" class="buy-now">Mua Ngay</button><button type="button" class="favorite" aria-label="Thêm yêu thích"><i class="fa-regular fa-heart"></i></button></div><div class="shipping-notes"><span>🚚 Giao hỏa tốc 2h</span><span>♧ Đổi mới 7 ngày</span><span>♧ Đóng gói màng co 3 lớp</span></div></div>
     </section>
 
     <section class="description-section">
@@ -52,5 +64,6 @@
   <footer><div class="container__top"></div><div class="container__main"><div class="main-grid"><div class="info-card"><span class="title">Tiệm Sách Sơn Vỹ</span><p class="content">Tiệm Sách Sơn Vỹ - Lan tỏa tình yêu sách Việt. Điểm dừng chân của những tâm hồn tìm kiếm sự tĩnh tại, chiều sâu suy tưởng và vẻ đẹp tinh tế của văn hóa đọc nguyên bản.</p></div><div class="info-card"><h4 class="title">Khám phá tiệm</h4><ul class="list-texts"><li class="text"><a href="#" data-user-info="Về chúng tôi">Về chúng tôi</a></li><li class="text"><a href="#" data-user-info="Không gian đọc sách cafe">Không gian đọc sách cafe</a></li><li class="text"><a href="#" data-user-info="Sự kiện ra mắt sách">Sự kiện ra mắt sách</a></li><li class="text"><a href="#" data-user-info="Tuyển dụng BookLover">Tuyển dụng BookLover</a></li><li class="text"><a href="#" data-user-info="Tạp chí sách Journal">Tạp chí sách Journal</a></li></ul></div><div class="info-card"><h4 class="title">Hỗ Trợ Bạn Đọc</h4><ul class="list-texts"><li class="text"><a href="#" data-user-info="Hướng dẫn mua hàng">Hướng dẫn mua hàng</a></li><li class="text"><a href="#" data-user-info="Chính sách đổi trả &amp; bảo hành sách">Chính sách đổi trả &amp; bảo hành sách</a></li><li class="text"><a href="#" data-user-info="Biểu phí &amp; Giao nhận toàn quốc">Biểu phí &amp; Giao nhận toàn quốc</a></li><li class="text"><a href="#" data-user-info="Dịch vụ bọc sách thủ công">Dịch vụ bọc sách thủ công</a></li><li class="text"><a href="#" data-user-info="Câu hỏi thường gặp">Câu hỏi thường gặp</a></li></ul></div><div class="info-card"><h4 class="title">Ghé thăm &amp; Liên hệ</h4><div class="about-shop"><span>120, Yên Lãng</span><span>Giờ mở cửa: 08:30 - 22:00 mỗi ngày</span><div class="hotline"><span class="hotline-title">Hotline tư vấn:</span><span class="telephone-number">1900 6868 - 024 3828 9999</span></div></div><div class="payments"><small>Phương thức thanh toán an toàn:</small></div></div></div></div><div class="container__bottom"><div class="small-text-footer"><div class="copyright-text"><span>© 2025 Tiệm Sách Sơn Vỹ. Giữ toàn bộ bản quyền tuyển tập.</span></div><div class="message"><span>Thiết kế với cảm hứng từ những trang sách giấy ấm áp.</span></div></div></div></footer>
 
   <script src="JS/user-core.js" defer></script><script src="JS/user-auth.js" defer></script><script src="JS/user-shop.js" defer></script><script src="JS/user-cart.js" defer></script><script src="JS/user-account.js" defer></script><script src="JS/user-orders.js" defer></script><script src="JS/book-specifications.js" defer></script>
+<script src="JS/admin-book-editor.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi"><head>
+<link rel="stylesheet" href="CSS/demo-ui.css">
+<script src="JS/demo-ui.js" defer></script>
+
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="web_standard" name="shell-type">
@@ -9,7 +12,8 @@
 <link rel="stylesheet" href="CSS/main.css">
 <link rel="stylesheet" href="CSS/account.css">
 <link rel="stylesheet" href="CSS/member-pages.css">
-<link rel="stylesheet" href="CSS/user-demo.css"></head>
+<link rel="stylesheet" href="CSS/user-demo.css"><link rel="stylesheet" href="CSS/typography.css">
+</head>
 <body class="member-site account-page" data-user-page="account">
 <header class="header">
       <div class="header-top">
@@ -130,7 +134,7 @@
 </div>
 <div class="sv-flex sv-flex-wrap sv-items-center sv-gap-3 sv-text-xs sv-text-secondary">
 <span class="sv-flex sv-items-center sv-gap-1 sv-font-mono sv-text-[11px] sv-bg-surface-container-high sv-px-2 sv-py-0.5 sv-rounded">
-<span class="material-symbols-outlined sv-text-[13px]">badge</span> #SV-READER-8942
+<span class="material-symbols-outlined sv-text-[13px]">badge</span> #DG-8942
               </span>
 <span class="sv-flex sv-items-center sv-gap-1">
 <span class="material-symbols-outlined sv-text-[13px]">calendar_today</span> Độc giả từ 01/2024
@@ -193,7 +197,7 @@
 <span class="material-symbols-outlined sv-text-[20px] sv-text-secondary">home_pin</span>
 <span class="">Sổ Địa Chỉ Nhận Hàng</span>
 </div>
-<span class="sv-text-[11px] sv-font-semibold sv-px-2 sv-py-0.5 sv-rounded-full sv-bg-surface-container-high sv-text-secondary">2 địa chỉ</span>
+<span class="sv-text-[11px] sv-font-semibold sv-px-2 sv-py-0.5 sv-rounded-full sv-bg-surface-container-high sv-text-secondary">1 địa chỉ</span>
 </label>
 <label class="sv-tab-button sv-w-full sv-flex sv-items-center sv-justify-between sv-px-3.5 sv-py-3 sv-rounded-xl sv-text-sm sv-font-medium sv-text-on-surface hover:sv-bg-surface-container-high sv-transition-all member-tab-label" data-tab="securityTab" for="account-view-securityTab">
 <div class="sv-flex sv-items-center sv-gap-3">
@@ -381,7 +385,7 @@
 <h2 class="sv-font-serif sv-text-xl sv-font-semibold sv-text-primary">Sổ Địa Chỉ Giao Sách</h2>
 <p class="sv-text-xs sv-text-secondary sv-mt-0.5">Địa chỉ dùng để nhận các kiện sách đóng gói thủ công từ Tiệm Sơn Vỹ</p>
 </div>
-<button class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-4 sv-py-2 sv-bg-primary sv-text-on-primary sv-rounded-full sv-text-xs sv-font-semibold hover:sv-bg-primary-container sv-transition-colors sv-shadow-sm sv-self-start sm:sv-self-auto" type="button">
+<button class="sv-inline-flex sv-items-center sv-gap-1.5 sv-px-4 sv-py-2 sv-bg-primary sv-text-on-primary sv-rounded-full sv-text-xs sv-font-semibold hover:sv-bg-primary-container sv-transition-colors sv-shadow-sm sv-self-start sm:sv-self-auto" data-address-action="add" type="button">
 <span class="material-symbols-outlined sv-text-[16px]">add_location_alt</span>
                 Thêm Địa Chỉ Mới
               </button>
@@ -410,55 +414,20 @@
                     </p>
 </div>
 <div class="sv-flex sv-items-center sv-gap-2 sv-shrink-0 sv-self-end sm:sv-self-start">
-<button class="sv-px-3 sv-py-1 sv-text-xs sv-font-semibold sv-text-primary hover:sv-bg-surface-container sv-rounded-lg sv-transition-colors" type="button">
+<button class="sv-px-3 sv-py-1 sv-text-xs sv-font-semibold sv-text-primary hover:sv-bg-surface-container sv-rounded-lg sv-transition-colors" data-address-action="edit" type="button">
                       Sửa
                     </button>
 <button class="sv-px-3 sv-py-1 sv-text-xs sv-font-semibold sv-text-secondary/40 sv-cursor-not-allowed" disabled="" type="button">
                       Đã đặt mặc định
                     </button>
-<button class="sv-p-1 sv-text-secondary/50 hover:sv-text-error sv-transition-colors" title="Xóa" type="button">
+<button class="sv-p-1 sv-text-secondary/50 hover:sv-text-error sv-transition-colors" title="Xóa địa chỉ" aria-label="Xóa địa chỉ" data-address-action="delete" type="button">
 <span class="material-symbols-outlined sv-text-[18px]">delete_outline</span>
 </button>
 </div>
 </div>
 </div>
-<!-- Địa chỉ 2: Phụ / Nơi làm việc -->
-<div class="sv-bg-surface-container-lowest sv-p-5 sv-rounded-2xl sv-shadow-sm sv-relative sv-transition-all">
-<div class="sv-flex sv-flex-col sm:sv-flex-row sm:sv-items-start sv-justify-between sv-gap-3">
-<div class="sv-space-y-1.5">
-<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-2">
-<span class="sv-font-semibold sv-text-sm sv-text-primary">Lại Sơn Vỹ (Văn phòng)</span>
-<span class="sv-text-xs sv-text-secondary sv-font-mono">0988 102 345</span>
-<span class="sv-bg-surface-container sv-text-secondary sv-text-[10px] sv-font-semibold sv-px-2 sv-py-0.5 sv-rounded-full">
-                        Văn phòng / Nơi làm việc
-                      </span>
-</div>
-<p class="sv-text-xs sm:sv-text-sm sv-text-on-surface-variant sv-font-normal sv-leading-relaxed">
-                      Số 18 Ngõ Huyện, phường Hàng Trống, quận Hoàn Kiếm, Hà Nội
-                    </p>
-<p class="sv-text-[11px] sv-text-secondary sv-flex sv-items-center sv-gap-1">
-<span class="material-symbols-outlined sv-text-[14px]">bolt</span>
-                      Hỗ trợ giao hàng hỏa tốc trong 2 giờ
-                    </p>
-</div>
-<div class="sv-flex sv-items-center sv-gap-2 sv-shrink-0 sv-self-end sm:sv-self-start">
-<button class="sv-px-3 sv-py-1 sv-text-xs sv-font-semibold sv-text-primary hover:sv-bg-surface-container sv-rounded-lg sv-transition-colors" type="button">
-                      Đặt làm mặc định
-                    </button>
-<button class="sv-px-3 sv-py-1 sv-text-xs sv-font-semibold sv-text-primary hover:sv-bg-surface-container sv-rounded-lg sv-transition-colors" type="button">
-                      Sửa
-                    </button>
-<button class="sv-p-1 sv-text-secondary hover:sv-text-error sv-transition-colors" title="Xóa" type="button">
-<span class="material-symbols-outlined sv-text-[18px]">delete</span>
-</button>
 </div>
 </div>
-</div>
-</div>
-</div>
-<details class="member-address-editor"><summary>Thêm hoặc chỉnh sửa địa chỉ</summary><div class="member-form-grid">
-<label>Họ và tên<input type="text" value="Lại Sơn Vỹ" autocomplete="name"></label><label>Số điện thoại<input type="tel" value="0912 345 678" autocomplete="tel"></label><label class="member-full-width">Địa chỉ nhận hàng<textarea rows="3" autocomplete="street-address">Tổ 34, phường Bình Lộc, thành phố Long Khánh, tỉnh Đồng Nai</textarea></label><button type="button" class="member-button">Lưu địa chỉ</button>
-</div></details>
 </div>
 <!-- TAB 3: ĐỔI MẬT KHẨU & BẢO MẬT -->
 <div class="sv-tab-content  sv-flex sv-flex-col sv-gap-6 member-account-panel" id="securityTab">

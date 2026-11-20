@@ -1,41 +1,25 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+<link rel="stylesheet" href="../CSS/demo-ui.css">
+<script src="../JS/demo-ui.js" defer></script>
+
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="web_standard" name="shell-type">
-<link rel="stylesheet" href="../CSS/fonts.css">
+
 <title>Tiệm Sách Sơn Vỹ - Quản Lý Kho &amp; Nhập Sách</title>
 <link rel="stylesheet" href="../CSS/theme.css">
 <link rel="stylesheet" href="../CSS/admin.css">
 <link rel="stylesheet" href="../CSS/inventory.css">
-<link rel="stylesheet" href="../CSS/pagination-demo.css"></head>
-<body class="admin-shell min-h-screen flex flex-col" data-page="inventory">
+<link rel="stylesheet" href="../CSS/pagination-demo.css"><link rel="stylesheet" href="../CSS/admin-sidebar.css">
+<script src="../JS/admin-sidebar.js" defer></script>
+<link rel="stylesheet" href="../CSS/typography.css">
+<link rel="stylesheet" href="../CSS/admin-list.css">
+</head>
+<body class="admin-shell admin-layout min-h-screen flex flex-col" data-page="inventory">
 <!-- Top Navigation Header -->
-<header class="sticky top-0 z-40 bg-[#fef8f4]/95 backdrop-blur-md border-b border-[#ede7e3] shadow-sm">
-<div class="admin-header-inner max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
-<div class="flex items-center gap-3">
-<span class="admin-logo-viewport"><!-- Logo -->
-<img src="../assets/logo/logo.png" alt="Logo"><span class="material-symbols-outlined logo-fallback" aria-hidden="true" hidden="">menu_book</span></span>
-<div>
-<span class="font-serif text-2xl font-bold text-primary block leading-tight">Tiệm Sách Sơn Vỹ</span>
-<span class="text-[11px] font-semibold tracking-widest uppercase text-secondary">Trung Tâm Quản Trị Hệ Thống</span>
-</div>
-</div>
-<nav class="hidden xl:flex items-center gap-1 bg-surface-container-low p-1.5 rounded-xl border border-surface-container-high" aria-label="Điều hướng quản trị">
-<a href="dashboard.html" class="admin-nav-link"><span>1. Tổng quan</span></a><a href="books.html" class="admin-nav-link"><span>2. Quản lý Sách</span></a><a href="orders.html" class="admin-nav-link"><span>3. Đơn hàng</span><span class="nav-count rounded-full">38</span></a><a href="inventory.html" class="admin-nav-link is-current" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">inventory_2</span><span>4. Kho &amp; Nhập</span><span class="nav-active-badge rounded-full">Active</span></a><a href="customers.html" class="admin-nav-link"><span>5. Khách hàng</span></a><a href="promotions.html" class="admin-nav-link"><span>6. Khuyến mãi</span></a></nav>
-<div class="flex items-center gap-3">
-<button class="p-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors relative" title="Thông báo" type="button" data-action="notifications" data-label="Thông báo" aria-label="Thông báo">
-<span class="material-symbols-outlined text-[22px]" aria-hidden="true">notifications</span>
-<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
-</button>
-<div class="hidden sm:block text-right">
-<div class="text-xs font-bold text-primary">Nguyễn Văn A</div>
-<div class="text-[11px] text-secondary">Tổng Điều Hành Kho</div>
-</div>
-</div>
-</div>
-</header>
+
 <main class="admin-main admin-page-main flex-1 " id="main-content">
   <div class="page-content">
     <!-- Header Section -->
@@ -55,9 +39,9 @@
           <span class="material-symbols-outlined text-[18px]" aria-hidden="true">file_download</span>
           <span>Xuất Báo Cáo Tồn Kho</span>
         </button>
-        <button class="bg-primary-container text-on-primary hover:bg-primary px-4 py-2 rounded-lg text-xs font-semibold shadow-sm flex items-center gap-1.5 transition-all" type="button" data-action="create" data-label="+ Tạo Phiếu Nhập Mới" aria-label="+ Tạo Phiếu Nhập Mới">
+        <button class="bg-primary-container text-on-primary hover:bg-primary px-4 py-2 rounded-lg text-xs font-semibold shadow-sm flex items-center gap-1.5 transition-all" type="button" data-action="create" data-label="Tạo phiếu nhập sách" aria-label="Tạo phiếu nhập sách">
           <span class="material-symbols-outlined text-[18px]" aria-hidden="true">add_box</span>
-          <span>+ Tạo Phiếu Nhập Mới</span>
+          <span>Tạo phiếu nhập sách</span>
         </button>
       </div>
     </div>
@@ -66,7 +50,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
       <div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm">
         <span class="text-[11px] font-semibold text-secondary uppercase tracking-wider">Tổng Giá Trị Nhập Tháng</span>
-        <div class="text-2xl font-bold text-primary mt-1">148.500.000₫</div>
+        <div class="text-2xl font-bold text-primary mt-1">148.500.000đ</div>
         <div class="text-[11px] text-emerald-700 font-semibold mt-0.5">8 phiếu đã đối soát NXB</div>
       </div>
       <div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm">
@@ -89,28 +73,35 @@
       </div>
     </div>
 
-    <!-- Search & Filters -->
-    <div class="bg-surface-container-lowest p-4 rounded-xl border border-surface-container-high shadow-sm mb-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
-      <div class="relative flex-1 max-w-md">
-        <span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-outline">search</span>
-        <input class="w-full bg-surface-container-low border border-surface-container-high rounded-lg pl-9 pr-3 py-2 text-xs text-on-surface placeholder-on-surface-variant/60 focus:bg-surface-container-lowest focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none" placeholder="Tìm theo mã phiếu (#PN-), tên nhà xuất bản, tựa sách..." type="search" id="inventory-field-1" aria-label="Tìm theo mã phiếu (#PN-), tên nhà xuất bản, tựa sách..." data-search="">
-      </div>
-      <div class="flex items-center gap-2 text-xs filter-options filter-options">
-        <select class="bg-surface-container-low border border-surface-container-high rounded-lg px-3 py-2 text-xs text-on-surface outline-none" id="inventory-field-2" aria-label="Lọc danh sách">
+    <div class="admin-filter-card">
+<h2>Bộ lọc phiếu nhập</h2>
+<form class="admin-filter-form admin-filter-form--compact" data-admin-demo-filter>
+  <label class="admin-filter-field" for="inventory-field-1">Tìm phiếu nhập
+    <input type="search" id="inventory-field-1" placeholder="Mã phiếu, tên sách hoặc nhà xuất bản">
+  </label>
+  <label class="admin-filter-field" for="inventory-field-2">Nhà xuất bản
+    <select id="inventory-field-2">
           <option>Tất cả Nhà xuất bản</option>
           <option>NXB Nhã Nam</option>
           <option>NXB Kim Đồng</option>
           <option>NXB Hội Nhà Văn</option>
           <option>NXB Trẻ</option>
         </select>
-        <select class="bg-surface-container-low border border-surface-container-high rounded-lg px-3 py-2 text-xs text-on-surface outline-none" id="inventory-field-3" aria-label="Lọc danh sách">
+  </label>
+  <label class="admin-filter-field" for="inventory-field-3">Trạng thái phiếu
+    <select id="inventory-field-3">
           <option>Tất cả trạng thái</option>
           <option>Đã hoàn tất nhập</option>
           <option>Đang kiểm đếm</option>
           <option>Chờ giao hàng</option>
         </select>
-      </div>
-    </div>
+  </label>
+  <div class="admin-filter-actions">
+    <button class="admin-filter-apply" type="submit"><span class="material-symbols-outlined" aria-hidden="true">search</span> Áp dụng</button>
+    <button class="admin-filter-reset" type="reset"><span class="material-symbols-outlined" aria-hidden="true">restart_alt</span> Đặt lại</button>
+  </div>
+</form>
+</div>
 
     <!-- Main Inbound Intake Table -->
     <div class="bg-surface-container-lowest p-5 rounded-xl border border-surface-container-high shadow-sm mb-6">
@@ -135,7 +126,7 @@
               <th class="py-3 px-3 text-right">Tổng Tiền Nhập</th>
               <th class="py-3 px-3">Thủ Kho Nhận</th>
               <th class="py-3 px-3 text-center">Trạng Thái</th>
-              <th class="py-3 px-3 text-right rounded-r-lg">Thao Tác</th>
+              <th class="py-3 px-3 text-right rounded-r-lg inventory-actions-heading" scope="col">Thao tác</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-surface-container">
@@ -154,7 +145,7 @@
                 <div class="text-[11px] text-secondary">Gồm: Rừng Na Uy, Kafka bên bờ biển</div>
               </td>
               <td class="py-3.5 px-3 text-right">
-                <span class="font-bold text-sm text-primary block">32.400.000₫</span>
+                <span class="font-bold text-sm text-primary block">32.400.000đ</span>
                 <span class="text-[11px] text-emerald-700 font-medium">Đã thanh toán 50%</span>
               </td>
               <td class="py-3.5 px-3">
@@ -167,13 +158,14 @@
                 </span>
               </td>
               <td class="py-3.5 px-3 text-right">
-                <div class="flex items-center justify-end gap-1.5">
-                  <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-semibold text-[11px] flex items-center gap-1 transition-colors" type="button" data-action="details" data-label="Chi Tiết" aria-label="Chi Tiết">
-                    <span class="material-symbols-outlined text-[14px]" aria-hidden="true">visibility</span>
-                    <span>Chi Tiết</span>
+                <div class="inventory-row-actions">
+                  <button class="inventory-row-action" type="button" data-action="details" data-label="Chi tiết">
+                    <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+                    <span>Chi tiết</span>
                   </button>
-                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-secondary hover:text-primary transition-colors" title="In phiếu kiểm kê" type="button" data-action="print" data-label="In phiếu" aria-label="In phiếu">
-                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">print</span>
+                  <button class="inventory-row-action" type="button" data-action="print" data-label="In phiếu">
+                    <span class="material-symbols-outlined" aria-hidden="true">print</span>
+                    <span>In phiếu</span>
                   </button>
                 </div>
               </td>
@@ -194,7 +186,7 @@
                 <div class="text-[11px] text-secondary">Gồm: Dune Messiah, Hoàng Tử Bé</div>
               </td>
               <td class="py-3.5 px-3 text-right">
-                <span class="font-bold text-sm text-primary block">21.800.000₫</span>
+                <span class="font-bold text-sm text-primary block">21.800.000đ</span>
                 <span class="text-[11px] text-amber-700 font-medium">Chờ đối soát công nợ</span>
               </td>
               <td class="py-3.5 px-3">
@@ -207,13 +199,14 @@
                 </span>
               </td>
               <td class="py-3.5 px-3 text-right">
-                <div class="flex items-center justify-end gap-1.5">
-                  <button class="px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-primary font-semibold text-[11px] flex items-center gap-1 transition-colors" type="button" data-action="inventory" data-label="Kiểm Kê" aria-label="Kiểm Kê">
-                    <span class="material-symbols-outlined text-[14px]" aria-hidden="true">checklist</span>
-                    <span>Kiểm Kê</span>
+                <div class="inventory-row-actions">
+                  <button class="inventory-row-action" type="button" data-action="details" data-label="Chi tiết">
+                    <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+                    <span>Chi tiết</span>
                   </button>
-                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-secondary hover:text-primary transition-colors" title="Xem chi tiết" type="button" data-action="details" data-label="Xem chi tiết" aria-label="Xem chi tiết">
-                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
+                  <button class="inventory-row-action" type="button" data-action="inventory" data-label="Kiểm kê">
+                    <span class="material-symbols-outlined" aria-hidden="true">checklist</span>
+                    <span>Kiểm kê</span>
                   </button>
                 </div>
               </td>
@@ -234,7 +227,7 @@
                 <div class="text-[11px] text-secondary">Gồm: Marketing for Rookies, Cây Cam Ngọt</div>
               </td>
               <td class="py-3.5 px-3 text-right">
-                <span class="font-bold text-sm text-primary block">16.200.000₫</span>
+                <span class="font-bold text-sm text-primary block">16.200.000đ</span>
                 <span class="text-[11px] text-on-surface-variant font-medium">Đặt cọc 30%</span>
               </td>
               <td class="py-3.5 px-3">
@@ -247,13 +240,14 @@
                 </span>
               </td>
               <td class="py-3.5 px-3 text-right">
-                <div class="flex items-center justify-end gap-1.5">
-                  <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-semibold text-[11px] flex items-center gap-1 transition-colors" type="button" data-action="tracking" data-label="Lộ Trình" aria-label="Lộ Trình">
-                    <span class="material-symbols-outlined text-[14px]" aria-hidden="true">schedule</span>
-                    <span>Lộ Trình</span>
+                <div class="inventory-row-actions">
+                  <button class="inventory-row-action" type="button" data-action="details" data-label="Chi tiết">
+                    <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+                    <span>Chi tiết</span>
                   </button>
-                  <button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-secondary hover:text-primary transition-colors" title="Xem chi tiết" type="button" data-action="details" data-label="Xem chi tiết" aria-label="Xem chi tiết">
-                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
+                  <button class="inventory-row-action" type="button" data-action="tracking" data-label="Lộ trình">
+                    <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                    <span>Lộ trình</span>
                   </button>
                 </div>
               </td>
@@ -263,19 +257,13 @@
       </div>
 
       <!-- Pagination -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 mt-2 border-t border-surface-container text-xs text-on-surface-variant">
-        <span>Hiển thị <strong class="text-primary font-bold">1 - 3</strong> trong tổng số <strong class="text-primary font-bold">189 phiếu nhập</strong></span>
-        <div data-demo-pagination data-max-page="2" class="flex items-center gap-1">
-          <button data-demo-page="prev" class="w-7 h-7 rounded flex items-center justify-center bg-surface-container text-secondary hover:text-primary transition-colors disabled:opacity-40" disabled type="button" data-action="pagination" data-label="Trang trước" aria-label="Trang trước">
-            <span class="material-symbols-outlined text-[16px]" aria-hidden="true">chevron_left</span>
-          </button>
-          <button data-demo-page="1" class="w-7 h-7 rounded flex items-center justify-center bg-primary-container text-on-primary font-bold text-xs" type="button" data-action="pagination" data-label="1" aria-label="1" aria-current="page">1</button>
-          <button data-demo-page="2" class="w-7 h-7 rounded flex items-center justify-center bg-surface-container text-on-surface font-semibold text-xs hover:bg-surface-container-high" type="button" data-action="pagination" data-label="2" aria-label="2">2</button>
-          <button data-demo-page="next" class="w-7 h-7 rounded flex items-center justify-center bg-surface-container text-secondary hover:text-primary transition-colors" type="button" data-action="pagination" data-label="Trang sau" aria-label="Trang sau">
-            <span class="material-symbols-outlined text-[16px]" aria-hidden="true">chevron_right</span>
-          </button>
-        </div>
-      </div>
+<nav class="demo-pager" aria-label="Phân trang" data-demo-pagination data-max-page="3">
+  <button type="button" data-demo-page="prev" aria-label="Trang trước" disabled aria-disabled="true">‹</button>
+  <button type="button" data-demo-page="1" aria-label="Trang 1" aria-current="page">1</button>
+  <button type="button" data-demo-page="2" aria-label="Trang 2">2</button>
+  <button type="button" data-demo-page="3" aria-label="Trang 3">3</button>
+  <button type="button" data-demo-page="next" aria-label="Trang sau">›</button>
+</nav>
     </div>
 
     <!-- Inventory Storage Allocation Map & Warning -->
@@ -341,9 +329,7 @@
 </div>
 </footer>
 <div id="admin-overlays">
-<div id="admin-toast" class="admin-toast" role="status" aria-live="polite" hidden>
-<span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span id="admin-toast-message"></span><button type="button" aria-label="Đóng thông báo" data-close-toast>×</button>
-</div>
+
 <dialog id="admin-dialog" class="admin-dialog" aria-labelledby="dialog-title"><div class="dialog-top">
 <h2 id="dialog-title"></h2>
 <button type="button" class="dialog-close" aria-label="Đóng" data-close-dialog><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
@@ -356,5 +342,6 @@
 </form></dialog>
 </div>
 <script src="../JS/admin.js" defer></script><script src="../JS/inventory.js" defer></script>
-<script src="../JS/pagination-demo.js" defer></script></body>
+<script src="../JS/pagination-demo.js" defer></script><script src="../JS/admin-demo-filter.js" defer></script>
+</body>
 </html>

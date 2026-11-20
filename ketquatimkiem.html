@@ -1,4 +1,8 @@
-<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kết quả tìm kiếm | Tiệm Sách Sơn Vỹ</title><link rel="stylesheet" href="CSS/fonts.css"><link rel="stylesheet" href="CSS/reset.css"><link rel="stylesheet" href="CSS/theme.css"><link rel="stylesheet" href="CSS/main.css"><link rel="stylesheet" href="CSS/user-demo.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="CSS/category.css"><link rel="stylesheet" href="CSS/catalog-filters.css"><link rel="stylesheet" href="CSS/catalog-price-inputs.css"><link rel="stylesheet" href="CSS/ketquatimkiem.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"></head><body data-user-page="danhmucsanpham" data-catalog-view="search"><header class="header">
+<!DOCTYPE html><html lang="vi"><head>
+<link rel="stylesheet" href="CSS/demo-ui.css">
+<script src="JS/demo-ui.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kết quả tìm kiếm | Tiệm Sách Sơn Vỹ</title><link rel="stylesheet" href="CSS/reset.css"><link rel="stylesheet" href="CSS/theme.css"><link rel="stylesheet" href="CSS/main.css"><link rel="stylesheet" href="CSS/user-demo.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="CSS/category.css"><link rel="stylesheet" href="CSS/catalog-filters.css"><link rel="stylesheet" href="CSS/catalog-price-inputs.css"><link rel="stylesheet" href="CSS/ketquatimkiem.css"><link rel="stylesheet" href="CSS/pagination-demo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"><link rel="stylesheet" href="CSS/typography.css">
+</head><body data-user-page="danhmucsanpham" data-catalog-view="search"><header class="header">
       <div class="header-top">
         <!----------- 
                Logo 
@@ -125,23 +129,16 @@
       </nav>
     </header><main class="sr-page"><nav class="sr-breadcrumb" aria-label="Đường dẫn"><a href="trangchu.html">Trang chủ</a><span>›</span><a href="danhmucsanpham.html">Danh mục sản phẩm</a><span>›</span><span>Kết quả tìm kiếm</span></nav>
 <div class="sr-search-layout">
-<form id="sr-keyword-form" class="sr-keyword-bar"><div><label for="search-keyword">Từ khóa tìm kiếm</label><div class="sr-keyword-entry"><input id="search-keyword" name="q" type="search" placeholder="Nhập tên sách..." value="Haruki Murakami"><button type="submit" class="sr-button primary">Tìm kiếm</button></div></div><span class="sr-result-badge">4 ấn phẩm</span></form>
 <form class="filter-panel" id="catalog-filter-form" role="search">
           <div class="filter-title">
             <i class="material-symbols-outlined">tune</i>
-            <h2>Bộ Lọc Sách<br />Tuyển Chọn</h2>
-            <span>48<br /><small>mục</small></span>
+            <h2>Bộ lọc sách</h2>
+
           </div>
-          <label class="filter-search"
-            ><strong>Tên sản phẩm (tìm tương đối)</strong
-            ><span
-              ><i class="material-symbols-outlined">search</i
-              ><input
+          <div class="filter-search"><label for="catalog-query"><strong>Tên sản phẩm</strong></label><div class="search-with-icon"><input
                 type="search"
-                name="q"
-                placeholder="Nhập một phần tên sách" /></span
-            ><small>Chọn các điều kiện rồi bấm Áp dụng bộ lọc.</small></label
-          >
+                name="q" id="catalog-query"
+                placeholder="Nhập một phần tên sách" /><button class="demo-search-button" type="submit" aria-label="Tìm kiếm" title="Tìm kiếm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4 4"></path></svg></button></div><small>Chọn các điều kiện rồi bấm Áp dụng bộ lọc.</small></div>
           <div class="filter-group">
             <h3>Danh mục</h3>
             <label
@@ -193,14 +190,99 @@
           <div class="filter-group catalog-price-group">
             <h3>Khoảng giá (VNĐ)</h3>
             <div class="catalog-price-inputs">
-              <label for="catalog-price-min">Giá từ<div class="catalog-price-wrap"><input id="catalog-price-min" type="text" name="min-price" inputmode="numeric" placeholder="Ví dụ: 100.000" data-catalog-money /><span>đ</span></div></label>
-              <label for="catalog-price-max">Giá đến<div class="catalog-price-wrap"><input id="catalog-price-max" type="text" name="max-price" inputmode="numeric" placeholder="Ví dụ: 300.000" data-catalog-money /><span>đ</span></div></label>
+              <label for="catalog-price-min">Từ<div class="catalog-price-wrap"><input id="catalog-price-min" type="text" name="min-price" inputmode="numeric" placeholder="Ví dụ: 100.000" data-catalog-money /><span>đ</span></div></label>
+              <label for="catalog-price-max">Đến<div class="catalog-price-wrap"><input id="catalog-price-max" type="text" name="max-price" inputmode="numeric" placeholder="Ví dụ: 300.000" data-catalog-money /><span>đ</span></div></label>
             </div>
           </div>
           <button class="filter-apply" type="submit">Áp dụng bộ lọc</button
           ><button class="filter-reset" type="button">Xóa bộ lọc</button>
         </form>
-<section class="sr-results" aria-labelledby="search-results-title"><div class="sr-results-heading"><div><p>Kết quả tìm kiếm</p><h1 id="search-results-title">Haruki Murakami <span>(4 cuốn)</span></h1><p id="search-applied-summary" class="sr-applied-summary" hidden></p></div><label for="sort">Sắp xếp<select id="sort" name="sort"><option value="relevance">Độ phù hợp</option><option value="newest">Mới nhất</option><option value="bestseller">Bán chạy nhất</option><option value="price-asc">Giá tăng dần</option></select></label></div><div class="sr-book-list"><article class="sr-book-card"><div class="sr-book-image"><a href="chitietsanpham.html"><img src="assets/books/RungNaUy.png" alt="Bìa Rừng Na Uy (Norwegian Wood)" loading="lazy"></a><span class="sr-edition">Bản bìa cứng giới hạn</span><button type="button" class="sr-favorite" data-search-action="favorite" aria-label="Thêm Rừng Na Uy (Norwegian Wood) vào yêu thích">♡</button></div><div class="sr-book-body"><div class="sr-rating" aria-label="Đánh giá 5 trên 5 sao">★★★★★ <small>(Đánh giá bạn đọc)</small></div><h2><a href="chitietsanpham.html">Rừng Na Uy (Norwegian Wood)</a></h2><p class="sr-metadata">Tác giả: <strong>Haruki Murakami</strong> · Dịch giả: Trịnh Lữ</p><p class="sr-description">Một bản tình ca của tuổi trẻ, tình yêu và ký ức. Tác phẩm đưa người đọc trở về những năm tháng thanh xuân của Toru Watanabe.</p><div class="sr-book-bottom"><div class="sr-prices"><strong>245.000đ</strong><del>290.000đ</del></div><div class="sr-actions"><a href="chitietsanpham.html" class="sr-button">Xem chi tiết</a><button type="button" class="sr-button primary" data-search-action="cart">Thêm vào giỏ</button></div></div></div></article><article class="sr-book-card"><div class="sr-book-image"><a href="chitietsanpham.html"><img src="assets/books/Kafka.png" alt="Bìa Kafka Bên Bờ Biển (Kafka on the Shore)" loading="lazy"></a><span class="sr-edition">Bìa mềm cao cấp</span><button type="button" class="sr-favorite" data-search-action="favorite" aria-label="Thêm Kafka Bên Bờ Biển (Kafka on the Shore) vào yêu thích">♡</button></div><div class="sr-book-body"><div class="sr-rating" aria-label="Đánh giá 5 trên 5 sao">★★★★★ <small>(Đánh giá bạn đọc)</small></div><h2><a href="chitietsanpham.html">Kafka Bên Bờ Biển (Kafka on the Shore)</a></h2><p class="sr-metadata">Tác giả: <strong>Haruki Murakami</strong> · Dịch giả: Dương Kim Thoa</p><p class="sr-description">Hành trình của cậu bé Kafka Tamura đan xen câu chuyện về ông lão Nakata, mở ra một thế giới huyền ảo giữa hiện thực và giấc mơ.</p><div class="sr-book-bottom"><div class="sr-prices"><strong>195.000đ</strong><del>220.000đ</del></div><div class="sr-actions"><a href="chitietsanpham.html" class="sr-button">Xem chi tiết</a><button type="button" class="sr-button primary" data-search-action="cart">Thêm vào giỏ</button></div></div></div></article><article class="sr-book-card"><div class="sr-book-image"><a href="chitietsanpham.html"><img src="assets/books/Chim.png" alt="Bìa Biên Niên Ký Chim Vặn Dây Cót" loading="lazy"></a><span class="sr-edition">Bìa cứng chuẩn mực</span><button type="button" class="sr-favorite" data-search-action="favorite" aria-label="Thêm Biên Niên Ký Chim Vặn Dây Cót vào yêu thích">♡</button></div><div class="sr-book-body"><div class="sr-rating" aria-label="Đánh giá 5 trên 5 sao">★★★★★ <small>(Đánh giá bạn đọc)</small></div><h2><a href="chitietsanpham.html">Biên Niên Ký Chim Vặn Dây Cót</a></h2><p class="sr-metadata">Tác giả: <strong>Haruki Murakami</strong> · Dịch giả: Trần Tiễn Cao Đăng</p><p class="sr-description">Một câu chuyện khám phá các tầng sâu ý thức, lịch sử và ranh giới mong manh giữa thực tại với thế giới nội tâm.</p><div class="sr-book-bottom"><div class="sr-prices"><strong>210.000đ</strong><del>235.000đ</del></div><div class="sr-actions"><a href="chitietsanpham.html" class="sr-button">Xem chi tiết</a><button type="button" class="sr-button primary" data-search-action="cart">Thêm vào giỏ</button></div></div></div></article><article class="sr-book-card"><div class="sr-book-image"><a href="chitietsanpham.html"><img src="assets/books/1Q84.png" alt="Bìa Trọn Bộ 1Q84 (Tập 1, 2 & 3)" loading="lazy"></a><span class="sr-edition">Bản giới hạn trọn bộ</span><button type="button" class="sr-favorite" data-search-action="favorite" aria-label="Thêm Trọn Bộ 1Q84 (Tập 1, 2 & 3) vào yêu thích">♡</button></div><div class="sr-book-body"><div class="sr-rating" aria-label="Đánh giá 5 trên 5 sao">★★★★★ <small>(Đánh giá bạn đọc)</small></div><h2><a href="chitietsanpham.html">Trọn Bộ 1Q84 (Tập 1, 2 & 3)</a></h2><p class="sr-metadata">Tác giả: <strong>Haruki Murakami</strong> · Dịch giả: Lục Hương</p><p class="sr-description">Thế giới với hai mặt trăng trên bầu trời năm 1984. Bộ sách kể về cuộc hội ngộ định mệnh giữa Aomame và Tengo.</p><div class="sr-book-bottom"><div class="sr-prices"><strong>395.000đ</strong><del>450.000đ</del></div><div class="sr-actions"><a href="chitietsanpham.html" class="sr-button">Xem chi tiết</a><button type="button" class="sr-button primary" data-search-action="cart">Thêm vào giỏ</button></div></div></div></article></div><p class="sr-result-count">Hiển thị 4 kết quả</p><div class="sr-support"><div><h2>Chưa tìm thấy ấn bản cậu đang tìm?</h2><p>Gửi yêu cầu để tiệm sách hỗ trợ tra cứu và tư vấn.</p></div><button type="button" class="sr-button" data-search-action="request">Yêu cầu tìm sách</button></div></section>
+<section class="sr-results" aria-labelledby="search-results-title"><div class="sr-results-heading"><div><h1 id="search-results-title">Kết quả tìm kiếm</h1><p id="search-results-query" class="sr-applied-summary" hidden></p></div><label for="sort">Sắp xếp<select id="sort" name="sort"><option value="relevance">Độ phù hợp</option><option value="newest">Mới nhất</option><option value="bestseller">Bán chạy nhất</option><option value="price-asc">Giá tăng dần</option></select></label></div><div class="sr-book-list">
+  <article class="sr-book-card">
+    <div class="sr-book-image">
+      <a href="chitietsanpham.html"><img src="assets/books/RungNaUy.png" alt="Bìa Rừng Na Uy (Norwegian Wood)" loading="lazy"></a>
+      <button type="button" class="sr-favorite" data-search-action="favorite" aria-label="Thêm Rừng Na Uy (Norwegian Wood) vào yêu thích">♡</button>
+    </div>
+    <div class="sr-book-body">
+      <h2><a href="chitietsanpham.html">Rừng Na Uy (Norwegian Wood)</a></h2>
+      <p class="sr-metadata">Tác giả: <strong>Haruki Murakami</strong> <span aria-hidden="true">·</span> Dịch giả: Trịnh Lữ</p>
+      <p class="sr-edition">Bản bìa cứng giới hạn · Nhã Nam · 520 trang</p>
+      <p class="sr-description">Giai điệu Norwegian Wood gợi lại những năm tháng thanh xuân của Toru Watanabe tại Tokyo thập niên 1960, cùng ký ức về Naoko, Kizuki và Midori.</p>
+      <div class="sr-book-bottom">
+        <div class="sr-prices"><strong>245.000đ</strong><del>290.000đ</del></div>
+        <div class="sr-actions">
+          <a href="chitietsanpham.html" class="sr-button">Xem chi tiết</a>
+          <button type="button" class="sr-button primary" data-search-action="cart">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article class="sr-book-card">
+    <div class="sr-book-image">
+      <a href="chitietsanpham.html"><img src="assets/books/Kafka.png" alt="Bìa Kafka Bên Bờ Biển (Kafka on the Shore)" loading="lazy"></a>
+      <button type="button" class="sr-favorite" data-search-action="favorite" aria-label="Thêm Kafka Bên Bờ Biển (Kafka on the Shore) vào yêu thích">♡</button>
+    </div>
+    <div class="sr-book-body">
+      <h2><a href="chitietsanpham.html">Kafka Bên Bờ Biển (Kafka on the Shore)</a></h2>
+      <p class="sr-metadata">Tác giả: <strong>Haruki Murakami</strong> <span aria-hidden="true">·</span> Dịch giả: Dương Kim Thoa</p>
+      <p class="sr-edition">Bìa mềm cao cấp</p>
+      <p class="sr-description">Hành trình của cậu bé Kafka Tamura đan xen câu chuyện về ông lão Nakata, mở ra một thế giới huyền ảo giữa hiện thực và giấc mơ.</p>
+      <div class="sr-book-bottom">
+        <div class="sr-prices"><strong>195.000đ</strong></div>
+        <div class="sr-actions">
+          <a href="chitietsanpham.html" class="sr-button">Xem chi tiết</a>
+          <button type="button" class="sr-button primary" data-search-action="cart">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article class="sr-book-card">
+    <div class="sr-book-image">
+      <a href="chitietsanpham.html"><img src="assets/books/Chim.png" alt="Bìa Biên Niên Ký Chim Vặn Dây Cót" loading="lazy"></a>
+      <button type="button" class="sr-favorite" data-search-action="favorite" aria-label="Thêm Biên Niên Ký Chim Vặn Dây Cót vào yêu thích">♡</button>
+    </div>
+    <div class="sr-book-body">
+      <h2><a href="chitietsanpham.html">Biên Niên Ký Chim Vặn Dây Cót</a></h2>
+      <p class="sr-metadata">Tác giả: <strong>Haruki Murakami</strong> <span aria-hidden="true">·</span> Dịch giả: Trần Tiễn Cao Đăng</p>
+      <p class="sr-edition">Bìa cứng chuẩn mực</p>
+      <p class="sr-description">Một câu chuyện khám phá các tầng sâu ý thức, lịch sử và ranh giới mong manh giữa thực tại với thế giới nội tâm.</p>
+      <div class="sr-book-bottom">
+        <div class="sr-prices"><strong>210.000đ</strong></div>
+        <div class="sr-actions">
+          <a href="chitietsanpham.html" class="sr-button">Xem chi tiết</a>
+          <button type="button" class="sr-button primary" data-search-action="cart">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article class="sr-book-card">
+    <div class="sr-book-image">
+      <a href="chitietsanpham.html"><img src="assets/books/1Q84.png" alt="Bìa Trọn Bộ 1Q84 (Tập 1, 2 &amp; 3)" loading="lazy"></a>
+      <button type="button" class="sr-favorite" data-search-action="favorite" aria-label="Thêm Trọn Bộ 1Q84 (Tập 1, 2 &amp; 3) vào yêu thích">♡</button>
+    </div>
+    <div class="sr-book-body">
+      <h2><a href="chitietsanpham.html">Trọn Bộ 1Q84 (Tập 1, 2 &amp; 3)</a></h2>
+      <p class="sr-metadata">Tác giả: <strong>Haruki Murakami</strong> <span aria-hidden="true">·</span> Dịch giả: Lục Hương</p>
+      <p class="sr-edition">Bản giới hạn trọn bộ</p>
+      <p class="sr-description">Thế giới với hai mặt trăng trên bầu trời năm 1984. Bộ sách kể về cuộc hội ngộ định mệnh giữa Aomame và Tengo.</p>
+      <div class="sr-book-bottom">
+        <div class="sr-prices"><strong>395.000đ</strong></div>
+        <div class="sr-actions">
+          <a href="chitietsanpham.html" class="sr-button">Xem chi tiết</a>
+          <button type="button" class="sr-button primary" data-search-action="cart">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </div>
+  </article>
+</div><p class="sr-result-count">Hiển thị 4 kết quả</p>
+<nav class="demo-pager" data-demo-pagination data-max-page="3" aria-label="Phân trang">
+  <button type="button" data-demo-page="prev" aria-label="Trang trước" disabled aria-disabled="true">‹</button>
+  <a href="?page=1" data-demo-page="1" aria-label="Trang 1" aria-current="page">1</a>
+  <a href="?page=2" data-demo-page="2" aria-label="Trang 2">2</a>
+  <a href="?page=3" data-demo-page="3" aria-label="Trang 3">3</a>
+  <a href="?page=2" data-demo-page="next" aria-label="Trang sau">›</a>
+</nav>
+<div class="sr-support"><div><h2>Chưa tìm thấy ấn bản cậu đang tìm?</h2><p>Gửi yêu cầu để tiệm sách hỗ trợ tra cứu và tư vấn.</p></div><button type="button" class="sr-button" data-search-action="request">Yêu cầu tìm sách</button></div></section>
 </div></main>
     <section class="section-header section-main">
       <div class="main-content">
@@ -498,4 +580,4 @@
           </div>
         </div>
       </div>
-    </footer><script src="JS/user-core.js" defer></script><script src="JS/user-shop.js" defer></script><script src="JS/ketquatimkiem.js" defer></script></body></html>
+    </footer><script src="JS/user-core.js" defer></script><script src="JS/user-shop.js" defer></script><script src="JS/ketquatimkiem.js" defer></script><script src="JS/pagination-demo.js" defer></script></body></html>
