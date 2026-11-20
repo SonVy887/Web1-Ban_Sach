@@ -4,17 +4,17 @@ Website bán sách với phong cách ấm áp, sử dụng màu xanh rừng, ter
 
 ## Các trang hiện có
 
-- `trangchu.html`: trang chủ và nguồn tham chiếu cho header, navigation, voucher thành viên và footer.
-- `danhmucsanpham.html`: trang danh mục sản phẩm.
-- `chitietsanpham.html`: trang chi tiết sản phẩm.
-- `giohang.html`: trang giỏ hàng và thanh toán.
-- `wishlist.html`: trang sách yêu thích.
+- `index.html` mở trang chủ `user/trangchu.html`. Toàn bộ các trang người mua nằm trong `user/`.
+- `user/danhmucsanpham.html` và `user/ketquatimkiem.html` dùng tham số `page` cho phân trang mô phỏng.
+- `user/chitietsanpham.html` và `user/chitietdonhang.html` dùng chung cho người mua và chế độ quản trị.
+- `user/giohang.html` là trang giỏ hàng và thanh toán. `user/wishlist.html` là trang sách yêu thích.
+- `admin/index.html` mở trang tổng quan `admin/dashboard.html`. Các trang quản trị nằm trong `admin/`.
 
 ## Quy tắc giao diện cần giữ
 
 ### Header và footer
 
-- Các trang mới phải giữ cấu trúc header giống `trangchu.html`.
+- Các trang mới phải giữ cấu trúc header giống `user/trangchu.html`.
 - Navigation, logo, ô tìm kiếm, icon yêu thích, giỏ hàng, đăng nhập và đăng ký phải đồng nhất với trang chủ.
 - Footer phải giữ đúng cấu trúc và nội dung của trang chủ.
 - Block voucher **Đặc Quyền Thành Viên Mới** phải nằm ngay trước footer, gồm:
@@ -54,7 +54,7 @@ Không thêm hệ font riêng cho từng trang. Khi tạo trang mới, phải t�
 
 ## Quy tắc tài nguyên
 
-- Dùng đường dẫn asset local, ví dụ `assets/books/...` và `assets/logo/...`.
+- Dùng đường dẫn tài nguyên cục bộ. Từ HTML trong `user/` và `admin/`, ảnh nằm ở `../assets/books/...` và `../assets/logo/...`.
 - Kiểm tra ảnh trong Chrome, bảo đảm không có request ảnh local bị lỗi.
 - Không đưa file mẫu tạm hoặc ảnh chụp kiểm tra vào repo nếu không được yêu cầu.
 - Các file CSS riêng đặt trong thư mục `CSS/` và dùng chung `CSS/main.css`, `CSS/reset.css`, `CSS/theme.css` khi phù hợp.

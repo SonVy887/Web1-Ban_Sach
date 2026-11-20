@@ -7,7 +7,7 @@ window.addEventListener('click', event => {
   if (adding || button.matches('.btn-edit')) {
     event.preventDefault();
     event.stopImmediatePropagation();
-    location.assign('../chitietsanpham.html?mode=' + (adding ? 'add' : 'edit'));
+    location.assign('../user/chitietsanpham.html?mode=' + (adding ? 'add' : 'edit'));
     return;
   }
   if (button.matches('.btn-visibility')) {

@@ -2,8 +2,9 @@
 
 (() => {
   const main = document.querySelector('.detail-page');
-  const mode = new URLSearchParams(location.search).get('mode') || (main ? '' : 'edit');
-  const codeField = main?.querySelector('.product-code-field');
+  if (!main) return;
+  const mode = new URLSearchParams(location.search).get('mode');
+  const codeField = main.querySelector('.product-code-field');
   if (codeField && ['view', 'edit', 'add'].includes(mode)) {
     const code = codeField.querySelector('input');
     if (mode === 'add') code.value = code.dataset.newCode;
@@ -11,10 +12,6 @@
   }
   if (!['add', 'edit'].includes(mode)) return;
 
-  if (!main) {
-    location.replace('../chitietsanpham.html?mode=' + mode);
-    return;
-  }
   const isNew = mode === 'add';
   const title = isNew ? 'Thêm sản phẩm' : 'Sửa sản phẩm mẫu';
   document.title = title + ' | Tiệm Sách Sơn Vỹ';
@@ -27,7 +24,7 @@
     <div class="product-editor-toolbar">
       <h1>${title}</h1>
       <div>
-        <a href="admin/books.html">Quay lại quản lý sách</a>
+        <a href="../admin/books.html">Quay lại quản lý sách</a>
         <button type="submit">Lưu thông tin</button>
       </div>
     </div>`;

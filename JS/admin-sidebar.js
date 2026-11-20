@@ -7,9 +7,7 @@
   const sharedOrderDetail = body.classList.contains('admin-order-detail-mode');
   if (!body.classList.contains('admin-layout') && !productEditor) return;
 
-  const rootPage = productEditor || sharedOrderDetail;
-  const prefix = rootPage ? 'admin/' : '';
-  const assetPrefix = rootPage ? '' : '../';
+  const prefix = productEditor || sharedOrderDetail ? '../admin/' : '';
   const page = productEditor ? 'books' : body.dataset.page;
   const activePage = page === 'order-detail' ? 'orders' : page;
   const items = [
@@ -24,7 +22,7 @@
   sidebar.className = 'admin-sidebar';
   sidebar.innerHTML = `
     <a class="admin-sidebar-brand" href="${prefix}dashboard.html">
-      <span class="admin-sidebar-logo"><img src="${assetPrefix}assets/logo/logo.png" alt=""></span>
+      <span class="admin-sidebar-logo"><img src="../assets/logo/logo.png" alt=""></span>
       <span>Tiệm Sách Sơn Vỹ<small>Quản trị hệ thống</small></span>
     </a>
     <nav aria-label="Điều hướng quản trị">
