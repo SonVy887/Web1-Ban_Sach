@@ -1,9 +1,8 @@
 (() => {
   'use strict';
   let page;
-  let currentAction;
+  let currentMessage;
   let lastTrigger;
-  let toastTimer;
   const byId = id => document.getElementById(id);
   const clean = node => (node?.textContent || '').replace(/\s+/g, ' ').trim();
   const messages = {
@@ -16,42 +15,27 @@
     search: 'Tìm kiếm thành công.', pagination: 'Chuyển trang thành công.'
   };
   const titles = { edit: 'Chỉnh sửa thông tin', stock: 'Cập nhật tồn kho', delete: 'Xác nhận xóa', details: 'Thông tin chi tiết', history: 'Lịch sử giao dịch', notifications: 'Thông báo hệ thống', bulk: 'Tác vụ hàng loạt', tracking: 'Thông tin theo dõi', cancel: 'Xác nhận hủy đơn', pause: 'Tạm dừng chiến dịch' };
-  function toast(message) {
-    clearTimeout(toastTimer);
-    byId('admin-toast-message').textContent = message;
-    byId('admin-toast').hidden = false;
-    toastTimer = setTimeout(() => { byId('admin-toast').hidden = true; }, 4500);
-  }
-  // Kết quả minh họa cố định, không đối chiếu bất kỳ điều kiện lọc nào.
+  const toast = DemoUI.toast;
   function showFilterDemo() {
-    document.querySelectorAll('main table').forEach(table => {
-      const rows = [...table.querySelectorAll('tbody > tr')];
-      rows.forEach((row, index) => { row.hidden = index >= 2; });
-      let note = table.parentElement.querySelector('[data-filter-demo-note]');
-      if (!note) {
-        note = document.createElement('p');
-        note.dataset.filterDemoNote = '';
-        note.setAttribute('role', 'status');
-        note.style.cssText = 'padding:12px 0;font-family:var(--font-sans);font-size:14px;color:var(--color-primary,#1e3c30)';
-        table.before(note);
-      }
-      note.textContent = 'Kết quả lọc: ' + Math.min(rows.length, 2) + ' bản ghi';
-    });
     toast('Áp dụng bộ lọc thành công (mô phỏng).');
   }
   function closeDialog() { byId('admin-dialog').close(); lastTrigger?.focus(); }
   function paragraph(text) { const p = document.createElement('p'); p.textContent = text; return p; }
-  function recordDetails(trigger, container) {
+  function recordDetails(trigger, container, {columns, entries = []} = {}) {
     const row = trigger.closest('tr');
     const card = trigger.closest('.order-item');
     if (row) {
       const headers = [...row.closest('table').querySelectorAll('thead th')].map(clean);
       const list = document.createElement('dl'); list.className = 'record-details';
-      [...row.cells].forEach((cell, index) => {
-        if (cell.querySelector('button') || !clean(cell)) return;
-        const dt = document.createElement('dt'); dt.textContent = headers[index] || 'Thông tin';
-        const dd = document.createElement('dd'); dd.textContent = clean(cell);
+      function appendEntry(label, value) {
+        const dt = document.createElement('dt'); dt.textContent = label;
+        const dd = document.createElement('dd'); dd.textContent = value;
         list.append(dt, dd);
+      }
+      for (const [label, value] of entries) appendEntry(label, value);
+      [...row.cells].forEach((cell, index) => {
+        if ((columns && !columns.includes(index)) || cell.querySelector('button') || !clean(cell)) return;
+        appendEntry(headers[index] || 'Thông tin', clean(cell));
       });
       container.append(list);
     } else if (card) {
@@ -62,7 +46,7 @@
       container.append(paragraph(page.summary));
     }
   }
-  function addField(container, field, index, value) {
+  function addField(container, field, index, value = field.value) {
     const group = document.createElement('div'); group.className = 'dialog-field';
     const id = 'action-field-' + index;
     const label = document.createElement('label'); label.htmlFor = id; label.textContent = field.label;
@@ -70,16 +54,18 @@
     input.id = id; input.name = field.name || id;
     if (field.options) field.options.forEach(text => { const option = document.createElement('option'); option.textContent = text; option.value = text; input.append(option); });
     else {
-      if (!field.multiline) input.type = field.type || 'text';
+      if (!field.multiline) input.type = field.type === 'money' ? 'text' : field.type || 'text';
       input.placeholder = field.placeholder || field.label;
       if (field.type === 'number') { input.min = '0'; input.step = field.step || '1'; }
       if (value !== undefined) input.value = value;
+      if (field.readOnly) input.readOnly = true;
     }
-    input.required = field.required !== false;
+    if (field.type === 'money') DemoUI.moneyInput(input);
+    input.required = !field.readOnly && field.required !== false;
     group.append(label, input); container.append(group);
   }
   function openDialog(action, trigger) {
-    lastTrigger = trigger; currentAction = action;
+    lastTrigger = trigger; currentMessage = messages[action] || 'Thực hiện thao tác thành công.';
     const dialog = byId('admin-dialog'); const content = byId('dialog-content');
     const form = byId('admin-action-form'); form.reset(); content.replaceChildren();
     byId('dialog-title').textContent = action === 'create' ? page.createTitle : titles[action] || trigger.dataset.label || 'Xác nhận thao tác';
@@ -87,8 +73,30 @@
     byId('dialog-confirm').hidden = readOnly;
     byId('dialog-confirm').textContent = action === 'delete' ? 'Xóa' : action === 'create' ? 'Tạo mới' : 'Xác nhận';
     byId('dialog-confirm').classList.toggle('danger', ['delete','cancel'].includes(action));
-    if (readOnly) {
-      if (action === 'notifications') {
+    const book = action === 'delete' ? trigger.closest('.book-row[data-sold]') : null;
+    if (book) {
+      const {title, sold, status} = book.dataset;
+      const hasSales = Number(sold) > 0;
+      const alreadyHidden = status === 'Đang ẩn';
+      const confirm = byId('dialog-confirm');
+      byId('dialog-title').textContent = hasSales ? 'Không thể xóa sản phẩm' : 'Xác nhận xóa vĩnh viễn';
+      confirm.textContent = hasSales ? 'Đồng ý ẩn sản phẩm' : 'Xóa vĩnh viễn';
+      confirm.hidden = hasSales && alreadyHidden;
+      confirm.classList.toggle('danger', !hasSales);
+      if (hasSales) {
+        content.append(paragraph('Sản phẩm “' + title + '” đã bán ' + sold + ' cuốn. Để giữ lịch sử đơn hàng và báo cáo doanh thu, sản phẩm này không thể xóa vĩnh viễn.'));
+        content.append(paragraph(alreadyHidden ? 'Sản phẩm đang ẩn khỏi cửa hàng.' : 'Bạn có muốn ẩn sản phẩm khỏi cửa hàng không?'));
+        currentMessage = 'Ẩn sản phẩm thành công (mô phỏng).';
+      } else {
+        content.append(paragraph('Sản phẩm “' + title + '” chưa từng bán. Bạn có chắc muốn xóa vĩnh viễn sản phẩm này không?'));
+        currentMessage = 'Xóa sản phẩm thành công (mô phỏng).';
+      }
+    } else if (readOnly) {
+      const record = page.describeRecord?.(action, trigger);
+      if (record) {
+        byId('dialog-title').textContent = record.title;
+        recordDetails(trigger, content, record);
+      } else if (action === 'notifications') {
         content.append(paragraph('Có 38 đơn hàng cần theo dõi.'), paragraph('Có 3 đầu sách tồn kho thấp cần bổ sung.'));
       } else {
         // Cùng một mẫu cố định cho Xem chi tiết, Lịch sử và Theo dõi.
@@ -103,9 +111,13 @@
         );
       }
     } else if (['create','edit'].includes(action)) {
-      if (action === 'edit') recordDetails(trigger, content);
+      const editing = action === 'edit';
+      if (editing) recordDetails(trigger, content, page.describeRecord?.(action, trigger));
       const fields = document.createElement('div'); fields.className = 'dialog-fields';
-      page.fields.forEach((field, i) => addField(fields, field, i)); content.append(fields);
+      page.fields.forEach((field, i) => {
+        addField(fields, field, i, editing ? field.editValue?.(trigger) : undefined);
+      });
+      content.append(fields);
     } else if (action === 'stock') {
       recordDetails(trigger, content);
       addField(content, {label: 'Số lượng tồn kho', type: 'number'}, 0, trigger.closest('tr')?.dataset.stock || 0);
@@ -143,12 +155,13 @@
       }
     }
     if (action === 'save') {
-      const form = trigger.closest('form'); if (form && !form.reportValidity()) return;
+      const form = trigger.closest('form'); if (form && !form.checkValidity()) { toast('Kiểm tra thông tin đã nhập.'); return; }
     }
     toast(messages[action] || 'Thực hiện thao tác thành công.');
   }
   function mount(config) {
     page = config;
+    byId('admin-action-form').noValidate = true;
     const logo = document.querySelector('.admin-logo-viewport img');
     if (logo) {
       const fallback = () => { logo.hidden = true; document.querySelector('.logo-fallback').hidden = false; };
@@ -158,15 +171,18 @@
     document.addEventListener('click', event => {
       const close = event.target.closest('[data-close-dialog]');
       if (close) { closeDialog(); return; }
-      if (event.target.closest('[data-close-toast]')) { byId('admin-toast').hidden = true; return; }
       const trigger = event.target.closest('button[data-action], a[data-action]');
       if (!trigger || trigger.disabled) return;
       event.preventDefault(); handleAction(trigger);
     });
     document.addEventListener('submit', event => {
       event.preventDefault();
-      if (!event.target.reportValidity()) return;
-      if (event.target.id === 'admin-action-form') { closeDialog(); toast(messages[currentAction] || 'Thực hiện thao tác thành công.'); }
+      if (!event.target.checkValidity()) { toast('Kiểm tra thông tin đã nhập.'); return; }
+      if (event.target.id === 'admin-action-form') {
+        if (byId('dialog-confirm').hidden) return;
+        closeDialog();
+        toast(currentMessage);
+      }
       else toast(messages.save);
     });
     document.addEventListener('keydown', event => {
@@ -188,26 +204,17 @@
       if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) closeDialog();
     });
   }
-  window.AdminUI = Object.freeze({ mount });
+  const receiptForm = {
+    createTitle: 'Tạo phiếu nhập sách',
+    fields: [
+      {label: 'Mã phiếu nhập', value: '#PN-2025-059', readOnly: true},
+      {label: 'Nhà xuất bản / nhà cung cấp', type: 'text'},
+      {label: 'Ngày nhập dự kiến', type: 'date'},
+      {label: 'Tên sách', type: 'text'},
+      {label: 'Số lượng', type: 'number'},
+      {label: 'Đơn giá nhập (đ)', type: 'money'}
+    ]
+  };
+  window.AdminUI = Object.freeze({ mount, receiptForm });
 })();
 
-// Đăng xuất mô phỏng từ avatar trong header quản trị.
-(() => {
-  const header = document.querySelector('header .admin-header-inner');
-  if (!header || header.querySelector('[data-admin-logout]')) return;
-  const actions = header.lastElementChild;
-  if (!actions) return;
-  const avatar = document.createElement('button');
-  avatar.type = 'button';
-  avatar.dataset.adminLogout = '';
-  avatar.className = 'w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-sm shadow-sm';
-  avatar.setAttribute('aria-label', 'Đăng xuất tài khoản quản trị');
-  avatar.title = 'Đăng xuất';
-  avatar.textContent = 'NA';
-  avatar.addEventListener('click', () => {
-    if (window.confirm('Cậu muốn đăng xuất tài khoản quản trị?')) {
-      window.location.assign('admin-login.html');
-    }
-  });
-  actions.append(avatar);
-})();

@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+<link rel="stylesheet" href="../CSS/demo-ui.css">
+<script src="../JS/demo-ui.js" defer></script>
+
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Tiệm Sách Sơn Vỹ - Quản Trị Hệ Thống Tương Tác</title>
-<link rel="stylesheet" href="../CSS/fonts.css">
+
 <link rel="stylesheet" href="../CSS/theme.css">
 <link rel="stylesheet" href="../CSS/admin.css">
 <link rel="stylesheet" href="../CSS/books.css">
-<link rel="stylesheet" href="../CSS/pagination-demo.css"></head>
-<body class="admin-shell min-h-screen flex flex-col" data-page="books">
+<link rel="stylesheet" href="../CSS/pagination-demo.css"><link rel="stylesheet" href="../CSS/admin-sidebar.css">
+<script src="../JS/admin-sidebar.js" defer></script>
+<link rel="stylesheet" href="../CSS/typography.css">
+<link rel="stylesheet" href="../CSS/admin-list.css">
+</head>
+<body class="admin-shell admin-layout min-h-screen flex flex-col" data-page="books">
 <!-- Header -->
-<header class="sticky top-0 z-40 bg-[#fef8f4]/95 backdrop-blur-md border-b border-[#ede7e3] shadow-sm">
-<div class="admin-header-inner max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
-<div class="flex items-center gap-3">
-<span class="admin-logo-viewport"><!-- Logo -->
-<img src="../assets/logo/logo.png" alt="Logo"><span class="material-symbols-outlined logo-fallback" aria-hidden="true" hidden="">menu_book</span></span>
-<div>
-<span class="font-serif text-2xl font-bold text-primary block leading-tight">Tiệm Sách Sơn Vỹ</span>
-<span class="text-[11px] font-semibold tracking-widest uppercase text-secondary">Trung Tâm Quản Trị Hệ Thống</span>
-</div>
-</div>
-<nav class="hidden xl:flex items-center gap-1 bg-surface-container-low p-1.5 rounded-xl border border-surface-container-high" aria-label="Điều hướng quản trị">
-<a href="dashboard.html" class="admin-nav-link"><span>1. Tổng quan</span></a><a href="books.html" class="admin-nav-link is-current" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">menu_book</span><span>2. Quản lý Sách</span><span class="nav-active-badge rounded-full">Active</span></a><a href="orders.html" class="admin-nav-link"><span>3. Đơn hàng</span><span class="nav-count rounded-full">38</span></a><a href="inventory.html" class="admin-nav-link"><span>4. Kho &amp; Nhập</span></a><a href="customers.html" class="admin-nav-link"><span>5. Khách hàng</span></a><a href="promotions.html" class="admin-nav-link"><span>6. Khuyến mãi</span></a></nav>
-<div class="flex items-center gap-3">
-<button class="p-2 rounded-lg text-secondary hover:text-primary hover:bg-surface-container transition-colors relative" title="Thông báo" type="button" data-action="notifications" data-label="Thông báo" aria-label="Thông báo">
-<span class="material-symbols-outlined text-[22px]" aria-hidden="true">notifications</span>
-<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
-</button>
-<div class="hidden sm:block text-right">
-<div class="text-xs font-bold text-primary">Nguyễn Văn A</div>
-<div class="text-[11px] text-secondary">Tổng Điều Hành Kho</div>
-</div>
-</div>
-</div>
-</header>
+
 <!-- Main Content -->
 <main class="admin-main admin-page-main flex-1 books-main" id="main-content">
 <!-- Header title & stats -->
@@ -46,26 +30,10 @@
 <span>/</span>
 <span class="text-primary font-semibold">Phân Hệ Quản Lý Sản Phẩm</span>
 </div>
-<h1 class="font-serif text-3xl font-bold text-primary">Trung Tâm Quản Lý Ấn Phẩm &amp; Đơn Hàng</h1>
-<p class="text-sm text-secondary mt-1">Kiểm kê danh mục sách, cập nhật tồn kho, duyệt xuất bưu cục và cấu hình đơn giá theo thời gian thực.</p>
-</div>
-<div class="flex items-center gap-3">
-<div class="bg-surface-container-lowest border border-surface-container-high px-4 py-2 rounded-xl text-right shadow-sm">
-<div class="text-[11px] font-bold uppercase tracking-wider text-secondary">Tổng Tựa Sách</div>
-<div class="font-serif text-xl font-bold text-primary" id="stat-total">1.890 <span class="text-xs font-sans text-secondary font-normal">đầu sách</span>
+<h1 class="font-serif text-3xl font-bold text-primary">Quản Lý Sách</h1>
+<p class="text-sm text-secondary mt-1">Quản lý danh mục sách, ấn bản, giá bán và tồn kho.</p>
 </div>
 </div>
-<div class="bg-surface-container-lowest border border-surface-container-high px-4 py-2 rounded-xl text-right shadow-sm">
-<div class="text-[11px] font-bold uppercase tracking-wider text-error">Tồn Kho Thấp</div>
-<div class="font-serif text-xl font-bold text-error" id="stat-low">3 <span class="text-xs font-sans text-secondary font-normal">cần nhập</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Main Grid -->
-<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-<!-- Left Table (8 cols) -->
-<div class="xl:col-span-8 flex flex-col gap-5">
 <div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-container-high p-5">
 <!-- Toolbar -->
 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-surface-container">
@@ -76,7 +44,7 @@
 </h2>
 <p class="text-xs text-secondary">Kiểm soát trực quan ấn bản bìa cứng, bìa mềm, đơn giá và số lượng thực xuất.</p>
 </div>
-<div class="flex items-center gap-2 self-stretch sm:self-auto">
+<div class="books-toolbar-actions">
 <button class="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 bg-primary-container text-white hover:bg-primary px-3.5 py-2 rounded-xl text-xs font-bold shadow-sm transition-all active:scale-95" id="btn-open-add" type="button" data-action="create" data-label="+ Thêm Sách Mới" aria-label="+ Thêm Sách Mới">
 <span class="material-symbols-outlined text-[17px]" aria-hidden="true">add_circle</span>
 <span>+ Thêm Sách Mới</span>
@@ -85,29 +53,45 @@
 <span class="material-symbols-outlined text-[17px]" aria-hidden="true">file_download</span>
 <span>Xuất CSV</span>
 </button>
+<button class="flex items-center justify-center gap-1 bg-surface-container-low hover:bg-surface-container border border-surface-container-high rounded-lg px-2.5 py-2 text-xs font-semibold text-secondary transition-all" id="btn-bulk-open" type="button" data-action="bulk" data-label="Tác vụ hàng loạt" aria-label="Tác vụ hàng loạt">
+<span class="material-symbols-outlined text-[16px]" aria-hidden="true">tune</span>
+<span>Tác vụ hàng loạt</span>
+</button>
 </div>
 </div>
 <!-- Filters -->
-<div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 pt-3">
-<div class="sm:col-span-6 relative">
-<button id="btn-search" class="admin-search-button" type="button" title="Tìm kiếm" aria-label="Tìm kiếm" data-action="search" data-label="Tìm kiếm"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">search</span></button>
-<input class="w-full bg-surface-container-low border border-surface-container-high rounded-lg pl-9 pr-3 py-2 text-xs text-primary focus:bg-white focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none" id="search-input" placeholder="Tìm kiếm theo tên sách, tác giả, ISBN..." type="search" aria-label="Tìm kiếm theo tên sách, tác giả, ISBN..." data-search="">
-</div>
-<div class="sm:col-span-3">
-<select class="w-full bg-surface-container-low border border-surface-container-high rounded-lg px-2.5 py-2 text-xs text-primary focus:border-primary-container outline-none" id="genre-filter" aria-label="Lọc danh sách">
+<div class="admin-filter-card">
+<h2>Bộ lọc sách</h2>
+<form class="admin-filter-form admin-filter-form--books" data-admin-demo-filter>
+  <label class="admin-filter-field" for="search-input">Tên sách
+    <input id="search-input" type="search" name="title" placeholder="Nhập tên sách">
+  </label>
+  <label class="admin-filter-field" for="genre-filter">Danh mục
+    <select id="genre-filter" name="category">
 <option value="">Tất cả danh mục</option>
 <option value="Văn học &amp; Tiểu thuyết">Văn học &amp; Tiểu thuyết</option>
 <option value="Kinh doanh - Khởi nghiệp">Kinh doanh - Khởi nghiệp</option>
 <option value="Phát triển bản thân">Phát triển bản thân</option>
 <option value="Thiếu nhi &amp; Tranh truyện">Thiếu nhi &amp; Tranh truyện</option>
 </select>
-</div>
-<div class="sm:col-span-3">
-<button class="w-full flex items-center justify-center gap-1 bg-surface-container-low hover:bg-surface-container border border-surface-container-high rounded-lg px-2.5 py-2 text-xs font-semibold text-secondary transition-all" id="btn-bulk-open" type="button" data-action="bulk" data-label="Tác vụ hàng loạt" aria-label="Tác vụ hàng loạt">
-<span class="material-symbols-outlined text-[16px]" aria-hidden="true">tune</span>
-<span>Tác vụ hàng loạt</span>
-</button>
-</div>
+  </label>
+  <label class="admin-filter-field" for="publisher-filter">Nhà xuất bản
+    <select id="publisher-filter" name="publisher">
+      <option value="">Tất cả nhà xuất bản</option>
+      <option>NXB Hội Nhà Văn</option><option>NXB Nhã Nam</option><option>Xưởng Thư Họa</option><option>NXB Kim Đồng</option>
+    </select>
+  </label>
+  <label class="admin-filter-field" for="book-price-min">Từ
+    <input id="book-price-min" name="minPrice" aria-label="Từ (đồng)" data-book-money type="text" inputmode="numeric" placeholder="0 đ">
+  </label>
+  <label class="admin-filter-field" for="book-price-max">Đến
+    <input id="book-price-max" name="maxPrice" aria-label="Đến (đồng)" data-book-money type="text" inputmode="numeric" placeholder="500.000 đ">
+  </label>
+    <div class="admin-filter-actions">
+    <button class="admin-filter-apply" type="submit"><span class="material-symbols-outlined" aria-hidden="true">search</span> Áp dụng</button>
+    <button class="admin-filter-reset" type="reset"><span class="material-symbols-outlined" aria-hidden="true">restart_alt</span> Đặt lại</button>
+  </div>
+</form>
 </div>
 <!-- Table -->
 <div class="overflow-x-auto w-full mt-4">
@@ -115,7 +99,7 @@
 <thead>
 <tr class="bg-surface-container-low text-secondary text-[11px] font-bold uppercase tracking-wider">
 <th class="py-2.5 px-3 rounded-l-lg w-8"><input class="rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" id="check-all" type="checkbox" aria-label="Chọn tất cả"></th>
-<th class="py-2.5 px-3 min-w-[200px]">Ấn phẩm / ISBN</th>
+<th class="py-2.5 px-3 min-w-[200px]">Ấn phẩm / Mã sản phẩm</th>
 <th class="py-2.5 px-3">Tác giả &amp; NXB</th>
 <th class="py-2.5 px-3">Giá bán / Vốn</th>
 <th class="py-2.5 px-3 text-center">Tồn kho</th>
@@ -125,7 +109,7 @@
 </thead>
 <tbody class="divide-y divide-surface-container text-xs" id="table-body">
 <!-- Book 1 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group book-row cursor-pointer" data-author="Haruki Murakami" data-code="SV-BK01" data-cost="170.000" data-isbn="978-604-9" data-price="245.000" data-publisher="NXB Hội Nhà Văn" data-status="Đang mở bán" data-stock="48" data-title="Rừng Na Uy" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Norwegian Wood" data-translator="Trịnh Lữ" data-distributor="Nhã Nam" data-description="Khởi đầu từ giai điệu êm dịu của bài hát Norwegian Wood, Toru Watanabe hồi tưởng những năm tháng thanh xuân tại Tokyo." data-cover="../assets/books/admin-book-1.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Cứng Boxset&quot;,&quot;isbn&quot;:&quot;978-604-9&quot;,&quot;price&quot;:245000,&quot;listPrice&quot;:290000,&quot;stock&quot;:48,&quot;editionNumber&quot;:&quot;Ấn bản bìa cứng&quot;,&quot;pageCount&quot;:520,&quot;dimensions&quot;:&quot;14.5 × 20.5 cm&quot;,&quot;paperType&quot;:&quot;Giấy xốp&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;},{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-9&quot;,&quot;price&quot;:135000,&quot;listPrice&quot;:null,&quot;stock&quot;:34,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:520,&quot;dimensions&quot;:&quot;14.5 × 20.5 cm&quot;,&quot;paperType&quot;:&quot;Giấy tiêu chuẩn&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]" data-quote="Cái chết không phải là điều đã rời khỏi sự sống, mà là một phần không thể tách rời của nó.">
+<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="Haruki Murakami" data-code="SV-BK01" data-sold="18" data-cost="170.000" data-isbn="978-604-9" data-price="245.000" data-publisher="NXB Hội Nhà Văn" data-status="Đang mở bán" data-stock="48" data-title="Rừng Na Uy" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Norwegian Wood" data-translator="Trịnh Lữ" data-distributor="Nhã Nam" data-description="Khởi đầu từ giai điệu êm dịu của bài hát Norwegian Wood, Toru Watanabe hồi tưởng những năm tháng thanh xuân tại Tokyo." data-cover="../assets/books/admin-book-1.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Cứng Boxset&quot;,&quot;isbn&quot;:&quot;978-604-9&quot;,&quot;price&quot;:245000,&quot;listPrice&quot;:290000,&quot;stock&quot;:48,&quot;editionNumber&quot;:&quot;Ấn bản bìa cứng&quot;,&quot;pageCount&quot;:520,&quot;dimensions&quot;:&quot;14.5 × 20.5 cm&quot;,&quot;paperType&quot;:&quot;Giấy xốp&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;},{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-9&quot;,&quot;price&quot;:135000,&quot;listPrice&quot;:null,&quot;stock&quot;:34,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:520,&quot;dimensions&quot;:&quot;14.5 × 20.5 cm&quot;,&quot;paperType&quot;:&quot;Giấy tiêu chuẩn&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]" data-quote="Cái chết không phải là điều đã rời khỏi sự sống, mà là một phần không thể tách rời của nó.">
 <td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-4" aria-label="Chọn bản ghi"></td>
 <td class="py-3 px-3">
 <div class="flex items-center gap-3">
@@ -133,9 +117,8 @@
 <img alt="Rừng Na Uy" class="w-full h-full object-cover" src="../assets/books/admin-book-1.jpg">
 </div>
 <div class="min-w-0">
-<span class="font-bold text-primary block truncate group-hover:text-primary-container book-title">Rừng Na Uy</span>
-<span class="text-[11px] font-mono text-secondary">SV-BK01 · 978-604-9</span>
-<span class="inline-block text-[10px] text-on-secondary-container bg-secondary-container/50 px-1 rounded ml-1 font-semibold">Boxset</span>
+<a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../chitietsanpham.html?mode=view">Rừng Na Uy</a>
+<span class="text-[11px] font-mono text-secondary">SV-BK01</span>
 </div>
 </div>
 </td>
@@ -144,8 +127,8 @@
 <div class="text-[11px] text-secondary">NXB Hội Nhà Văn</div>
 </td>
 <td class="py-3 px-3">
-<div class="font-bold text-primary book-price">245.000₫</div>
-<div class="text-[10px] text-secondary">Vốn: 170.000₫</div>
+<div class="font-bold text-primary book-price">245.000đ</div>
+<div class="text-[10px] text-secondary">Vốn: 170.000đ</div>
 </td>
 <td class="py-3 px-3 text-center">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 stock-badge">
@@ -158,14 +141,15 @@
 </td>
 <td class="py-3 px-3 text-right">
 <div class="flex items-center justify-end gap-1">
+<a class="book-view-link" href="../chitietsanpham.html?mode=view">Xem</a>
 <button class="p-1 hover:bg-surface-container rounded text-primary btn-edit" title="Chỉnh sửa thông tin" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">edit</span></button>
-<button class="p-1 hover:bg-surface-container rounded text-secondary hover:text-primary btn-stock" title="Cập nhật tồn kho" type="button" data-action="stock" data-label="Cập nhật tồn kho" aria-label="Cập nhật tồn kho"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">shelves</span></button>
+<button class="p-1 rounded text-secondary hover:text-primary btn-visibility" title="Ẩn/hiện sản phẩm" type="button" aria-label="Ẩn/hiện sản phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">visibility_off</span></button>
 <button class="p-1 hover:bg-error-container/40 rounded text-error/70 hover:text-error btn-del" title="Xóa ấn phẩm" type="button" data-action="delete" data-label="Xóa ấn phẩm" aria-label="Xóa ấn phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">delete</span></button>
 </div>
 </td>
 </tr>
 <!-- Book 2 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group book-row cursor-pointer" data-author="José Mauro" data-code="SV-BK02" data-cost="72.000" data-isbn="978-604-2" data-price="108.000" data-publisher="NXB Nhã Nam" data-status="Đang mở bán" data-stock="34" data-title="Cây Cam Ngọt Của Tôi" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Meu Pé de Laranja Lima" data-translator="Tô Huệ Lan" data-distributor="Nhã Nam" data-description="Câu chuyện dịu dàng về tuổi thơ, tình yêu thương và những điều làm nên một trái tim tốt." data-cover="../assets/books/admin-book-2.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-2&quot;,&quot;price&quot;:108000,&quot;listPrice&quot;:null,&quot;stock&quot;:34,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
+<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="José Mauro" data-code="SV-BK02" data-sold="2" data-cost="72.000" data-isbn="978-604-2" data-price="108.000" data-publisher="NXB Nhã Nam" data-status="Đang mở bán" data-stock="34" data-title="Cây Cam Ngọt Của Tôi" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Meu Pé de Laranja Lima" data-translator="Tô Huệ Lan" data-distributor="Nhã Nam" data-description="Câu chuyện dịu dàng về tuổi thơ, tình yêu thương và những điều làm nên một trái tim tốt." data-cover="../assets/books/admin-book-2.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-2&quot;,&quot;price&quot;:108000,&quot;listPrice&quot;:null,&quot;stock&quot;:34,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
 <td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-5" aria-label="Chọn bản ghi"></td>
 <td class="py-3 px-3">
 <div class="flex items-center gap-3">
@@ -173,9 +157,8 @@
 <img alt="Cây Cam Ngọt Của Tôi" class="w-full h-full object-cover" src="../assets/books/admin-book-2.jpg">
 </div>
 <div class="min-w-0">
-<span class="font-bold text-primary block truncate group-hover:text-primary-container book-title">Cây Cam Ngọt Của Tôi</span>
-<span class="text-[11px] font-mono text-secondary">SV-BK02 · 978-604-2</span>
-<span class="inline-block text-[10px] text-secondary bg-surface-container px-1 rounded ml-1">Kèm Bookmark</span>
+<a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../chitietsanpham.html?mode=view">Cây Cam Ngọt Của Tôi</a>
+<span class="text-[11px] font-mono text-secondary">SV-BK02</span>
 </div>
 </div>
 </td>
@@ -184,8 +167,8 @@
 <div class="text-[11px] text-secondary">NXB Nhã Nam</div>
 </td>
 <td class="py-3 px-3">
-<div class="font-bold text-primary book-price">108.000₫</div>
-<div class="text-[10px] text-secondary">Vốn: 72.000₫</div>
+<div class="font-bold text-primary book-price">108.000đ</div>
+<div class="text-[10px] text-secondary">Vốn: 72.000đ</div>
 </td>
 <td class="py-3 px-3 text-center">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 stock-badge">
@@ -198,14 +181,15 @@
 </td>
 <td class="py-3 px-3 text-right">
 <div class="flex items-center justify-end gap-1">
+<a class="book-view-link" href="../chitietsanpham.html?mode=view">Xem</a>
 <button class="p-1 hover:bg-surface-container rounded text-primary btn-edit" title="Chỉnh sửa thông tin" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">edit</span></button>
-<button class="p-1 hover:bg-surface-container rounded text-secondary hover:text-primary btn-stock" title="Cập nhật tồn kho" type="button" data-action="stock" data-label="Cập nhật tồn kho" aria-label="Cập nhật tồn kho"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">shelves</span></button>
+<button class="p-1 rounded text-secondary hover:text-primary btn-visibility" title="Ẩn/hiện sản phẩm" type="button" aria-label="Ẩn/hiện sản phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">visibility_off</span></button>
 <button class="p-1 hover:bg-error-container/40 rounded text-error/70 hover:text-error btn-del" title="Xóa ấn phẩm" type="button" data-action="delete" data-label="Xóa ấn phẩm" aria-label="Xóa ấn phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">delete</span></button>
 </div>
 </td>
 </tr>
 <!-- Book 3 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group book-row cursor-pointer" data-author="Sơn Vỹ Tuyển Tập" data-code="SV-BK03" data-cost="620.000" data-isbn="978-604-7" data-price="950.000" data-publisher="Xưởng Thư Họa" data-status="Đang mở bán" data-stock="5" data-title="Thổ Hạc Xuân Tình Tuyển Tập" data-category="Văn học &amp; Tiểu thuyết" data-original-title="" data-translator="" data-distributor="Xưởng Thư Họa" data-description="" data-cover="../assets/books/admin-book-3.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Cứng Boxset&quot;,&quot;isbn&quot;:&quot;978-604-7&quot;,&quot;price&quot;:950000,&quot;listPrice&quot;:null,&quot;stock&quot;:5,&quot;editionNumber&quot;:&quot;Bản cổ phục dựng&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
+<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="Sơn Vỹ Tuyển Tập" data-code="SV-BK03" data-sold="1" data-cost="620.000" data-isbn="978-604-7" data-price="950.000" data-publisher="Xưởng Thư Họa" data-status="Đang mở bán" data-stock="5" data-title="Thổ Hạc Xuân Tình Tuyển Tập" data-category="Văn học &amp; Tiểu thuyết" data-original-title="" data-translator="" data-distributor="Xưởng Thư Họa" data-description="" data-cover="../assets/books/admin-book-3.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Cứng Boxset&quot;,&quot;isbn&quot;:&quot;978-604-7&quot;,&quot;price&quot;:950000,&quot;listPrice&quot;:null,&quot;stock&quot;:5,&quot;editionNumber&quot;:&quot;Bản cổ phục dựng&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
 <td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-6" aria-label="Chọn bản ghi"></td>
 <td class="py-3 px-3">
 <div class="flex items-center gap-3">
@@ -213,9 +197,8 @@
 <img alt="Thổ Hạc Xuân Tình" class="w-full h-full object-cover" src="../assets/books/admin-book-3.jpg">
 </div>
 <div class="min-w-0">
-<span class="font-bold text-primary block truncate group-hover:text-primary-container book-title">Thổ Hạc Xuân Tình Tuyển Tập</span>
-<span class="text-[11px] font-mono text-secondary">SV-BK03 · 978-604-7</span>
-<span class="inline-block text-[10px] text-amber-800 bg-amber-100 px-1 rounded ml-1 font-semibold">Bản Cổ Phục Dựng</span>
+<a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../chitietsanpham.html?mode=view">Thổ Hạc Xuân Tình Tuyển Tập</a>
+<span class="text-[11px] font-mono text-secondary">SV-BK03</span>
 </div>
 </div>
 </td>
@@ -224,8 +207,8 @@
 <div class="text-[11px] text-secondary">Xưởng Thư Họa</div>
 </td>
 <td class="py-3 px-3">
-<div class="font-bold text-primary book-price">950.000₫</div>
-<div class="text-[10px] text-secondary">Vốn: 620.000₫</div>
+<div class="font-bold text-primary book-price">950.000đ</div>
+<div class="text-[10px] text-secondary">Vốn: 620.000đ</div>
 </td>
 <td class="py-3 px-3 text-center">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300 stock-badge">
@@ -238,14 +221,15 @@
 </td>
 <td class="py-3 px-3 text-right">
 <div class="flex items-center justify-end gap-1">
+<a class="book-view-link" href="../chitietsanpham.html?mode=view">Xem</a>
 <button class="p-1 hover:bg-surface-container rounded text-primary btn-edit" title="Chỉnh sửa thông tin" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">edit</span></button>
-<button class="p-1 hover:bg-surface-container rounded text-secondary hover:text-primary btn-stock" title="Cập nhật tồn kho" type="button" data-action="stock" data-label="Cập nhật tồn kho" aria-label="Cập nhật tồn kho"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">shelves</span></button>
+<button class="p-1 rounded text-secondary hover:text-primary btn-visibility" title="Ẩn/hiện sản phẩm" type="button" aria-label="Ẩn/hiện sản phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">visibility_off</span></button>
 <button class="p-1 hover:bg-error-container/40 rounded text-error/70 hover:text-error btn-del" title="Xóa ấn phẩm" type="button" data-action="delete" data-label="Xóa ấn phẩm" aria-label="Xóa ấn phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">delete</span></button>
 </div>
 </td>
 </tr>
 <!-- Book 4 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group book-row cursor-pointer bg-red-50/20" data-author="Frank Herbert" data-code="SV-BK04" data-cost="125.000" data-isbn="978-604-5" data-price="185.000" data-publisher="NXB Kim Đồng" data-status="Đang mở bán" data-stock="4" data-title="Dune Messiah (Xứ Cát Cứu Thế)" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Dune Messiah" data-translator="" data-distributor="NXB Kim Đồng" data-description="" data-cover="../assets/books/admin-book-4.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-5&quot;,&quot;price&quot;:185000,&quot;listPrice&quot;:null,&quot;stock&quot;:4,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
+<tr class="hover:bg-surface-container-low/60 transition-colors group book-row bg-red-50/20" data-author="Frank Herbert" data-code="SV-BK04" data-sold="1" data-cost="125.000" data-isbn="978-604-5" data-price="185.000" data-publisher="NXB Kim Đồng" data-status="Đang mở bán" data-stock="4" data-title="Dune Messiah (Xứ Cát Cứu Thế)" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Dune Messiah" data-translator="" data-distributor="NXB Kim Đồng" data-description="" data-cover="../assets/books/admin-book-4.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-5&quot;,&quot;price&quot;:185000,&quot;listPrice&quot;:null,&quot;stock&quot;:4,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
 <td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-7" aria-label="Chọn bản ghi"></td>
 <td class="py-3 px-3">
 <div class="flex items-center gap-3">
@@ -253,9 +237,8 @@
 <img alt="Dune Messiah" class="w-full h-full object-cover" src="../assets/books/admin-book-4.jpg">
 </div>
 <div class="min-w-0">
-<span class="font-bold text-primary block truncate group-hover:text-primary-container book-title">Dune Messiah (Xứ Cát Cứu Thế)</span>
-<span class="text-[11px] font-mono text-secondary">SV-BK04 · 978-604-5</span>
-<span class="inline-block text-[10px] text-error font-semibold bg-error-container px-1 rounded ml-1">Sắp hết</span>
+<a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../chitietsanpham.html?mode=view">Dune Messiah (Xứ Cát Cứu Thế)</a>
+<span class="text-[11px] font-mono text-secondary">SV-BK04</span>
 </div>
 </div>
 </td>
@@ -264,8 +247,8 @@
 <div class="text-[11px] text-secondary">NXB Kim Đồng</div>
 </td>
 <td class="py-3 px-3">
-<div class="font-bold text-primary book-price">185.000₫</div>
-<div class="text-[10px] text-secondary">Vốn: 125.000₫</div>
+<div class="font-bold text-primary book-price">185.000đ</div>
+<div class="text-[10px] text-secondary">Vốn: 125.000đ</div>
 </td>
 <td class="py-3 px-3 text-center">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-error-container text-error stock-badge">
@@ -278,8 +261,49 @@
 </td>
 <td class="py-3 px-3 text-right">
 <div class="flex items-center justify-end gap-1">
+<a class="book-view-link" href="../chitietsanpham.html?mode=view">Xem</a>
 <button class="p-1 hover:bg-surface-container rounded text-primary btn-edit" title="Chỉnh sửa thông tin" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">edit</span></button>
-<button class="p-1 hover:bg-surface-container rounded text-secondary hover:text-primary btn-stock" title="Cập nhật tồn kho" type="button" data-action="stock" data-label="Cập nhật tồn kho" aria-label="Cập nhật tồn kho"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">shelves</span></button>
+<button class="p-1 rounded text-secondary hover:text-primary btn-visibility" title="Ẩn/hiện sản phẩm" type="button" aria-label="Ẩn/hiện sản phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">visibility_off</span></button>
+<button class="p-1 hover:bg-error-container/40 rounded text-error/70 hover:text-error btn-del" title="Xóa ấn phẩm" type="button" data-action="delete" data-label="Xóa ấn phẩm" aria-label="Xóa ấn phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Book 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="Haruki Murakami" data-code="SV-BK05" data-sold="0" data-cost="130.000" data-isbn="" data-price="195.000" data-publisher="NXB Nhã Nam" data-status="Đang mở bán" data-stock="24" data-title="Kafka Bên Bờ Biển" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Kafka on the Shore" data-translator="Dương Kim Thoa" data-distributor="Nhã Nam" data-description="Hành trình của cậu bé Kafka Tamura đan xen câu chuyện về ông lão Nakata." data-cover="../assets/books/Kafka.png" data-editions="[{&quot;format&quot;:&quot;Bìa mềm cao cấp&quot;,&quot;isbn&quot;:&quot;&quot;,&quot;price&quot;:195000,&quot;listPrice&quot;:null,&quot;stock&quot;:24,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
+<td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-8" aria-label="Chọn bản ghi"></td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded overflow-hidden shadow-sm flex-shrink-0 bg-surface-container relative border border-surface-container-high">
+<img alt="Kafka Bên Bờ Biển" class="w-full h-full object-cover" src="../assets/books/Kafka.png">
+</div>
+<div class="min-w-0">
+<a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../chitietsanpham.html?mode=view">Kafka Bên Bờ Biển</a>
+<span class="text-[11px] font-mono text-secondary">SV-BK05</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-primary text-xs book-author">Haruki Murakami</div>
+<div class="text-[11px] text-secondary">NXB Nhã Nam</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-bold text-primary book-price">195.000đ</div>
+<div class="text-[10px] text-secondary">Vốn: 130.000đ</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 stock-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span class="stock-val">24</span> cuốn
+                    </span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 status-badge">Đang mở bán</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<a class="book-view-link" href="../chitietsanpham.html?mode=view">Xem</a>
+<button class="p-1 hover:bg-surface-container rounded text-primary btn-edit" title="Chỉnh sửa thông tin" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">edit</span></button>
+<button class="p-1 rounded text-secondary hover:text-primary btn-visibility" title="Ẩn/hiện sản phẩm" type="button" aria-label="Ẩn/hiện sản phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">visibility_off</span></button>
 <button class="p-1 hover:bg-error-container/40 rounded text-error/70 hover:text-error btn-del" title="Xóa ấn phẩm" type="button" data-action="delete" data-label="Xóa ấn phẩm" aria-label="Xóa ấn phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">delete</span></button>
 </div>
 </td>
@@ -288,143 +312,13 @@
 </table>
 </div>
 <!-- Pagination -->
-<div class="flex items-center justify-between pt-4 mt-3 border-t border-surface-container text-xs text-secondary">
-<span>Đang hiển thị 1 - 4 trên tổng số <strong class="text-primary font-bold">1.890</strong> đầu sách</span>
-<div data-demo-pagination data-max-page="3" class="flex items-center gap-1">
-<button data-demo-page="1" class="w-7 h-7 rounded-lg flex items-center justify-center bg-primary-container text-white font-bold text-xs" type="button" data-action="pagination" data-label="1" aria-label="1" aria-current="page">1</button>
-<button data-demo-page="2" class="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-surface-container font-semibold text-xs" type="button" data-action="pagination" data-label="2" aria-label="2">2</button>
-<button data-demo-page="3" class="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-surface-container font-semibold text-xs" type="button" data-action="pagination" data-label="3" aria-label="3">3</button>
-</div>
-</div>
-</div>
-<!-- Inbound Banner -->
-<div class="bg-surface-container-low rounded-2xl p-4 border border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary-container border border-surface-container-high shadow-xs">
-<span class="material-symbols-outlined text-[22px]">forklift</span>
-</div>
-<div>
-<div class="text-xs font-bold text-primary">Kế Hoạch Nhập Kho Định Kỳ Tuần Này</div>
-<div class="text-[11px] text-secondary">Dự kiến tiếp nhận lô 450 cuốn từ NXB Trẻ và Hội Nhà Văn vào thứ Sáu (14:00).</div>
-</div>
-</div>
-<button class="px-4 py-2 rounded-xl bg-surface-container-lowest text-primary hover:bg-surface-container text-xs font-bold border border-surface-container-high shadow-xs transition-colors" id="btn-view-schedule" type="button" data-action="tracking" data-label="Xem Lịch Nhập Hàng" aria-label="Xem Lịch Nhập Hàng">
-            Xem Lịch Nhập Hàng
-          </button>
-</div>
-</div>
-<!-- Right Aside (4 cols) -->
-<div class="xl:col-span-4 flex flex-col gap-6">
-<!-- Quick Edit Drawer -->
-<div class="bg-surface-container-lowest rounded-2xl shadow-md border-2 border-primary-container/20 p-5 relative overflow-hidden">
-<div class="absolute top-0 left-0 right-0 h-1.5 bg-primary-container"></div>
-<div class="flex items-center justify-between pb-3 border-b border-surface-container mb-4">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container text-[20px]">tune</span>
-<h3 class="font-serif text-lg font-bold text-primary">Thao Tác Nhanh</h3>
-</div>
-<span class="px-2 py-0.5 rounded text-[11px] bg-emerald-100 text-emerald-800 font-bold" id="quick-badge">#SV-BK01</span>
-</div>
-<form class="space-y-3.5" id="quick-form" data-action="save">
-<div>
-<label class="block text-[11px] font-bold text-secondary mb-1">Tựa Sách Đang Chọn</label>
-<div class="p-2.5 bg-surface-container-low rounded-lg text-xs text-primary font-bold truncate" id="quick-title">Rừng Na Uy (Bản Bìa Cứng)</div>
-</div>
-<div class="grid grid-cols-2 gap-2">
-<div>
-<label class="block text-[11px] font-bold text-secondary mb-1" for="quick-price">Giá Bán Lẻ (₫)</label>
-<input class="w-full bg-surface-container-low border border-surface-container-high rounded-lg px-2.5 py-1.5 text-xs text-primary font-bold focus:bg-white focus:border-primary-container outline-none" id="quick-price" type="text" value="245.000">
-</div>
-<div>
-<label class="block text-[11px] font-bold text-secondary mb-1" for="quick-stock">Tồn Kho Thực</label>
-<input class="w-full bg-surface-container-low border border-surface-container-high rounded-lg px-2.5 py-1.5 text-xs text-primary font-bold focus:bg-white focus:border-primary-container outline-none" id="quick-stock" type="number" value="48">
-</div>
-</div>
-<div>
-<label class="block text-[11px] font-bold text-secondary mb-1">Trạng Thái Bán</label>
-<div class="grid grid-cols-3 gap-1.5" id="quick-status-group">
-<button class="quick-status-btn py-1.5 rounded-lg text-xs font-bold border transition-all" data-status="Đang mở bán" type="button" data-action="select-status" data-label="Đang bán" aria-label="Đang bán" aria-pressed="true">Đang bán</button>
-<button class="quick-status-btn py-1.5 rounded-lg text-xs font-semibold border transition-all" data-status="Tạm dừng" type="button" data-action="select-status" data-label="Tạm dừng" aria-label="Tạm dừng" aria-pressed="false">Tạm dừng</button>
-<button class="quick-status-btn py-1.5 rounded-lg text-xs font-semibold border transition-all" data-status="Hết hàng" type="button" data-action="select-status" data-label="Hết hàng" aria-label="Hết hàng" aria-pressed="false">Hết hàng</button>
-</div>
-</div>
-<div class="flex items-center gap-2 pt-2">
-<button class="flex-1 py-2 px-3 rounded-xl bg-primary-container text-white hover:bg-primary text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-1 active:scale-95" id="btn-quick-save" type="button" data-action="save" data-label="Lưu Thay Đổi" aria-label="Lưu Thay Đổi">
-<span class="material-symbols-outlined text-[16px]" aria-hidden="true">check</span>
-<span>Lưu Thay Đổi</span>
-</button>
-<button class="py-2 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary text-xs font-semibold transition-all" id="btn-quick-reset" type="button" data-action="reset" data-label="Hủy" aria-label="Hủy">Hủy</button>
-</div>
-</form>
-</div>
-<!-- Orders Queue -->
-<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-container-high p-5">
-<div class="flex items-center justify-between pb-3 border-b border-surface-container">
-<div>
-<h3 class="font-serif text-lg font-bold text-primary flex items-center gap-1.5">
-<span class="material-symbols-outlined text-secondary text-[20px]">assignment</span>
-<span>Duyệt Đơn Hàng Mới</span>
-</h3>
-<p class="text-[11px] text-secondary">38 đơn hàng phát sinh cần xử lý</p>
-</div>
-<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary-container" id="orders-badge">12 chờ duyệt</span>
-</div>
-<!-- Order Tabs -->
-<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl my-3 text-[11px] font-bold">
-<button class="order-tab flex-1 py-1 rounded-lg" data-filter="all" type="button" data-action="tab" data-label="Chờ duyệt (12)" aria-label="Chờ duyệt (12)" aria-pressed="true">Chờ duyệt (12)</button>
-<button class="order-tab flex-1 py-1 rounded-lg" data-filter="pack" type="button" data-action="tab" data-label="Đóng gói (8)" aria-label="Đóng gói (8)" aria-pressed="false">Đóng gói (8)</button>
-<button class="order-tab flex-1 py-1 rounded-lg" data-filter="ship" type="button" data-action="tab" data-label="Đang giao (24)" aria-label="Đang giao (24)" aria-pressed="false">Đang giao (24)</button>
-</div>
-<!-- Order Cards List -->
-<div class="flex flex-col gap-2.5" id="orders-list">
-<!-- Order 1 -->
-<div class="p-3 rounded-xl bg-surface-container-low/70 border border-surface-container flex flex-col gap-2 order-item">
-<div class="flex items-center justify-between">
-<span class="font-mono text-xs font-bold text-primary">#SV-8942</span>
-<span class="text-xs font-bold text-primary">385.000₫</span>
-</div>
-<div class="text-xs">
-<div class="font-bold text-primary">Trần Thảo Ly · <span class="font-normal text-secondary">Hà Nội</span>
-</div>
-<div class="text-[11px] text-secondary truncate">Rừng Na Uy (Boxset Bìa Cứng Đặc Biệt)</div>
-</div>
-<div class="flex items-center gap-1.5 pt-1 border-t border-surface-container-high/60">
-<button class="btn-approve flex-1 py-1 px-2 rounded-lg bg-primary-container text-white text-[11px] font-bold flex items-center justify-center gap-1 hover:bg-primary transition-all active:scale-95" type="button" data-action="approve" data-label="Duyệt Đơn" aria-label="Duyệt Đơn">
-<span class="material-symbols-outlined text-[14px]" aria-hidden="true">done_all</span>
-<span>Duyệt Đơn</span>
-</button>
-<button class="btn-view-order p-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-secondary hover:text-primary transition-colors" data-address="Số 14 Ngõ Tràng Tiền, Hoàn Kiếm, Hà Nội" data-id="#SV-8942" data-items="Rừng Na Uy (Boxset Bìa Cứng)" data-name="Trần Thảo Ly" data-phone="0982 *** 451" data-total="385.000₫" title="Xem Chi Tiết" type="button" data-action="details" data-label="Xem chi tiết" aria-label="Xem chi tiết">
-<span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
-</button>
-</div>
-</div>
-<!-- Order 2 -->
-<div class="p-3 rounded-xl bg-surface-container-low/70 border border-surface-container flex flex-col gap-2 order-item">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-1.5">
-<span class="font-mono text-xs font-bold text-primary">#SV-8941</span>
-<span class="px-1.5 py-0.2 rounded text-[10px] bg-secondary-container text-on-secondary-container font-bold">COD</span>
-</div>
-<span class="text-xs font-bold text-primary">215.000₫</span>
-</div>
-<div class="text-xs">
-<div class="font-bold text-primary">Đỗ Minh Tuấn · <span class="font-normal text-secondary">Đà Nẵng</span>
-</div>
-<div class="text-[11px] text-secondary truncate">Cây Cam Ngọt Của Tôi + Bookmark Gỗ Khắc</div>
-</div>
-<div class="flex items-center gap-1.5 pt-1 border-t border-surface-container-high/60">
-<button class="btn-approve flex-1 py-1 px-2 rounded-lg bg-secondary text-white text-[11px] font-bold flex items-center justify-center gap-1 hover:bg-on-secondary-container transition-all active:scale-95" type="button" data-action="approve" data-label="Xác Nhận COD" aria-label="Xác Nhận COD">
-<span class="material-symbols-outlined text-[14px]" aria-hidden="true">verified</span>
-<span>Xác Nhận COD</span>
-</button>
-<button class="btn-view-order p-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-secondary hover:text-primary transition-colors" data-address="88 Nguyễn Văn Linh, Hải Châu, Đà Nẵng" data-id="#SV-8941" data-items="Cây Cam Ngọt Của Tôi + Bookmark Gỗ Khắc" data-name="Đỗ Minh Tuấn" data-phone="0914 *** 892" data-total="215.000₫" title="Xem Chi Tiết" type="button" data-action="details" data-label="Xem chi tiết" aria-label="Xem chi tiết">
-<span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
+<nav class="demo-pager" aria-label="Phân trang" data-demo-pagination data-max-page="3">
+  <button type="button" data-demo-page="prev" aria-label="Trang trước" disabled aria-disabled="true">‹</button>
+  <button type="button" data-demo-page="1" aria-label="Trang 1" aria-current="page">1</button>
+  <button type="button" data-demo-page="2" aria-label="Trang 2">2</button>
+  <button type="button" data-demo-page="3" aria-label="Trang 3">3</button>
+  <button type="button" data-demo-page="next" aria-label="Trang sau">›</button>
+</nav>
 </div>
 </main>
 <!-- Footer -->
@@ -444,9 +338,7 @@
 <!-- Toast Notification Container -->
 <!-- JavaScript -->
 <div id="admin-overlays">
-<div id="admin-toast" class="admin-toast" role="status" aria-live="polite" hidden>
-<span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span id="admin-toast-message"></span><button type="button" aria-label="Đóng thông báo" data-close-toast>×</button>
-</div>
+
 <dialog id="admin-dialog" class="admin-dialog" aria-labelledby="dialog-title"><div class="dialog-top">
 <h2 id="dialog-title"></h2>
 <button type="button" class="dialog-close" aria-label="Đóng" data-close-dialog><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
@@ -460,36 +352,7 @@
 </div>
 <script src="../JS/admin.js" defer></script>
 <script src="../JS/books.js" defer></script>
-<dialog id="book-editor-dialog" class="admin-dialog book-editor-dialog" aria-labelledby="book-editor-title">
-  <div class="dialog-top"><h2 id="book-editor-title">Thêm sách mới</h2><button type="button" class="dialog-close" data-book-close aria-label="Đóng">×</button></div>
-  <form class="book-editor" id="book-editor-form">
-    <div class="book-cover-editor"><span class="book-editor-label">Ảnh bìa sách</span><div class="book-cover-layout"><img class="book-cover-preview" alt="Xem trước ảnh bìa" hidden><label class="book-cover-upload">Chọn ảnh từ máy<input name="coverFile" type="file" accept="image/jpeg,image/png,image/webp"></label><small>Ảnh chỉ được đọc trong trình duyệt để xem trước; không tải lên hay lưu sau khi đóng.</small></div></div>
-    <label class="book-editor-field"><span>Tên sách</span><input class="book-editor-control" name="title" required></label>
-    <label class="book-editor-field"><span>Tên nguyên tác / tên phụ</span><input class="book-editor-control" name="originalTitle"></label>
-    <label class="book-editor-field"><span>Tác giả</span><input class="book-editor-control" name="author" required></label>
-    <label class="book-editor-field"><span>Dịch giả</span><input class="book-editor-control" name="translator"></label>
-    <label class="book-editor-field"><span>Danh mục hiển thị bên người mua</span><select class="book-editor-control" name="category" required><option value="">Chọn danh mục</option><option>Văn học &amp; Tiểu thuyết</option><option>Kinh doanh - Khởi nghiệp</option><option>Phát triển bản thân</option><option>Thiếu nhi &amp; Tranh truyện</option></select></label>
-    <label class="book-editor-field"><span>Nhà xuất bản</span><input class="book-editor-control" name="publisher" required></label>
-    <label class="book-editor-field"><span>Đơn vị phát hành</span><input class="book-editor-control" name="distributor"></label>
-    <label class="book-editor-field book-editor-wide"><span>Mô tả giới thiệu trên trang chi tiết</span><textarea class="book-editor-control" name="description" rows="4"></textarea></label>
-    <label class="book-editor-field book-editor-wide"><span>Trích dẫn hiển thị (nếu có)</span><textarea class="book-editor-control" name="quote" rows="2"></textarea></label>
-    <section class="edition-editor book-editor-wide" aria-labelledby="edition-editor-heading"><div class="edition-editor-heading"><div><h3 id="edition-editor-heading">Các ấn bản</h3><p>Mỗi ấn bản có định dạng, giá và tồn kho riêng.</p></div><button type="button" class="dialog-button" data-add-edition>+ Thêm ấn bản</button></div><div id="edition-list" class="edition-list"></div></section>
-    <p class="book-demo-message book-editor-wide" id="book-demo-message" role="status" tabindex="-1" hidden>Lưu mô phỏng thành công. Danh sách sách mẫu không thay đổi.</p>
-    <div class="book-editor-actions book-editor-wide"><button type="button" class="dialog-button" data-book-close>Hủy bỏ</button><button type="submit" class="dialog-button primary">Lưu mô phỏng</button></div>
-  </form>
-</dialog>
-<template id="edition-template"><fieldset class="edition-item"><legend class="edition-item-title">Ấn bản 1</legend><button type="button" class="edition-remove" data-remove-edition aria-label="Xóa ấn bản này">×</button>
-<label class="book-editor-field"><span>Định dạng</span><select class="book-editor-control" data-edition-field="format" required><option value="Bìa Cứng Boxset">Bìa Cứng Boxset</option><option value="Bìa Mềm Tiêu Chuẩn">Bìa Mềm Tiêu Chuẩn</option><option value="Ấn bản kỷ niệm">Ấn bản kỷ niệm</option></select></label>
-<label class="book-editor-field"><span>ISBN</span><input class="book-editor-control" data-edition-field="isbn"></label>
-<label class="book-editor-field"><span>Giá bán (₫)</span><input class="book-editor-control" type="number" min="0" step="1" data-edition-field="price" required></label>
-<label class="book-editor-field"><span>Giá bìa / giá cũ (₫)</span><input class="book-editor-control" type="number" min="0" step="1" data-edition-field="listPrice" placeholder="Không áp dụng"></label>
-<label class="book-editor-field"><span>Số lượng tồn</span><input class="book-editor-control" type="number" min="0" step="1" data-edition-field="stock" required></label>
-<label class="book-editor-field"><span>Mã / số hiệu ấn bản</span><input class="book-editor-control" data-edition-field="editionNumber" placeholder="Chưa có mã ấn bản"></label>
-<label class="book-editor-field"><span>Ghi chú ấn bản</span><input class="book-editor-control" data-edition-field="editionNote" placeholder="Không có ghi chú"></label>
-<label class="book-editor-field"><span>Số trang</span><input class="book-editor-control" type="number" min="0" step="1" data-edition-field="pageCount" placeholder="Chưa có số trang"></label>
-<label class="book-editor-field"><span>Kích thước</span><input class="book-editor-control" data-edition-field="dimensions" placeholder="Chưa có kích thước" placeholder="14.5 × 20.5 cm"></label>
-<label class="book-editor-field"><span>Loại giấy</span><input class="book-editor-control" data-edition-field="paperType" placeholder="Chưa có loại giấy"></label>
-<label class="book-editor-field"><span>Trạng thái bán</span><select class="book-editor-control" data-edition-field="status"><option>Đang mở bán</option><option>Tạm dừng</option><option>Hết hàng</option></select></label>
-</fieldset></template>
-<script src="../JS/pagination-demo.js" defer></script></body>
+
+<script src="../JS/pagination-demo.js" defer></script><script src="../JS/admin-demo-filter.js" defer></script>
+</body>
 </html>

@@ -23,3 +23,35 @@
 #sv-review-dialog .sv-review-cancel {border:1px solid #8886;border-radius:8px;padding:10px 18px;background:transparent;color:inherit;}
 #sv-review-dialog .sv-review-note {margin:0;font-size:13px;opacity:.75;}
 #sv-review-feedback {position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:#315347;color:#fff;padding:14px 22px;border-radius:10px;font-family:var(--font-sans, inherit);max-width:calc(100% - 32px);}
+
+.my-orders-search .search-with-icon > input {
+  min-height: 44px;
+  padding-left: 44px;
+}
+.my-order-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 32rem);
+}
+.my-order-actions > :is(a, button) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 44px;
+  min-width: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font: 600 14px/1.35 var(--font-sans), sans-serif;
+  text-align: center;
+}
+.my-order-actions .material-symbols-outlined { flex-shrink: 0; }
+.my-order-review-status {
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+}
+.my-order-review-status > span { color: var(--color-secondary); }
+@media (max-width: 480px) {
+  .my-order-actions { grid-template-columns: minmax(0, 1fr); }
+}

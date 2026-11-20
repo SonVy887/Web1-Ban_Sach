@@ -79,7 +79,7 @@
   
   /* Font Families */
   --font-serif: 'Lora', Georgia, 'Times New Roman', serif; /* Dùng cho Logo, Tiêu đề nghệ thuật (H1, H2, Tên sách) */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Dùng cho nội dung đọc, form, menu */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Dùng cho nội dung đọc, form, menu */
   --font-display: var(--font-serif);
   --font-headline: var(--font-serif);
   --font-body: var(--font-sans);
@@ -95,6 +95,11 @@
   --text-2xl: 1.5rem;        /* 24px: Tiêu đề danh mục, tiêu đề phân khối (H3) */
   --text-3xl: 1.875rem;      /* 30px: Tiêu đề trang (H2) */
   --text-4xl: 2.25rem;       /* 36px: Tiêu đề Hero Banner chính (H1) */
+
+  /* Cùng vai trò dùng cùng thang chữ trên cả trang người mua và quản trị. */
+  --text-page-title: clamp(1.625rem, 2.3vw, 2rem);
+  --text-section-title: var(--text-2xl);
+  --text-card-title: var(--text-lg);
 
   /* Stitch typography roles, giữ font chữ hiện tại của website */
   --text-display-hero: 3.5rem;          /* 56px */
@@ -136,7 +141,7 @@
   --font-bold: 700;
 
   /* Letter Spacing */
-  --tracking-tighter: -0.03em; /* Tiêu đề Playfair Display lớn */
+  --tracking-tighter: -0.03em; /* Tiêu đề lớn */
   --tracking-tight: -0.015em;
   --tracking-normal: 0;
   --tracking-wide: 0.05em;     /* Chữ viết hoa nhỏ (UPPERCASE categories, subtitle) */

@@ -2,3 +2,41 @@
 .inventory-visual-1 { width: 85% }
 .inventory-visual-2 { width: 46% }
 .inventory-visual-3 { width: 76% }
+
+.inventory-actions-heading {
+  min-width: 13.5rem;
+}
+
+.inventory-row-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 6rem);
+  justify-content: end;
+  gap: .5rem;
+}
+
+.inventory-row-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  min-height: 40px;
+  padding: .4rem .5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-container);
+  color: var(--color-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.inventory-row-action:hover {
+  background: var(--color-surface-container-high);
+}
+
+.inventory-row-action:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.inventory-row-action .material-symbols-outlined {
+  font-size: 16px;
+}

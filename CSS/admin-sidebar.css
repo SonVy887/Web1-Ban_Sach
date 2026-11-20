@@ -1,0 +1,99 @@
+.admin-layout {
+  --sidebar-width: 225px;
+  padding-left: var(--sidebar-width);
+  min-width: 0;
+  min-height: 100vh;
+}
+.admin-sidebar {
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  padding: 20px 13px;
+  overflow: auto;
+  background: var(--color-primary, #1e3a2f);
+  color: #fff;
+  font: 500 14px/1.45 var(--font-sans, Inter, sans-serif);
+}
+.admin-sidebar a { color: inherit; text-decoration: none; }
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 5px 19px;
+  margin-bottom: 17px;
+  border-bottom: 1px solid #ffffff30;
+  font: 600 16px/1.3 var(--font-serif, Georgia, serif);
+}
+.admin-sidebar-logo {
+  position: relative;
+  flex: 0 0 44px;
+  height: 44px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #fffaf4;
+}
+/* Hiện phần biểu tượng cuốn sách ở bên trái của logo gốc 300 × 85. */
+.admin-sidebar-logo img {
+  position: absolute;
+  top: -7px;
+  left: -10px;
+  width: 192px;
+  max-width: none;
+  height: auto;
+}
+.admin-sidebar small {
+  display: block;
+  margin-top: 4px;
+  color: #e2eee6;
+  font: 400 12px/1.4 var(--font-sans, Inter, sans-serif);
+}
+.admin-sidebar nav { display: grid; gap: 5px; }
+.admin-sidebar nav a,
+.admin-sidebar-account a,
+.admin-sidebar-account button {
+  display: block;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.admin-sidebar nav a:hover,
+.admin-sidebar-account :is(a, button):hover { background: #ffffff1c; }
+.admin-sidebar nav a[aria-current="page"] {
+  background: #edf4ee;
+  color: var(--color-primary, #1e3a2f);
+  font-weight: 650;
+}
+.admin-sidebar :is(a, button):focus-visible { outline: 2px solid #d2e8d6; }
+.admin-sidebar-account {
+  display: grid;
+  gap: 3px;
+  margin-top: auto;
+  padding: 14px 0 0;
+}
+.admin-sidebar-account > span { padding: 8px 12px; }
+.admin-layout > :is(.admin-main, .aod-main, footer) { max-width: 100%; }
+.admin-layout table { max-width: 100%; }
+@media (max-width: 860px) {
+  .admin-layout { --sidebar-width: 168px; }
+  .admin-sidebar { padding: 13px 8px; }
+  .admin-sidebar-brand { font-size: 14px; }
+}
+@media (max-width: 570px) {
+  .admin-layout { padding-left: 0; }
+  .admin-sidebar { position: static; width: 100%; padding: 12px 14px; }
+  .admin-sidebar-brand { padding-bottom: 8px; margin-bottom: 6px; }
+  .admin-sidebar nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-sidebar-account { display: flex; flex-wrap: wrap; align-items: center; }
+}
+@media (max-width: 1070px) {
+  .admin-layout .aod-grid { grid-template-columns: minmax(0, 1fr); }
+}

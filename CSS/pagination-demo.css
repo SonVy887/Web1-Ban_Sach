@@ -3,3 +3,33 @@
 [data-demo-pagination] [data-demo-page]:not([aria-current="page"]) {background:var(--color-surface-container,#f2ede5) !important;color:var(--color-primary,#07241a) !important;}
 [data-demo-pagination] [data-demo-page][aria-disabled="true"] {opacity:.45;cursor:not-allowed;}
 [data-demo-pagination] [data-demo-page]:focus-visible {outline:3px solid #aecebe;outline-offset:2px;}
+
+.demo-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+.catalog > .demo-pager {
+  margin-top: 16px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  background: var(--color-surface-container-lowest, #fff);
+}
+[data-demo-pagination].demo-pager [data-demo-page] {
+  box-sizing: border-box;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 8px;
+  font: 600 14px/1 var(--font-sans), sans-serif;
+  text-decoration: none;
+}
+[data-demo-pagination].demo-pager [data-demo-page]:is([data-demo-page="prev"], [data-demo-page="next"]) {
+  font-size: 20px;
+}
+[data-demo-pagination].demo-pager button:disabled { opacity: .45; cursor: default; }

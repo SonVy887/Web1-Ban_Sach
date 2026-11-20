@@ -254,3 +254,23 @@
     color:black;
     transform: translateY(-2px);
 }
+
+.header .search-bar,
+.header .search-input { min-width: 0; }
+.header .search-select { min-width: 0; max-width: 45%; }
+.header .search-button { flex-shrink: 0; }
+
+@media (max-width: 1050px) {
+    .header .header-top { flex-wrap: wrap; gap: 12px; }
+    .header .search-bar { order: 3; flex-basis: 100%; max-width: none; }
+    .header .header-actions, .header .action-bussiness { flex-wrap: wrap; gap: 12px; }
+    .header .nav-links { flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
+}
+
+@media (max-width: 480px) {
+    .header .header-top { padding: 10px 12px; }
+    .header .logo { min-width: 0; gap: 12px; }
+    .header .logo-badge { flex: 0 1 106px; min-width: 0; }
+    .header .logo-badge img { max-width: 100%; }
+    .header .nav-bar { padding: 9px 12px; }
+}

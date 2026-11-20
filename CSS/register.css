@@ -227,11 +227,11 @@
 .register-main .layout{display:grid;grid-template-columns:minmax(260px,5fr) minmax(0,7fr);gap:30px;align-items:start;}
 .register-main .form-card{min-width:0;background:#fff;border:1px solid var(--color-border-subtle);border-radius:20px;padding:38px 42px;box-shadow:var(--shadow-card);}
 .register-main .form-card .tag{display:inline-block;font-family:var(--font-sans);font-size:12px;letter-spacing:.08em;font-weight:600;color:var(--color-secondary);margin-bottom:6px;}
-.register-main .form-card h1{font-family:var(--font-serif);font-size:34px;line-height:1.25;color:var(--color-primary);margin:8px 0 14px;}
+.register-main .form-card h1{font-family:var(--font-serif);font-size:var(--text-page-title);line-height:1.25;color:var(--color-primary);margin:8px 0 14px;}
 .register-main .form-card .subtitle{font-family:var(--font-sans);font-size:14px;line-height:1.7;color:var(--color-text-muted);margin:0 0 26px;}
 .register-main .form-card .subtitle b{font-weight:700;}
 .register-main .form-card .field{min-width:0;margin-bottom:20px;}
-.register-main .form-card .field label{display:block;margin-bottom:8px;font-family:var(--font-sans);font-size:13px;line-height:1.5;font-weight:600;color:var(--color-text-main);}
+.register-main .form-card .field label{display:block;margin-bottom:8px;font-family:var(--font-sans);font-size:var(--text-sm);line-height:1.5;font-weight:600;color:var(--color-text-main);}
 .register-main .form-card .field input:not([type=checkbox]){display:block;width:100%;min-width:0;min-height:48px;padding:12px 14px;background:var(--color-surface-container-low);border:1px solid var(--color-border);border-radius:var(--radius-md);font:400 14px/1.5 var(--font-sans);color:var(--color-text-main);}
 .register-main .form-card .field input:focus{background:white;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(30,58,47,.1);}
 .register-main .form-card .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px;}
@@ -253,7 +253,7 @@
 .register-main .benefits{min-width:0;}
 .register-main .trust{margin-top:30px;}
 @media(max-width:1100px){.register-main .layout{grid-template-columns:1fr}.register-main .benefits{display:none}.register-main .form-card{max-width:760px;margin-inline:auto}}
-@media(max-width:700px){.register-main .form-card{padding:26px 20px}.register-main .form-card .form-grid{grid-template-columns:1fr}.register-main .form-card h1{font-size:28px}.register-main .register-container{width:calc(100% - 2rem)}}
+@media(max-width:700px){.register-main .form-card{padding:26px 20px}.register-main .form-card .form-grid{grid-template-columns:1fr}.register-main .form-card h1{font-size:var(--text-page-title)}.register-main .register-container{width:calc(100% - 2rem)}}
 
 /* Show confirmation only after valid form submission */
 .register-main .form-card .notice.is-visible{display:block;}

@@ -3,3 +3,28 @@
 .promotions-visual-2 { width: 61% }
 .promotions-visual-3 { width: 92% }
 .promotions-visual-4 { width: 100% }
+
+.admin-page-main table.promotion-table {
+  min-width: 1080px;
+  table-layout: fixed;
+}
+
+.admin-page-main .page-content .promotion-table :is(th, td) {
+  padding: 12px 10px;
+  line-height: 1.45;
+}
+
+.promotion-table th:nth-child(1) { width: 151px; }
+.promotion-table th:nth-child(2) { width: 17%; }
+.promotion-table th:nth-child(5) { width: 110px; }
+.promotion-table th:nth-child(7) { width: 112px; }
+.promotion-table th:nth-child(8) { width: 126px; }
+
+.promotion-code {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.promotion-table td:nth-child(7) > span {
+  white-space: nowrap;
+}

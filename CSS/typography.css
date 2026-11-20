@@ -1,0 +1,37 @@
+/* Các trang tải file này sau CSS riêng để dùng cùng cỡ chữ theo vai trò. */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+}
+
+body main h1:not(.product-info h1) {
+  font-family: var(--font-serif);
+  font-size: var(--text-page-title);
+  font-weight: var(--font-semibold);
+  line-height: 1.25;
+}
+
+body main h2:not(.hero-title),
+body #product-specifications h2,
+body :is(#admin-dialog, #user-dialog, #sv-review-dialog, #od-dialog) h2 {
+  font-family: var(--font-serif);
+  font-size: var(--text-section-title);
+  font-weight: var(--font-semibold);
+  line-height: 1.35;
+}
+
+body main h3,
+body main :is(.filter-title, .catalog-card, .sr-book-card, .cart-item, .wishlist-card) h2 {
+  font-family: var(--font-serif);
+  font-size: var(--text-card-title);
+  font-weight: var(--font-semibold);
+  line-height: 1.4;
+}
+
+body :is(main, dialog) :is(input, select, textarea, legend),
+body :is(main, dialog) label:not(.sv-review-stars label, .member-stars label),
+body :is(main, dialog) button:not(.material-symbols-outlined, .dialog-close, .sv-review-close, .member-modal-close, [aria-label="Đóng"], [aria-label="Xóa"]),
+body :is(.header .nav-link, .admin-sidebar nav a) {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+}

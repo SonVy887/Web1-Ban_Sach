@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi"><head>
+<link rel="stylesheet" href="CSS/demo-ui.css">
+<script src="JS/demo-ui.js" defer></script>
+
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="web_standard" name="shell-type">
@@ -11,7 +14,8 @@
 <link rel="stylesheet" href="CSS/member-pages.css">
 
 
-<link rel="stylesheet" href="CSS/user-demo.css"><link rel="stylesheet" href="CSS/my-orders-extras.css"><link rel="stylesheet" href="CSS/pagination-demo.css"></head>
+<link rel="stylesheet" href="CSS/user-demo.css"><link rel="stylesheet" href="CSS/my-orders-extras.css"><link rel="stylesheet" href="CSS/pagination-demo.css"><link rel="stylesheet" href="CSS/typography.css">
+</head>
 <body class="member-site my-orders-page" data-user-page="my-orders">
 <header class="header">
       <div class="header-top">
@@ -121,27 +125,10 @@
 </div>
 </section>
 <!-- 3. Search & Filter Toolbar -->
-<section class="sv-grid sv-grid-cols-1 md:sv-grid-cols-12 sv-gap-space-sm sv-items-center">
-<form class="md:sv-col-span-8 sv-relative" action="my-orders.html" method="get">
-<span class="material-symbols-outlined sv-absolute sv-left-space-md sv-top-1/2 sv--translate-y-1/2 sv-text-outline sv-text-[20px] sv-pointer-events-none">
-          search
-        </span>
+<section class="my-orders-search">
+<form class="search-with-icon" action="my-orders.html" method="get"><button class="demo-search-button" type="submit" aria-label="Tìm kiếm" title="Tìm kiếm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4 4"></path></svg></button>
 <input class="sv-w-full sv-bg-surface-container-lowest sv-rounded-lg sv-pl-11 sv-pr-space-md sv-py-2.5 sv-font-body-md sv-text-body-md sv-text-on-surface placeholder:sv-text-outline sv-shadow-sm focus:sv-outline-none focus:sv-ring-1 focus:sv-ring-primary-container" placeholder="Tìm kiếm theo Mã đơn hàng hoặc Tên tựa sách, tác giả..." type="search" name="search" aria-label="Tìm đơn hàng">
 </form>
-<div class="md:sv-col-span-4 sv-flex sv-items-center sv-gap-space-xs">
-<div class="sv-relative sv-w-full">
-<select class="sv-w-full sv-appearance-none sv-bg-surface-container-lowest sv-rounded-lg sv-px-space-md sv-py-2.5 sv-font-body-md sv-text-body-md sv-text-on-surface sv-shadow-sm focus:sv-outline-none focus:sv-ring-1 focus:sv-ring-primary-container sv-cursor-pointer sv-pr-10">
-<option>Tất cả thời gian</option>
-<option>30 ngày gần nhất</option>
-<option>6 tháng gần nhất</option>
-<option>Năm 2025</option>
-<option>Năm 2024</option>
-</select>
-<span class="material-symbols-outlined sv-absolute sv-right-space-sm sv-top-1/2 sv--translate-y-1/2 sv-text-on-surface-variant sv-pointer-events-none sv-text-[20px]">
-            calendar_month
-          </span>
-</div>
-</div>
 </section>
 <!-- 4. Smart Filter Tabs (Horizontal) -->
 <nav aria-label="Bộ lọc trạng thái đơn" class="sv-flex sv-items-center sv-overflow-x-auto sv-gap-space-xs sv-pb-1 sv-border-b-0 sv-scrollbar-none">
@@ -277,16 +264,16 @@
               Đã thanh toán VietQR • Miễn phí vận chuyển
             </span>
 </div>
-<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+<div class="my-order-actions">
 <button class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container sv-text-on-surface-variant hover:sv-text-on-surface sv-font-label-lg sv-text-label-lg sv-font-medium sv-transition-colors" type="button">
-              Hủy Đơn Hàng
+              Hủy đơn hàng
             </button>
 <a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-primary hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-transition-colors" href="chitietdonhang.html">
-              Xem Chi Tiết Đơn
+              Xem chi tiết
             </a>
 <button class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-primary-container sv-text-on-primary hover:sv-bg-primary sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-gap-1.5" type="button">
 <span class="material-symbols-outlined sv-text-[18px]">location_searching</span>
-<span>Theo Dõi Vận Đơn (VNPost)</span>
+<span>Theo dõi vận đơn</span>
 </button>
 </div>
 </div>
@@ -362,15 +349,15 @@
 <span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tổng thanh toán (2 cuốn):</span>
 <span class="sv-font-headline-md sv-text-headline-md sv-text-primary sv-font-bold">305.000đ</span>
 </div>
-<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+<div class="my-order-actions">
 <button type="button" class="sv-review-open" data-review-order="#SV-8720" aria-haspopup="dialog" aria-controls="sv-review-dialog">+ Đánh giá</button>
 
 <a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-medium sv-shadow-sm sv-transition-colors" href="chitietdonhang.html">
-              Xem Chi Tiết
+              Xem chi tiết
             </a>
 <a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-primary-container sv-text-on-primary hover:sv-bg-primary sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-gap-1" href="giohang.html">
 <span class="material-symbols-outlined sv-text-[16px]">replay</span>
-<span>Mua Lại Đơn Này</span>
+<span>Mua lại</span>
 </a>
 </div>
 </div>
@@ -423,23 +410,20 @@
 </div>
 <!-- Order Footer -->
 <div class="sv-px-space-lg sv-py-space-md sv-bg-surface-container-low sv-flex sv-flex-col md:sv-flex-row sv-items-center sv-justify-between sv-gap-space-md">
-<div class="sv-flex sv-items-baseline sv-gap-1.5 sv-w-full md:sv-w-auto">
+<div class="sv-flex sv-items-baseline sv-flex-wrap sv-gap-1.5 sv-w-full md:sv-w-auto">
 <span class="sv-font-body-md sv-text-body-md sv-text-on-surface-variant">Tổng thanh toán:</span>
 <span class="sv-font-headline-md sv-text-headline-md sv-text-primary sv-font-bold">405.000đ</span>
+<span class="my-order-review-status"><span aria-hidden="true">★</span> Đã đánh giá 5 sao</span>
 </div>
-<div class="sv-flex sv-flex-wrap sv-items-center sv-gap-space-xs sv-w-full md:sv-w-auto sv-justify-end">
+<div class="my-order-actions">
 <button type="button" class="sv-review-open" data-review-order="#SV-8511" aria-haspopup="dialog" aria-controls="sv-review-dialog">+ Đánh giá</button>
 
 <a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container-lowest sv-text-on-surface hover:sv-bg-surface-container sv-font-label-lg sv-text-label-lg sv-font-medium sv-shadow-sm sv-transition-colors" href="chitietdonhang.html">
-              Xem Chi Tiết
+              Xem chi tiết
             </a>
-<div class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-surface-container sv-text-on-surface-variant sv-font-label-lg sv-text-label-lg sv-flex sv-items-center sv-gap-1">
-<span class="sv-text-secondary sv-font-bold">★★★★★</span>
-<span>Đã đánh giá 5 sao</span>
-</div>
 <a class="sv-px-space-md sv-py-2 sv-rounded-lg sv-bg-primary-container sv-text-on-primary hover:sv-bg-primary sv-font-label-lg sv-text-label-lg sv-font-semibold sv-shadow-sm sv-transition-colors sv-flex sv-items-center sv-gap-1" href="giohang.html">
 <span class="material-symbols-outlined sv-text-[16px]">replay</span>
-<span>Mua Lại</span>
+<span>Mua lại</span>
 </a>
 </div>
 </div>

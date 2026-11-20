@@ -1,5 +1,9 @@
 'use strict';
 (() => {
+  const url = new URL(location.href);
+  if (url.searchParams.has('signed-out')) {
+    DemoUI.toast('Đăng xuất thành công.');
+  }
   const form = document.getElementById('admin-login-form');
   const password = document.getElementById('admin-password');
   const toggle = document.getElementById('toggle-password');

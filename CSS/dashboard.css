@@ -1,2 +1,89 @@
-/* Chi tiết trình bày riêng của trang dashboard. */
+.dashboard-header-actions {
+  flex-wrap: wrap;
+}
 
+.dashboard-content-grid {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+}
+
+.dashboard-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+}
+
+@media (min-width: 1180px) {
+  .dashboard-content-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+.dashboard-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+}
+
+.dashboard-section-title {
+  margin-bottom: 12px;
+}
+
+.dashboard-delivery-metrics > div {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 4px;
+}
+
+.dashboard-orders .dashboard-card-heading {
+  margin-bottom: 16px;
+}
+
+.dashboard-card-heading a,
+.dashboard-order-table a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.admin-page-main table.dashboard-order-table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.dashboard-order-table thead {
+  background: var(--color-surface-container-low);
+}
+
+.admin-page-main .page-content .dashboard-order-table :is(th, td) {
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.dashboard-order-table td {
+  overflow-wrap: anywhere;
+}
+
+.dashboard-order-total {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 420px) {
+  .dashboard-orders {
+    padding: 14px;
+  }
+
+  .admin-page-main .page-content .dashboard-order-table :is(th, td) {
+    padding-inline: 4px;
+  }
+}

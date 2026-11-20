@@ -6,7 +6,10 @@
   if(b.matches('.catalog-cart,.book-btn,.btn-add,.btn-arrival,.recommendation-grid button,.wishlist-card .add-cart,.product-info .add-cart,#add-all')){e.preventDefault();S.toast('Thêm vào giỏ hàng thành công.');}
   else if(b.matches('.catalog-buy,.buy-now')){e.preventDefault();S.go('giohang.html');}
   else if(b.matches('.catalog-heart,.book-wishlist,.favorite')){e.preventDefault();S.toast('Thêm vào yêu thích thành công.');}
-  else if(b.matches('.remove-item')){e.preventDefault();S.toast('Xóa khỏi yêu thích thành công.');}
+  else if(b.matches('.remove-item')){
+   e.preventDefault();
+   if(await S.confirm('Xác nhận xóa khỏi yêu thích','Cậu muốn bỏ sách này khỏi danh sách yêu thích?','Xóa khỏi yêu thích'))S.toast('Xóa khỏi yêu thích thành công.');
+  }
   else if(b.matches('.read-mark')){e.preventDefault();S.toast('Đánh dấu đã đọc thành công.');}
   else if(b.matches('#share-wishlist')){e.preventDefault();S.toast('Chia sẻ danh sách thành công.');}
   else if(b.matches('.quantity button')){
@@ -25,30 +28,22 @@
  function setupCatalog(){
   const form=$('#catalog-filter-form');if(!form)return;
   const applied=new URLSearchParams(location.search);
-  const pageNumber=Math.min(12,Math.max(1,Number.parseInt(applied.get('page'),10)||Number(document.body.dataset.catalogPage)||1));
-  const pageSize=['12','24','48'].includes(applied.get('per-page'))?applied.get('per-page'):'12';
   const categories=applied.getAll('category').filter(x=>x!=='all');
   const query=applied.get('q')||'';
   form.elements.q.value=query;
   const headerSearch=$('.header .search-input');if(headerSearch)headerSearch.value=query;
-  const normalize=text=>text.toLocaleLowerCase('vi').replace(/\s+/g,' ').trim();
+  const normalize=text=>text.toLocaleLowerCase('vi').replace(/\s*[-–]\s*/g,'-').replace(/\s+/g,' ').replace('truyện tranh','tranh truyện').trim();
   const categoryInputs=$$('input[name="category"]',form);
   categoryInputs.forEach(input=>{input.checked=input.value==='all'?categories.length===0:categories.some(c=>normalize(c)===normalize(input.value));});
   $$('input[name="format"]',form).forEach(input=>input.checked=applied.getAll('format').includes(input.value));
   const price=$$('input[name="price"]',form).find(input=>input.value===(applied.get('price')||'all'));
   if(price)price.checked=true;
-  const moneyDigits=value=>String(value).replace(/\D/g,'').replace(/^0+(?=\d)/,'');
-  const formatMoney=value=>moneyDigits(value).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  const {moneyDigits, formatMoney, moneyInput} = DemoUI;
   const legacyPrices={under100:['','100000'],range100300:['100000','300000'],over300:['300000','']};
   const oldRange=legacyPrices[applied.get('price')]||['',''];
   $$('[data-catalog-money]',form).forEach((input,index)=>{
-   input.value=formatMoney(applied.get(input.name)||oldRange[index]);
-   input.addEventListener('input',()=>{
-    const before=input.value.slice(0,input.selectionStart),count=moneyDigits(before).length;
-    input.value=formatMoney(input.value);let caret=0,seen=0;
-    while(caret<input.value.length&&seen<count){if(/\d/.test(input.value[caret]))seen++;caret++;}
-    input.setSelectionRange(caret,caret);
-   });
+   input.value=applied.get(input.name)||oldRange[index];
+   moneyInput(input);
   });
   const sort=$('#sort');if(sort&&[...sort.options].some(option=>option.value===applied.get('sort')))sort.value=applied.get('sort');
   // Changing controls only prepares conditions. Navigation starts on submit.
@@ -57,7 +52,10 @@
    else if(input.value!=='all'&&input.checked)categoryInputs.find(other=>other.value==='all').checked=false;
    if(!categoryInputs.some(other=>other.checked))categoryInputs.find(other=>other.value==='all').checked=true;
   }));
-  function navigate(params){const target=document.body.dataset.catalogView==='search'?'ketquatimkiem.html':params.get('page')==='2'?'danhmucsanpham-2.html':'danhmucsanpham.html';if(document.body.dataset.catalogView==='search')params.delete('page');S.go(target+'?'+params.toString());}
+  function navigate(params){
+   const target=document.body.dataset.catalogView==='search'?'ketquatimkiem.html':'danhmucsanpham.html';
+   S.go(target+'?'+params.toString());
+  }
   form.addEventListener('submit',event=>{
    event.preventDefault();const params=new URLSearchParams(applied);
    ['q','category','format','price','min-price','max-price','page','sort'].forEach(key=>params.delete(key));
@@ -88,18 +86,6 @@
    chips.forEach(([text,keys])=>{const button=document.createElement('button');button.type='button';button.textContent=text+' ×';button.setAttribute('aria-label','Bỏ '+text);button.addEventListener('click',()=>{const params=new URLSearchParams(applied);keys.forEach(key=>params.delete(key));params.set('page','1');navigate(params);});active.append(button);});
    const clear=document.createElement('button');clear.type='button';clear.textContent='Xóa tất cả bộ lọc';clear.addEventListener('click',reset);active.append(clear);
   }
-  const pagination=$('.pagination');if(pagination){
-   $$('.page-numbers button',pagination).forEach(button=>{
-    const text=button.textContent.trim();const number=/^\d+$/.test(text)?Number(text):null;
-    button.type='button';button.classList.toggle('current',number===pageNumber);
-    if(number===pageNumber)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
-    if(text.includes('trước'))button.disabled=pageNumber===1;
-    if(text.includes('sau'))button.disabled=pageNumber===12;
-    button.addEventListener('click',()=>{const params=new URLSearchParams(applied);params.set('page',String(number||(text.includes('trước')?pageNumber-1:pageNumber+1)));navigate(params);});
-   });
-   $$('.pagination > button').forEach(button=>{button.type='button';button.classList.toggle('selected',button.textContent.trim()===pageSize);button.addEventListener('click',()=>{const params=new URLSearchParams(applied);params.set('per-page',button.textContent.trim());params.set('page','1');navigate(params);});});
-   const jump=$('label input',pagination);if(jump){jump.value=String(pageNumber);const go=()=>{if(!jump.reportValidity())return;const params=new URLSearchParams(applied);params.set('page',jump.value);navigate(params);};$('label button',pagination)?.addEventListener('click',go);jump.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();go();}});}
-  }
   $$('.view-toggle').forEach(button=>button.addEventListener('click',()=>S.toast('Chọn kiểu hiển thị thành công.')));
   // Each HTML page has a fixed sample; search conditions never filter the records.
  }
@@ -107,6 +93,5 @@
  if(page==='danhmucsanpham')setupCatalog();
  if(page==='wishlist')$('#sort-select')?.addEventListener('change',()=>S.reload());
  $$('.format-option').forEach(el=>{el.tabIndex=0;el.addEventListener('click',()=>S.toast('Chọn định dạng thành công.'));});
- $$('.thumb').forEach(b=>b.addEventListener('click',()=>S.toast('Xem ảnh thành công.')));
  $$('.section-tabs button').forEach(b=>b.addEventListener('click',()=>S.toast('Chuyển mục thành công.')));
 })();

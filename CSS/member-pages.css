@@ -21,8 +21,6 @@
 .account-page:has(#account-view-profileTab:checked) label[for="account-view-profileTab"],
 .account-page:has(#account-view-addressesTab:checked) label[for="account-view-addressesTab"],
 .account-page:has(#account-view-securityTab:checked) label[for="account-view-securityTab"] { background: var(--color-primary); color: var(--color-text-inverse); }
-.member-address-editor { padding: 20px; background: var(--color-surface-container-lowest); border: 1px solid var(--color-border-subtle); border-radius: 16px; }
-.member-address-editor summary { cursor: pointer; color: var(--color-primary); font-weight: var(--font-semibold); }
 .member-form-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 20px; }
 .member-form-grid label, .member-review-text { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
 .member-form-grid input, .member-form-grid textarea, .member-review-text textarea { min-width: 0; width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-surface-container-low); }

@@ -58,10 +58,34 @@
 .text-slate-900{color:#0f172a}
 .bg-black\/50{background:rgb(0 0 0/.5)}.bg-surface-container-low\/40{background:rgb(248 243 235/.4)}.bg-surface-container-low\/50{background:rgb(248 243 235/.5)}.border-outline-variant{border-color:#c1c8c3}.border-emerald-300{border-color:#6ee7b7}.border-slate-200{border-color:#e2e8f0}.border-slate-300{border-color:#cbd5e1}.hover\:bg-emerald-800:hover{background:#065f46}
 
-/* Nội dung quản trị trải rộng theo màn hình. */
-main.orders-page { width:100%; max-width:none; padding-inline:0; }
-main.orders-page > .max-w-7xl { width:calc(100% - 48px); max-width:none !important; margin-inline:auto; padding-inline:0 !important; }
-@media(max-width:640px) { main.orders-page > .max-w-7xl { width:calc(100% - 32px); } }
+/* Căn tiêu đề và cả hai tab trong cùng một khung nội dung. */
+main.orders-page { width: 100%; min-width: 0; padding: 0; }
+.orders-content {
+  width: 100%;
+  max-width: 1320px;
+  min-width: 0;
+  margin-inline: auto;
+  padding: clamp(16px, 3vw, 40px);
+}
+.orders-page-heading {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.orders-page-heading > div { min-width: 0; }
+.orders-page-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px;
+  border: 1px solid var(--color-surface-container-high, #e4ded7);
+  border-radius: 10px;
+  background: var(--color-surface-container-low, #f6f3ef);
+}
+.orders-page-tabs button { text-align: left; }
 
 /* Thang chữ thống nhất cho nội dung đơn hàng và thống kê. */
 .orders-page, #orderDetailModal { font-size:14px; line-height:1.55; }
@@ -77,11 +101,68 @@ main.orders-page > .max-w-7xl { width:calc(100% - 48px); max-width:none !importa
 .orders-page table { font-size:14px; line-height:1.55; }
 .orders-page th { font-size:13px; line-height:1.4; letter-spacing:.02em; }
 .orders-page :is(td, th) { padding-top:14px; padding-bottom:14px; }
-#view-orders table { min-width:1180px; }
 .orders-page .status-badge { font-size:13px; line-height:1.5; white-space:normal; }
 .orders-page :is(#tabBtn-orders, #tabBtn-analytics) { font-size:14px; padding:10px 16px; }
 .orders-page .material-symbols-outlined, #orderDetailModal .material-symbols-outlined { flex-shrink:0; }
 @media(max-width:640px) {
   .orders-page h1 { font-size:25px; }
   :is(.orders-page, #orderDetailModal) h2 { font-size:18px; }
+}
+
+
+.order-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.order-quick-dates {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 8px;
+}
+.order-table-scroll { width: 100%; max-width: 100%; overflow-x: auto; }
+.order-table { width: 100%; min-width: 860px; border-collapse: collapse; text-align: left; }
+.order-table th { background: var(--color-surface-container-low); }
+.order-table :is(th, td) {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  vertical-align: middle;
+}
+.order-table td:first-child { width: 36px; }
+.order-table td:nth-child(4) { width: 24%; }
+.order-code { color: var(--color-primary); font-weight: 700; white-space: nowrap; }
+.order-code:hover { text-decoration: underline; }
+.order-meta { display: block; margin-top: 2px; color: var(--color-text-muted); }
+.order-total { white-space: nowrap; }
+.order-status { font-weight: 600; }
+.order-row-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 7.75rem);
+  gap: 6px;
+}
+.order-row-actions .order-action {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 44px;
+  min-height: 44px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+.order-row-actions button { background: var(--color-primary); color: #fff; }
+.order-row-actions button:disabled { background: var(--color-surface-container-low); color: var(--color-text-muted); }
+.order-detail-link { background: var(--color-surface-container); color: var(--color-primary); }
+.order-detail-link:hover { background: var(--color-surface-container-high); }
+.orders-page :is(input, select, button, a):focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
 }

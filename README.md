@@ -32,6 +32,8 @@ Website chỉ sử dụng hai font được khai báo trong `CSS/theme.css`:
 - `--font-serif`: Lora, dùng cho logo, tiêu đề lớn, tên sách, giá nổi bật và nội dung quote.
 - `--font-sans`: Inter, dùng cho nội dung, menu, metadata, form, filter, button và label.
 
+Dùng `CSS/typography.css` sau CSS riêng của trang để đồng bộ các vai trò: tiêu đề trang 26–32 px, tiêu đề mục 24 px, tiêu đề thẻ 18 px, nội dung cơ bản 16 px và nhãn, nút, ô nhập 14 px ở cỡ chữ mặc định của trình duyệt. Tiêu đề banner và tên sách nổi bật trên trang chi tiết dùng thang chữ riêng.
+
 Không thêm hệ font riêng cho từng trang. Khi tạo trang mới, phải tải `Lora` và `Inter` hoặc dùng fallback đã định nghĩa trong theme.
 
 ### Màu sắc và biến theme

@@ -19,7 +19,10 @@
     if (mode !== 'confirm') pendingAction = null;
     if (!dialog.open) dialog.showModal();
   }
-  function notify(message) { show('Thao tác thành công', [message]); }
+  function notify(message) {
+    if (dialog.open) dialog.close();
+    DemoUI.toast(message);
+  }
   function confirmAction(title, message, success) {
     show(title, [message], 'confirm'); pendingAction = success;
   }
@@ -33,7 +36,14 @@
       case 'invoice': notify('Tải hóa đơn #VAT-8942 thành công.'); break;
       case 'call': show('Liên hệ tiệm sách', ['Tổng đài hỗ trợ: 1900 6868', 'Thời gian hỗ trợ: 08:00 – 21:30 hằng ngày.']); break;
       case 'cancel': confirmAction('Xác nhận hủy đơn hàng', 'Cậu muốn hủy đơn hàng #SV-8942?', 'Hủy đơn hàng thành công.'); break;
-      case 'tracking': show('Theo dõi vận chuyển', ['Mã vận đơn: VN8921820 · VNPost Express', 'Đơn hàng #SV-8942 đang được đóng gói.', 'Dự kiến giao: 18/05/2025.']); break;
+      case 'tracking': {
+        show('Theo dõi vận chuyển', [
+          'Mã vận đơn: VN8921820 · VNPost Express',
+          'Đơn hàng #SV-8942 đang được đóng gói.',
+          'Dự kiến giao: 18/05/2025.'
+        ]);
+        break;
+      }
       case 'chat': show('Nhắn thủ quán', ['Tiệm sách hỗ trợ cậu về đơn hàng #SV-8942.'], 'chat'); break;
     }
   });

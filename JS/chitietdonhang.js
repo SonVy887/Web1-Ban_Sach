@@ -1,18 +1,11 @@
 'use strict';
 (() => {
-  const toast = document.getElementById('od-toast');
   const dialog = document.getElementById('od-dialog');
   const heading = document.getElementById('od-dialog-title');
   const content = document.getElementById('od-dialog-content');
   const chat = document.getElementById('od-chat-form');
-  let timer;
   let opener;
-  function notify(message) {
-    clearTimeout(timer);
-    toast.textContent = message;
-    toast.hidden = false;
-    timer = setTimeout(() => { toast.hidden = true; }, 4500);
-  }
+  const notify = DemoUI.toast;
   function show(title, lines, showChat = false) {
     opener = document.activeElement;
     heading.textContent = title;
@@ -39,10 +32,10 @@
       case 'invoice': notify('Tải hóa đơn #VAT-8942 thành công (mô phỏng).'); break;
       case 'call': notify('Liên hệ tổng đài 1900 6868 thành công (mô phỏng).'); break;
       case 'cancel':
-        if (window.confirm('Xác nhận hủy đơn hàng mẫu #SV-8942?')) notify('Hủy đơn hàng thành công (mô phỏng).');
+        notify('Hủy đơn hàng thành công (mô phỏng).');
         break;
       case 'deliver':
-        if (window.confirm('Chuyển đơn mẫu từ Đã xác nhận sang Đã giao thành công?')) notify('Xác nhận giao thành công (mô phỏng).');
+        notify('Xác nhận giao thành công (mô phỏng).');
         break;
       case 'tracking':
         show('Theo dõi vận chuyển', ['Mã vận đơn: VN8921820 · VNPost Express', 'Đơn hàng #SV-8942 đang được đóng gói.', 'Dự kiến giao: 18/05/2025.']);

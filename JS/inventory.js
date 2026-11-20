@@ -1,31 +1,16 @@
 'use strict';
 window.AdminUI.mount({
-  "createTitle": "Tạo phiếu nhập mới",
-  "summary": "Thông tin phiếu nhập sách, nhà xuất bản và lịch giao nhận.",
-  "fields": [
-    {
-      "label": "Mã phiếu nhập",
-      "type": "text"
-    },
-    {
-      "label": "Nhà xuất bản / nhà cung cấp",
-      "type": "text"
-    },
-    {
-      "label": "Ngày nhập dự kiến",
-      "type": "date"
-    },
-    {
-      "label": "Tên sách",
-      "type": "text"
-    },
-    {
-      "label": "Số lượng",
-      "type": "number"
-    },
-    {
-      "label": "Đơn giá nhập (đ)",
-      "type": "number"
-    }
-  ]
+  ...window.AdminUI.receiptForm,
+  summary: 'Thông tin phiếu nhập sách, nhà xuất bản và lịch giao nhận.',
+  describeRecord(action, trigger) {
+    const row = trigger.closest('tr');
+    if (!row || (action !== 'details' && action !== 'tracking')) return;
+    const [code, date] = row.cells[0].children;
+    const tracking = action === 'tracking';
+    return {
+      title: tracking ? 'Lộ trình phiếu nhập' : 'Chi tiết phiếu nhập',
+      entries: [['Mã phiếu nhập', code.textContent.trim()], ['Thời điểm', date.textContent.trim()]],
+      columns: tracking ? [1, 4, 5] : [1, 2, 3, 4, 5]
+    };
+  }
 });

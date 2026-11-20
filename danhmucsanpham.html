@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="vi">
   <head>
+<link rel="stylesheet" href="CSS/demo-ui.css">
+<script src="JS/demo-ui.js" defer></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&amp;family=Roboto:wght@100..900&amp;display=swap"
-      rel="stylesheet"
-    />
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -21,10 +21,12 @@
     <link rel="stylesheet" href="CSS/reset.css" />
     <link rel="stylesheet" href="CSS/main.css" />
     <link rel="stylesheet" href="CSS/category.css" />
+    <link rel="stylesheet" href="CSS/pagination-demo.css" />
     <link rel="stylesheet" href="CSS/user-demo.css" />
     <link rel="stylesheet" href="CSS/catalog-filters.css" />
     <link rel="stylesheet" href="CSS/catalog-price-inputs.css" />
-  </head>
+  <link rel="stylesheet" href="CSS/typography.css">
+</head>
   <body data-user-page="danhmucsanpham">
     <header class="header">
       <div class="header-top">
@@ -172,19 +174,12 @@
         <form class="filter-panel" id="catalog-filter-form" role="search">
           <div class="filter-title">
             <i class="material-symbols-outlined">tune</i>
-            <h2>Bộ Lọc Sách<br />Tuyển Chọn</h2>
-            <span>48<br /><small>mục</small></span>
+            <h2>Bộ lọc sách</h2>
           </div>
-          <label class="filter-search"
-            ><strong>Tên sản phẩm (tìm tương đối)</strong
-            ><span
-              ><i class="material-symbols-outlined">search</i
-              ><input
+          <div class="filter-search"><label for="catalog-query"><strong>Tên sản phẩm</strong></label><div class="search-with-icon"><input
                 type="search"
-                name="q"
-                placeholder="Nhập một phần tên sách" /></span
-            ><small>Chọn các điều kiện rồi bấm Áp dụng bộ lọc.</small></label
-          >
+                name="q" id="catalog-query"
+                placeholder="Nhập một phần tên sách" /><button class="demo-search-button" type="submit" aria-label="Tìm kiếm" title="Tìm kiếm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4 4"></path></svg></button></div><small>Chọn các điều kiện rồi bấm Áp dụng bộ lọc.</small></div>
           <div class="filter-group">
             <h3>Danh mục</h3>
             <label
@@ -236,8 +231,8 @@
           <div class="filter-group catalog-price-group">
             <h3>Khoảng giá (VNĐ)</h3>
             <div class="catalog-price-inputs">
-              <label for="catalog-price-min">Giá từ<div class="catalog-price-wrap"><input id="catalog-price-min" type="text" name="min-price" inputmode="numeric" placeholder="Ví dụ: 100.000" data-catalog-money /><span>đ</span></div></label>
-              <label for="catalog-price-max">Giá đến<div class="catalog-price-wrap"><input id="catalog-price-max" type="text" name="max-price" inputmode="numeric" placeholder="Ví dụ: 300.000" data-catalog-money /><span>đ</span></div></label>
+              <label for="catalog-price-min">Từ<div class="catalog-price-wrap"><input id="catalog-price-min" type="text" name="min-price" inputmode="numeric" placeholder="Ví dụ: 100.000" data-catalog-money /><span>đ</span></div></label>
+              <label for="catalog-price-max">Đến<div class="catalog-price-wrap"><input id="catalog-price-max" type="text" name="max-price" inputmode="numeric" placeholder="Ví dụ: 300.000" data-catalog-money /><span>đ</span></div></label>
             </div>
           </div>
           <button class="filter-apply" type="submit">Áp dụng bộ lọc</button
@@ -245,11 +240,7 @@
         </form>
         <section class="catalog">
           <div class="catalog-toolbar">
-            <span
-              ><i class="catalog-dot"></i> Hiển thị
-              <strong>1 - 12</strong> trong tổng số <strong>48</strong> tác
-              phẩm</span
-            >
+            <span><i class="catalog-dot"></i> Hiển thị <strong>8</strong> tác phẩm</span>
             <div>
               <label for="sort">Sắp xếp:</label
               ><select id="sort">
@@ -540,11 +531,11 @@
             <article
               class="catalog-card"
               data-product-id="strange-is-the-night"
-              data-product='{"id":"strange-is-the-night","title":"Strange is the Night","price":48,"oldPrice":180000,"author":"Patrick Modiano","image":"./assets/books/strange.png","format":"Bìa mềm gập mép","stock":"in-stock","sale":true,"category":"Văn học &amp; Tiểu thuyết"}'
+              data-product='{"id":"strange-is-the-night","title":"Strange is the Night","price":48,"oldPrice":180000,"author":"Patrick Modiano","image":"./assets/books/Strange.png","format":"Bìa mềm gập mép","stock":"in-stock","sale":true,"category":"Văn học &amp; Tiểu thuyết"}'
             >
               <div class="catalog-cover">
                 <img
-                  src="./assets/books/strange.png"
+                  src="./assets/books/Strange.png"
                   alt="Strange is the Night"
                   data-product-link="strange-is-the-night"
                   tabindex="0"
@@ -578,22 +569,13 @@
               </div>
             </article>
           </div>
-          <div class="pagination">
-            <span>Hiển thị:</span><button class="selected">12</button
-            ><button>24</button><button>48</button><span>sách mỗi trang</span>
-            <div class="page-numbers">
-              <button disabled="">‹ Trang trước</button
-              ><button class="current">1</button><button>2</button
-              ><button>3</button><span>...</span><button>12</button
-              ><button>Trang sau ›</button>
-            </div>
-            <label
-              >Đến trang:
-              <input type="number" min="1" max="12" value="1" /><button>
-                Đi
-              </button></label
-            >
-          </div>
+          <nav class="demo-pager" data-demo-pagination data-max-page="3" aria-label="Phân trang">
+  <button type="button" data-demo-page="prev" aria-label="Trang trước" disabled aria-disabled="true">‹</button>
+  <a href="?page=1" data-demo-page="1" aria-label="Trang 1" aria-current="page">1</a>
+  <a href="?page=2" data-demo-page="2" aria-label="Trang 2">2</a>
+  <a href="?page=3" data-demo-page="3" aria-label="Trang 3">3</a>
+  <a href="?page=2" data-demo-page="next" aria-label="Trang sau">›</a>
+</nav>
         </section>
       </div>
     </main>
@@ -898,6 +880,7 @@
     <script src="JS/user-core.js" defer=""></script>
     <script src="JS/user-auth.js" defer=""></script>
     <script src="JS/user-shop.js" defer=""></script>
+    <script src="JS/pagination-demo.js" defer></script>
     <script src="JS/user-cart.js" defer=""></script>
     <script src="JS/user-account.js" defer=""></script>
     <script src="JS/user-orders.js" defer=""></script>
