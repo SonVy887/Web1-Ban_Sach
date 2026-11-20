@@ -4,7 +4,7 @@
   if (document.body.dataset.page !== 'order-detail') return;
 
   const analytics = new URLSearchParams(location.search).get('from') === 'analytics';
-  const backUrl = analytics ? 'admin/orders.html#analytics' : 'admin/orders.html#orders';
+  const backUrl = analytics ? '../admin/orders.html#analytics' : '../admin/orders.html#orders';
   const backLabel = analytics ? 'Thống kê khách hàng' : 'Quản lý đơn hàng';
   const page = document.getElementById('order-detail');
 
