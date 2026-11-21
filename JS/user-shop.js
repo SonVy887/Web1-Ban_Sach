@@ -58,19 +58,6 @@
   }
   form.addEventListener('submit',event=>{
    event.preventDefault();const params=new URLSearchParams(applied);
-   const minInput=form.elements['min-price'];
-   const maxInput=form.elements['max-price'];
-   const minValue=moneyDigits(minInput?.value||'');
-   const maxValue=moneyDigits(maxInput?.value||'');
-   if(minValue&&maxValue&&Number(minValue)>Number(maxValue)){
-    S.toast('Giá từ phải nhỏ hơn hoặc bằng giá đến.');
-    minInput?.setAttribute('aria-invalid','true');
-    maxInput?.setAttribute('aria-invalid','true');
-    minInput?.focus();
-    return;
-   }
-   minInput?.removeAttribute('aria-invalid');
-   maxInput?.removeAttribute('aria-invalid');
    ['q','category','format','price','min-price','max-price','page','sort'].forEach(key=>params.delete(key));
    const term=form.elements.q.value.trim();params.set('q',term);
    $$('input[name="category"]:checked',form).filter(input=>input.value!=='all').forEach(input=>params.append('category',input.value));
