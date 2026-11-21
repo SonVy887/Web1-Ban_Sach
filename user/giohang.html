@@ -109,8 +109,14 @@
         <div class="member-box"><div><span>Tài khoản đặt mua</span><b>Hội viên Thân Thiết</b></div><div class="member-user"><strong>V</strong><p><b>Lại Sơn Vỹ</b><small>0912 345 678 - sonvy@gmail.com</small></p></div></div>
         <div class="summary-section"><div class="summary-label"><span class="material-symbols-outlined">pin_drop</span>Địa chỉ giao nhận <button type="button">Nhập địa chỉ mới</button></div><div class="address-box"><span class="material-symbols-outlined">radio_button_checked</span><p><b>Địa chỉ mặc định</b><span>Tổ 34, phường Bình Lộc, thành phố Long Khánh, tỉnh Đồng Nai.</span></p></div></div>
         <div class="summary-section"><div class="summary-label"><span class="material-symbols-outlined">account_balance_wallet</span>Hình thức thanh toán</div><label class="payment-option"><input checked type="radio" name="payment"><span class="payment-option-copy"><b>Thanh toán khi nhận hàng (COD)</b><small>Kiểm tra sách kỹ lưỡng trước khi nhận</small></span><span class="material-symbols-outlined" aria-hidden="true">payments</span></label><label class="payment-option"><input type="radio" name="payment"><span class="payment-option-copy"><b>Chuyển khoản QR</b><small>Quét mã VietQR tiện lợi không phí</small></span><span class="material-symbols-outlined" aria-hidden="true">qr_code_scanner</span></label></div>
-        <div class="voucher-box"><label>Mã ưu đãi / Phiếu đọc sách</label><div><span class="material-symbols-outlined">check_circle</span><strong>BOOKNOOK2025</strong><b>Đã áp dụng</b></div></div>
-        <div class="totals"><p><span>Tạm tính (3 tác phẩm):</span><strong>585.000đ</strong></p><p><span>Chiết khấu hội viên (10%):</span><strong class="discount">-58.500đ</strong></p><p><span>Mã giảm giá (EMANHVY2006):</span><strong class="discount">-20.000đ</strong></p><p><span>Phí vận chuyển toàn quốc:</span><strong class="free">Miễn phí (0đ)</strong></p><div class="grand-total"><span>Tổng thanh toán:</span><div><strong>506.500đ</strong><small>(Đã bao gồm VAT và đóng gói chuyên dụng)</small></div></div></div>
+        <form class="voucher-box">
+          <label for="cart-voucher-code">Mã ưu đãi</label>
+          <div class="voucher-controls">
+            <input id="cart-voucher-code" type="text" value="SONVY_BANMAI" placeholder="Nhập mã ưu đãi" maxlength="32" autocomplete="off" spellcheck="false" required>
+            <button type="submit">Áp dụng</button>
+          </div>
+        </form>
+        <div class="totals"><p><span>Tạm tính (3 tác phẩm):</span><strong>585.000đ</strong></p><p><span>Chiết khấu hội viên (10%):</span><strong class="discount">-58.500đ</strong></p><p><span>Mã giảm giá (<span data-applied-voucher>SONVY_BANMAI</span>):</span><strong class="discount">-20.000đ</strong></p><p><span>Phí vận chuyển toàn quốc:</span><strong class="free">Miễn phí (0đ)</strong></p><div class="grand-total"><span>Tổng thanh toán:</span><div><strong>506.500đ</strong><small>(Đã bao gồm VAT và đóng gói chuyên dụng)</small></div></div></div>
         <button type="button" class="checkout-button">Tiến Hành Đặt Hàng <span class="material-symbols-outlined">arrow_forward</span></button><p class="terms">Bằng việc đặt hàng, bạn đồng ý với các <a href="#" data-user-info="Điều khoản giao dịch">Điều khoản giao dịch</a> của Tiệm Sách Sơn Vỹ.</p>
       </aside>
     </div>
