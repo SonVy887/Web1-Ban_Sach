@@ -23,12 +23,9 @@
 <main class="admin-main admin-page-main flex-1 " id="main-content">
   <div class="page-content">
     <!-- Header Section -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-      <div>
-        <h1 class="font-headline-lg text-3xl lg:text-4xl text-primary font-bold tracking-tight">Quản Lý Kho &amp; Phiếu Nhập Sách</h1>
-        <p class="text-sm text-on-surface-variant mt-1">Tiếp nhận lô sách từ các Nhà xuất bản, kiểm kê kệ trưng bày và theo dõi lịch nhập hàng tuần.</p>
-      </div>
-      <div class="flex items-center gap-3">
+    <header class="admin-page-heading">
+      <h1>Quản lý kho và phiếu nhập sách</h1>
+      <div class="admin-page-heading-actions">
         <button class="bg-surface-container text-secondary hover:text-primary px-3.5 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors" type="button" data-action="export" data-label="Xuất Báo Cáo Tồn Kho" aria-label="Xuất Báo Cáo Tồn Kho">
           <span class="material-symbols-outlined text-[18px]" aria-hidden="true">file_download</span>
           <span>Xuất Báo Cáo Tồn Kho</span>
@@ -38,7 +35,7 @@
           <span>Tạo phiếu nhập sách</span>
         </button>
       </div>
-    </div>
+    </header>
 
     <!-- 4 KPI Metrics -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
