@@ -10,7 +10,7 @@
     stock: 'Cập nhật tồn kho thành công.', delete: 'Xóa bản ghi thành công.', approve: 'Duyệt đơn hàng thành công.',
     cancel: 'Hủy đơn hàng thành công.', pause: 'Tạm dừng chiến dịch thành công.', activate: 'Kích hoạt chiến dịch thành công.',
     gift: 'Gửi thông tin đến khách hàng thành công.', call: 'Xác nhận đơn hàng thành công.',
-    inventory: 'Hoàn tất kiểm kê thành công.', copy: 'Sao chép liên kết thành công.',
+    inventory: 'Hoàn tất kiểm kê thành công.', copy: 'Sao chép mã khuyến mãi thành công.',
     print: 'In phiếu thành công.', export: 'Xuất báo cáo thành công.', bulk: 'Thực hiện tác vụ hàng loạt thành công.',
     search: 'Tìm kiếm thành công.', pagination: 'Chuyển trang thành công.'
   };
