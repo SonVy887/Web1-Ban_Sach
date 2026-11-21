@@ -1,6 +1,6 @@
 .product-editor-mode > :is(.header, .section-header, footer),
 .product-editor-mode .detail-page > :is(.reviews-section, .related-section),
-.product-editor-mode .product-detail :is(.purchase-row, .rating, .price-row, .format-options, .shipping-notes, .limited-badge, .bestseller-badge, .edition-note),
+.product-editor-mode .product-detail :is(.purchase-row, .rating, .price-row, .format-options, .shipping-notes, .edition-note),
 .product-editor-mode [hidden] {
   display: none !important;
 }
@@ -165,6 +165,10 @@ body:not(.product-editor-mode) .product-code-field {
   padding: 0;
 }
 .product-editor-form .product-tab-panel { margin: 0 !important; }
+.product-editor-specifications {
+  display: grid;
+  gap: 16px;
+}
 .product-editor-form .product-editor-editions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));

@@ -42,21 +42,14 @@
     const value = isNew ? '' : (options.value ?? element?.textContent.trim() ?? '');
     const control = document.createElement(options.choices ? 'select' : options.multiline ? 'textarea' : 'input');
     if (options.choices) {
-      const placeholder = document.createElement('option');
-      placeholder.value = '';
-      placeholder.textContent = 'Chọn ' + label.toLocaleLowerCase('vi');
-      placeholder.disabled = true;
-      control.append(placeholder);
-      const choices = new Set(options.choices);
-      if (value) choices.add(value);
-      for (const choice of choices) {
+      for (const choice of options.choices) {
         const option = document.createElement('option');
         option.value = option.textContent = choice;
         control.append(option);
       }
     }
     if (options.multiline) control.rows = 3;
-    control.value = value;
+    control.value = options.choices && !options.choices.includes(value) ? options.choices[0] : value;
     if (options.money) DemoUI.moneyInput(control);
     field.append(caption, control);
     if (element) element.replaceWith(field);
@@ -66,7 +59,13 @@
   const product = form.querySelector('.product-info');
   replaceWithField(product.querySelector('h1'), 'Tên sách');
   const subtitle = product.querySelector('.product-subtitle');
-  replaceWithField(subtitle, 'Tên nguyên tác / tên phụ', {value: subtitle.firstChild.textContent.trim()});
+  const editionSubtitle = subtitle.querySelector('.product-edition-subtitle');
+  const originalTitleField = replaceWithField(subtitle, 'Tên nguyên tác / tên phụ', {
+    value: subtitle.firstChild.textContent.trim()
+  });
+  originalTitleField.after(replaceWithField(null, 'Tên ấn bản hiển thị', {
+    value: editionSubtitle.textContent.trim()
+  }));
   const [author, translator] = product.querySelectorAll('.authors strong');
   const authorField = replaceWithField(author.closest('span'), 'Tác giả', {
     value: author.textContent.trim()
@@ -99,11 +98,7 @@
   replaceWithField(care.querySelector('p'), 'Hướng dẫn đóng gói & bảo quản', {multiline: true});
 
   const categories = ['Văn học & Tiểu thuyết', 'Kinh doanh - Khởi nghiệp', 'Phát triển bản thân', 'Thiếu nhi & Tranh truyện'];
-  const formatsByEdition = {
-    'Ấn bản bìa cứng': ['Bìa Cứng Cao Cấp', 'Bìa Cứng Giới Hạn', 'Bìa Cứng Boxset'],
-    'Ấn bản bìa mềm': ['Bìa Mềm Tiêu Chuẩn', 'Bìa Mềm Gập Mép', 'Bìa Mềm Minh Họa']
-  };
-  const saleStatuses = ['Chưa mở bán', 'Đang mở bán', 'Đang ẩn', 'Tạm ngừng bán', 'Ngừng bán'];
+  const saleStatuses = ['Đang mở bán', 'Đang ẩn', 'Ngừng bán'];
   const table = form.querySelector('.product-spec-table');
   const pricePanel = document.createElement('section');
   pricePanel.className = 'product-editor-price-panel';
@@ -114,6 +109,8 @@
   pricePanel.append(priceTitle, priceFields);
   overview.append(pricePanel);
 
+  const specForm = document.createElement('div');
+  specForm.className = 'product-editor-specifications';
   const specFields = document.createElement('div');
   specFields.className = 'product-editor-editions';
   const publishingFields = document.createElement('div');
@@ -136,8 +133,7 @@
     prices.setAttribute('aria-labelledby', heading.id);
     prices.append(heading);
     priceFields.append(prices);
-    const formats = formatsByEdition[title] ?? Object.values(formatsByEdition).flat();
-    return { specs, prices, formats };
+    return { specs, prices };
   });
 
   const group = document.createElement('fieldset');
@@ -145,6 +141,7 @@
   const categoryTitle = document.createElement('legend');
   categoryTitle.textContent = 'Danh mục';
   group.append(categoryTitle);
+  specForm.append(publishingFields, group, specFields);
 
   for (const row of table.tBodies[0].rows) {
     const [heading, ...values] = row.cells;
@@ -170,7 +167,6 @@
           value: cell.textContent.trim(),
           money: label.startsWith('Giá')
         };
-        if (label === 'Định dạng') options.choices = edition.formats;
         if (label === 'Trạng thái bán') options.choices = saleStatuses;
         const specField = replaceWithField(null, label, options);
         edition.specs.append(specField);
@@ -185,8 +181,7 @@
       });
     }
   }
-  product.append(publishingFields, group);
-  table.closest('.product-spec-scroll').replaceWith(specFields);
+  table.closest('.product-spec-scroll').replaceWith(specForm);
 
   const cover = form.querySelector('.gallery-main');
   const image = cover.querySelector('img');

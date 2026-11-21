@@ -74,29 +74,6 @@
     transform: scale(1.03)
 }
 
-.limited-badge,
-.bestseller-badge {
-    position: absolute;
-    left: 1.25rem;
-    z-index: 1;
-    padding: .45rem .8rem;
-    border-radius: 999px;
-    font-size: var(--text-xs);
-    font-weight: 700
-}
-
-.limited-badge {
-    top: 1.25rem;
-    background: var(--color-primary);
-    color: #fff
-}
-
-.bestseller-badge {
-    top: 3.35rem;
-    background: #ffd9c8;
-    color: var(--color-tertiary)
-}
-
 .zoom-button {
     position: absolute;
     right: 1.25rem;
