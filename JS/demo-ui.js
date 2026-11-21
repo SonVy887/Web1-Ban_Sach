@@ -30,15 +30,10 @@
     input.inputMode = 'numeric';
     input.value = formatMoney(input.value);
     input.addEventListener('input', () => {
-      const digitCount = moneyDigits(input.value.slice(0, input.selectionStart)).length;
+      input.value = moneyDigits(input.value);
+    });
+    input.addEventListener('blur', () => {
       input.value = formatMoney(input.value);
-      let position = 0;
-      let digitsSeen = 0;
-      while (position < input.value.length && digitsSeen < digitCount) {
-        if (/\d/.test(input.value[position])) digitsSeen++;
-        position++;
-      }
-      input.setSelectionRange(position, position);
     });
   }
 
