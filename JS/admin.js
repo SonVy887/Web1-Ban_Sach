@@ -127,7 +127,6 @@
       addField(content, {label:'Chọn tác vụ', options:['Cập nhật trạng thái','Duyệt các bản ghi đã chọn','Xóa các bản ghi đã chọn']},0);
     } else {
       recordDetails(trigger, content);
-      content.append(paragraph('Xác nhận thực hiện thao tác này?'));
     }
     dialog.showModal();
   }

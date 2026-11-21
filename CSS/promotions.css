@@ -18,7 +18,7 @@
 .promotion-table th:nth-child(2) { width: 17%; }
 .promotion-table th:nth-child(5) { width: 110px; }
 .promotion-table th:nth-child(7) { width: 138px; }
-.promotion-table th:nth-child(8) { width: 190px; }
+.promotion-table th:nth-child(8) { width: 208px; }
 
 .promotion-code {
   display: inline-block;
@@ -32,10 +32,9 @@
 }
 
 .promotion-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  justify-content: center;
   gap: 6px;
 }
 
@@ -43,9 +42,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 34px;
-  min-height: 36px;
+  min-width: 0;
+  height: 40px;
+  padding: 4px;
   white-space: nowrap;
+}
+
+.promotion-actions button[data-action="activate"] {
+  grid-column: 2 / -1;
 }
 
 .promotion-actions button .material-symbols-outlined,
