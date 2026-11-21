@@ -22,23 +22,19 @@
 
 <main class="orders-page w-full bg-surface flex-1 pb-12">
 <div class="orders-content">
-<!-- Top Action Breadcrumb & Main View Switcher Bar -->
-<div class="orders-page-heading">
-<div>
-<h1>Quản lý đơn hàng</h1>
-</div>
-<!-- Primary Switch Tabs (Quản lý Đơn hàng vs Thống kê Top 5 Khách hàng) -->
-<div class="orders-page-tabs">
-<button class="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold bg-primary-container text-on-primary shadow-xs transition-all" id="tabBtn-orders" type="button" data-order-tab="orders">
-<span class="material-symbols-outlined text-[18px]">receipt_long</span>
-<span>Đơn hàng</span>
-</button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-secondary hover:text-primary transition-all" id="tabBtn-analytics" type="button" data-order-tab="analytics">
-<span class="material-symbols-outlined text-[18px]">leaderboard</span>
-<span>Thống kê Top 5 khách hàng</span>
-</button>
-</div>
-</div>
+<header class="admin-page-heading">
+  <h1>Quản lý đơn hàng</h1>
+  <div class="admin-page-heading-actions orders-page-tabs">
+    <button class="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold bg-primary-container text-on-primary shadow-xs transition-all" id="tabBtn-orders" type="button" data-order-tab="orders">
+      <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+      <span>Đơn hàng</span>
+    </button>
+    <button class="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-secondary hover:text-primary transition-all" id="tabBtn-analytics" type="button" data-order-tab="analytics">
+      <span class="material-symbols-outlined text-[18px]">leaderboard</span>
+      <span>Thống kê Top 5 khách hàng</span>
+    </button>
+  </div>
+</header>
 <!-- VIEW 1: QUẢN LÝ ĐƠN HÀNG VIEW -->
 <div class="space-y-6" id="view-orders">
 <!-- KPI Summary Cards -->

@@ -1,7 +1,3 @@
-.dashboard-header-actions {
-  flex-wrap: wrap;
-}
-
 .dashboard-content-grid {
   grid-template-columns: minmax(0, 1fr);
   align-items: start;
