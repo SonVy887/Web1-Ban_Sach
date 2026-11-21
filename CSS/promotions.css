@@ -5,7 +5,7 @@
 .promotions-visual-4 { width: 100% }
 
 .admin-page-main table.promotion-table {
-  min-width: 1080px;
+  min-width: 1180px;
   table-layout: fixed;
 }
 
@@ -17,14 +17,38 @@
 .promotion-table th:nth-child(1) { width: 151px; }
 .promotion-table th:nth-child(2) { width: 17%; }
 .promotion-table th:nth-child(5) { width: 110px; }
-.promotion-table th:nth-child(7) { width: 112px; }
-.promotion-table th:nth-child(8) { width: 126px; }
+.promotion-table th:nth-child(7) { width: 138px; }
+.promotion-table th:nth-child(8) { width: 190px; }
 
 .promotion-code {
   display: inline-block;
-  white-space: nowrap;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .promotion-table td:nth-child(7) > span {
+  max-width: 100%;
+  justify-content: center;
+}
+
+.promotion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+}
+
+.promotion-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 36px;
   white-space: nowrap;
+}
+
+.promotion-actions button .material-symbols-outlined,
+.promotion-table td:nth-child(7) > span > span {
+  flex-shrink: 0;
 }
