@@ -1215,10 +1215,6 @@ a:focus-visible {
   padding: 16px 12px;
   vertical-align: middle;
 }
-.admin-main #books-table .w-10.h-14 {
-  width: 50px;
-  height: 70px;
-}
 .admin-main .book-title {
   font-size: 16px;
   line-height: 1.45;

@@ -92,7 +92,7 @@
 <th class="py-2.5 px-3 rounded-l-lg w-8"><input class="rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" id="check-all" type="checkbox" aria-label="Chọn tất cả"></th>
 <th class="py-2.5 px-3 min-w-[200px]">Ấn phẩm / Mã sản phẩm</th>
 <th class="py-2.5 px-3">Tác giả &amp; NXB</th>
-<th class="py-2.5 px-3">Giá bán / Vốn</th>
+<th class="py-2.5 px-3">Giá bán</th>
 <th class="py-2.5 px-3 text-center">Tồn kho</th>
 <th class="py-2.5 px-3">Trạng thái</th>
 <th class="py-2.5 px-3 text-right rounded-r-lg">Thao tác</th>
@@ -100,12 +100,12 @@
 </thead>
 <tbody class="divide-y divide-surface-container text-xs" id="table-body">
 <!-- Book 1 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="Haruki Murakami" data-code="SV-BK01" data-sold="18" data-cost="170.000" data-isbn="978-604-9" data-price="245.000" data-publisher="NXB Hội Nhà Văn" data-status="Đang mở bán" data-stock="48" data-title="Rừng Na Uy" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Norwegian Wood" data-translator="Trịnh Lữ" data-distributor="Nhã Nam" data-description="Khởi đầu từ giai điệu êm dịu của bài hát Norwegian Wood, Toru Watanabe hồi tưởng những năm tháng thanh xuân tại Tokyo." data-cover="../assets/books/admin-book-1.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Cứng Boxset&quot;,&quot;isbn&quot;:&quot;978-604-9&quot;,&quot;price&quot;:245000,&quot;listPrice&quot;:290000,&quot;stock&quot;:48,&quot;editionNumber&quot;:&quot;Ấn bản bìa cứng&quot;,&quot;pageCount&quot;:520,&quot;dimensions&quot;:&quot;14.5 × 20.5 cm&quot;,&quot;paperType&quot;:&quot;Giấy xốp&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;},{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-9&quot;,&quot;price&quot;:135000,&quot;listPrice&quot;:null,&quot;stock&quot;:34,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:520,&quot;dimensions&quot;:&quot;14.5 × 20.5 cm&quot;,&quot;paperType&quot;:&quot;Giấy tiêu chuẩn&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]" data-quote="Cái chết không phải là điều đã rời khỏi sự sống, mà là một phần không thể tách rời của nó.">
+<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="Haruki Murakami" data-code="SV-BK01" data-sold="18" data-cost="170.000" data-isbn="978-604-9" data-price="245.000" data-publisher="NXB Hội Nhà Văn" data-status="Đang mở bán" data-stock="48" data-title="Rừng Na Uy" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Norwegian Wood" data-translator="Trịnh Lữ" data-distributor="Nhã Nam" data-description="Khởi đầu từ giai điệu êm dịu của bài hát Norwegian Wood, Toru Watanabe hồi tưởng những năm tháng thanh xuân tại Tokyo." data-cover="../assets/books/RungNaUy.png" data-editions="[{&quot;format&quot;:&quot;Bìa Cứng Boxset&quot;,&quot;isbn&quot;:&quot;978-604-9&quot;,&quot;price&quot;:245000,&quot;listPrice&quot;:290000,&quot;stock&quot;:48,&quot;editionNumber&quot;:&quot;Ấn bản bìa cứng&quot;,&quot;pageCount&quot;:520,&quot;dimensions&quot;:&quot;14.5 × 20.5 cm&quot;,&quot;paperType&quot;:&quot;Giấy xốp&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;},{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-9&quot;,&quot;price&quot;:135000,&quot;listPrice&quot;:null,&quot;stock&quot;:34,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:520,&quot;dimensions&quot;:&quot;14.5 × 20.5 cm&quot;,&quot;paperType&quot;:&quot;Giấy tiêu chuẩn&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]" data-quote="Cái chết không phải là điều đã rời khỏi sự sống, mà là một phần không thể tách rời của nó.">
 <td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-4" aria-label="Chọn bản ghi"></td>
 <td class="py-3 px-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-14 rounded overflow-hidden shadow-sm flex-shrink-0 bg-surface-container relative border border-surface-container-high">
-<img alt="Rừng Na Uy" class="w-full h-full object-cover" src="../assets/books/admin-book-1.jpg">
+<div class="admin-book-cover">
+<img alt="Rừng Na Uy" src="../assets/books/RungNaUy.png">
 </div>
 <div class="min-w-0">
 <a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../user/chitietsanpham.html?mode=view">Rừng Na Uy</a>
@@ -119,7 +119,6 @@
 </td>
 <td class="py-3 px-3">
 <div class="font-bold text-primary book-price">245.000đ</div>
-<div class="text-[10px] text-secondary">Vốn: 170.000đ</div>
 </td>
 <td class="py-3 px-3 text-center">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 stock-badge">
@@ -140,12 +139,12 @@
 </td>
 </tr>
 <!-- Book 2 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="José Mauro" data-code="SV-BK02" data-sold="2" data-cost="72.000" data-isbn="978-604-2" data-price="108.000" data-publisher="NXB Nhã Nam" data-status="Đang mở bán" data-stock="34" data-title="Cây Cam Ngọt Của Tôi" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Meu Pé de Laranja Lima" data-translator="Tô Huệ Lan" data-distributor="Nhã Nam" data-description="Câu chuyện dịu dàng về tuổi thơ, tình yêu thương và những điều làm nên một trái tim tốt." data-cover="../assets/books/admin-book-2.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-2&quot;,&quot;price&quot;:108000,&quot;listPrice&quot;:null,&quot;stock&quot;:34,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
+<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="José Mauro" data-code="SV-BK02" data-sold="2" data-cost="72.000" data-isbn="978-604-2" data-price="108.000" data-publisher="NXB Nhã Nam" data-status="Đang mở bán" data-stock="34" data-title="Cây Cam Ngọt Của Tôi" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Meu Pé de Laranja Lima" data-translator="Tô Huệ Lan" data-distributor="Nhã Nam" data-description="Câu chuyện dịu dàng về tuổi thơ, tình yêu thương và những điều làm nên một trái tim tốt." data-cover="../assets/books/Cam.png" data-editions="[{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-2&quot;,&quot;price&quot;:108000,&quot;listPrice&quot;:null,&quot;stock&quot;:34,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
 <td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-5" aria-label="Chọn bản ghi"></td>
 <td class="py-3 px-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-14 rounded overflow-hidden shadow-sm flex-shrink-0 bg-surface-container relative border border-surface-container-high">
-<img alt="Cây Cam Ngọt Của Tôi" class="w-full h-full object-cover" src="../assets/books/admin-book-2.jpg">
+<div class="admin-book-cover">
+<img alt="Cây Cam Ngọt Của Tôi" src="../assets/books/Cam.png">
 </div>
 <div class="min-w-0">
 <a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../user/chitietsanpham.html?mode=view">Cây Cam Ngọt Của Tôi</a>
@@ -159,7 +158,6 @@
 </td>
 <td class="py-3 px-3">
 <div class="font-bold text-primary book-price">108.000đ</div>
-<div class="text-[10px] text-secondary">Vốn: 72.000đ</div>
 </td>
 <td class="py-3 px-3 text-center">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 stock-badge">
@@ -179,56 +177,16 @@
 </div>
 </td>
 </tr>
-<!-- Book 3 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group book-row" data-author="Sơn Vỹ Tuyển Tập" data-code="SV-BK03" data-sold="1" data-cost="620.000" data-isbn="978-604-7" data-price="950.000" data-publisher="Xưởng Thư Họa" data-status="Đang mở bán" data-stock="5" data-title="Thổ Hạc Xuân Tình Tuyển Tập" data-category="Văn học &amp; Tiểu thuyết" data-original-title="" data-translator="" data-distributor="Xưởng Thư Họa" data-description="" data-cover="../assets/books/admin-book-3.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Cứng Boxset&quot;,&quot;isbn&quot;:&quot;978-604-7&quot;,&quot;price&quot;:950000,&quot;listPrice&quot;:null,&quot;stock&quot;:5,&quot;editionNumber&quot;:&quot;Bản cổ phục dựng&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
-<td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-6" aria-label="Chọn bản ghi"></td>
-<td class="py-3 px-3">
-<div class="flex items-center gap-3">
-<div class="w-10 h-14 rounded overflow-hidden shadow-sm flex-shrink-0 bg-surface-container relative border border-surface-container-high">
-<img alt="Thổ Hạc Xuân Tình" class="w-full h-full object-cover" src="../assets/books/admin-book-3.jpg">
-</div>
-<div class="min-w-0">
-<a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../user/chitietsanpham.html?mode=view">Thổ Hạc Xuân Tình Tuyển Tập</a>
-<span class="text-[11px] font-mono text-secondary">SV-BK03</span>
-</div>
-</div>
-</td>
-<td class="py-3 px-3">
-<div class="font-medium text-primary text-xs book-author">Sơn Vỹ Tuyển Tập</div>
-<div class="text-[11px] text-secondary">Xưởng Thư Họa</div>
-</td>
-<td class="py-3 px-3">
-<div class="font-bold text-primary book-price">950.000đ</div>
-<div class="text-[10px] text-secondary">Vốn: 620.000đ</div>
-</td>
-<td class="py-3 px-3 text-center">
-<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300 stock-badge">
-<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
-<span class="stock-val">5</span> cuốn
-                    </span>
-</td>
-<td class="py-3 px-3">
-<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 status-badge">Đang mở bán</span>
-</td>
-<td class="py-3 px-3 text-right">
-<div class="flex items-center justify-end gap-1">
-<a class="book-view-link" href="../user/chitietsanpham.html?mode=view">Xem</a>
-<button class="p-1 hover:bg-surface-container rounded text-primary btn-edit" title="Chỉnh sửa thông tin" type="button" data-action="edit" data-label="Chỉnh sửa" aria-label="Chỉnh sửa"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">edit</span></button>
-<button class="p-1 rounded text-secondary hover:text-primary btn-visibility" title="Ẩn/hiện sản phẩm" type="button" aria-label="Ẩn/hiện sản phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">visibility_off</span></button>
-<button class="p-1 hover:bg-error-container/40 rounded text-error/70 hover:text-error btn-del" title="Xóa ấn phẩm" type="button" data-action="delete" data-label="Xóa ấn phẩm" aria-label="Xóa ấn phẩm"><span class="material-symbols-outlined text-[17px]" aria-hidden="true">delete</span></button>
-</div>
-</td>
-</tr>
 <!-- Book 4 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group book-row bg-red-50/20" data-author="Frank Herbert" data-code="SV-BK04" data-sold="1" data-cost="125.000" data-isbn="978-604-5" data-price="185.000" data-publisher="NXB Kim Đồng" data-status="Đang mở bán" data-stock="4" data-title="Dune Messiah (Xứ Cát Cứu Thế)" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Dune Messiah" data-translator="" data-distributor="NXB Kim Đồng" data-description="" data-cover="../assets/books/admin-book-4.jpg" data-editions="[{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-5&quot;,&quot;price&quot;:185000,&quot;listPrice&quot;:null,&quot;stock&quot;:4,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
+<tr class="hover:bg-surface-container-low/60 transition-colors group book-row bg-red-50/20" data-author="Frank Herbert" data-code="SV-BK04" data-sold="1" data-cost="125.000" data-isbn="978-604-5" data-price="185.000" data-publisher="NXB Kim Đồng" data-status="Đang mở bán" data-stock="4" data-title="Dune Messiah" data-category="Văn học &amp; Tiểu thuyết" data-original-title="Dune Messiah" data-translator="" data-distributor="NXB Kim Đồng" data-description="" data-cover="../assets/books/dune-messiah.png" data-editions="[{&quot;format&quot;:&quot;Bìa Mềm Tiêu Chuẩn&quot;,&quot;isbn&quot;:&quot;978-604-5&quot;,&quot;price&quot;:185000,&quot;listPrice&quot;:null,&quot;stock&quot;:4,&quot;editionNumber&quot;:&quot;&quot;,&quot;pageCount&quot;:&quot;&quot;,&quot;dimensions&quot;:&quot;&quot;,&quot;paperType&quot;:&quot;&quot;,&quot;status&quot;:&quot;Đang mở bán&quot;}]">
 <td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-7" aria-label="Chọn bản ghi"></td>
 <td class="py-3 px-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-14 rounded overflow-hidden shadow-sm flex-shrink-0 bg-surface-container relative border border-surface-container-high">
-<img alt="Dune Messiah" class="w-full h-full object-cover" src="../assets/books/admin-book-4.jpg">
+<div class="admin-book-cover">
+<img alt="Dune Messiah" src="../assets/books/dune-messiah.png">
 </div>
 <div class="min-w-0">
-<a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../user/chitietsanpham.html?mode=view">Dune Messiah (Xứ Cát Cứu Thế)</a>
+<a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../user/chitietsanpham.html?mode=view">Dune Messiah</a>
 <span class="text-[11px] font-mono text-secondary">SV-BK04</span>
 </div>
 </div>
@@ -239,7 +197,6 @@
 </td>
 <td class="py-3 px-3">
 <div class="font-bold text-primary book-price">185.000đ</div>
-<div class="text-[10px] text-secondary">Vốn: 125.000đ</div>
 </td>
 <td class="py-3 px-3 text-center">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-error-container text-error stock-badge">
@@ -264,8 +221,8 @@
 <td class="py-3 px-3"><input class="row-check rounded border-outline text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox" id="books-field-8" aria-label="Chọn bản ghi"></td>
 <td class="py-3 px-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-14 rounded overflow-hidden shadow-sm flex-shrink-0 bg-surface-container relative border border-surface-container-high">
-<img alt="Kafka Bên Bờ Biển" class="w-full h-full object-cover" src="../assets/books/Kafka.png">
+<div class="admin-book-cover">
+<img alt="Kafka Bên Bờ Biển" src="../assets/books/Kafka.png">
 </div>
 <div class="min-w-0">
 <a class="font-bold text-primary block truncate group-hover:text-primary-container book-title" href="../user/chitietsanpham.html?mode=view">Kafka Bên Bờ Biển</a>
@@ -279,7 +236,6 @@
 </td>
 <td class="py-3 px-3">
 <div class="font-bold text-primary book-price">195.000đ</div>
-<div class="text-[10px] text-secondary">Vốn: 130.000đ</div>
 </td>
 <td class="py-3 px-3 text-center">
 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 stock-badge">
