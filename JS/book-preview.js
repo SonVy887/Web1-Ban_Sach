@@ -49,7 +49,7 @@
       }
     },
     "SV-BK04": {
-      "title": "Dune Messiah (Xứ Cát Cứu Thế)",
+      "title": "Dune Messiah",
       "author": "Frank Herbert",
       "publisher": "NXB Kim Đồng",
       "distributor": "NXB Kim Đồng",
